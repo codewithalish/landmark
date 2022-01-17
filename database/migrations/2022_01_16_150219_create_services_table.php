@@ -15,9 +15,9 @@ class CreateServicesTable extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->id();
-            $table->char('title');
-            $table->char('body');
-            $table->char('thumbnail_path');
+            $table->string('title');
+            $table->string('body');
+            $table->string('thumbnail_path');
             $table->timestamps();
         });
     }
