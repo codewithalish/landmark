@@ -23,10 +23,10 @@ class CreateCasesTable extends Migration
             $table->integer('price');
             $table->integer('deposit');
             $table->integer('rent');
-            $table->enum(['FIELD','APARTMENT','VILLA']);
+            $table->enum('type',['FIELD','APARTMENT','VILLA']);
             $table->string('avatar_path')->nullable();
-            $table->enum(['contract','FOR_SALE','FOR_RENT']);
-            $table->boolean('s_vip')->default(false);
+            $table->enum('contract',['FOR_SALE','FOR_RENT']);
+            $table->boolean('is_vip')->default(false);
             $table->text('description')->nullable();
             $table->timestamps();
         });
