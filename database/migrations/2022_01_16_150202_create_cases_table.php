@@ -19,6 +19,7 @@ class CreateCasesTable extends Migration
             $table->integer('room_number')->default(0);
             $table->integer('area');
             $table->integer('parking_number');
+            $table->integer('bath_number');
             $table->integer('price');
             $table->integer('deposit');
             $table->integer('rent');

@@ -19,9 +19,9 @@ class CreateUsersTable extends Migration
             $table->integer('mobile')->unique();
             $table->string('password');
             $table->string('avatar_path');
-            $table->string('telegram');
-            $table->string('whatsapp');
-            $table->rememberToken();
+            $table->string('telegram')->nullable();
+            $table->string('whatsapp')->nullable();
+            $table->rememberToken()->nullable();
             $table->timestamps();
         });
     }
