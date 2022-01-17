@@ -15,8 +15,8 @@ class CreateBookmarksTable extends Migration
     {
         Schema::create('bookmarks', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
-            $table->integer('bookmarkable_id');
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('bookmarkable_id');
             $table->string('bookmarkable_type');
             $table->timestamps();
         });

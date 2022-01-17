@@ -15,8 +15,8 @@ class CreateCaseFeatureTable extends Migration
     {
         Schema::create('case_feature', function (Blueprint $table) {
             $table->id();
-            $table->integer('case_id');
-            $table->integer('feature_id');
+            $table->foreignId('case_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('feature_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateCaseFeatureTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('case_features');
+        Schema::dropIfExists('case_feature');
     }
 }

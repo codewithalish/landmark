@@ -15,9 +15,9 @@ class CreateCategoryablesTable extends Migration
     {
         Schema::create('categoryables', function (Blueprint $table) {
             $table->id();
-            $table->integer('categoryable_id');
+            $table->foreignId('categoryable_id');
             $table->string('categoryable_type');
-            $table->integer('category_id');
+            $table->foreignId('category_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
         });
     }
