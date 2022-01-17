@@ -20,9 +20,9 @@ class CreateCasesTable extends Migration
             $table->integer('area');
             $table->integer('parking_number');
             $table->integer('bath_number');
-            $table->integer('price');
-            $table->integer('deposit');
-            $table->integer('rent');
+            $table->bigInteger('price');
+            $table->bigInteger('deposit');
+            $table->bigInteger('rent');
             $table->enum('type',['FIELD','APARTMENT','VILLA']);
             $table->string('avatar_path')->nullable();
             $table->enum('contract',['FOR_SALE','FOR_RENT']);
