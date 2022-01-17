@@ -16,21 +16,7 @@ class CaseSeeder extends Seeder
      */
     public function run()
     {
-//        CaseModel::create([
-//            'title'=>'Orwell - Organic ',
-//            'room_number'=>"ti-mobile",
-//            'area'=>"ti-mobile",
-//            'parking_number'=>"ti-mobile",
-//            'bath_number'=>"ti-mobile",
-//            'price'=>'by Afracode in Retail',
-//            'deposit'=>'by Afracode in Retail',
-//            'rent'=>'by Afracode in Retail',
-//            'case_type'=>'by Afracode in Retail',
-//            'avatar_path'=>'by Afracode in Retail',
-//            'contract'=>'by Afracode in Retail',
-//            'is_vip'=>'by Afracode in Retail',
-//            'description'=>'by Afracode in Retail'
-//
-//        ]);
+        CaseModel::factory(100)->create();
+
     }
 }
