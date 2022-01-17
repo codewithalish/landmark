@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUsersTable extends Migration
+class CreateCaseFeaturesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,10 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('case_features', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->integer('mobile')->unique();
-            $table->string('password');
-            $table->string('avatar_path');
-            $table->string('telegram');
-            $table->string('whatsapp');
-            $table->rememberToken();
+            $table->integer('case_id');
+            $table->integer('feature_id');
             $table->timestamps();
         });
     }
@@ -33,6 +28,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('case_features');
     }
 }
