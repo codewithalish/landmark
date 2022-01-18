@@ -104,13 +104,6 @@
                                 <ul class="sub-menu">
                                     <li class="current"><a href="index.html">خانه با جستجوی پیشرفته</a></li>
                                     <li><a href="index-2.html">خانه با نقشه عمودی</a></li>
-                                    <li><a href="index-3.html">خانه با نقشه افقی</a></li>
-                                    <li><a href="index-4.html">خانه با نقشه نصف</a></li>
-                                    <li><a href="index-5.html">خانه با جستجوی نقشه</a></li>
-                                    <li><a href="index-6.html">خانه با یک ملک</a></li>
-                                    <li><a href="index-7.html">خانه سفارشی 1</a></li>
-                                    <li><a href="index-8.html">خانه سفارشی 2</a></li>
-                                    <li><a href="index-9.html">خانه سفارشی 3</a></li>
                                 </ul>
                                 <i class="fa fa-angle-down"></i>
                             </li>
@@ -118,11 +111,6 @@
                                 <a href="#">ملک ها</a>
                                 <ul class="sub-menu">
                                     <li><a href="properties.html">لیست ملک ها</a></li>
-                                    <li><a href="property-fullwidth.html">ملک تمام عرض</a></li>
-                                    <li><a href="property-left-sidebar.html">ملک با نوار کناری راست</a></li>
-                                    <li><a href="property-boxed-layout.html">ملک طرح جعبه ای</a></li>
-                                    <li><a href="property-tab-style.html">ملک حالت تب</a></li>
-                                    <li><a href="property-right-sidebar.html">ملک با نوار کناری چپ</a></li>
                                     <li><a href="property-landing-page.html">ملک با توضیحات تکمیلی</a></li>
                                 </ul>
                                 <i class="fa fa-angle-down"></i>
@@ -159,7 +147,6 @@
                                         <a href="#">خدمات فروشگاه</a>
                                         <ul class="sub-menu">
                                             <li><a href="shop-grid.html">فروشگاه توری</a></li>
-                                            <li><a href="shop-list.html">فروشگاه سطری</a></li>
                                             <li><a href="shop-detail.html">جزئیات فروشگاه</a></li>
                                             <li><a href="cart-empty.html">سبد خرید خالی</a></li>
                                             <li><a href="cart.html">سبد خرید</a></li>
