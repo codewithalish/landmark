@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('landmarkpages.index');
+    return view('pages.index');
 });
 Route::get('login', function () {
     return view('auth.login');
