@@ -16,6 +16,7 @@ class CreateCasesTable extends Migration
         Schema::create('cases', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('address');
             $table->integer('room_number')->default(0);
             $table->integer('area');
             $table->integer('parking_number');

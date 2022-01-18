@@ -17,7 +17,8 @@ class CaseModelFactory extends Factory
         return [
             //
             'title' => $this->faker->title(),
-//            'room_number' => $this->faker->randomElement(range(1,5)),
+            'address' => $this->faker->address(),
+          'room_number' => $this->faker->randomElement(range(1,5)),
             'area' => $this->faker->randomElement(range(40,1000,5)),
             'parking_number' => $this->faker->randomElement(range(1,10)),
             'bath_number' => $this->faker->randomElement(range(1,10)),
