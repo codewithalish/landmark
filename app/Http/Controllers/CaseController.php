@@ -30,4 +30,14 @@ class CaseController extends Controller
 
         return view('pages/search', compact('items'));
     }
+
+    public function lastCases(Request $request)
+    {
+        $items=CaseModel::query()
+            ->limit(9)
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        return view('pages/index', compact('items'));
+    }
 }
