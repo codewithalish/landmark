@@ -63,7 +63,7 @@
                     </div>
                     <div class="col-md-7 faq-img-wrap">
                         <div class="faq-img">
-                            <img src="images/image_1.png" alt="">
+                            <img src="/landmark/images/image_1.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -169,7 +169,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <img src="images/about.png" alt="about">
+                            <img src="/landmark/images/about.png" alt="about">
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -200,7 +200,7 @@
                             <div class="agent-item">
                                 <div class="thumbnail">
                                     <a href="agent-detail.html" title="Bruck Banner">
-                                        <img src="images/team/team_1.png" alt="Bruck Banner">
+                                        <img src="/landmark/images/team/team_1.png" alt="Bruck Banner">
                                     </a>
                                     <span class="line"><span></span></span>
                                 </div>
@@ -220,7 +220,7 @@
                             <div class="agent-item">
                                 <div class="thumbnail">
                                     <a href="agent-detail.html" title="Kent Pather">
-                                        <img src="images/team/team_2.png" alt="Kent Pather">
+                                        <img src="/landmark/images/team/team_2.png" alt="Kent Pather">
                                     </a>
                                     <span class="line"><span></span></span>
                                 </div>
@@ -240,7 +240,7 @@
                             <div class="agent-item">
                                 <div class="thumbnail">
                                     <a href="agent-detail.html" title="Henry Silver">
-                                        <img src="images/team/team_3.png" alt="Henry Silver">
+                                        <img src="/landmark/images/team/team_3.png" alt="Henry Silver">
                                     </a>
                                     <span class="line"><span></span></span>
                                 </div>
@@ -260,7 +260,7 @@
                             <div class="agent-item">
                                 <div class="thumbnail">
                                     <a href="agent-detail.html" title="Scarlet Atkinson">
-                                        <img src="images/team/team_4.png" alt="Scarlet Atkinson">
+                                        <img src="/landmark/images/team/team_4.png" alt="Scarlet Atkinson">
                                     </a>
                                     <span class="line"><span></span></span>
                                 </div>
@@ -280,7 +280,7 @@
                             <div class="agent-item">
                                 <div class="thumbnail">
                                     <a href="agent-detail.html" title="Sarah Barabova">
-                                        <img src="images/team/team_5.png" alt="Sarah Barabova">
+                                        <img src="/landmark/images/team/team_5.png" alt="Sarah Barabova">
                                     </a>
                                     <span class="line"><span></span></span>
                                 </div>
@@ -300,7 +300,7 @@
                             <div class="agent-item">
                                 <div class="thumbnail">
                                     <a href="agent-detail.html" title="Barack Ocean">
-                                        <img src="images/team/team_6.png" alt="Barack Ocean">
+                                        <img src="/landmark/images/team/team_6.png" alt="Barack Ocean">
                                     </a>
                                     <span class="line"><span></span></span>
                                 </div>

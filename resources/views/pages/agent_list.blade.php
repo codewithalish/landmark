@@ -7,7 +7,7 @@
                     <div class="col-md-9">
                         <div class="row agent-detail style-2">
                             <div class="thumbnail col-md-4">
-                                <img src="images/team/team_2.png" alt="">
+                                <img src="/landmark/images/team/team_2.png" alt="">
                                 <div class="agent-social text-center">
                                     <a class="fa fa-facebook" href="#"></a>
                                     <a class="fa fa-twitter" href="#"></a>
@@ -42,7 +42,7 @@
                         </div>
                         <div class="row agent-detail style-2">
                             <div class="thumbnail col-md-4">
-                                <img src="images/team/team_1.png" alt="">
+                                <img src="/landmark/images/team/team_1.png" alt="">
                                 <div class="agent-social text-center">
                                     <a class="fa fa-facebook" href="#"></a>
                                     <a class="fa fa-twitter" href="#"></a>
@@ -77,7 +77,7 @@
                         </div>
                         <div class="row agent-detail style-2">
                             <div class="thumbnail col-md-4">
-                                <img src="images/team/team_3.png" alt="">
+                                <img src="/landmark/images/team/team_3.png" alt="">
                                 <div class="agent-social text-center">
                                     <a class="fa fa-facebook" href="#"></a>
                                     <a class="fa fa-twitter" href="#"></a>
@@ -112,7 +112,7 @@
                         </div>
                         <div class="row agent-detail style-2">
                             <div class="thumbnail col-md-4">
-                                <img src="images/team/team_4.png" alt="">
+                                <img src="/landmark/images/team/team_4.png" alt="">
                                 <div class="agent-social text-center">
                                     <a class="fa fa-facebook" href="#"></a>
                                     <a class="fa fa-twitter" href="#"></a>
@@ -147,7 +147,7 @@
                         </div>
                         <div class="row agent-detail style-2">
                             <div class="thumbnail col-md-4">
-                                <img src="images/team/team_5.png" alt="">
+                                <img src="/landmark/images/team/team_5.png" alt="">
                                 <div class="agent-social text-center">
                                     <a class="fa fa-facebook" href="#"></a>
                                     <a class="fa fa-twitter" href="#"></a>
@@ -182,7 +182,7 @@
                         </div>
                         <div class="row agent-detail style-2">
                             <div class="thumbnail col-md-4">
-                                <img src="images/team/team_6.png" alt="">
+                                <img src="/landmark/images/team/team_6.png" alt="">
                                 <div class="agent-social text-center">
                                     <a class="fa fa-facebook" href="#"></a>
                                     <a class="fa fa-twitter" href="#"></a>
@@ -337,7 +337,7 @@
                                     <div class="agent-item">
                                         <div class="thumbnail">
                                             <a href="agent-detail.html" title="Clark Darik">
-                                                <img src="images/team/thumb/agent_1.png" alt="Clark Darik">
+                                                <img src="/landmark/images/team/thumb/agent_1.png" alt="Clark Darik">
                                             </a>
                                         </div>
                                         <div class="content">
@@ -350,7 +350,7 @@
                                     <div class="agent-item">
                                         <div class="thumbnail">
                                             <a href="agent-detail.html" title="Sarah Barabova">
-                                                <img src="images/team/thumb/agent_2.png" alt="Sarah Barabova">
+                                                <img src="/landmark/images/team/thumb/agent_2.png" alt="Sarah Barabova">
                                             </a>
                                         </div>
                                         <div class="content">
@@ -363,7 +363,7 @@
                                     <div class="agent-item">
                                         <div class="thumbnail">
                                             <a href="agent-detail.html" title="Bruck Banner">
-                                                <img src="images/team/thumb/agent_3.png" alt="Bruck Banner">
+                                                <img src="/landmark/images/team/thumb/agent_3.png" alt="Bruck Banner">
                                             </a>
                                         </div>
                                         <div class="content">
@@ -381,7 +381,7 @@
                                     <div class="recent-property-item">
                                         <div class="thumbnail">
                                             <a href="property-fullwidth.html" title="Family House in Hudson">
-                                                <img src="images/property/thumb/property_1.jpg" alt="Family House in Hudson">
+                                                <img src="/landmark/images/property/thumb/property_1.jpg" alt="Family House in Hudson">
                                             </a>
                                         </div>
                                         <div class="content">
@@ -398,7 +398,7 @@
                                     <div class="recent-property-item">
                                         <div class="thumbnail">
                                             <a href="property-fullwidth.html" title="Loft Above The City">
-                                                <img src="images/property/thumb/property_2.jpg" alt="Loft Above The City">
+                                                <img src="/landmark/images/property/thumb/property_2.jpg" alt="Loft Above The City">
                                             </a>
                                         </div>
                                         <div class="content">
@@ -415,7 +415,7 @@
                                     <div class="recent-property-item">
                                         <div class="thumbnail">
                                             <a href="property-fullwidth.html" title="Villa on Hollywood Boulevard">
-                                                <img src="images/property/thumb/property_3.jpg" alt="Villa on Hollywood Boulevard">
+                                                <img src="/landmark/images/property/thumb/property_3.jpg" alt="Villa on Hollywood Boulevard">
                                             </a>
                                         </div>
                                         <div class="content">

@@ -1,3 +1,12 @@
+<?php
+$contracts=[
+    'FOR_SALE'=>'برای فروش',
+    'FOR_RENT'=>'برای اجاره'
+];
+    ?>
+
+
+
 @extends('layouts.masterPages.landmark')
 @section('content')
 <div id="main">
@@ -21,7 +30,7 @@
                                         <a href="property-fullwidth.html" title="Family House in Hudson">
                                             <img src="/landmark/images/property/property_1.jpg" alt="Family House in Hudson">
                                         </a>
-                                        <span class="property-status">{{$item->contract}}</span>
+                                        <span class="property-status">{{$contracts[$item->contract]}}</span>
                                     </div>
                                     <div class="info">
 													<span class="primary-file-1">
@@ -87,16 +96,16 @@
                                 <div class="noo-map">
                                     <div class="gsearch">
                                         <div class="gsearch-wrap">
-                                            <form class="gsearchform" action="" method="">
+                                            <form class="gsearchform" action="/search" method="get">
                                                 <div class="gsearch-content">
                                                     <div class="gsearch-field">
                                                         <div class="form-group keyword">
-                                                            <input type="text" id="keyword" name="keyword" value="" placeholder="عبارت مورد جستجو ..." class="keyword" autocomplete="off">
+                                                            <input type="text" id="keyword" name="title" value="title" placeholder="عبارت مورد جستجو ..." class="keyword" autocomplete="off">
                                                         </div>
 
                                                         <div class="form-group glocation">
                                                             <div class="label-select">
-                                                                <select class="form-control">
+                                                                <select class="form-control" name="area">
                                                                     <option>همه مناطق</option>
                                                                     <option>ولیعصر</option>
                                                                     <option>شهناز</option>
@@ -110,7 +119,7 @@
 
                                                         <div class="form-group gtype">
                                                             <div class="label-select">
-                                                                <select class="form-control">
+                                                                <select class="form-control" name="type">
                                                                     <option>همه انواع ملک</option>
                                                                     <option>آپارتمان</option>
                                                                     <option>ویلایی</option>
@@ -122,7 +131,7 @@
 
                                                         <div class="form-group gbed">
                                                             <div class="label-select">
-                                                                <select class="form-control">
+                                                                <select class="form-control" name="room_number">
                                                                     <option>تعداد اتاق خواب</option>
                                                                     <option>1</option>
                                                                     <option>2</option>
@@ -135,7 +144,7 @@
 
                                                         <div class="form-group gbath">
                                                             <div class="label-select">
-                                                                <select class="form-control">
+                                                                <select class="form-control" name="bath_number">
                                                                     <option>تعداد سرویس بهداشتی</option>
                                                                     <option>1</option>
                                                                     <option>2</option>
@@ -147,7 +156,7 @@
 
                                                         <div class="form-group ggarage">
                                                             <div class="label-select">
-                                                                <select class="form-control">
+                                                                <select class="form-control" name="parking_number">
                                                                     <option>هر تعداد پارکینگ</option>
                                                                     <option>1</option>
                                                                     <option>2</option>

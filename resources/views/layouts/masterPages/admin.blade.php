@@ -9,13 +9,13 @@
 
 <!-- Breadcrumb-->
 <html lang="en">
-@include('layouts.partials.coreui.head')
+@include('layouts.partials.admin.head')
 <body>
 <script id="__bs_script__">//<![CDATA[
     document.write("<script async src='/browser-sync/browser-sync-client.js?v=2.27.7'><\/script>".replace("HOST", location.hostname));
     //]]></script>
 
-@include('layouts.partials.coreui.sidebar')
+@include('layouts.partials.admin.sidebar')
 <div class="wrapper d-flex flex-column min-vh-100 bg-light">
     <header class="header header-sticky mb-4">
         <div class="container-fluid">
@@ -151,7 +151,7 @@
 <script src="/node_modules/chart.js/dist/chart.min.js"></script>
 <script src="/node_modules/@coreui/chartjs/dist/js/coreui-chartjs.js"></script>
 <script src="/node_modules/@coreui/utils/dist/coreui-utils.js"></script>
-<script src="/coreui/js/main.js"></script>
+<script src="/admin/js/main.js"></script>
 
 </body>
 </html>

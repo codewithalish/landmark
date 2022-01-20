@@ -57,11 +57,11 @@
                             </p>
                         </div>
                     </div>
-                    <form class="advanced-search-property">
+                    <form class="advanced-search-property" method="get" action="/search">
                         <div class="advanced-search-property-wrap">
                             <div class="row">
                                 <div class="item-wrap col-md-3">
-                                    <input type="text" id="keyword" name="keyword" value="" placeholder="عبارت مورد جستجو ...">
+                                    <input type="text" id="keyword" name="title" value="" placeholder="عبارت مورد جستجو ...">
                                 </div>
                                 <div class="item-wrap col-md-3">
                                     <select class="selection" name="status">
@@ -71,7 +71,7 @@
                                     </select>
                                 </div>
                                 <div class="item-wrap col-md-3">
-                                    <select class="selection" name="types">
+                                    <select class="selection" name="type">
                                         <option value="">همه انواع ملک</option>
                                         <option value="">آپارتمان</option>
                                         <option value="">زمین</option>
@@ -79,7 +79,7 @@
                                     </select>
                                 </div>
                                 <div class="item-wrap col-md-3">
-                                    <select class="selection" name="property_bedrooms">
+                                    <select class="selection" name="room_number">
                                         <option value="">هر تعداد اتاق </option>
                                         <option value="">3</option>
                                         <option value="">5</option>
@@ -87,7 +87,7 @@
                                     </select>
                                 </div>
                                 <div class="item-wrap col-md-3">
-                                    <select class="selection" name="property_bathrooms">
+                                    <select class="selection" name="bath_number">
                                         <option value="">هر تعداد سرویس بهداشتی </option>
                                         <option value="">2</option>
                                         <option value="">3</option>
@@ -96,7 +96,7 @@
                                     </select>
                                 </div>
                                 <div class="item-wrap col-md-3">
-                                    <select class="selection" name="property_garages">
+                                    <select class="selection" name="parking_number">
                                         <option value="">هر تعداد پارکینگ </option>
                                         <option value="">1</option>
                                         <option value="">2</option>
