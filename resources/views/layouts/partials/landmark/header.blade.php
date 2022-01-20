@@ -80,7 +80,7 @@
                     </div>
                     <div class="pull-right navbar-meta meta-property">
                         <div class="meta-content">
-                            <a href="#" class="meta-property button">
+                            <a href="/login" class="meta-property button">
                                 <span><i class="fa fa-plus-circle"></i></span>افزودن ملک
                             </a>
                         </div>
@@ -306,7 +306,7 @@
                     </nav>
                     <div class="pull-right navbar-meta meta-property show_on_mobile">
                         <div class="meta-content">
-                            <a href="/login" class="meta-property button">
+                            <a href="#" class="meta-property button">
                                 <span><i class="fa fa-plus-circle"></i></span>افزودن ملک
                             </a>
                         </div>
