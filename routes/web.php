@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\LoginController;
+use Illuminate\Support\Facades\Hash;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,6 +20,9 @@ Route::get('/create', function () {
 });
 Route::get('login', function () {
     return view('auth.login');
+});
+Route::get('register', function () {
+    return view('auth.register');
 });
 Route::get('create2', function () {
     return view('pages.create_case');
@@ -41,3 +46,30 @@ Route::get('case_list', function () {
 
 Route::get('search', [\App\Http\Controllers\CaseController::class , 'search']);
 Route::get('/', [\App\Http\Controllers\CaseController::class , 'lastCases']);
+Route::post('/contact_us', [\App\Http\Controllers\ContactController::class , 'store']);
+
+
+/*
+|--------------------------------------------------------------------------
+| Authentication Routes
+|--------------------------------------------------------------------------
+|
+*/
+Route::get('login', [LoginController::class , 'login'])->name('login');
+Route::get('register', [LoginController::class , 'register'])->name('register');
+Route::post('login', [LoginController::class , 'login']);
+Route::post('register', [LoginController::class , 'register']);
+Route::get('logout',function (){
+    session::flush();
+    auth::logout();
+    return redirect('login');
+});
+
+/*
+|--------------------------------------------------------------------------
+| Admin panel Routes
+|--------------------------------------------------------------------------
+|
+*/
+Route::get('/admin',[AdminController::class,'dashboard'])->middleware('auth');
+Route::resource('/admin/contacts',\App\Http\Controllers\ContactController::class)->middleware('auth');
