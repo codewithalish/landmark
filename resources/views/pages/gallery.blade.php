@@ -12,65 +12,65 @@
                     </div>
                     <div class="galleries">
                         <div class="col-md-3 col-sm-4 col-xs-6 p-0">
-                            <a href="images/gallery/gallery_1.jpg" class="mfp-image gallery-item">
+                            <a href="/landmark/images/gallery/gallery_1.jpg" class="mfp-image gallery-item">
                                 <div class="gallery-content">
-                                    <img src="images/gallery/gallery_thumb_1.jpg">
+                                    <img src="/landmark/images/gallery/gallery_thumb_1.jpg">
                                 </div>
                                 <i class="fa fa-search-plus"></i>
                             </a>
                         </div>
                         <div class="col-md-3 col-sm-4 col-xs-6 p-0">
-                            <a href="images/gallery/gallery_2.jpg" class="mfp-image gallery-item">
+                            <a href="/landmark/images/gallery/gallery_2.jpg" class="mfp-image gallery-item">
                                 <div class="gallery-content">
-                                    <img src="images/gallery/gallery_thumb_2.jpg">
+                                    <img src="/landmark/images/gallery/gallery_thumb_2.jpg">
                                 </div>
                                 <i class="fa fa-search-plus"></i>
                             </a>
                         </div>
                         <div class="col-md-3 col-sm-4 col-xs-6 p-0">
-                            <a href="images/gallery/gallery_3.jpg" class="mfp-image gallery-item">
+                            <a href="/landmark/images/gallery/gallery_3.jpg" class="mfp-image gallery-item">
                                 <div class="gallery-content">
-                                    <img src="images/gallery/gallery_thumb_3.jpg">
+                                    <img src="/landmark/images/gallery/gallery_thumb_3.jpg">
                                 </div>
                                 <i class="fa fa-search-plus"></i>
                             </a>
                         </div>
                         <div class="col-md-3 col-sm-4 col-xs-6 p-0">
-                            <a href="images/gallery/gallery_4.jpg" class="mfp-image gallery-item">
+                            <a href="/landmark/images/gallery/gallery_4.jpg" class="mfp-image gallery-item">
                                 <div class="gallery-content">
-                                    <img src="images/gallery/gallery_thumb_4.jpg">
+                                    <img src="/landmark/images/gallery/gallery_thumb_4.jpg">
                                 </div>
                                 <i class="fa fa-search-plus"></i>
                             </a>
                         </div>
                         <div class="col-md-3 col-sm-4 col-xs-6 p-0">
-                            <a href="images/gallery/gallery_5.jpg" class="mfp-image gallery-item">
+                            <a href="/landmark/images/gallery/gallery_5.jpg" class="mfp-image gallery-item">
                                 <div class="gallery-content">
-                                    <img src="images/gallery/gallery_thumb_5.jpg">
+                                    <img src="/landmark/images/gallery/gallery_thumb_5.jpg">
                                 </div>
                                 <i class="fa fa-search-plus"></i>
                             </a>
                         </div>
                         <div class="col-md-3 col-sm-4 col-xs-6 p-0">
-                            <a href="images/gallery/gallery_6.jpg" class="mfp-image gallery-item">
+                            <a href="/landmark/images/gallery/gallery_6.jpg" class="mfp-image gallery-item">
                                 <div class="gallery-content">
-                                    <img src="images/gallery/gallery_thumb_6.jpg">
+                                    <img src="/landmark/images/gallery/gallery_thumb_6.jpg">
                                 </div>
                                 <i class="fa fa-search-plus"></i>
                             </a>
                         </div>
                         <div class="col-md-3 col-sm-4 col-xs-6 p-0">
-                            <a href="images/gallery/gallery_7.jpg" class="mfp-image gallery-item">
+                            <a href="/landmark/images/gallery/gallery_7.jpg" class="mfp-image gallery-item">
                                 <div class="gallery-content">
-                                    <img src="images/gallery/gallery_thumb_7.jpg">
+                                    <img src="/landmark/images/gallery/gallery_thumb_7.jpg">
                                 </div>
                                 <i class="fa fa-search-plus"></i>
                             </a>
                         </div>
                         <div class="col-md-3 col-sm-4 col-xs-6 p-0">
-                            <a href="images/gallery/gallery_8.jpg" class="mfp-image gallery-item">
+                            <a href="/landmark/images/gallery/gallery_8.jpg" class="mfp-image gallery-item">
                                 <div class="gallery-content">
-                                    <img src="images/gallery/gallery_thumb_8.jpg">
+                                    <img src="/landmark/images/gallery/gallery_thumb_8.jpg">
                                 </div>
                                 <i class="fa fa-search-plus"></i>
                             </a>
