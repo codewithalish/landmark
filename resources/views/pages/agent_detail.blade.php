@@ -14,7 +14,7 @@
                             <div class="info-agent col-md-7">
                                 <div class="box-content">
                                     <h3 class="title">
-                                        <a href="/agent_detail" title="{{$item->name}}">{{$item->name}} </a>
+                                        <a href="/agent_detail">{{$item->name}} </a>
                                     </h3>
                                     <div class="box-info">
                                         <div class="item-info">

@@ -23,8 +23,8 @@ class AgentController extends Controller
 //    public function index()
 //    {
 //        //
-//        $query=Post::get();
-//        return view('afracode.posts.index',['items'=>$query]);
+//        $query=User::get();
+//        return view('pages.index',['items'=>$query]);
 //    }
 
 
