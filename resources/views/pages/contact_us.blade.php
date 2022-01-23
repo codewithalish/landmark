@@ -27,21 +27,23 @@
                                 </div>
                                 <div class="col-md-6 col-xs-12">
                                     <h3 class="title">ارسال پیام</h3>
-                                    <form class="contact-form">
+                                    @include('layouts.partials.auth.alert')
+                                    <form class="contact-form" action="/contact_us" method="post">
+                                        @csrf
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-item">
-                                                    <input type="text" name="your-name" value="" size="40" placeholder="نام">
+                                                    <input type="text" name="name" value="" size="40" placeholder="نام">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-item">
-                                                    <input type="email" name="your-email" value="" size="40" placeholder="ایمیل">
+                                                    <input type="email" name="email" value="" size="40" placeholder="ایمیل">
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="form-item form-textarea">
-                                                    <textarea name="your-message" cols="40" rows="10" placeholder="دیدگاه شما ..."></textarea>
+                                                    <textarea name="message" cols="40" rows="10" placeholder="دیدگاه شما ..."></textarea>
                                                 </div>
                                             </div>
                                             <div class="col-md-12">

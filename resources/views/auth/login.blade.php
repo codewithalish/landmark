@@ -30,7 +30,7 @@
                                     {{--                                @enderror--}}
                                     <div class="input-group mb-4"><span class="input-group-text">
                       <svg class="icon">
-                        <use xlink:href="/afracode/admin/login/node_modules/@coreui/icons/sprites/free.svg#cil-lock-locked"></use>
+                        <use xlink:href="/node_modules/@coreui/icons/sprites/free.svg#cil-lock-locked"></use>
                       </svg></span>
                                         <input class="form-control" type="password" placeholder="Password" name="password">
                                     </div>
