@@ -112,7 +112,7 @@
                                 <a href="#">ملک ها</a>
                                 <ul class="sub-menu">
                                     <li><a href="/case_list">لیست ملک ها</a></li>
-                                    <li><a href="/case_detail">ملک با توضیحات تکمیلی</a></li>
+
                                 </ul>
                                 <i class="fa fa-angle-down"></i>
                             </li>
@@ -120,7 +120,7 @@
                                 <a href="#">نمایندگان</a>
                                 <ul class="sub-menu">
                                     <li><a href="/agent_list">لیست نمایندگان</a></li>
-                                    <li><a href="/agent_detail">جزئیات نماینده</a></li>
+
                                 </ul>
                                 <i class="fa fa-angle-down"></i>
                             </li>

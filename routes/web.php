@@ -65,6 +65,8 @@ Route::post('/contact_us', [\App\Http\Controllers\ContactController::class , 'st
 
 Route::get('agent_list', [\App\Http\Controllers\AgentController::class , 'allAgents']);
 Route::get('agent_detail/{id}', [\App\Http\Controllers\AgentController::class , 'show']);
+Route::get('case_detail/{id}', [\App\Http\Controllers\CaseController::class , 'show']);
+Route::get('shop_detail/{id}', [\App\Http\Controllers\ShopController::class , 'show']);
 /*
 |--------------------------------------------------------------------------
 | Authentication Routes
