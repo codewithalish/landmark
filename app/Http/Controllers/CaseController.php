@@ -46,8 +46,10 @@ class CaseController extends Controller
 
         $items=$items->get();
 
-        return view('pages/search', compact('items' , 'request'));
+        return view('pages/cases', compact('items' , 'request'));
     }
+
+
 
     public function lastCases(Request $request)
     {
@@ -57,5 +59,15 @@ class CaseController extends Controller
             ->get();
 
         return view('pages/index', compact('items'));
+    }
+
+
+    public function allCases(Request $request)
+    {
+        $items=CaseModel::query()
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        return view('pages/case_list', compact('items'));
     }
 }

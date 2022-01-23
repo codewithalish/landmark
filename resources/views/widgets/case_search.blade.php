@@ -4,14 +4,13 @@
         <div class="noo-map">
             <div class="gsearch">
                 <div class="gsearch-wrap">
-                    <form class="gsearchform" action="/search" method="get">
+                    <form class="gsearchform" action="/cases" method="get">
                         <div class="gsearch-content">
                             <div class="gsearch-field">
                                 <div class="form-group keyword">
                                     <input type="text" id="keyword" name="q" placeholder="عبارت مورد جستجو ..."
                                            value="{{$request->get('q')}}" class="keyword" autocomplete="off">
                                 </div>
-
                                 <div class="form-group keyword">
                                     <input type="number" id="keyword" name="area_min"
                                            value="{{$request->get('area_min')}}" placeholder="متراژ از." class="keyword"
@@ -22,8 +21,6 @@
                                            value="{{$request->get('area_max')}}" placeholder="متراژ تا" class="keyword"
                                            autocomplete="off">
                                 </div>
-
-
                                 <div class="form-group gtype">
                                     <div class="label-select">
                                         <select class="form-control" name="type" >
@@ -35,7 +32,6 @@
                                         </select>
                                     </div>
                                 </div>
-
                                 <div class="form-group ggarage">
                                     <div class="label-select">
                                         <select class="form-control" name="contract"
@@ -47,7 +43,6 @@
                                         </select>
                                     </div>
                                 </div>
-
                                 <div class="form-group gbed">
                                     <div class="label-select">
                                         <select class="form-control" name="room_number">
@@ -61,12 +56,9 @@
                                         </select>
                                     </div>
                                 </div>
-
-
                                 <div class="form-group ggarage">
                                     <div class="label-select">
-                                        <select class="form-control" name="parking_number"
-                                                >
+                                        <select class="form-control" name="parking_number">
                                             <option value="">هر تعداد پارکینگ</option>
                                             <option {{$request->get('parking_number') == 1 ? 'selected' : ''}}>1</option>
                                             <option {{$request->get('parking_number') == 2 ? 'selected' : ''}}>2</option>
@@ -75,7 +67,6 @@
                                         </select>
                                     </div>
                                 </div>
-
                                 <div class="form-group gprice">
                                     <span class="gprice-label">قیمت (تومان)</span>
                                     <div class="price_slider_wrapper widget_price_filter">
@@ -104,7 +95,6 @@
                                 </div>
                             </div>
                         </div>
-                </div>
                 </form>
             </div>
         </div>

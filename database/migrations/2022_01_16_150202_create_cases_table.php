@@ -17,6 +17,7 @@ class CreateCasesTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('address');
+            $table->integer('user_id');
             $table->integer('room_number')->default(0);
             $table->integer('area');
             $table->integer('parking_number');
