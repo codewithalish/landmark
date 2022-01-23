@@ -48,7 +48,7 @@ $contracts=[
                                     </div>
                                     <div class="action">
                                         <div class="price">
-                                            <span class="amount">{{$item->price}} تومان</span>
+                                            <span class="amount">{{number_format($item->price)}} تومان</span>
                                         </div>
                                         <div class="action-post">
                                             <a data-toggle="tooltip" data-placement="top" title="" data-original-title="علاقه‌مندی‌ها" href="#">
@@ -90,112 +90,7 @@ $contracts=[
                 </div>
                 <div class="col-md-3">
                     <div class="sidebar">
-                        <div class="widget">
-                            <h3 class="widget-title">یافتن ملک</h3>
-                            <div class="advanced_search_property vertical">
-                                <div class="noo-map">
-                                    <div class="gsearch">
-                                        <div class="gsearch-wrap">
-                                            <form class="gsearchform" action="/search" method="get">
-                                                <div class="gsearch-content">
-                                                    <div class="gsearch-field">
-                                                        <div class="form-group keyword">
-                                                            <input type="text" id="keyword" name="title" value="title" placeholder="عبارت مورد جستجو ..." class="keyword" autocomplete="off">
-                                                        </div>
-
-                                                        <div class="form-group glocation">
-                                                            <div class="label-select">
-                                                                <select class="form-control" name="area">
-                                                                    <option>همه مناطق</option>
-                                                                    <option>ولیعصر</option>
-                                                                    <option>شهناز</option>
-                                                                    <option>ائل گلی</option>
-                                                                    <option>17 شهریور</option>
-                                                                    <option>پاستور جدید</option>
-                                                                    <option>بهار جنوبی</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="form-group gtype">
-                                                            <div class="label-select">
-                                                                <select class="form-control" name="type">
-                                                                    <option>همه انواع ملک</option>
-                                                                    <option>آپارتمان</option>
-                                                                    <option>ویلایی</option>
-                                                                    <option>زمین</option>
-                                                                    <option>منزل مشترک</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="form-group gbed">
-                                                            <div class="label-select">
-                                                                <select class="form-control" name="room_number">
-                                                                    <option>تعداد اتاق خواب</option>
-                                                                    <option>1</option>
-                                                                    <option>2</option>
-                                                                    <option>3</option>
-                                                                    <option>4</option>
-                                                                    <option>5</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="form-group gbath">
-                                                            <div class="label-select">
-                                                                <select class="form-control" name="bath_number">
-                                                                    <option>تعداد سرویس بهداشتی</option>
-                                                                    <option>1</option>
-                                                                    <option>2</option>
-                                                                    <option>3</option>
-                                                                    <option>4</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="form-group ggarage">
-                                                            <div class="label-select">
-                                                                <select class="form-control" name="parking_number">
-                                                                    <option>هر تعداد پارکینگ</option>
-                                                                    <option>1</option>
-                                                                    <option>2</option>
-                                                                    <option>3</option>
-                                                                    <option>4</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="form-group gprice">
-                                                            <span class="gprice-label">قیمت (تومان)</span>
-                                                            <div class="price_slider_wrapper widget_price_filter">
-                                                                <div class="price_slider" style="display:none;"></div>
-                                                                <div class="price_slider_amount" data-currency="" data-step="100000">
-                                                                    <input type="hidden" id="min_price" name="min_price" value="" data-min="500000" placeholder="حداقل قیمت">
-                                                                    <input type="hidden" id="max_price" name="max_price" value="" data-max="600000000" placeholder="حداکثر قیمت">
-                                                                    <div class="price_label" style="display:none;">
-                                                                        <span class="from"></span> - <span class="to"></span>
-                                                                    </div>
-                                                                    <div class="clear"></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="gsearch-action">
-                                                        <div class="gsubmit">
-                                                            <button type="submit" class="button">
-                                                                <span class="ion-search"></span> جستجوی ملک
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                       @include('widgets.case_search')
                         <div class="widget">
                             <h3 class="widget-title">نمایندگان ویژه</h3>
                             <div class="featured-agent">
