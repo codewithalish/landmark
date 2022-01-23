@@ -6,7 +6,7 @@ use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Hash;
 /*
 |--------------------------------------------------------------------------
-| Web Routes
+| test
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Hash;
 |
 */
 
-Route::get('/create', function () {
+Route::get('/admin_create', function () {
     return view('admin.create_case');
 });
 Route::get('login', function () {
@@ -24,31 +24,47 @@ Route::get('login', function () {
 Route::get('register', function () {
     return view('auth.register');
 });
-Route::get('create2', function () {
-    return view('pages.create_case');
-});
-Route::get('about', function () {
-    return view('pages.about_us');
-});
-Route::get('contact', function () {
-    return view('pages.contact_us');
-});
-Route::get('agent', function () {
-    return view('pages.agent_list');
-});
-Route::get('agent_detail', function () {
-    return view('pages.agent_detail');
-});
+
 Route::get('case_list', function () {
     return view('pages.case_list');
 });
 
+Route::view('shop','pages/shop');
+Route::view('cart','pages/cart');
+Route::view('cart_empty','pages/cart_empty');
+Route::view('checkout','pages/checkout');
+Route::view('gallery','pages/gallery');
+Route::view('my_account','pages/my_account');
+Route::view('shop_detail','pages/shop_detail');
+Route::view('partner','pages/partner');
+Route::view('services','pages/services');
+Route::view('agent_list','pages/agent_list');
+Route::view('agent_detail','pages/agent_detail');
+Route::view('case_detail','pages/case_detail');
+Route::view('about_us','pages/about_us');
+Route::view('contact_us','pages/contact_us');
+Route::view('create','pages/create_case');
+Route::view('create_user','pages/create_user');
+Route::view('cases','pages/cases');
 
-Route::get('search', [\App\Http\Controllers\CaseController::class , 'search']);
+
+/*
+|--------------------------------------------------------------------------
+| dev
+|--------------------------------------------------------------------------
+|
+*/
+
+Route::get('cases', [\App\Http\Controllers\CaseController::class , 'search']);
+Route::get('case_list', [\App\Http\Controllers\CaseController::class , 'allCases']);
 Route::get('/', [\App\Http\Controllers\CaseController::class , 'lastCases']);
+//Route::get('/', [\App\Http\Controllers\CaseController::class , 'indexSearch']);
+
 Route::post('/contact_us', [\App\Http\Controllers\ContactController::class , 'store']);
 
 
+Route::get('agent_list', [\App\Http\Controllers\AgentController::class , 'allAgents']);
+Route::get('agent_detail/{id}', [\App\Http\Controllers\AgentController::class , 'show']);
 /*
 |--------------------------------------------------------------------------
 | Authentication Routes

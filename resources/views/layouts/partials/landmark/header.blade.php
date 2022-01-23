@@ -47,7 +47,7 @@
                                             </button>
                                             <p>
                                                 <span>حساب کاربری ندارید؟</span>
-                                                <a class="color" href="#" title="Register now!">هم اکنون ثبت نام کنید!</a>
+                                                <a class="color" href="/create_user" title="Register now!">هم اکنون ثبت نام کنید!</a>
                                             </p>
                                         </div>
                                     </div>
@@ -102,41 +102,36 @@
                             <li class="current">
                                 <a href="./">خانه</a>
                                 <ul class="sub-menu">
-                                    <li class="current"><a href="index.html">خانه با جستجوی پیشرفته</a></li>
-                                    <li><a href="index-2.html">خانه با نقشه عمودی</a></li>
+                                    <li><a href="/">خانه</a></li>
+                                    <li class="current"><a href="/cases">جستجوی پیشرفته</a></li>
+
                                 </ul>
                                 <i class="fa fa-angle-down"></i>
                             </li>
                             <li>
                                 <a href="#">ملک ها</a>
                                 <ul class="sub-menu">
-                                    <li><a href="properties.html">لیست ملک ها</a></li>
-                                    <li><a href="property-landing-page.html">ملک با توضیحات تکمیلی</a></li>
+                                    <li><a href="/case_list">لیست ملک ها</a></li>
+                                    <li><a href="/case_detail">ملک با توضیحات تکمیلی</a></li>
                                 </ul>
                                 <i class="fa fa-angle-down"></i>
                             </li>
                             <li>
                                 <a href="#">نمایندگان</a>
                                 <ul class="sub-menu">
-                                    <li><a href="agent-list.html">لیست نمایندگان</a></li>
-                                    <li><a href="agent-detail.html">جزئیات نماینده</a></li>
+                                    <li><a href="/agent_list">لیست نمایندگان</a></li>
+                                    <li><a href="/agent_detail">جزئیات نماینده</a></li>
                                 </ul>
                                 <i class="fa fa-angle-down"></i>
                             </li>
                             <li>
                                 <a href="#">صفحات</a>
                                 <ul class="sub-menu">
-                                    <li><a href="header-search-form.html">سرصفحه با فرم جستجو</a></li>
-                                    <li><a href="header-below-map.html">سرصفحه زیر نقشه</a></li>
-                                    <li><a href="header-toggle-menu.html">سر صفحه با دکمه منو</a></li>
-                                    <li><a href="blog.html">لیست مطالب بلاگ</a></li>
-                                    <li><a href="blog-mansory.html">بلاگ حالت کاشی</a></li>
-                                    <li><a href="blog-detail-fullwidth.html">جزئیات بلاگ تمام عرض</a></li>
-                                    <li><a href="blog-detail-sidebar.html">جزئیات بلاگ با نوار کناری</a></li>
-                                    <li><a href="agent-package.html">پکیج نماینده</a></li>
-                                    <li><a href="about-us.html">درباره ما</a></li>
-                                    <li><a href="contact-us.html">تماس با ما</a></li>
-                                    <li><a href="404.html">خطای 404</a></li>
+                                    <li><a href="/gallery">گالری</a></li>
+                                    <li><a href="/partner">شرکا</a></li>
+                                    <li><a href="/services">خدمات</a></li>
+                                    <li><a href="/about_us">درباره ما</a></li>
+                                    <li><a href="/contact_us">تماس با ما</a></li>
                                 </ul>
                                 <i class="fa fa-angle-down"></i>
                             </li>
@@ -146,12 +141,12 @@
                                     <li>
                                         <a href="#">خدمات فروشگاه</a>
                                         <ul class="sub-menu">
-                                            <li><a href="shop-grid.html">فروشگاه توری</a></li>
-                                            <li><a href="shop-detail.html">جزئیات فروشگاه</a></li>
-                                            <li><a href="cart-empty.html">سبد خرید خالی</a></li>
-                                            <li><a href="cart.html">سبد خرید</a></li>
-                                            <li><a href="checkout.html">پرداخت</a></li>
-                                            <li><a href="my-account.html">حساب کاربری</a></li>
+                                            <li><a href="/shop">فروشگاه</a></li>
+                                            <li><a href="/shop_detail">جزئیات فروشگاه</a></li>
+                                            <li><a href="/cart_empty">سبد خرید خالی</a></li>
+                                            <li><a href="/cart">سبد خرید</a></li>
+                                            <li><a href="/checkout">پرداخت</a></li>
+                                            <li><a href="/my_account">حساب کاربری</a></li>
                                         </ul>
                                         <i class="fa fa-angle-down"></i>
                                     </li>
@@ -161,21 +156,21 @@
                                                 <h3 class="widget-title">جدیدترین ها</h3>
                                                 <ul class="product-list-widget">
                                                     <li>
-                                                        <a href="shop-detail.html">
+                                                        <a href="/shop_detail">
                                                             <img src="/landmark/images/placeholder.png" alt="Placeholder">
                                                             <span class="product-title">رایگان</span>
                                                         </a>
                                                         <span class="amount">560,000,000 تومان</span>
                                                     </li>
                                                     <li>
-                                                        <a href="shop-detail.html">
+                                                        <a href="/shop_detail">
                                                             <img src="/landmark/images/shop/thumb/shop_1.png" alt="">
                                                             <span class="product-title">لورم ایپسوم متن ساختگی</span>
                                                         </a>
                                                         <span class="amount">560,000,000 تومان</span>
                                                     </li>
                                                     <li>
-                                                        <a href="shop-detail.html">
+                                                        <a href="/shop_detail">
                                                             <img src="/landmark/images/shop/thumb/shop_2.png" alt="">
                                                             <span class="product-title">لورم ایپسوم</span>
                                                         </a>
@@ -191,21 +186,21 @@
                                                 <h3 class="widget-title">فروش‌ها</h3>
                                                 <ul class="product-list-widget">
                                                     <li>
-                                                        <a href="shop-detail.html">
+                                                        <a href="/shop_detail">
                                                             <img src="/landmark/images/shop/thumb/shop_3.jpg" alt="Placeholder">
                                                             <span class="product-title">لورم ایپسوم متن</span>
                                                         </a>
                                                         <span class="amount">560,000,000 تومان</span>
                                                     </li>
                                                     <li>
-                                                        <a href="shop-detail.html">
+                                                        <a href="/shop_detail">
                                                             <img src="/landmark/images/shop/thumb/shop_4.jpg" alt="">
                                                             <span class="product-title">لورم ایپسوم متن</span>
                                                         </a>
                                                         <span class="amount">560,000,000 تومان</span>
                                                     </li>
                                                     <li>
-                                                        <a href="shop-detail.html">
+                                                        <a href="/shop_detail">
                                                             <img src="/landmark/images/shop/thumb/shop_5.jpg" alt="">
                                                             <span class="product-title">لورم ایپسوم متن ساختگی</span>
                                                         </a>
@@ -221,7 +216,7 @@
                                                 <h3 class="widget-title">بالاترین امتیاز</h3>
                                                 <ul class="product-list-widget">
                                                     <li>
-                                                        <a href="shop-detail.html">
+                                                        <a href="/shop_detail">
                                                             <img src="/landmark/images/shop/thumb/shop_6.jpg" alt="Placeholder">
                                                             <span class="product-title">لورم ایپسوم متن</span>
                                                         </a>
@@ -231,7 +226,7 @@
                                                         <span class="amount">560,000,000 تومان</span>
                                                     </li>
                                                     <li>
-                                                        <a href="shop-detail.html">
+                                                        <a href="/shop_detail">
                                                             <img src="/landmark/images/shop/thumb/shop_7.jpg" alt="">
                                                             <span class="product-title">لورم ایپسوم متن</span>
                                                         </a>
@@ -241,7 +236,7 @@
                                                         <span class="amount">560,000,000 تومان</span>
                                                     </li>
                                                     <li>
-                                                        <a href="shop-detail.html">
+                                                        <a href="/shop_detail">
                                                             <img src="/landmark/images/shop/thumb/shop_1.png" alt="">
                                                             <span class="product-title">لورم ایپسوم</span>
                                                         </a>
@@ -257,61 +252,17 @@
                                 </ul>
                                 <i class="fa fa-angle-down"></i>
                             </li>
-                            <li class="megamenu mega-col-4">
-                                <a href="#">ویژگی ها</a>
-                                <ul class="sub-menu">
-                                    <li>
-                                        <a href="#">صفحات</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="advanced-search-property.html">جستجوی ملک پیشرفته</a></li>
-                                            <li><a href="ads-banner.html">بنر تبلیغات</a></li>
-                                            <li><a href="faq.html">سوالات متداول</a></li>
-                                            <li><a href="floor-plan.html">نقشه ملک</a></li>
-                                        </ul>
-                                        <i class="fa fa-angle-down"></i>
-                                    </li>
-                                    <li>
-                                        <a href="#">صفحات</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="gallery.html">گالری</a></li>
-                                            <li><a href="partner.html">شرکا</a></li>
-                                            <li><a href="progress.html">نوار پیشرفت</a></li>
-                                        </ul>
-                                        <i class="fa fa-angle-down"></i>
-                                    </li>
-                                    <li>
-                                        <a href="#">صفحات</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="service.html">خدمات</a></li>
-                                            <li><a href="properties-list.html">لیست ملک ها</a></li>
-                                            <li><a href="single-agent-contact.html">تماس با نماینده</a></li>
-                                            <li><a href="single-property.html">درباره ملک</a></li>
-                                        </ul>
-                                        <i class="fa fa-angle-down"></i>
-                                    </li>
-                                    <li>
-                                        <a href="#">صفحات</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="single-property-banner.html">درباره ملک طرح بنر</a></li>
-                                            <li><a href="single-property-fullwidth.html">درباره ملک با جزئیات</a></li>
-                                            <li><a href="single-property-featured.html">درباره ملک ویژه</a></li>
-                                            <li><a href="single-property-map.html">درباره ملک با نقشه</a></li>
-                                        </ul>
-                                        <i class="fa fa-angle-down"></i>
-                                    </li>
-                                </ul>
-                                <i class="fa fa-angle-down"></i>
-                            </li>
+
                         </ul>
                     </nav>
-                    <div class="pull-right navbar-meta meta-property show_on_mobile">
-                        <div class="meta-content">
-                            <a href="#" class="meta-property button">
-                                <span><i class="fa fa-plus-circle"></i></span>افزودن ملک
-                            </a>
-                        </div>
-                    </div>
-                </div>
+{{--                    <div class="pull-right navbar-meta meta-property show_on_mobile">--}}
+{{--                        <div class="meta-content">--}}
+{{--                            <a href="/create_case" class="meta-property button">--}}
+{{--                                <span><i class="fa fa-plus-circle"></i></span>افزودن ملک--}}
+{{--                            </a>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
             </div>
         </div>
     </div>
