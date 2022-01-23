@@ -91,11 +91,11 @@
                                         </div>
                                     </div>
                                 </div>
-                                <h3 class="detail-title">منزل ویلایی دو طبقه</h3>
-                                <span class="property-status">برای اجاره</span>
+                                <h3 class="detail-title">{{$item->title}}</h3>
+                                <span class="property-status">{{$item->contract}}</span>
                                 <div class="info">
-                                    <span class="location">تبریز، چهارراه شهناز</span>
-                                    <div class="price">15,450,000,000 تومان</div>
+                                    <span class="location">{{$item->address}}</span>
+                                    <div class="price">{{$item->price}} تومان</div>
                                 </div>
                             </div>
                             <div class="detail-content">
@@ -104,13 +104,13 @@
                                         <a data-toggle="tab" href="#tab-desc" aria-expanded="true">توضیحات</a>
                                     </li>
                                     <li>
-                                        <a data-toggle="tab" href="#tab-address" aria-expanded="false">آدرس</a>
+                                        <a data-toggle="tab" href="#tab-address" aria-expanded="false">{{$item->address}}</a>
                                     </li>
                                     <li>
-                                        <a data-toggle="tab" href="#tab-detail" aria-expanded="false">جزئیات</a>
+                                        <a data-toggle="tab" href="#tab-detail" aria-expanded="false">{{$item->description}}</a>
                                     </li>
                                     <li>
-                                        <a data-toggle="tab" href="#tab-video" aria-expanded="false">ویدئو</a>
+                                        <a data-toggle="tab" href="#tab-video" aria-expanded="false">{{$item->video_path}}</a>
                                     </li>
                                 </ul>
                                 <div class="tab-content">
@@ -124,7 +124,7 @@
                                             <div class="col-md-6">
                                                 <div class="content-box-item">
                                                     <label>آدرس</label>
-                                                    <span>تبریز، پاستور جدید</span>
+                                                    <span>{{$item->address}}</span>
                                                 </div>
                                                 <div class="content-box-item">
                                                     <label>کشور</label>
@@ -132,13 +132,13 @@
                                                 </div>
                                                 <div class="content-box-item">
                                                     <label>شهر</label>
-                                                    <span>نیوجرسی</span>
+                                                    <span>اراک</span>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="content-box-item">
                                                     <label>منطقه</label>
-                                                    <span>ائل گلی</span>
+                                                    <span>فاطمیه</span>
                                                 </div>
                                                 <div class="content-box-item">
                                                     <label>کدپستی</label>
@@ -160,31 +160,31 @@
                                                     </div>
                                                     <div class="content-box-item">
                                                         <label>وضعیت</label>
-                                                        <span><a href="#">برای اجاره</a></span>
+                                                        <span><a href="#">{{$item->contract}}</a></span>
                                                     </div>
                                                     <div class="content-box-item">
                                                         <label>نوع</label>
-                                                        <span><a href="#">زمین</a></span>
+                                                        <span><a href="#">{{$item->type}}</a></span>
                                                     </div>
                                                     <div class="content-box-item">
                                                         <label>قیمت</label>
-                                                        <span>لورم ایپسوم متن ساختگی</span>
+                                                        <span>{{$item->price}}</span>
                                                     </div>
                                                     <div class="content-box-item">
                                                         <label>مساحت</label>
-                                                        <span>2800</span>
+                                                        <span>{{$item->area}}</span>
                                                     </div>
                                                     <div class="content-box-item">
                                                         <label>اتاق خواب</label>
-                                                        <span>6</span>
+                                                        <span>{{$item->room_number}}</span>
                                                     </div>
                                                     <div class="content-box-item">
                                                         <label>سرویس بهداشتی</label>
-                                                        <span>5</span>
+                                                        <span>{{$item->bath_number}}</span>
                                                     </div>
                                                     <div class="content-box-item">
                                                         <label>پارکینگ</label>
-                                                        <span>2</span>
+                                                        <span>{{$item->parking_number}}</span>
                                                     </div>
                                                     <div class="content-box-item">
                                                         <label>سال ساخت</label>
