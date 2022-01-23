@@ -27,9 +27,11 @@ class CreateCasesTable extends Migration
             $table->bigInteger('rent');
             $table->enum('type',['FIELD','APARTMENT','VILLA']);
             $table->string('avatar_path')->nullable();
+            $table->string('video_path')->nullable();
             $table->enum('contract',['FOR_SALE','FOR_RENT']);
             $table->boolean('is_vip')->default(false);
             $table->text('description')->nullable();
+            $table->text('details')->nullable();
             $table->timestamps();
         });
     }

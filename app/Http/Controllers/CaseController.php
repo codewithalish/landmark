@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\CaseModel;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -70,4 +71,11 @@ class CaseController extends Controller
 
         return view('pages/case_list', compact('items'));
     }
+
+    public function show($id)
+    {
+        $query=CaseModel::find($id);
+        return view('pages/case_detail',['item'=>$query]);
+    }
+
 }
