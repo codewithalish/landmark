@@ -13,14 +13,10 @@ class PageController extends Controller
     {
 
 
-        $items=CaseModel::query()
-            ->limit(9)
-            ->orderBy('created_at', 'desc')
-            ->get();
 
 
 
-        return view('pages/index', compact('items'));
+        return view('pages/index');
     }
 
 

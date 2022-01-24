@@ -42,7 +42,7 @@
             </div>
         </div>
     </div>
-    @include('sections.search_case')
+  <x-SearchCaseComponent></x-SearchCaseComponent>
     <div class="section section-overlay section-bg-3">
         <div class="container">
             <div class="row">
@@ -63,7 +63,7 @@
             </div>
         </div>
     </div>
-   @include('sections.last_cases')
+ <x-LastCaseComponent></x-LastCaseComponent>
     <div class="section">
         <div class="container">
             <div class="row">
@@ -171,7 +171,7 @@
             </div>
         </div>
     </div>
-{{--    @include('sections.agents')--}}
+{{-- <x-AgentComponent></x-AgentComponent> --}}
     <div class="section section-overlay section-bg-5 pt-10 pb-20">
         <div class="container">
             <div class="row">
