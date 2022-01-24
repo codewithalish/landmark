@@ -67,6 +67,7 @@ Route::get('agent_list', [\App\Http\Controllers\AgentController::class , 'allAge
 Route::get('agent_detail/{id}', [\App\Http\Controllers\AgentController::class , 'show']);
 Route::get('case_detail/{id}', [\App\Http\Controllers\CaseController::class , 'show']);
 Route::get('shop_detail/{id}', [\App\Http\Controllers\ShopController::class , 'show']);
+Route::get('shop', [\App\Http\Controllers\ShopController::class , 'index']);
 /*
 |--------------------------------------------------------------------------
 | Authentication Routes

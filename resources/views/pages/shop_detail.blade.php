@@ -12,23 +12,23 @@
                                 <div class="single-product-images">
                                     <div class="shop-slider owl-carousel owl-theme" data-auto-play="false" data-desktop="1" data-laptop="1" data-tablet="1" data-mobile="1">
                                         <div class="item">
-                                            <a href="images/shop/shop_detail.jpg" class="mfp-image gallery-item">
-                                                <img src="images/shop/shop_detail.jpg" alt="">
+                                            <a href="/landmark/images/shop/shop_detail.jpg" class="mfp-image gallery-item">
+                                                <img src="/landmark/images/shop/shop_detail.jpg" alt="">
                                             </a>
                                         </div>
                                         <div class="item">
-                                            <a href="images/shop/shop_detail_2.jpg" class="mfp-image gallery-item">
-                                                <img src="images/shop/shop_detail_2.jpg" alt="">
+                                            <a href="/landmark/images/shop/shop_detail_2.jpg" class="mfp-image gallery-item">
+                                                <img src="/landmark/images/shop/shop_detail_2.jpg" alt="">
                                             </a>
                                         </div>
                                         <div class="item">
-                                            <a href="images/shop/shop_detail_3.jpg" class="mfp-image gallery-item">
-                                                <img src="images/shop/shop_detail_3.jpg" alt="">
+                                            <a href="/landmark/images/shop/shop_detail_3.jpg" class="mfp-image gallery-item">
+                                                <img src="/landmark/images/shop/shop_detail_3.jpg" alt="">
                                             </a>
                                         </div>
                                         <div class="item">
-                                            <a href="images/shop/shop_detail_4.jpg" class="mfp-image gallery-item">
-                                                <img src="images/shop/shop_detail_4.jpg" alt="">
+                                            <a href="/landmark/images/shop/shop_detail_4.jpg" class="mfp-image gallery-item">
+                                                <img src="/landmark/images/shop/shop_detail_4.jpg" alt="">
                                             </a>
                                         </div>
                                     </div>
@@ -36,13 +36,19 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="summary">
-                                    <h1 class="product-title">لوستر تک لامپ آویزان</h1>
+                                    <h1 class="product-title">{{$item->title}}</h1>
                                     <div class="price-stock">
-                                        <div class="price">456,000 تومان</div>
-                                        <div class="status-stock">وضعیت: <span class="">موجود در انبار</span></div>
+                                        <div class="price"><span>قیمت:</span>{{$item->price}} تومان</div>
+                                        <br>
+                                        <div class=""> وضعیت:  <span class="">{{$item->status}}</span></div><br>
+                                        <div class=""><span> وزن:</span>{{$item->weight}} کیلوگرم</div><br>
+                                        <div class=""><span>سایز: </span>{{$item->size}} </div><br>
+                                        <div class=""><span>رنگ: </span>{{$item->color}} </div><br>
+                                        <div class=""><span>جنس: </span>{{$item->material}} </div><br>
+                                        <div class=""><span>گارانتی: </span>{{$item->guaranty}}</div><br>
                                     </div>
                                     <hr>
-                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع</p>
+                                    <p>{{$item->description}}</p>
                                     <br>
                                     <form class="mini-cart">
                                         <div class="quantity">
