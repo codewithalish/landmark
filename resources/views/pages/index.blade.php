@@ -310,7 +310,7 @@
             </div>
         </div>
     </div>
-@include('sections.partners')
+<x-PartnerComponent></x-PartnerComponent>
 @include('sections.news_letter')
 </div>
 @endsection
