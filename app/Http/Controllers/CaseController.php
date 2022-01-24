@@ -52,15 +52,6 @@ class CaseController extends Controller
 
 
 
-    public function lastCases(Request $request)
-    {
-        $items=CaseModel::query()
-            ->limit(9)
-            ->orderBy('created_at', 'desc')
-            ->get();
-
-        return view('pages/index', compact('items'));
-    }
 
 
     public function allCases(Request $request)

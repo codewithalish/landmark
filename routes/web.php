@@ -57,8 +57,9 @@ Route::view('cases','pages/cases');
 
 Route::get('cases', [\App\Http\Controllers\CaseController::class , 'search']);
 Route::get('case_list', [\App\Http\Controllers\CaseController::class , 'allCases']);
-Route::get('/', [\App\Http\Controllers\CaseController::class , 'lastCases']);
-//Route::get('/', [\App\Http\Controllers\CaseController::class , 'indexSearch']);
+Route::get('/', [\App\Http\Controllers\PageController::class , 'welcome']);
+
+//Route::get('/', [\App\Http\Controllers\CaseController::class , 'Search']);
 
 Route::post('/contact_us', [\App\Http\Controllers\ContactController::class , 'store']);
 
