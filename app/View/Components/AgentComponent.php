@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use App\Models\User;
 use Illuminate\View\Component;
 
 class AgentComponent extends Component
@@ -11,9 +12,10 @@ class AgentComponent extends Component
      *
      * @return void
      */
+
     public function __construct()
     {
-        //
+
     }
 
     /**
@@ -23,6 +25,9 @@ class AgentComponent extends Component
      */
     public function render()
     {
-        return view('components.agent-component');
+        $items=User::query()
+            ->orderBy('created_at', 'desc')
+            ->get();
+        return view('components.agent-component' , compact('items'));
     }
 }

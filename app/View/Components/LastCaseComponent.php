@@ -25,7 +25,7 @@ class LastCaseComponent extends Component
     public function render()
     {
         $items=CaseModel::query()
-            ->limit(9)
+            ->limit(6)
             ->orderBy('created_at', 'desc')
             ->get();
 

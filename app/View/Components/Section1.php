@@ -2,11 +2,10 @@
 
 namespace App\View\Components;
 
-use App\Models\Partner;
-use App\Models\User;
+use App\Models\CaseModel;
 use Illuminate\View\Component;
 
-class PartnerComponent extends Component
+class Section1 extends Component
 {
     /**
      * Create a new component instance.
@@ -25,9 +24,11 @@ class PartnerComponent extends Component
      */
     public function render()
     {
-        $items=Partner::query()
-            ->orderBy('created_at', 'desc')
+        $item=CaseModel::query()
+            ->limit(1)
+            ->orderBy('is_vip', 'desc')
             ->get();
-        return view('components.partner-component' ,compact('items'));
+
+        return view('components.section1' , compact('item'));
     }
 }

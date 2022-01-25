@@ -2,11 +2,11 @@
 
 namespace App\View\Components;
 
-use App\Models\Partner;
+use App\Models\Service;
 use App\Models\User;
 use Illuminate\View\Component;
 
-class PartnerComponent extends Component
+class ServicesComponent extends Component
 {
     /**
      * Create a new component instance.
@@ -25,9 +25,9 @@ class PartnerComponent extends Component
      */
     public function render()
     {
-        $items=Partner::query()
-            ->orderBy('created_at', 'desc')
+        $items=Service::query()
+            ->limit(4)
             ->get();
-        return view('components.partner-component' ,compact('items'));
+        return view('components.services-component' , compact('items'));
     }
 }

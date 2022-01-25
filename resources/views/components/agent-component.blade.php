@@ -17,16 +17,16 @@
                     @foreach($items as $item)
                         <div class="agent-item">
                             <div class="thumbnail">
-                                <a href="agent-detail.html" title="Kent Pather">
+                                <a href="/agent_detail/{{$item->id}}" title="Kent Pather">
                                     <img src="/landmark/images/team/team_2.png" alt="Kent Pather">
                                 </a>
                                 <span class="line"><span></span></span>
                             </div>
                             <div class="content">
                                 <h4 class="name-agent">
-                                    <a href="agent-detail.html" title="Kent Pather">{{$item->name}}</a>
+                                    <a href="/agent_detail/{{$item->id}}" title="Kent Pather">{{$item->name}}</a>
                                 </h4>
-                                <span class="position">{{$items->title}}</span>
+                                <span class="position">body</span>
                                 <div class="agent-social">
                                     <a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
                                     <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>

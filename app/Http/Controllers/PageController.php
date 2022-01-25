@@ -12,13 +12,14 @@ class PageController extends Controller
     public function welcome(Request $request)
     {
 
-
-
-
-
         return view('pages/index');
     }
 
+    public function search(Request $request)
+    {
+
+        return view('pages/index');
+    }
 
 
 

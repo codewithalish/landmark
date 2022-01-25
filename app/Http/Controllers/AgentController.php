@@ -12,20 +12,9 @@ class AgentController extends Controller
 {
     public function allAgents(Request $request)
     {
-
-        $items=User::query()
-            ->orderBy('created_at', 'desc')
-            ->get();
-
-        return view('pages/agent_list', compact('items'));
+        return view('pages/agent_list');
     }
 
-//    public function index()
-//    {
-//        //
-//        $query=User::get();
-//        return view('pages.index',['items'=>$query]);
-//    }
 
 
     public function show($id)

@@ -15,70 +15,16 @@
                         </div>
                     </div>
                     <div class="partner-carousel owl-carousel owl-theme" data-auto-play="false" data-desktop="6" data-laptop="4" data-tablet="3" data-mobile="2">
+                        @foreach($items as $item)
                         <div class="item">
                             <a href="#">
-                                <img src="/landmark/images/partners/partner_1.jpg" alt="">
+                                <img src="{{$item->avatar_path}}" alt="">
                             </a>
                             <a href="#">
-                                <img src="/landmark/images/partners/partner_2.jpg" alt="">
+                                <img src="{{$item->avatar_path}}" alt="">
                             </a>
                         </div>
-                        <div class="item">
-                            <a href="#">
-                                <img src="/landmark/images/partners/partner_3.jpg" alt="">
-                            </a>
-                            <a href="#">
-                                <img src="/landmark/images/partners/partner_4.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="item">
-                            <a href="#">
-                                <img src="/landmark/images/partners/partner_5.jpg" alt="">
-                            </a>
-                            <a href="#">
-                                <img src="/landmark/images/partners/partner_6.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="item">
-                            <a href="#">
-                                <img src="/landmark/images/partners/partner_7.jpg" alt="">
-                            </a>
-                            <a href="#">
-                                <img src="/landmark/images/partners/partner_8.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="item">
-                            <a href="#">
-                                <img src="/landmark/images/partners/partner_9.jpg" alt="">
-                            </a>
-                            <a href="#">
-                                <img src="/landmark/images/partners/partner_10.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="item">
-                            <a href="#">
-                                <img src="/landmark/images/partners/partner_1.jpg" alt="">
-                            </a>
-                            <a href="#">
-                                <img src="/landmark/images/partners/partner_11.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="item">
-                            <a href="#">
-                                <img src="/landmark/images/partners/partner_5.jpg" alt="">
-                            </a>
-                            <a href="#">
-                                <img src="/landmark/images/partners/partner_7.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="item">
-                            <a href="#">
-                                <img src="/landmark/images/partners/partner_9.jpg" alt="">
-                            </a>
-                            <a href="#">
-                                <img src="/landmark/images/partners/partner_3.jpg" alt="">
-                            </a>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

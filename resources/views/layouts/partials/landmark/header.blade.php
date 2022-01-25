@@ -109,19 +109,19 @@
                                 <i class="fa fa-angle-down"></i>
                             </li>
                             <li>
-                                <a href="#">ملک ها</a>
-                                <ul class="sub-menu">
-                                    <li><a href="/case_list">لیست ملک ها</a></li>
+                                <a href="/case_list">ملک ها</a>
+{{--                                <ul class="sub-menu">--}}
+{{--                                    <li><a href="/case_list">لیست ملک ها</a></li>--}}
 
-                                </ul>
+{{--                                </ul>--}}
                                 <i class="fa fa-angle-down"></i>
                             </li>
                             <li>
-                                <a href="#">نمایندگان</a>
-                                <ul class="sub-menu">
-                                    <li><a href="/agent_list">لیست نمایندگان</a></li>
+                                <a href="/agent_list">نمایندگان</a>
+{{--                                <ul class="sub-menu">--}}
+{{--                                    <li><a href="/agent_list">لیست نمایندگان</a></li>--}}
 
-                                </ul>
+{{--                                </ul>--}}
                                 <i class="fa fa-angle-down"></i>
                             </li>
                             <li>
@@ -155,21 +155,21 @@
                                                 <h3 class="widget-title">جدیدترین ها</h3>
                                                 <ul class="product-list-widget">
                                                     <li>
-                                                        <a href="/shop_detail/{{$item->id}}">
+                                                        <a href="/shop_detail">
                                                             <img src="/landmark/images/placeholder.png" alt="Placeholder">
                                                             <span class="product-title">رایگان</span>
                                                         </a>
                                                         <span class="amount">560,000,000 تومان</span>
                                                     </li>
                                                     <li>
-                                                        <a href="/shop_detail/{{$item->id}}">
+                                                        <a href="/shop_detail">
                                                             <img src="/landmark/images/shop/thumb/shop_1.png" alt="">
                                                             <span class="product-title">لورم ایپسوم متن ساختگی</span>
                                                         </a>
                                                         <span class="amount">560,000,000 تومان</span>
                                                     </li>
                                                     <li>
-                                                        <a href="/shop_detail/{{$item->id}}">
+                                                        <a href="/shop_detail">
                                                             <img src="/landmark/images/shop/thumb/shop_2.png" alt="">
                                                             <span class="product-title">لورم ایپسوم</span>
                                                         </a>
@@ -185,21 +185,21 @@
                                                 <h3 class="widget-title">فروش‌ها</h3>
                                                 <ul class="product-list-widget">
                                                     <li>
-                                                        <a href="/shop_detail/{{$item->id}}">
+                                                        <a href="/shop_detail">
                                                             <img src="/landmark/images/shop/thumb/shop_3.jpg" alt="Placeholder">
                                                             <span class="product-title">لورم ایپسوم متن</span>
                                                         </a>
                                                         <span class="amount">560,000,000 تومان</span>
                                                     </li>
                                                     <li>
-                                                        <a href="/shop_detail/{{$item->id}}">
+                                                        <a href="/shop_detail">
                                                             <img src="/landmark/images/shop/thumb/shop_4.jpg" alt="">
                                                             <span class="product-title">لورم ایپسوم متن</span>
                                                         </a>
                                                         <span class="amount">560,000,000 تومان</span>
                                                     </li>
                                                     <li>
-                                                        <a href="/shop_detail/{{$item->id}}">
+                                                        <a href="/shop_detail">
                                                             <img src="/landmark/images/shop/thumb/shop_5.jpg" alt="">
                                                             <span class="product-title">لورم ایپسوم متن ساختگی</span>
                                                         </a>
@@ -215,7 +215,7 @@
                                                 <h3 class="widget-title">بالاترین امتیاز</h3>
                                                 <ul class="product-list-widget">
                                                     <li>
-                                                        <a href="/shop_detail/{{$item->id}}">
+                                                        <a href="/shop_detail">
                                                             <img src="/landmark/images/shop/thumb/shop_6.jpg" alt="Placeholder">
                                                             <span class="product-title">لورم ایپسوم متن</span>
                                                         </a>
@@ -225,7 +225,7 @@
                                                         <span class="amount">560,000,000 تومان</span>
                                                     </li>
                                                     <li>
-                                                        <a href="/shop_detail/{{$item->id}}">
+                                                        <a href="/shop_detail">
                                                             <img src="/landmark/images/shop/thumb/shop_7.jpg" alt="">
                                                             <span class="product-title">لورم ایپسوم متن</span>
                                                         </a>
@@ -235,7 +235,7 @@
                                                         <span class="amount">560,000,000 تومان</span>
                                                     </li>
                                                     <li>
-                                                        <a href="/shop_detail/{{$item->id}}">
+                                                        <a href="/shop_detail">
                                                             <img src="/landmark/images/shop/thumb/shop_1.png" alt="">
                                                             <span class="product-title">لورم ایپسوم</span>
                                                         </a>
@@ -264,5 +264,6 @@
 {{--                </div>--}}
             </div>
         </div>
+    </div>
     </div>
 </header>
