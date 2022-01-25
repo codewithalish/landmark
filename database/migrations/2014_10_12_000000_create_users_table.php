@@ -18,6 +18,8 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('mobile')->unique();
             $table->string('password');
+            $table->string('address');
+            $table->string('body');
             $table->string('avatar_path')->nullable();
             $table->string('telegram')->nullable();
             $table->string('whatsapp')->nullable();

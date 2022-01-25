@@ -15,18 +15,18 @@
                             <!-- popup-content mfp-with-anim mfp-hide -->
                             <div class="popup-content box-login mfp-with-anim mfp-hide" id="popup_01">
                                 <h4 class="title">ورود</h4>
-                                <form class="login-member-container">
+                                <form class="login-member-container" method="post" action="">
                                     <div class="social-login-widget">
                                         <div class="social-login-connect-with">ورود با:</div>
                                         <div class="social-login-provider-list">
                                             <a rel="nofollow" href="javascript:void(0);" title="ورود با فیسبوک" data-provider="Facebook">
-                                                <img alt="Facebook" title="ورود با فیسبوک" src="images/icons/facebook.png">
+                                                <img alt="Facebook" title="ورود با فیسبوک" src="/landmark/images/icons/facebook.png">
                                             </a>
                                             <a rel="nofollow" href="javascript:void(0);" title="ورود با گوگل" data-provider="Google">
-                                                <img alt="Google" title="ورود با گوگل" src="images/icons/google.png">
+                                                <img alt="Google" title="ورود با گوگل" src="/landmark/images/icons/google.png">
                                             </a>
                                             <a rel="nofollow" href="javascript:void(0);" title="ورود با توییتر" data-provider="Twitter">
-                                                <img alt="Twitter" title="ورود با توییتر" src="images/icons/twitter.png">
+                                                <img alt="Twitter" title="ورود با توییتر" src="/landmark/images/icons/twitter.png">
                                             </a>
                                         </div>
                                     </div>
@@ -142,7 +142,6 @@
                                         <a href="#">خدمات فروشگاه</a>
                                         <ul class="sub-menu">
                                             <li><a href="/shop">فروشگاه</a></li>
-                                            <li><a href="/shop_detail">جزئیات فروشگاه</a></li>
                                             <li><a href="/cart_empty">سبد خرید خالی</a></li>
                                             <li><a href="/cart">سبد خرید</a></li>
                                             <li><a href="/checkout">پرداخت</a></li>
@@ -156,21 +155,21 @@
                                                 <h3 class="widget-title">جدیدترین ها</h3>
                                                 <ul class="product-list-widget">
                                                     <li>
-                                                        <a href="/shop_detail">
+                                                        <a href="/shop_detail/{{$item->id}}">
                                                             <img src="/landmark/images/placeholder.png" alt="Placeholder">
                                                             <span class="product-title">رایگان</span>
                                                         </a>
                                                         <span class="amount">560,000,000 تومان</span>
                                                     </li>
                                                     <li>
-                                                        <a href="/shop_detail">
+                                                        <a href="/shop_detail/{{$item->id}}">
                                                             <img src="/landmark/images/shop/thumb/shop_1.png" alt="">
                                                             <span class="product-title">لورم ایپسوم متن ساختگی</span>
                                                         </a>
                                                         <span class="amount">560,000,000 تومان</span>
                                                     </li>
                                                     <li>
-                                                        <a href="/shop_detail">
+                                                        <a href="/shop_detail/{{$item->id}}">
                                                             <img src="/landmark/images/shop/thumb/shop_2.png" alt="">
                                                             <span class="product-title">لورم ایپسوم</span>
                                                         </a>
@@ -186,21 +185,21 @@
                                                 <h3 class="widget-title">فروش‌ها</h3>
                                                 <ul class="product-list-widget">
                                                     <li>
-                                                        <a href="/shop_detail">
+                                                        <a href="/shop_detail/{{$item->id}}">
                                                             <img src="/landmark/images/shop/thumb/shop_3.jpg" alt="Placeholder">
                                                             <span class="product-title">لورم ایپسوم متن</span>
                                                         </a>
                                                         <span class="amount">560,000,000 تومان</span>
                                                     </li>
                                                     <li>
-                                                        <a href="/shop_detail">
+                                                        <a href="/shop_detail/{{$item->id}}">
                                                             <img src="/landmark/images/shop/thumb/shop_4.jpg" alt="">
                                                             <span class="product-title">لورم ایپسوم متن</span>
                                                         </a>
                                                         <span class="amount">560,000,000 تومان</span>
                                                     </li>
                                                     <li>
-                                                        <a href="/shop_detail">
+                                                        <a href="/shop_detail/{{$item->id}}">
                                                             <img src="/landmark/images/shop/thumb/shop_5.jpg" alt="">
                                                             <span class="product-title">لورم ایپسوم متن ساختگی</span>
                                                         </a>
@@ -216,7 +215,7 @@
                                                 <h3 class="widget-title">بالاترین امتیاز</h3>
                                                 <ul class="product-list-widget">
                                                     <li>
-                                                        <a href="/shop_detail">
+                                                        <a href="/shop_detail/{{$item->id}}">
                                                             <img src="/landmark/images/shop/thumb/shop_6.jpg" alt="Placeholder">
                                                             <span class="product-title">لورم ایپسوم متن</span>
                                                         </a>
@@ -226,7 +225,7 @@
                                                         <span class="amount">560,000,000 تومان</span>
                                                     </li>
                                                     <li>
-                                                        <a href="/shop_detail">
+                                                        <a href="/shop_detail/{{$item->id}}">
                                                             <img src="/landmark/images/shop/thumb/shop_7.jpg" alt="">
                                                             <span class="product-title">لورم ایپسوم متن</span>
                                                         </a>
@@ -236,7 +235,7 @@
                                                         <span class="amount">560,000,000 تومان</span>
                                                     </li>
                                                     <li>
-                                                        <a href="/shop_detail">
+                                                        <a href="/shop_detail/{{$item->id}}">
                                                             <img src="/landmark/images/shop/thumb/shop_1.png" alt="">
                                                             <span class="product-title">لورم ایپسوم</span>
                                                         </a>
