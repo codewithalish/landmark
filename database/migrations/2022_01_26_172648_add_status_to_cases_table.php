@@ -15,7 +15,7 @@ class AddStatusToCasesTable extends Migration
     {
         Schema::table('cases', function (Blueprint $table) {
             //
-            $table->enum('status', ['CONFIRMED', 'REJECTED', 'IN_PROGRESS','NEW']);
+            $table->enum('status', ['CONFIRMED', 'REJECTED', 'IN_PROGRESS','NEW'])->default('CONFIRMED');
         });
     }
 

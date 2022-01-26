@@ -45,7 +45,7 @@ class CaseController extends Controller
         if ($request->get('price_max'))
             $items=$items->where('price','<=',$request->get('price_max'));
 
-        $items=$items->get();
+        $items=$items->where('status' , 'CONFIRMED')->get();
 
         return view('pages/cases', compact('items' , 'request'));
     }
@@ -55,6 +55,7 @@ class CaseController extends Controller
     public function lastCases(Request $request)
     {
         $items=CaseModel::query()
+            ->where('status' , 'CONFIRMED')
             ->limit(9)
             ->orderBy('created_at', 'desc')
             ->get();
@@ -66,6 +67,7 @@ class CaseController extends Controller
     public function allCases(Request $request)
     {
         $items=CaseModel::query()
+            ->where('status' , 'CONFIRMED')
             ->orderBy('created_at', 'desc')
             ->get();
 
@@ -74,7 +76,7 @@ class CaseController extends Controller
 
     public function show($id)
     {
-        $query=CaseModel::find($id);
+        $query=CaseModel::query()->where('status' , 'CONFIRMED')->find($id);
         return view('pages/case_detail',['item'=>$query]);
     }
 

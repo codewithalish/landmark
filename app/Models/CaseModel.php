@@ -14,6 +14,7 @@ class CaseModel extends Model
     protected $fillable = [
         'case_id',
         'feature_id',
-        'status'
+        'status',
+        'address'
     ];
 }
