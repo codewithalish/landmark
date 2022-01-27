@@ -22,6 +22,7 @@ class UserSeeder extends Seeder
             'name'=>'مجید صالحی',
             'mobile'=>'09181230001',
             'email'=>'majid@gmail.com',
+            'address'=>'mostafa khomeini',
 
             #'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
@@ -32,6 +33,7 @@ class UserSeeder extends Seeder
             'name'=>'فاطمه مظفری',
             'mobile'=>'09181230002',
             'email'=>'fateme@gmail.com',
+            'address'=>'fatemieh',
 
             #'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
@@ -43,6 +45,7 @@ class UserSeeder extends Seeder
             'name'=>'علی شریفی نیستانی',
             'mobile'=>'09181230003',
             'email'=>'ali@gmail.com',
+            'address'=>'hafezieh',
 
             #'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password

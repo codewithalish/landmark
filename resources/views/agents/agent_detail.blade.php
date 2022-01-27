@@ -39,8 +39,8 @@
                                             <div class="col-sm-6 agent-social text-right text-center-sm">
                                                 <a class="fa fa-telegram" title="telegram" href="#"></a>
                                                 <a class="fa fa-whatsapp" title="whatsapp" href="#"></a>
-                                                <a class="fa fa-google" href="#"></a>
-                                                <a class="fa fa-pinterest" href="#"></a>
+                                                <a class="fa fa-instagram" title="instagram" href="#"></a>
+
                                             </div>
                                         </div>
                                     </div>
@@ -57,7 +57,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="mb-11 text-center">
-                        <h2 class="white text-uppercase mb-3">اطلاعات تماس</h2>
+                        <h2 class="white text-uppercase mb-3">ارسال پیام</h2>
                     </div>
                     <div class="agent-contact">
                         <div class="box-form">

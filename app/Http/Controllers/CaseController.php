@@ -47,8 +47,12 @@ class CaseController extends Controller
 
         $items=$items->where('status' , 'CONFIRMED')->paginate(6);
 
+        $caseWidget=CaseModel::query()
+            ->orderBy('created_at','desc')
+            ->limit(3)
+            ->get();
 
-        return view('cases/cases', compact('items' , 'request'));
+        return view('cases/cases', compact('items' , 'request' ,'caseWidget'));
     }
 
 
@@ -63,7 +67,9 @@ class CaseController extends Controller
             ->limit(2)
             ->get();
 
-        return view('cases/case_detail',compact('item' , 'cases'));
+
+
+        return view('cases/case_detail',compact('item' , 'cases' ));
     }
 
 }
