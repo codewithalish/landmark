@@ -45,7 +45,7 @@ class CaseController extends Controller
         if ($request->get('price_max'))
             $items=$items->where('price','<=',$request->get('price_max'));
 
-        $items=$items->paginate(6);
+        $items=$items->where('status' , 'CONFIRMED')->paginate(6);
 
 
         return view('cases/cases', compact('items' , 'request'));
