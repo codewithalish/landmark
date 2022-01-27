@@ -45,37 +45,25 @@ class CaseController extends Controller
         if ($request->get('price_max'))
             $items=$items->where('price','<=',$request->get('price_max'));
 
-        $items=$items->get();
+        $items=$items->paginate(6);
 
-        return view('pages/cases', compact('items' , 'request'));
+
+        return view('cases/cases', compact('items' , 'request'));
     }
 
 
 
-    public function lastCases(Request $request)
+
+    public function show(Request $request,$id)
     {
-        $items=CaseModel::query()
-            ->limit(9)
-            ->orderBy('created_at', 'desc')
+        $item=CaseModel::find($id);
+
+        $cases=CaseModel::query()
+            ->where('title','like','%'.$request->get('title').'%' )
+            ->limit(2)
             ->get();
 
-        return view('pages/index', compact('items'));
-    }
-
-
-    public function allCases(Request $request)
-    {
-        $items=CaseModel::query()
-            ->orderBy('created_at', 'desc')
-            ->get();
-
-        return view('pages/case_list', compact('items'));
-    }
-
-    public function show($id)
-    {
-        $query=CaseModel::find($id);
-        return view('pages/case_detail',['item'=>$query]);
+        return view('cases/case_detail',compact('item' , 'cases'));
     }
 
 }

@@ -9,7 +9,7 @@
                             <h1 class="page-title">منزل ویلایی دو طبقه</h1>
                             <div class="page-breadcrumb">
 										<span>
-											<a title="بازگشت به خانه" href="./" class="home"><span>خانه</span></a>
+											<a title="بازگشت به خانه" href="../pages" class="home"><span>خانه</span></a>
 										</span>
                                 <i class="icon ion-ios-arrow-forward"></i>
                                 <span><a title="بازگشت به لیست ملک ها" href="#"><span>ملک ها</span></a></span>
@@ -300,49 +300,49 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="detail-header">
-                                <h3 class="detail-title">نقشه ملک</h3>
-                            </div>
-                            <div class="detail-content">
-                                <div class="floor-plan-carousel owl-carousel owl-theme" data-auto-play="false" data-desktop="1" data-laptop="1" data-tablet="1" data-mobile="1">
-                                    <div class="item text-center">
-                                        <a href="images/floor_plan/plan_1.jpg" class="mfp-image gallery-item">
-                                            <img src="images/floor_plan/plan_1.jpg" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="item text-center">
-                                        <a href="images/floor_plan/plan_2.jpg" class="mfp-image gallery-item">
-                                            <img src="images/floor_plan/plan_2.jpg" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="item text-center">
-                                        <a href="images/floor_plan/plan_3.jpg" class="mfp-image gallery-item">
-                                            <img src="images/floor_plan/plan_3.jpg" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="item text-center">
-                                        <a href="images/floor_plan/plan_4.jpg" class="mfp-image gallery-item">
-                                            <img src="images/floor_plan/plan_4.jpg" alt="">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="detail-header">
-                                <h3 class="detail-title">موقعیت مکانی</h3>
-                            </div>
-                            <div class="detail-content">
-                                <div id="googleMap" data-icon="images/icon_location.png" data-lat="38.066082" data-lon="46.323638"></div>
-                            </div>
+{{--                            <div class="detail-header">--}}
+{{--                                <h3 class="detail-title">نقشه ملک</h3>--}}
+{{--                            </div>--}}
+{{--                            <div class="detail-content">--}}
+{{--                                <div class="floor-plan-carousel owl-carousel owl-theme" data-auto-play="false" data-desktop="1" data-laptop="1" data-tablet="1" data-mobile="1">--}}
+{{--                                    <div class="item text-center">--}}
+{{--                                        <a href="images/floor_plan/plan_1.jpg" class="mfp-image gallery-item">--}}
+{{--                                            <img src="images/floor_plan/plan_1.jpg" alt="">--}}
+{{--                                        </a>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="item text-center">--}}
+{{--                                        <a href="images/floor_plan/plan_2.jpg" class="mfp-image gallery-item">--}}
+{{--                                            <img src="images/floor_plan/plan_2.jpg" alt="">--}}
+{{--                                        </a>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="item text-center">--}}
+{{--                                        <a href="images/floor_plan/plan_3.jpg" class="mfp-image gallery-item">--}}
+{{--                                            <img src="images/floor_plan/plan_3.jpg" alt="">--}}
+{{--                                        </a>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="item text-center">--}}
+{{--                                        <a href="images/floor_plan/plan_4.jpg" class="mfp-image gallery-item">--}}
+{{--                                            <img src="images/floor_plan/plan_4.jpg" alt="">--}}
+{{--                                        </a>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            <div class="detail-header">--}}
+{{--                                <h3 class="detail-title">موقعیت مکانی</h3>--}}
+{{--                            </div>--}}
+{{--                            <div class="detail-content">--}}
+{{--                                <div id="googleMap" data-icon="images/icon_location.png" data-lat="38.066082" data-lon="46.323638"></div>--}}
+{{--                            </div>--}}
                         </div>
                         <div class="property-agent-contact">
                             <h3 class="box-title">تماس با نماینده </h3>
                             <div class="box-content col-md-6">
                                 <div class="thumbnail col-md-6">
-                                    <img src="images/team/team_1.png" alt="">
+                                    <img src="/landmark/images/team/team_1.png" alt="">
                                 </div>
                                 <div class="box-info col-md-6">
                                     <h4 class="agent-name">
-                                        <a href="agent-detail.html" title="Bruck Banner">بروس بنر </a>
+                                        <a href="/agent_detail" title="Bruck Banner">بروس بنر </a>
                                     </h4>
                                     <div class="item-info">
                                         <span class="position">توسعه دهنده </span>
@@ -387,78 +387,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="property-comment">
-                            <div class="col-md-6">
-                                <h3 class="box-title">نقد و بررسی ها</h3>
-                                <ul class="list-comment">
-                                    <li class="item-comment">
-                                        <div class="item-comment-header">
-                                            <div class="item-comment-header-left">
-                                                <h4 class="name-user-comment">کرال </h4>
-                                                <span class="datetime">30 فروردین 1397 </span>
-                                            </div>
-                                            <div class="item-comment-header-right">
-                                                <div class="stars-rating">
-                                                    <span style="width: 100%"></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <p class="item-comment-content">
-                                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای
-                                        </p>
-                                    </li>
-                                    <li class="item-comment">
-                                        <div class="item-comment-header">
-                                            <div class="item-comment-header-left">
-                                                <h4 class="name-user-comment">الکس فرگوسن </h4>
-                                                <span class="datetime">30 فروردین 1397 </span>
-                                            </div>
-                                            <div class="item-comment-header-right">
-                                                <div class="stars-rating">
-                                                    <span style="width: 100%"></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <p class="item-comment-content">
-                                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
-                                        </p>
-                                    </li>
-                                    <li class="item-comment">
-                                        <div class="item-comment-header">
-                                            <div class="item-comment-header-left">
-                                                <h4 class="name-user-comment">جان اسنو </h4>
-                                                <span class="datetime">30 فروردین 1397 </span>
-                                            </div>
-                                            <div class="item-comment-header-right">
-                                                <div class="stars-rating">
-                                                    <span style="width: 40%"></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <p class="item-comment-content">
-                                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای
-                                        </p>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-md-6">
-                                <h3 class="box-title">نقد و بررسی شما</h3>
-                                <form class="form-comment-wrap">
-                                    <div class="form-comment">
-                                        <div class="form-item">
-                                            <input type="text" name="user_name" placeholder="نام" value="">
-                                        </div>
-                                        <div class="form-item">
-                                            <input type="text" name="user_email" placeholder="ایمیل" value="">
-                                        </div>
-                                        <div class="form-item form-textarea">
-                                            <textarea name="user_msg" placeholder="دیدگاه شما ..."></textarea>
-                                        </div>
-                                    </div>
-                                    <button class="button" type="">ثبت</button>
-                                </form>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -474,7 +403,6 @@
                                 </h3>
                                 <p class="sub-title">
                                     <i class="icon-decotitle"></i>
-                                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
                                 </p>
                             </div>
                         </div>
@@ -483,39 +411,40 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="properties-carousel row owl-carousel owl-theme" data-auto-play="false" data-desktop="2" data-laptop="2" data-tablet="1" data-mobile="1">
+                           @foreach($cases as $item)
                             <div class="item">
                                 <div class="property-item">
                                     <div class="property-item-wrap">
                                         <div class="item-head">
                                             <h4 class="item-title">
-                                                <i class="ion-bookmark">ویژه</i>
-                                                <a href="property-fullwidth.html" title="Vilayi 2 tabage">منزل ویلایی دو طبقه</a>
+                                                <i class="ion-bookmark">{{$item->is_vip}}</i>
+                                                <a href="/case_detail" title="Vilayi 2 tabage">{{$item->title}}</a>
                                             </h4>
-                                            <span class="location">تبریز، چهارراه شهناز</span>
+                                            <span class="location">{{$item->address}}</span>
                                         </div>
                                         <div class="item-featured">
-                                            <a href="property-fullwidth.html" title="Family House in Hudson">
-                                                <img src="images/property/property_1.jpg" alt="Family House in Hudson">
+                                            <a href="/case_detail" title="Family House in Hudson">
+                                                <img src="/landmark/images/property/property_2.jpg" alt="Family House in Hudson">
                                             </a>
-                                            <span class="property-status">برای فروش</span>
+                                            <span class="property-status">{{__('custom.contract')[$item->contract]}}</span>
                                         </div>
                                         <div class="info">
 													<span class="primary-file-1">
-														<i class="icon-ruler"></i> <span>2100 متر مربع</span>
+														<i class="icon-ruler"></i> <span>{{$item->area}} متر مربع</span>
 													</span>
                                             <span class="primary-file-2">
-														<i class="icon-bed"></i> <span>5 خوابه</span>
+														<i class="icon-bed"></i> <span>{{$item->room_number}} خوابه</span>
 													</span>
                                             <span class="primary-file-3">
-														<i class="icon-storage"></i> <span>1 پارکینگ</span>
+														<i class="icon-storage"></i> <span>{{$item->parking_number}} پارکینگ</span>
 													</span>
                                             <span class="primary-file-4">
-														<i class="icon-bath"></i> <span>4 سرویس بهداشتی</span>
+														<i class="icon-bath"></i> <span>{{$item->bath_number}} سرویس بهداشتی</span>
 													</span>
                                         </div>
                                         <div class="action">
                                             <div class="price">
-                                                <span class="amount">560,000,000 تومان</span>
+                                                <span class="amount">{{number_format($item->prine)}} تومان</span>
                                             </div>
                                             <div class="action-post">
                                                 <a data-toggle="tooltip" data-placement="top" title="" data-original-title="علاقه‌مندی‌ها" href="#">
@@ -526,12 +455,6 @@
                                                         <i class="ion-android-share-alt"></i>
                                                     </a>
                                                     <div class="social-property">
-                                                        <a title="اشتراک‌گذاری در فیسبوک" class="share">
-                                                            <i class="fa fa-facebook"></i>
-                                                        </a>
-                                                        <a title="اشتراک‌گذاری در توییتر" class="share">
-                                                            <i class="fa fa-twitter"></i>
-                                                        </a>
                                                         <a title="اشتراک‌گذاری در تلگرام" class="share">
                                                             <i class="fa fa-telegram"></i>
                                                         </a>
@@ -545,250 +468,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="item">
-                                <div class="property-item">
-                                    <div class="property-item-wrap">
-                                        <div class="item-head">
-                                            <h4 class="item-title">
-                                                <i class="ion-bookmark">ویژه</i>
-                                                <a href="property-fullwidth.html" title="Vilayi 2 tabage">منزل ویلایی دو طبقه</a>
-                                            </h4>
-                                            <span class="location">تبریز، چهارراه شهناز</span>
-                                        </div>
-                                        <div class="item-featured">
-                                            <a href="property-fullwidth.html" title="Villa on Hollywood Boulevard">
-                                                <img src="images/property/property_2.jpg" alt="Villa on Hollywood Boulevard">
-                                            </a>
-                                            <span class="property-status">برای فروش</span>
-                                        </div>
-                                        <div class="info">
-													<span class="primary-file-1">
-														<i class="icon-ruler"></i> <span>2075 متر مربع</span>
-													</span>
-                                            <span class="primary-file-2">
-														<i class="icon-bed"></i> <span>3 خوابه</span>
-													</span>
-                                            <span class="primary-file-3">
-														<i class="icon-storage"></i> <span>1 پارکینگ</span>
-													</span>
-                                            <span class="primary-file-4">
-														<i class="icon-bath"></i> <span>3 سرویس بهداشتی</span>
-													</span>
-                                        </div>
-                                        <div class="action">
-                                            <div class="price">
-                                                <span class="amount">560,000,000 تومان</span>
-                                            </div>
-                                            <div class="action-post">
-                                                <a data-toggle="tooltip" data-placement="top" title="" data-original-title="علاقه‌مندی‌ها" href="#">
-                                                    <i class="fa fa-heart-o"></i>
-                                                </a>
-                                                <div class="property-sharing">
-                                                    <a data-toggle="tooltip" data-placement="top" title="" data-original-title="علاقه‌مندی‌ها" class="like" href="#">
-                                                        <i class="ion-android-share-alt"></i>
-                                                    </a>
-                                                    <div class="social-property">
-                                                        <a title="اشتراک‌گذاری در فیسبوک" class="share">
-                                                            <i class="fa fa-facebook"></i>
-                                                        </a>
-                                                        <a title="اشتراک‌گذاری در توییتر" class="share">
-                                                            <i class="fa fa-twitter"></i>
-                                                        </a>
-                                                        <a title="اشتراک‌گذاری در تلگرام" class="share">
-                                                            <i class="fa fa-telegram"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <a data-toggle="tooltip" data-placement="top" title="" data-original-title="مقایسه" class="compare" href="#">
-                                                    <i class="ion-arrow-swap"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="property-item">
-                                    <div class="property-item-wrap">
-                                        <div class="item-head">
-                                            <h4 class="item-title">
-                                                <i class="ion-bookmark">ویژه</i>
-                                                <a href="property-fullwidth.html" title="Vilayi 2 tabage">منزل ویلایی دو طبقه</a>
-                                            </h4>
-                                            <span class="location">تبریز، چهارراه شهناز</span>
-                                        </div>
-                                        <div class="item-featured">
-                                            <a href="property-fullwidth.html" title="Park Avenue Apartment">
-                                                <img src="images/property/property_3.jpg" alt="Park Avenue Apartment">
-                                            </a>
-                                            <span class="property-status">برای اجاره</span>
-                                        </div>
-                                        <div class="info">
-													<span class="primary-file-1">
-														<i class="icon-ruler"></i> <span>3450 متر مربع</span>
-													</span>
-                                            <span class="primary-file-2">
-														<i class="icon-bed"></i> <span>6 اتاق خواب</span>
-													</span>
-                                            <span class="primary-file-3">
-														<i class="icon-storage"></i> <span>2 پارکینگ</span>
-													</span>
-                                            <span class="primary-file-4">
-														<i class="icon-bath"></i> <span>5 سرویس بهداشتی</span>
-													</span>
-                                        </div>
-                                        <div class="action">
-                                            <div class="price">
-                                                <span class="amount">560,000,000 تومان</span>
-                                            </div>
-                                            <div class="action-post">
-                                                <a data-toggle="tooltip" data-placement="top" title="" data-original-title="علاقه‌مندی‌ها" href="#">
-                                                    <i class="fa fa-heart-o"></i>
-                                                </a>
-                                                <div class="property-sharing">
-                                                    <a data-toggle="tooltip" data-placement="top" title="" data-original-title="علاقه‌مندی‌ها" class="like" href="#">
-                                                        <i class="ion-android-share-alt"></i>
-                                                    </a>
-                                                    <div class="social-property">
-                                                        <a title="اشتراک‌گذاری در فیسبوک" class="share">
-                                                            <i class="fa fa-facebook"></i>
-                                                        </a>
-                                                        <a title="اشتراک‌گذاری در توییتر" class="share">
-                                                            <i class="fa fa-twitter"></i>
-                                                        </a>
-                                                        <a title="اشتراک‌گذاری در تلگرام" class="share">
-                                                            <i class="fa fa-telegram"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <a data-toggle="tooltip" data-placement="top" title="" data-original-title="مقایسه" class="compare" href="#">
-                                                    <i class="ion-arrow-swap"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="property-item">
-                                    <div class="property-item-wrap">
-                                        <div class="item-head">
-                                            <h4 class="item-title">
-                                                <a href="property-fullwidth.html" title="Vilayi 2 tabage">منزل ویلایی دو طبقه</a>
-                                            </h4>
-                                            <span class="location">تبریز، چهارراه شهناز</span>
-                                        </div>
-                                        <div class="item-featured">
-                                            <a href="property-fullwidth.html" title="Loft Above The City">
-                                                <img src="images/property/property_4.jpg" alt="Loft Above The City">
-                                            </a>
-                                            <span class="property-status">برای اجاره</span>
-                                        </div>
-                                        <div class="info">
-													<span class="primary-file-1">
-														<i class="icon-ruler"></i> <span>2800 متر مربع</span>
-													</span>
-                                            <span class="primary-file-2">
-														<i class="icon-bed"></i> <span>6 اتاق خواب</span>
-													</span>
-                                            <span class="primary-file-3">
-														<i class="icon-storage"></i> <span>2 پارکینگ</span>
-													</span>
-                                        </div>
-                                        <div class="action">
-                                            <div class="price">
-                                                <span class="amount">560,000,000 تومان</span>
-                                            </div>
-                                            <div class="action-post">
-                                                <a data-toggle="tooltip" data-placement="top" title="" data-original-title="علاقه‌مندی‌ها" href="#">
-                                                    <i class="fa fa-heart-o"></i>
-                                                </a>
-                                                <div class="property-sharing">
-                                                    <a data-toggle="tooltip" data-placement="top" title="" data-original-title="علاقه‌مندی‌ها" class="like" href="#">
-                                                        <i class="ion-android-share-alt"></i>
-                                                    </a>
-                                                    <div class="social-property">
-                                                        <a title="اشتراک‌گذاری در فیسبوک" class="share">
-                                                            <i class="fa fa-facebook"></i>
-                                                        </a>
-                                                        <a title="اشتراک‌گذاری در توییتر" class="share">
-                                                            <i class="fa fa-twitter"></i>
-                                                        </a>
-                                                        <a title="اشتراک‌گذاری در تلگرام" class="share">
-                                                            <i class="fa fa-telegram"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <a data-toggle="tooltip" data-placement="top" title="" data-original-title="مقایسه" class="compare" href="#">
-                                                    <i class="ion-arrow-swap"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="property-item">
-                                    <div class="property-item-wrap">
-                                        <div class="item-head">
-                                            <h4 class="item-title">
-                                                <i class="ion-bookmark">ویژه</i>
-                                                <a href="property-fullwidth.html" title="Vilayi 2 tabage">منزل ویلایی دو طبقه</a>
-                                            </h4>
-                                            <span class="location">تبریز، چهارراه شهناز</span>
-                                        </div>
-                                        <div class="item-featured">
-                                            <a href="property-fullwidth.html" title="Villa in Melbourne">
-                                                <img src="images/property/property_5.jpg" alt="Villa in Melbourne">
-                                            </a>
-                                            <span class="property-status">برای اجاره</span>
-                                        </div>
-                                        <div class="info">
-													<span class="primary-file-1">
-														<i class="icon-ruler"></i> <span>3450 متر مربع</span>
-													</span>
-                                            <span class="primary-file-2">
-														<i class="icon-bed"></i> <span>6 اتاق خواب</span>
-													</span>
-                                            <span class="primary-file-3">
-														<i class="icon-storage"></i> <span>2 پارکینگ</span>
-													</span>
-                                            <span class="primary-file-4">
-														<i class="icon-bath"></i> <span>5 سرویس بهداشتی</span>
-													</span>
-                                        </div>
-                                        <div class="action">
-                                            <div class="price">
-                                                <span class="amount">560,000,000 تومان</span>
-                                            </div>
-                                            <div class="action-post">
-                                                <a data-toggle="tooltip" data-placement="top" title="" data-original-title="علاقه‌مندی‌ها" href="#">
-                                                    <i class="fa fa-heart-o"></i>
-                                                </a>
-                                                <div class="property-sharing">
-                                                    <a data-toggle="tooltip" data-placement="top" title="" data-original-title="علاقه‌مندی‌ها" class="like" href="#">
-                                                        <i class="ion-android-share-alt"></i>
-                                                    </a>
-                                                    <div class="social-property">
-                                                        <a title="اشتراک‌گذاری در فیسبوک" class="share">
-                                                            <i class="fa fa-facebook"></i>
-                                                        </a>
-                                                        <a title="اشتراک‌گذاری در توییتر" class="share">
-                                                            <i class="fa fa-twitter"></i>
-                                                        </a>
-                                                        <a title="اشتراک‌گذاری در تلگرام" class="share">
-                                                            <i class="fa fa-telegram"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <a data-toggle="tooltip" data-placement="top" title="" data-original-title="مقایسه" class="compare" href="#">
-                                                    <i class="ion-arrow-swap"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
