@@ -8,7 +8,7 @@
                         @foreach($items as $item)
                         <div class="row agent-detail style-2">
                             <div class="thumbnail col-md-4">
-                                <img src="/landmark/images/team/team_2.png" alt="/agent_detail/{{$item->id}}">
+                                <img src="/landmark/images/team/team_5.png" alt="/agent_detail/{{$item->id}}">
                                 <div class="agent-social text-center">
                                     <a class="fa fa-facebook" href="#"></a>
                                     <a class="fa fa-twitter" href="#"></a>
@@ -42,12 +42,9 @@
                             </div>
                         </div>
                         @endforeach
-                        <span class="pagination-loop">
-									<a class="prev page-numbers" href="#"><i class="ion-ios-arrow-forward"></i></a>
-									<a class="page-numbers" href="#">1</a>
-									<span class="page-numbers current">2</span>
-									<a class="page-numbers" href="#">3</a>
-									<a class="next page-numbers" href="#"><i class="ion-ios-arrow-back"></i></a>
+
+                            <span class="pagination-loop" >
+								 {{$items->links()}}
 								</span>
                     </div>
                     <div class="col-md-3">

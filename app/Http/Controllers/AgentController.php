@@ -12,15 +12,23 @@ class AgentController extends Controller
 {
     public function allAgents(Request $request)
     {
-        return view('pages/agent_list');
+        $items=Agent::query()
+            ->paginate(3);
+
+
+        return view('agents/agents', compact('items'));
     }
 
 
 
     public function show($id)
     {
-        $query=User::find($id);
-        return view('pages/agent_detail',['item'=>$query]);
+        $item=User::find($id);
+
+        $cases=CaseModel::query()
+            ->limit(2)
+            ->get();
+        return view('agents/agent_detail',compact('item','cases'));
     }
 
 
