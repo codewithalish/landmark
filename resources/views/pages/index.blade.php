@@ -12,6 +12,7 @@
 {{--        <x-section3></x-section3>--}}
         <x-section4></x-section4>
         <x-partner-component></x-partner-component>
-        @include('sections.news_letter')
+        <x-news-letter-component></x-news-letter-component>
+
     </div>
 @endsection

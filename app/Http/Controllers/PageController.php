@@ -12,7 +12,8 @@ class PageController extends Controller
     public function welcome(Request $request)
     {
 
-        return view('pages/index');
+        $items=CaseModel::query()->limit(6)->orderBy('created_at','desc')->get();
+        return view('pages/index', compact('items'));
     }
 
     public function search(Request $request)
@@ -20,7 +21,6 @@ class PageController extends Controller
 
         return view('pages/index');
     }
-
 
 
 }
