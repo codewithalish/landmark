@@ -8,9 +8,10 @@ use App\Http\Controllers\AgentController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Hash;
+use App\Http\Controllers\PageController;
 /*
 |--------------------------------------------------------------------------
-| dev
+| test
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
@@ -29,8 +30,8 @@ Route::get('register', function () {
     return view('auth.register');
 });
 
-Route::get('case_list', function () {
-    return view('pages.case_list');
+Route::get('cases', function () {
+    return view('cases/cases');
 });
 
 Route::view('/','pages/index');
@@ -43,12 +44,12 @@ Route::view('my_account','pages/my_account');
 Route::view('shop_detail','pages/shop_detail');
 Route::view('partner','pages/partner');
 Route::view('services','pages/services');
-Route::view('agent_list','pages/agent_list');
-Route::view('agent_detail','pages/agent_detail');
-Route::view('case_detail','pages/case_detail');
+Route::view('agents','agents/agents');
+Route::view('agent_detail','agents/agent_detail');
+Route::view('case_detail','cases/case_detail');
 Route::view('create','pages/create_case');
 Route::view('create_user','pages/create_user');
-Route::view('cases','pages/cases');
+Route::view('cases','cases/cases');
 
 /*
 |--------------------------------------------------------------------------
@@ -56,7 +57,7 @@ Route::view('cases','pages/cases');
 |--------------------------------------------------------------------------
 |
 */
-Route::get('agent_list', [AgentController::class , 'allAgents']);
+Route::get('agents', [AgentController::class , 'allAgents']);
 Route::get('agent_detail/{id}', [AgentController::class , 'show']);
 
 /*
@@ -65,10 +66,9 @@ Route::get('agent_detail/{id}', [AgentController::class , 'show']);
 |--------------------------------------------------------------------------
 |
 */
+Route::get('/', [PageController::class , 'welcome']);
 
 Route::get('cases', [CaseController::class , 'search']);
-Route::get('case_list', [CaseController::class , 'allCases']);
-Route::get('/', [CaseController::class , 'lastCases']);
 Route::get('case_detail/{id}', [CaseController::class , 'show']);
 
 /*
