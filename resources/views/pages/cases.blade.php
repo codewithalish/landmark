@@ -1,11 +1,3 @@
-<?php
-$contracts=[
-    'FOR_SALE'=>'برای فروش',
-    'FOR_RENT'=>'برای اجاره'
-];
-    ?>
-
-
 
 @extends('layouts.masterPages.landmark')
 @section('content')
@@ -30,7 +22,7 @@ $contracts=[
                                         <a href="/case_detail/{{$item->id}}" title="Family House in Hudson">
                                             <img src="/landmark/images/property/property_1.jpg" alt="Family House in Hudson">
                                         </a>
-                                        <span class="property-status">{{$contracts[$item->contract]}}</span>
+                                        <span class="property-status">{{__('custom.contract')[$item->contract]}}</span>
                                     </div>
                                     <div class="info">
 													<span class="primary-file-1">
@@ -80,12 +72,9 @@ $contracts=[
                         </div>
                         @endforeach
                     </div>
-                    <span class="pagination-loop">
-									<a class="prev page-numbers" href="#"><i class="ion-ios-arrow-forward"></i></a>
-									<a class="page-numbers" href="#">1</a>
-									<span class="page-numbers current">2</span>
-									<a class="page-numbers" href="#">3</a>
-									<a class="next page-numbers" href="#"><i class="ion-ios-arrow-back"></i></a>
+
+                    <span class="pagination-loop" >
+								 {{$items->links()}}
 								</span>
                 </div>
                 <div class="col-md-3">
