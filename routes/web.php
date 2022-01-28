@@ -58,7 +58,10 @@ Route::view('cases','cases/cases');
 |
 */
 Route::get('agents', [AgentController::class , 'allAgents']);
+Route::get('agent_detail/create', [AgentController::class , 'create']);
+Route::post('agent_detail', [AgentController::class , 'store']);
 Route::get('agent_detail/{id}', [AgentController::class , 'show']);
+Route::post('/create_user', [\App\Http\Controllers\UserController::class , 'store']);
 
 /*
 |--------------------------------------------------------------------------
@@ -66,10 +69,15 @@ Route::get('agent_detail/{id}', [AgentController::class , 'show']);
 |--------------------------------------------------------------------------
 |
 */
-Route::get('/', [PageController::class , 'welcome']);
 
+
+Route::get('/', [PageController::class , 'welcome']);
 Route::get('cases', [CaseController::class , 'search']);
+Route::get('case_detail/create', [CaseController::class , 'create']);
+Route::post('case_detail', [CaseController::class , 'store']);
 Route::get('case_detail/{id}', [CaseController::class , 'show']);
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -80,6 +88,7 @@ Route::get('case_detail/{id}', [CaseController::class , 'show']);
 Route::view('about_us','pages/about_us');
 Route::view('contact_us','pages/contact_us');
 Route::post('/contact_us', [ContactController::class , 'store']);
+
 /*
 |--------------------------------------------------------------------------
 |shop

@@ -8,7 +8,9 @@
                     <div class="col-md-12">
                         <h2>عضویت</h2>
                         <div class="my-account-wrap">
-                            <form class="login-form" method="post" action="/login">
+                            @include('layouts.partials.auth.alert')
+                            <form class="login-form" method="post" action="/create_user">
+                                @csrf
                                 <div class="item-wrap">
                                     <label>نام کاربری <span class="required">*</span></label>
                                     <input type="text" id="name" name="name">
