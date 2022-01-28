@@ -125,9 +125,12 @@
                                     <li><a href="/partner">شرکا</a></li>
                                     <li><a href="/services">خدمات</a></li>
                                     <li><a href="/about_us">درباره ما</a></li>
-                                    <li><a href="/contact_us">تماس با ما</a></li>
+
                                 </ul>
                                 <i class="fa fa-angle-down"></i>
+                            </li>
+                            <li>
+                                <a href="/contact_us">تماس با ما</a>
                             </li>
 {{--                            <li class="megamenu mega-col-4">--}}
 {{--                                <a href="#">فروشگاه</a>--}}

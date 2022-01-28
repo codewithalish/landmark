@@ -71,68 +71,68 @@
             <span class="skew"></span>
         </div>
         <div class="section mt-9 mb-12">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="section-title">
-                            <div class="wrap-title">
-                                <h3 class="title">
-                                    <span class="first-word">خدمات</span> ما
-                                </h3>
-                                <p class="sub-title">
-                                    <i class="icon-decotitle"></i>
-                                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3 col-sm-6">
-                        <div class="service-item">
-                            <div class="service-icon icon-mapmarker">
-                                <span class="icon icon-price-house"></span>
-                            </div>
-                            <h4 class="service-title">خدمات فروش</h4>
-                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="service-item">
-                            <div class="service-icon icon-mapmarker">
-                                <span class="icon icon-rent"></span>
-                            </div>
-                            <h4 class="service-title">خدمات اجاره</h4>
-                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="service-item">
-                            <div class="service-icon icon-mapmarker">
-                                <span class="icon icon-painting"></span>
-                            </div>
-                            <h4 class="service-title">لیست ملک ها</h4>
-                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="service-item">
-                            <div class="service-icon icon-mapmarker">
-                                <span class="icon icon-safe-house"></span>
-                            </div>
-                            <h4 class="service-title">مدیریت ملک</h4>
-                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="btlink">
-                            <a class="readmore" href="#">بیشتر بخوانید </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+{{--            <div class="container">--}}
+{{--                <div class="row">--}}
+{{--                    <div class="col-md-12">--}}
+{{--                        <div class="section-title">--}}
+{{--                            <div class="wrap-title">--}}
+{{--                                <h3 class="title">--}}
+{{--                                    <span class="first-word">خدمات</span> ما--}}
+{{--                                </h3>--}}
+{{--                                <p class="sub-title">--}}
+{{--                                    <i class="icon-decotitle"></i>--}}
+{{--                                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک--}}
+{{--                                </p>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="row">--}}
+{{--                    <div class="col-md-3 col-sm-6">--}}
+{{--                        <div class="service-item">--}}
+{{--                            <div class="service-icon icon-mapmarker">--}}
+{{--                                <span class="icon icon-price-house"></span>--}}
+{{--                            </div>--}}
+{{--                            <h4 class="service-title">خدمات فروش</h4>--}}
+{{--                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="col-md-3 col-sm-6">--}}
+{{--                        <div class="service-item">--}}
+{{--                            <div class="service-icon icon-mapmarker">--}}
+{{--                                <span class="icon icon-rent"></span>--}}
+{{--                            </div>--}}
+{{--                            <h4 class="service-title">خدمات اجاره</h4>--}}
+{{--                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک</p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="col-md-3 col-sm-6">--}}
+{{--                        <div class="service-item">--}}
+{{--                            <div class="service-icon icon-mapmarker">--}}
+{{--                                <span class="icon icon-painting"></span>--}}
+{{--                            </div>--}}
+{{--                            <h4 class="service-title">لیست ملک ها</h4>--}}
+{{--                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و</p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="col-md-3 col-sm-6">--}}
+{{--                        <div class="service-item">--}}
+{{--                            <div class="service-icon icon-mapmarker">--}}
+{{--                                <span class="icon icon-safe-house"></span>--}}
+{{--                            </div>--}}
+{{--                            <h4 class="service-title">مدیریت ملک</h4>--}}
+{{--                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها</p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="row">--}}
+{{--                    <div class="col-md-12">--}}
+{{--                        <div class="btlink">--}}
+{{--                            <a class="readmore" href="#">بیشتر بخوانید </a>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
         </div>
         <div class="section section-overlay-3 section-about-group section-bg-8">
             <div class="container">
@@ -181,147 +181,147 @@
             </div>
             <span class="skew"></span>
         </div>
-        <div class="section mt-10 mb-11">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="section-title">
-                            <div class="wrap-title">
-                                <h3 class="title">
-                                    <span class="first-word">تیم</span> ما
-                                </h3>
-                                <p class="sub-title">
-                                    <i class="icon-decotitle"></i>
-                                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
-                                </p>
-                            </div>
-                        </div>
-                        <div class="agent-carousel row owl-carousel owl-theme" data-auto-play="false" data-desktop="4" data-laptop="3" data-tablet="2" data-mobile="1">
-                            <div class="agent-item">
-                                <div class="thumbnail">
-                                    <a href="agent-detail.html" title="Bruck Banner">
-                                        <img src="/landmark/images/team/team_1.png" alt="Bruck Banner">
-                                    </a>
-                                    <span class="line"><span></span></span>
-                                </div>
-                                <div class="content">
-                                    <h4 class="name-agent">
-                                        <a href="agent-detail.html" title="Bruck Banner">بروس بنر</a>
-                                    </h4>
-                                    <span class="position">توسعه دهنده</span>
-                                    <div class="agent-social">
-                                        <a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
-                                        <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
-                                        <a class="google_plus" href="#"><i class="fa fa-telegram"></i></a>
-                                        <a class="vimeo" href="#"><i class="fa fa-vimeo"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="agent-item">
-                                <div class="thumbnail">
-                                    <a href="agent-detail.html" title="Kent Pather">
-                                        <img src="/landmark/images/team/team_2.png" alt="Kent Pather">
-                                    </a>
-                                    <span class="line"><span></span></span>
-                                </div>
-                                <div class="content">
-                                    <h4 class="name-agent">
-                                        <a href="agent-detail.html" title="Kent Pather">تونی استارک</a>
-                                    </h4>
-                                    <span class="position">مجری فروش</span>
-                                    <div class="agent-social">
-                                        <a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
-                                        <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
-                                        <a class="google_plus" href="#"><i class="fa fa-telegram"></i></a>
-                                        <a class="vimeo" href="#"><i class="fa fa-vimeo"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="agent-item">
-                                <div class="thumbnail">
-                                    <a href="agent-detail.html" title="Henry Silver">
-                                        <img src="/landmark/images/team/team_3.png" alt="Henry Silver">
-                                    </a>
-                                    <span class="line"><span></span></span>
-                                </div>
-                                <div class="content">
-                                    <h4 class="name-agent">
-                                        <a href="agent-detail.html" title="Henry Silver">جان اسنو</a>
-                                    </h4>
-                                    <span class="position">نماینده فروش</span>
-                                    <div class="agent-social">
-                                        <a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
-                                        <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
-                                        <a class="google_plus" href="#"><i class="fa fa-telegram"></i></a>
-                                        <a class="vimeo" href="#"><i class="fa fa-vimeo"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="agent-item">
-                                <div class="thumbnail">
-                                    <a href="agent-detail.html" title="Scarlet Atkinson">
-                                        <img src="/landmark/images/team/team_4.png" alt="Scarlet Atkinson">
-                                    </a>
-                                    <span class="line"><span></span></span>
-                                </div>
-                                <div class="content">
-                                    <h4 class="name-agent">
-                                        <a href="agent-detail.html" title="Scarlet Atkinson">اسکارلت جکمن</a>
-                                    </h4>
-                                    <span class="position">مشاور املاک</span>
-                                    <div class="agent-social">
-                                        <a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
-                                        <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
-                                        <a class="google_plus" href="#"><i class="fa fa-telegram"></i></a>
-                                        <a class="vimeo" href="#"><i class="fa fa-vimeo"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="agent-item">
-                                <div class="thumbnail">
-                                    <a href="agent-detail.html" title="Sarah Barabova">
-                                        <img src="/landmark/images/team/team_5.png" alt="Sarah Barabova">
-                                    </a>
-                                    <span class="line"><span></span></span>
-                                </div>
-                                <div class="content">
-                                    <h4 class="name-agent">
-                                        <a href="agent-detail.html" title="Sarah Barabova">سارا لنس</a>
-                                    </h4>
-                                    <span class="position">نماینده خرید</span>
-                                    <div class="agent-social">
-                                        <a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
-                                        <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
-                                        <a class="google_plus" href="#"><i class="fa fa-telegram"></i></a>
-                                        <a class="vimeo" href="#"><i class="fa fa-vimeo"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="agent-item">
-                                <div class="thumbnail">
-                                    <a href="agent-detail.html" title="Barack Ocean">
-                                        <img src="/landmark/images/team/team_6.png" alt="Barack Ocean">
-                                    </a>
-                                    <span class="line"><span></span></span>
-                                </div>
-                                <div class="content">
-                                    <h4 class="name-agent">
-                                        <a href="agent-detail.html" title="Barack Ocean">استیو راجرز</a>
-                                    </h4>
-                                    <span class="position">مجری فروش</span>
-                                    <div class="agent-social">
-                                        <a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
-                                        <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
-                                        <a class="google_plus" href="#"><i class="fa fa-telegram"></i></a>
-                                        <a class="vimeo" href="#"><i class="fa fa-vimeo"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+{{--        <div class="section mt-10 mb-11">--}}
+{{--            <div class="container">--}}
+{{--                <div class="row">--}}
+{{--                    <div class="col-md-12">--}}
+{{--                        <div class="section-title">--}}
+{{--                            <div class="wrap-title">--}}
+{{--                                <h3 class="title">--}}
+{{--                                    <span class="first-word">تیم</span> ما--}}
+{{--                                </h3>--}}
+{{--                                <p class="sub-title">--}}
+{{--                                    <i class="icon-decotitle"></i>--}}
+{{--                                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت--}}
+{{--                                </p>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="agent-carousel row owl-carousel owl-theme" data-auto-play="false" data-desktop="4" data-laptop="3" data-tablet="2" data-mobile="1">--}}
+{{--                            <div class="agent-item">--}}
+{{--                                <div class="thumbnail">--}}
+{{--                                    <a href="agent-detail.html" title="Bruck Banner">--}}
+{{--                                        <img src="/landmark/images/team/team_1.png" alt="Bruck Banner">--}}
+{{--                                    </a>--}}
+{{--                                    <span class="line"><span></span></span>--}}
+{{--                                </div>--}}
+{{--                                <div class="content">--}}
+{{--                                    <h4 class="name-agent">--}}
+{{--                                        <a href="agent-detail.html" title="Bruck Banner">بروس بنر</a>--}}
+{{--                                    </h4>--}}
+{{--                                    <span class="position">توسعه دهنده</span>--}}
+{{--                                    <div class="agent-social">--}}
+{{--                                        <a class="facebook" href="#"><i class="fa fa-facebook"></i></a>--}}
+{{--                                        <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>--}}
+{{--                                        <a class="google_plus" href="#"><i class="fa fa-telegram"></i></a>--}}
+{{--                                        <a class="vimeo" href="#"><i class="fa fa-vimeo"></i></a>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            <div class="agent-item">--}}
+{{--                                <div class="thumbnail">--}}
+{{--                                    <a href="agent-detail.html" title="Kent Pather">--}}
+{{--                                        <img src="/landmark/images/team/team_2.png" alt="Kent Pather">--}}
+{{--                                    </a>--}}
+{{--                                    <span class="line"><span></span></span>--}}
+{{--                                </div>--}}
+{{--                                <div class="content">--}}
+{{--                                    <h4 class="name-agent">--}}
+{{--                                        <a href="agent-detail.html" title="Kent Pather">تونی استارک</a>--}}
+{{--                                    </h4>--}}
+{{--                                    <span class="position">مجری فروش</span>--}}
+{{--                                    <div class="agent-social">--}}
+{{--                                        <a class="facebook" href="#"><i class="fa fa-facebook"></i></a>--}}
+{{--                                        <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>--}}
+{{--                                        <a class="google_plus" href="#"><i class="fa fa-telegram"></i></a>--}}
+{{--                                        <a class="vimeo" href="#"><i class="fa fa-vimeo"></i></a>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            <div class="agent-item">--}}
+{{--                                <div class="thumbnail">--}}
+{{--                                    <a href="agent-detail.html" title="Henry Silver">--}}
+{{--                                        <img src="/landmark/images/team/team_3.png" alt="Henry Silver">--}}
+{{--                                    </a>--}}
+{{--                                    <span class="line"><span></span></span>--}}
+{{--                                </div>--}}
+{{--                                <div class="content">--}}
+{{--                                    <h4 class="name-agent">--}}
+{{--                                        <a href="agent-detail.html" title="Henry Silver">جان اسنو</a>--}}
+{{--                                    </h4>--}}
+{{--                                    <span class="position">نماینده فروش</span>--}}
+{{--                                    <div class="agent-social">--}}
+{{--                                        <a class="facebook" href="#"><i class="fa fa-facebook"></i></a>--}}
+{{--                                        <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>--}}
+{{--                                        <a class="google_plus" href="#"><i class="fa fa-telegram"></i></a>--}}
+{{--                                        <a class="vimeo" href="#"><i class="fa fa-vimeo"></i></a>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            <div class="agent-item">--}}
+{{--                                <div class="thumbnail">--}}
+{{--                                    <a href="agent-detail.html" title="Scarlet Atkinson">--}}
+{{--                                        <img src="/landmark/images/team/team_4.png" alt="Scarlet Atkinson">--}}
+{{--                                    </a>--}}
+{{--                                    <span class="line"><span></span></span>--}}
+{{--                                </div>--}}
+{{--                                <div class="content">--}}
+{{--                                    <h4 class="name-agent">--}}
+{{--                                        <a href="agent-detail.html" title="Scarlet Atkinson">اسکارلت جکمن</a>--}}
+{{--                                    </h4>--}}
+{{--                                    <span class="position">مشاور املاک</span>--}}
+{{--                                    <div class="agent-social">--}}
+{{--                                        <a class="facebook" href="#"><i class="fa fa-facebook"></i></a>--}}
+{{--                                        <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>--}}
+{{--                                        <a class="google_plus" href="#"><i class="fa fa-telegram"></i></a>--}}
+{{--                                        <a class="vimeo" href="#"><i class="fa fa-vimeo"></i></a>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            <div class="agent-item">--}}
+{{--                                <div class="thumbnail">--}}
+{{--                                    <a href="agent-detail.html" title="Sarah Barabova">--}}
+{{--                                        <img src="/landmark/images/team/team_5.png" alt="Sarah Barabova">--}}
+{{--                                    </a>--}}
+{{--                                    <span class="line"><span></span></span>--}}
+{{--                                </div>--}}
+{{--                                <div class="content">--}}
+{{--                                    <h4 class="name-agent">--}}
+{{--                                        <a href="agent-detail.html" title="Sarah Barabova">سارا لنس</a>--}}
+{{--                                    </h4>--}}
+{{--                                    <span class="position">نماینده خرید</span>--}}
+{{--                                    <div class="agent-social">--}}
+{{--                                        <a class="facebook" href="#"><i class="fa fa-facebook"></i></a>--}}
+{{--                                        <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>--}}
+{{--                                        <a class="google_plus" href="#"><i class="fa fa-telegram"></i></a>--}}
+{{--                                        <a class="vimeo" href="#"><i class="fa fa-vimeo"></i></a>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            <div class="agent-item">--}}
+{{--                                <div class="thumbnail">--}}
+{{--                                    <a href="agent-detail.html" title="Barack Ocean">--}}
+{{--                                        <img src="/landmark/images/team/team_6.png" alt="Barack Ocean">--}}
+{{--                                    </a>--}}
+{{--                                    <span class="line"><span></span></span>--}}
+{{--                                </div>--}}
+{{--                                <div class="content">--}}
+{{--                                    <h4 class="name-agent">--}}
+{{--                                        <a href="agent-detail.html" title="Barack Ocean">استیو راجرز</a>--}}
+{{--                                    </h4>--}}
+{{--                                    <span class="position">مجری فروش</span>--}}
+{{--                                    <div class="agent-social">--}}
+{{--                                        <a class="facebook" href="#"><i class="fa fa-facebook"></i></a>--}}
+{{--                                        <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>--}}
+{{--                                        <a class="google_plus" href="#"><i class="fa fa-telegram"></i></a>--}}
+{{--                                        <a class="vimeo" href="#"><i class="fa fa-vimeo"></i></a>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
     </div>
 @endsection
 

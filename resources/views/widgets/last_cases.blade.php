@@ -4,7 +4,7 @@
         @foreach($caseWidget as $item)
         <div class="recent-property-item">
             <div class="thumbnail">
-                <a href="property-fullwidth.html" title="{{$item->title}}">
+                <a href="/case_detail" title="{{$item->title}}">
                     <img src="/landmark/images/property/thumb/property_3.jpg" alt="Villa on Hollywood Boulevard">
                 </a>
             </div>

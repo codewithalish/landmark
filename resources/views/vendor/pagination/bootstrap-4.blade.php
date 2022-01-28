@@ -1,7 +1,7 @@
 @if ($paginator->hasPages())
     <nav>
 
-        <ul class="pagination">
+        <ul class="">
             {{-- Previous Page Link --}}
             <span class="pagination-loop" style="display: flex">
 
