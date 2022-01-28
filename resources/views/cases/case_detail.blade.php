@@ -6,7 +6,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="wrap-page-title">
-                            <h1 class="page-title">منزل ویلایی دو طبقه</h1>
+                            <h1 class="page-title">{{$item->title}}</h1>
                             <div class="page-breadcrumb">
 										<span>
 											<a title="بازگشت به خانه" href="../pages" class="home"><span>خانه</span></a>
@@ -92,7 +92,7 @@
                                     </div>
                                 </div>
                                 <h3 class="detail-title">{{$item->title}}</h3>
-                                <span class="property-status">{{$item->contract}}</span>
+                                <span class="property-status">{{__('custom.contract')[$item->contract]}}</span>
                                 <div class="info">
                                     <span class="location">{{$item->address}}</span>
                                     <div class="price">{{$item->price}} تومان</div>
@@ -160,7 +160,7 @@
                                                     </div>
                                                     <div class="content-box-item">
                                                         <label>وضعیت</label>
-                                                        <span><a href="#">{{$item->contract}}</a></span>
+                                                        <span><a href="#">{{__('custom.contract')[$item->contract]}}</a></span>
                                                     </div>
                                                     <div class="content-box-item">
                                                         <label>نوع</label>
@@ -335,6 +335,7 @@
 {{--                            </div>--}}
                         </div>
                         <div class="property-agent-contact">
+                            <div> @include('layouts.partials.auth.alert')</div>
                             <h3 class="box-title">تماس با نماینده </h3>
                             <div class="box-content col-md-6">
                                 <div class="thumbnail col-md-6">
@@ -342,19 +343,19 @@
                                 </div>
                                 <div class="box-info col-md-6">
                                     <h4 class="agent-name">
-                                        <a href="/agent_detail" title="Bruck Banner">بروس بنر </a>
+                                        <a href="/agent_detail" title="Bruck Banner">{{$agent->name}}</a>
                                     </h4>
                                     <div class="item-info">
                                         <span class="position">توسعه دهنده </span>
                                     </div>
                                     <ul class="item-info">
                                         <li class="agent-email">
-                                            <a href="mailto:contact.usa@landmark.com" target="_top">contact.us@sample.com</a>
+                                            <a href="mailto:contact.usa@landmark.com" target="_top">{{$agent->email}}</a>
                                         </li>
                                         <li class="agent-phone">
-                                            <a href="tel:123456789" target="_top" class="ltr_text">0123456789</a>
+                                            <a href="tel:123456789" target="_top" class="ltr_text">{{$agent->mobile}}</a>
                                         </li>
-                                        <li class="agent-address">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم</li>
+                                        <li class="agent-address">{{$agent->address}}</li>
                                     </ul>
                                     <div class="agent-about">
                                         لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله
@@ -364,12 +365,13 @@
                             <div class="box-contact-property col-md-6">
                                 <div class="box-contact">
                                     <div class="box-form">
-                                        <form class="box-contact-agent">
+                                        <form class="box-contact-agent" method="post" action="/case_detail">
+                                            @csrf
                                             <div class="item-wrap">
                                                 <input type="text" name="name" placeholder="نام *">
                                             </div>
                                             <div class="item-wrap">
-                                                <input type="text" name="phone" placeholder="تلفن">
+                                                <input type="text" name="mobile" placeholder="تلفن">
                                             </div>
                                             <div class="item-wrap">
                                                 <input type="text" name="email" placeholder="ایمیل *">
@@ -418,7 +420,7 @@
                                         <div class="item-head">
                                             <h4 class="item-title">
                                                 <i class="ion-bookmark">{{$item->is_vip}}</i>
-                                                <a href="/case_detail" title="Vilayi 2 tabage">{{$item->title}}</a>
+                                                <a href="/case_detail/{{$item->id}}" title="Vilayi 2 tabage">{{$item->title}}</a>
                                             </h4>
                                             <span class="location">{{$item->address}}</span>
                                         </div>

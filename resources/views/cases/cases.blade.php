@@ -71,11 +71,12 @@
                             </div>
                         </div>
                         @endforeach
-                    </div>
 
-                    <span class="pagination-loop" >
+                    </div>
+                    <span class="pagination-loop" style="padding: 0 20%">
 								 {{$items->links()}}
 								</span>
+
                 </div>
                 <div class="col-md-3">
                     <div class="sidebar">

@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ContactRequest;
+use App\Models\Agent;
 use App\Models\CaseModel;
+use App\Models\ContactUs;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -56,7 +59,22 @@ class CaseController extends Controller
     }
 
 
+    public function create(Request $request){
 
+        return view('case_detail');
+    }
+
+    public function store(ContactRequest $request)
+    {
+        $inputs=$request->only('name','email','message','mobile');
+        $result=ContactUs::create($inputs);
+        if ($result){
+            return redirect('/case_detail/{id}')->with('success','با موفقیت ارسال شد');
+        } else{
+            return redirect('/case_detail')->with('error');
+        }
+
+    }
 
     public function show(Request $request,$id)
     {
@@ -67,9 +85,10 @@ class CaseController extends Controller
             ->limit(2)
             ->get();
 
+        $agent=Agent::query()
+            ->first();
 
-
-        return view('cases/case_detail',compact('item' , 'cases' ));
+        return view('cases/case_detail',compact('item' , 'cases','agent' ));
     }
 
 }
