@@ -5,6 +5,7 @@
     <div class="section mt-7 mb-7">
         <div class="container">
             <div class="row">
+                <div> @include('layouts.partials.auth.alert')</div>
                 <div class="col-md-12">
                     <div class="about-agent">
                         <div class="row agent-detail">
@@ -61,13 +62,14 @@
                     </div>
                     <div class="agent-contact">
                         <div class="box-form">
-                            <form class="box-contact-agent">
+                            <form class="box-contact-agent" method="post" action="/agent_detail">
+                                @csrf
                                 <div class="row">
                                     <div class="item-wrap col-sm-4 col-xs-12">
                                         <input type="text" name="name" placeholder="نام *">
                                     </div>
                                     <div class="item-wrap col-sm-4 col-xs-12">
-                                        <input type="text" name="phone" placeholder="تلفن" dir="ltr">
+                                        <input type="text" name="mobile" placeholder="تلفن" dir="ltr">
                                     </div>
                                     <div class="item-wrap col-sm-4 col-xs-12">
                                         <input type="text" name="email" placeholder="* ایمیل" dir="ltr">
