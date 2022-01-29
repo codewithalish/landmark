@@ -80,15 +80,19 @@ class CaseController extends Controller
     {
         $item=CaseModel::find($id);
 
-        $cases=CaseModel::query()
-            ->where('title','like','%'.$request->get('title').'%' )
+
+        $related_cases=CaseModel::query()
+            ->where('title','like','%'.$item->title.'%' )
+            ->where('id','<>',$item->id )
             ->limit(2)
             ->get();
 
+
+        # todo wrong cod
         $agent=Agent::query()
             ->first();
 
-        return view('cases/case_detail',compact('item' , 'cases','agent' ));
+        return view('cases/show',compact('item' , 'related_cases','agent' ));
     }
 
 }

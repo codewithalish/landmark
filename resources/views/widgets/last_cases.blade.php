@@ -4,13 +4,13 @@
         @foreach($caseWidget as $item)
         <div class="recent-property-item">
             <div class="thumbnail">
-                <a href="/case_detail" title="{{$item->title}}">
+                <a href="/cases" title="{{$item->title}}">
                     <img src="/landmark/images/property/thumb/property_3.jpg" alt="Villa on Hollywood Boulevard">
                 </a>
             </div>
             <div class="content">
                 <div class="item-title">
-                    <a href="/case_detail" title="{{$item->title}}">
+                    <a href="/cases" title="{{$item->title}}">
                         {{$item->title}}
                     </a>
                 </div>
