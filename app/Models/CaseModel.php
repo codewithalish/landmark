@@ -15,6 +15,20 @@ class CaseModel extends Model
         'case_id',
         'feature_id',
         'status',
-        'address'
+        'address',
+        'title',
+        'room_number',
+        'parking_number',
+        'bath_number',
+        'price',
+        'deposit',
+        'rent',
+        'contract',
+        'type',
+        'avatar_path',
+        'is_vip',
+        'description',
+        'area',
+
     ];
 }
