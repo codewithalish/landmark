@@ -72,10 +72,16 @@ Route::view('register_user','pages/register_user');
 Route::get('register_user/create', [\App\Http\Controllers\UserController::class , 'create']);
 Route::post('register_user', [\App\Http\Controllers\UserController::class , 'store']);
 
+
+# restful
 Route::get('agents', [AgentController::class , 'allAgents']);
-Route::get('agent_detail/create', [AgentController::class , 'create']);
-Route::post('agent_detail', [AgentController::class , 'store']);
-Route::get('agent_detail/{id}', [AgentController::class , 'show']);
+Route::get('agents/create', [AgentController::class , 'create']);
+Route::post('agents', [AgentController::class , 'store']);
+Route::get('agents/{id}', [AgentController::class , 'show']);
+
+
+Route::get('agents/{id}/contacts', [ContactController::class , 'create']);
+Route::post('agents/{id}/contacts', [ContactController::class , 'store']);
 
 
 /*

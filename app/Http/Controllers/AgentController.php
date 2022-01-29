@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ContactRequest;
 use App\Models\Agent;
 use App\Models\CaseModel;
-use App\Models\ContactUs;
+use App\Models\Contact;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -29,7 +29,7 @@ class AgentController extends Controller
     public function store(ContactRequest $request)
     {
         $inputs = $request->only('name', 'email', 'message', 'mobile');
-        $result = ContactUs::create($inputs);
+        $result = Contact::create($inputs);
         if ($result) {
             return redirect('/agent_detail/{id}')->with('success', 'با موفقیت ارسال شد');
         } else {
