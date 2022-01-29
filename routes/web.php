@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\PageController;
 /*
 |--------------------------------------------------------------------------
-| test
+| test & dev
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
@@ -27,13 +27,6 @@ Route::get('/admin_create', function () {
 Route::get('cases', function () {
     return view('cases/cases');
 });
-/*
-|--------------------------------------------------------------------------
-|shop
-|--------------------------------------------------------------------------
-|
-*/
-
 //
 //Route::get('shop_detail/{id}', [ShopController::class , 'show']);
 //Route::get('shop', [ShopController::class , 'index']);
@@ -46,9 +39,18 @@ Route::get('cases', function () {
 
 Route::view('agents','agents/agents');
 Route::view('agent_detail','agents/agent_detail');
-Route::view('case_detail','cases/case_detail');
+Route::view('cases','cases/cases');
 Route::view('create','pages/create_case');
 Route::view('cases','cases/cases');
+
+/*
+|--------------------------------------------------------------------------
+|shop
+|--------------------------------------------------------------------------
+|
+*/
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -64,7 +66,7 @@ Route::view('services','pages/services');
 
 /*
 |--------------------------------------------------------------------------
-| agent
+| need to sort
 |--------------------------------------------------------------------------
 |
 */
@@ -73,13 +75,19 @@ Route::get('register_user/create', [\App\Http\Controllers\UserController::class 
 Route::post('register_user', [\App\Http\Controllers\UserController::class , 'store']);
 
 
-# restful
+
+
+/*
+|--------------------------------------------------------------------------
+| agent
+|--------------------------------------------------------------------------
+|
+*/
+
 Route::get('agents', [AgentController::class , 'allAgents']);
 Route::get('agents/create', [AgentController::class , 'create']);
 Route::post('agents', [AgentController::class , 'store']);
 Route::get('agents/{id}', [AgentController::class , 'show']);
-
-
 Route::get('agents/{id}/contacts', [ContactController::class , 'create']);
 Route::post('agents/{id}/contacts', [ContactController::class , 'store']);
 
@@ -94,15 +102,15 @@ Route::post('agents/{id}/contacts', [ContactController::class , 'store']);
 
 Route::get('/', [PageController::class , 'welcome']);
 Route::get('cases', [CaseController::class , 'search']);
-Route::get('case_detail/create', [CaseController::class , 'create']);
-Route::post('case_detail', [CaseController::class , 'store']);
-Route::get('case_detail/{id}', [CaseController::class , 'show']);
+Route::get('cases/create', [CaseController::class , 'create']);
+Route::post('cases', [CaseController::class , 'store']);
+Route::get('cases/{id}', [CaseController::class , 'show']);
 
 
 
 /*
 |--------------------------------------------------------------------------
-|contact and about
+| pages & other
 |--------------------------------------------------------------------------
 |
 */
