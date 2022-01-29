@@ -13,4 +13,9 @@ class Variable extends Model
         'key',
         'value',
     ];
+
+    public function scopeKey($query, $key)
+    {
+       return $query->where('key', $key)->first()->value;
+    }
 }
