@@ -21,7 +21,7 @@
                                     <p class="text-medium-emphasis">Sign In to your account</p>
                                     <div class="input-group mb-3"><span class="input-group-text">
                       <svg class="icon">
-                        <use xlink:href="/afracode/admin/login/node_modules/@coreui/icons/sprites/free.svg#cil-user"></use>
+                        <use xlink:href="/admin/login/node_modules/@coreui/icons/sprites/free.svg#cil-user"></use>
                       </svg></span>
                                         <input class="form-control" type="text" placeholder="Username" name="email">
                                     </div>

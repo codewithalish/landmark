@@ -47,7 +47,7 @@
                                             </button>
                                             <p>
                                                 <span>حساب کاربری ندارید؟</span>
-                                                <a class="color" href="/create_user" title="Register now!">هم اکنون ثبت نام کنید!</a>
+                                                <a class="color" href="/register_user" title="Register now!">هم اکنون ثبت نام کنید!</a>
                                             </p>
                                         </div>
                                     </div>
@@ -105,6 +105,7 @@
                                     <li><a href="/">خانه</a></li>
                                     <li class="current"><a href="/cases">جستجوی پیشرفته</a></li>
 
+
                                 </ul>
                                 <i class="fa fa-angle-down"></i>
                             </li>
@@ -121,6 +122,7 @@
                             <li>
                                 <a href="#">صفحات</a>
                                 <ul class="sub-menu">
+                                    <li><a href="/register_user">عضویت در سایت</a></li>
                                     <li><a href="/gallery">گالری</a></li>
                                     <li><a href="/partner">شرکا</a></li>
                                     <li><a href="/services">خدمات</a></li>

@@ -17,7 +17,7 @@
                                 </div>
                                 <div class="item-wrap">
                                     <label>رمز عبور <span class="required">*</span></label>
-                                    <input type="number" id="room_number" name="room_number">
+                                    <input type="text" id="room_number" name="password">
                                 </div>
                                 <div class="item-wrap">
                                     <label>تلفن همراه <span class="required">*</span></label>
@@ -28,15 +28,24 @@
                                     <input type="text" id="email" name="email">
                                 </div>
                                 <div class="item-wrap">
-                                    <label>ادرس تلگرامی <span class="required">*</span></label>
+                                    <label>بیوگرافی <span class="required">*</span></label>
+                                    <input type="text" id="email" name="bio">
+                                </div>
+                                <div class="item-wrap">
+                                    <label>ادرس <span class="required">*</span></label>
+                                    <input type="text" id="email" name="address">
+                                </div>
+
+                                <div class="item-wrap">
+                                    <label>ادرس تلگرامی <span class="required"></span></label>
                                     <input type="text" id="telegram" name="telegram">
                                 </div>
                                 <div class="item-wrap">
-                                    <label>ادرس واتساپ<span class="required">*</span></label>
+                                    <label>ادرس واتساپ<span class="required"></span></label>
                                     <input type="text" id="whatsapp" name="whatsapp">
                                 </div>
                                 <div class="item-wrap">
-                                    <label>آپلود تصویر <span class="required">*</span></label>
+                                    <label>آپلود تصویر <span class="required"></span></label>
                                     <input type="file" id="avatar_path" name="avatar_path">
                                 </div>
 

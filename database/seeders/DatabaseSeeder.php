@@ -14,14 +14,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Shop::factory(100)->create();
+//        Shop::factory(100)->create();
 
         $this->call([
-            RoleSeeder::class,
-            UserSeeder::class,
-            RoleUserSeeder::class,
-            CaseSeeder::class,
-            VariableSeeder::class
+//            RoleSeeder::class,
+//            UserSeeder::class,
+//            RoleUserSeeder::class,
+//            CaseSeeder::class,
+//            VariableSeeder::class,
+//            GallerySeeder::class,
+            PartnerSeeder::class
         ]);
 
     }
