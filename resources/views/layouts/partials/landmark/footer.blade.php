@@ -4,17 +4,17 @@
             <div class="container">
                 <div class="row">
                     <div class="footer-column-item col-md-3 col-sm-6">
-                        <div class="widget widget_text">
-                            <h4 class="widget-title">لندمارک</h4>
-                            <div class="textwidget">
-                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
-                                <ul class="contact-info">
-                                    <li><i class="fa fa-map-marker"></i>تبریز، ولیعصر، پلاک 896</li>
-                                    <li><i class="fa fa-phone"></i><span class="ltr_text">(+1)-800-555-6789</span></li>
-                                    <li><i class="fa fa-envelope"></i>contact.us@sample.com</li>
-                                </ul>
-                            </div>
-                        </div>
+{{--                        <div class="widget widget_text">--}}
+{{--                            <h4 class="widget-title">{{$item->title}}</h4>--}}
+{{--                            <div class="textwidget">--}}
+{{--                                <p>{{$item->description}}</p>--}}
+{{--                                <ul class="contact-info">--}}
+{{--                                    <li><i class="fa fa-map-marker"></i>{{$item->address}}</li>--}}
+{{--                                    <li><i class="fa fa-phone"></i><span class="ltr_text">{{$item->mobile}}</span></li>--}}
+{{--                                    <li><i class="fa fa-envelope"></i>{{$item->email}}</li>--}}
+{{--                                </ul>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
                     </div>
                     <div class="footer-column-item col-md-3 col-sm-6">
                         <div class="widget widget_text">
