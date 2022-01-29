@@ -20,6 +20,19 @@ use App\Http\Controllers\PageController;
 |
 */
 
+Route::get('/test/users/{id}', function ($id) {
+    return \App\Models\User::where('id',$id)->with('cases','comments','contacts')->first;
+});
+
+Route::get('/test/cases/{id}', function ($id) {
+    return \App\Models\CaseModel::where('id',$id)->with('user')->first();
+});
+
+
+
+
+
+
 Route::get('/admin_create', function () {
     return view('admin.create_case');
 });

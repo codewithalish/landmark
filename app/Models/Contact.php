@@ -15,4 +15,9 @@ class Contact extends Model
         'mobile',
         'message',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

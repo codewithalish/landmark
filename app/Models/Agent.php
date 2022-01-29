@@ -16,4 +16,13 @@ protected $fillable=[
     'mobile',
 
 ];
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
+
+    public function cases()
+    {
+        return $this->hasMany(CaseModel::class);
+    }
 }

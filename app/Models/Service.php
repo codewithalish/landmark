@@ -13,4 +13,6 @@ class Service extends Model
         'body',
         'thumbnail_path'
     ];
+
+
 }

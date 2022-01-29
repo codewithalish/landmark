@@ -31,4 +31,9 @@ class CaseModel extends Model
         'area',
 
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
