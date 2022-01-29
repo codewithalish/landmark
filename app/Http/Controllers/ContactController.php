@@ -9,16 +9,20 @@ use Illuminate\Http\Request;
 class ContactController extends Controller
 {
     //
-    public function store(ContactRequest $request)
+    public function store(ContactRequest $request , $id)
     {
-        $inputs = $request->only('name', 'email', 'message', 'user_id');
+
+        $inputs = $request->only('name', 'mobile', 'message');
+        $inputs['user_id'] = $id;
 
         $result = Contact::create($inputs);
+
+
         if ($result) {
-            return redirect('/contact_us')->with('success', 'با موفقیت ارسال شد');
-        } else {
-            return redirect('/contact_us')->with('error');
+            return back()->with('success', 'با موفقیت ارسال شد');
         }
+
+        return back()->with('error','خطا');
 
 
     }
