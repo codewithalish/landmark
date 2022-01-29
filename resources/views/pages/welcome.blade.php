@@ -2,7 +2,7 @@
 @section('content')
 
     <div id="main">
-{{--      <x-section1></x-section1>--}}
+{{--      <x-section1 :item="$item"></x-section1>--}}
         <x-search-case-component></x-search-case-component>
         <x-best-service-component></x-best-service-component>
         <x-last-case-component></x-last-case-component>
