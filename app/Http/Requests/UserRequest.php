@@ -30,7 +30,7 @@ class UserRequest extends FormRequest
             'mobile'=>['required','string'],
             'whatsapp'=>['required','string'],
             'telegram'=>['required','string'],
-            'password'=>['required','password'],
+            'password'=>['required','min:6'],
         ];
     }
 
@@ -50,7 +50,7 @@ class UserRequest extends FormRequest
     {
         return [
             'required'=>'فیلد :attribute اجباری است',
-            'password'=>'فیلد :attribute حداقل 6 کاراکتر باشد',
+            'min'=>'فیلد :attribute حداقل 6 کاراکتر باشد',
             'email'=>'فیلد :attribute با فرمت معتبر وارد شود',
 
         ];
