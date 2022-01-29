@@ -365,7 +365,7 @@
                             <div class="box-contact-property col-md-6">
                                 <div class="box-contact">
                                     <div class="box-form">
-                                        <form class="box-contact-agent" method="post" action="/case_detail">
+                                        <form class="box-contact-agent" method="post" action="/agents/{{$item->user_id}}/contacts">
                                             @csrf
                                             <div class="item-wrap">
                                                 <input type="text" name="name" placeholder="نام *">

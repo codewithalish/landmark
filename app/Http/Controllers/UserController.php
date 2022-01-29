@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ContactRequest;
 use App\Http\Requests\UserRequest;
-use App\Models\ContactUs;
+use App\Models\Contact;
 use App\Models\User;
 use Illuminate\Http\Request;
 
