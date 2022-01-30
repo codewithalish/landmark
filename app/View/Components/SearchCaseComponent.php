@@ -12,10 +12,10 @@ class SearchCaseComponent extends Component
      *
      * @return void
      */
-
+public $items;
     public function __construct()
     {
-
+        $this->items=CaseModel::query();
     }
 
     /**
@@ -26,8 +26,6 @@ class SearchCaseComponent extends Component
      */
     public function render()
     {
-        $items=CaseModel::query();
-
 
         return view('components.search-case-component' );
     }
