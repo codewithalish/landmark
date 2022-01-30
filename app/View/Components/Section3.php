@@ -13,9 +13,13 @@ class Section3 extends Component
      *
      * @return void
      */
+    public $item;
     public function __construct()
     {
-        //
+        $this->item=User::query()
+            ->limit(1)
+            ->orderBy('is_vip', 'desc')
+            ->get();
     }
 
     /**
@@ -25,11 +29,8 @@ class Section3 extends Component
      */
     public function render()
     {
-        $item=User::query()
-            ->limit(1)
-            ->orderBy('is_vip', 'desc')
-            ->get();
 
-        return view('components.section3' , compact('item'));
+
+        return view('components.section3' );
     }
 }

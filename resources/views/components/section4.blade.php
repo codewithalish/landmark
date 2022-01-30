@@ -8,7 +8,7 @@
                             <div class="blog-item">
                                 <div class="blog-featured">
                                     <div class="content-featured">
-                                        <a class="content-thumb" href="blog-detail-sidebar.html">
+                                        <a class="content-thumb" href="#">
                                             <img src="/landmark/images/blog/blog_1.jpg" alt="">
                                             <span></span>
                                         </a>
@@ -17,7 +17,7 @@
                                 <div class="wrap-entry">
                                     <div class="entry-header">
                                         <h2>
-                                            <a href="blog-detail-sidebar.html">
+                                            <a href="#">
                                                 لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
                                             </a>
                                         </h2>
@@ -42,7 +42,7 @@
                             <div class="blog-item">
                                 <div class="blog-featured">
                                     <div class="content-featured">
-                                        <a class="content-thumb" href="blog-detail-sidebar.html">
+                                        <a class="content-thumb" href="#">
                                             <img src="/landmark/images/blog/blog_2.jpg" alt="">
                                             <span></span>
                                         </a>
@@ -51,7 +51,7 @@
                                 <div class="wrap-entry">
                                     <div class="entry-header">
                                         <h2>
-                                            <a href="blog-detail-sidebar.html">
+                                            <a href="#">
                                                 لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از
                                             </a>
                                         </h2>
