@@ -14,39 +14,6 @@ use App\Http\Controllers\PageController;
 | test & dev
 |--------------------------------------------------------------------------
 |
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-Route::get('/admin_create', function () {
-    return view('admin.create_case');
-});
-
-Route::get('cases', function () {
-    return view('cases/cases');
-});
-//
-//Route::get('shop_detail/{id}', [ShopController::class , 'show']);
-//Route::get('shop', [ShopController::class , 'index']);
-
-//Route::view('shop','pages/shop');
-//Route::view('cart','pages/cart');
-//Route::view('cart_empty','pages/cart_empty');
-//Route::view('checkout','pages/checkout');
-//Route::view('gallery','pages/gallery');
-
-Route::view('agents','agents/agents');
-Route::view('agent_detail','agents/agent_detail');
-Route::view('cases','cases/cases');
-Route::view('create','pages/create_case');
-Route::view('cases','cases/cases');
-
-/*
-|--------------------------------------------------------------------------
-|shop
-|--------------------------------------------------------------------------
 |
 */
 
@@ -70,9 +37,9 @@ Route::view('services','pages/services');
 |--------------------------------------------------------------------------
 |
 */
-Route::view('register_user','pages/register_user');
-Route::get('register_user/create', [\App\Http\Controllers\UserController::class , 'create']);
-Route::post('register_user', [\App\Http\Controllers\UserController::class , 'store']);
+
+Route::get('agents/create', [\App\Http\Controllers\UserController::class , 'create']);
+Route::post('agents/create', [\App\Http\Controllers\UserController::class , 'store']);
 
 
 
@@ -84,10 +51,11 @@ Route::post('register_user', [\App\Http\Controllers\UserController::class , 'sto
 |
 */
 
-Route::get('agents', [AgentController::class , 'allAgents']);
+Route::get('agents', [AgentController::class , 'index']);
 Route::get('agents/create', [AgentController::class , 'create']);
 Route::post('agents', [AgentController::class , 'store']);
 Route::get('agents/{id}', [AgentController::class , 'show']);
+
 Route::get('agents/{id}/contacts', [ContactController::class , 'create']);
 Route::post('agents/{id}/contacts', [ContactController::class , 'store']);
 
@@ -114,9 +82,9 @@ Route::get('cases/{id}', [CaseController::class , 'show']);
 |--------------------------------------------------------------------------
 |
 */
-Route::view('about_us','pages/about_us');
-Route::view('contact_us','pages/contact_us');
-Route::post('/contact_us', [ContactController::class , 'store']);
+Route::view('abouts','pages/abouts');
+Route::view('contacts','pages/contacts');
+Route::post('/contacts', [ContactController::class , 'store']);
 
 
 /*
@@ -126,12 +94,6 @@ Route::post('/contact_us', [ContactController::class , 'store']);
 |
 */
 
-Route::get('login', function () {
-    return view('auth.login');
-});
-Route::get('register', function () {
-    return view('auth.register');
-});
 
 Route::get('login', [LoginController::class , 'login'])->name('login');
 Route::get('register', [LoginController::class , 'register'])->name('register');
@@ -151,4 +113,9 @@ Route::get('logout',function (){
 */
 Route::get('/admin',[AdminController::class,'dashboard'])->middleware('auth');
 Route::resource('/admin/contacts',\App\Http\Controllers\ContactController::class)->middleware('auth');
+Route::resource('/admin/agents',\App\Http\Controllers\admin\AgentController::class)->middleware('auth');
 Route::resource('/admin/cases',\App\Http\Controllers\admin\CaseController::class)->middleware('auth');
+Route::resource('/admin/galleries',\App\Http\Controllers\admin\GalleryController::class)->middleware('auth');
+Route::resource('/admin/partners',\App\Http\Controllers\admin\PartnerController::class)->middleware('auth');
+Route::resource('/admin/services',\App\Http\Controllers\admin\ServiceController::class)->middleware('auth');
+Route::resource('/admin/users',\App\Http\Controllers\admin\userController::class)->middleware('auth');

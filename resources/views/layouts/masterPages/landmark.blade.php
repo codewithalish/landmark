@@ -6,7 +6,7 @@
 <div class="site">
     @include('layouts.partials.landmark.header')
     @yield('content')
-    <x-footer></x-footer>
+{{--    <x-footer :scopeKey="$var"></x-footer>--}}
 </div>
 <div id="go-to-top" class="go-to-top">
     <i class="fa fa-angle-up"></i>

@@ -11,7 +11,7 @@
          <x-AgentComponent></x-AgentComponent>
 {{--        <x-section3></x-section3>--}}
         <x-section4></x-section4>
-        <x-partner-component></x-partner-component>
+{{--        <x-partner-component></x-partner-component>--}}
         <x-news-letter-component></x-news-letter-component>
 
     </div>
