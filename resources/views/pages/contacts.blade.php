@@ -28,7 +28,7 @@
                                 <div class="col-md-6 col-xs-12">
                                     <h3 class="title">ارسال پیام</h3>
                                     @include('layouts.partials.auth.alert')
-                                    <form class="contact-form" action="/contact_us" method="post">
+                                    <form class="contact-form" action="/contacts" method="post">
                                         @csrf
                                         <div class="row">
                                             <div class="col-md-6">
@@ -38,7 +38,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-item">
-                                                    <input type="email" name="email" value="" size="40" placeholder="ایمیل">
+                                                    <input type="text" name="mobile" value="" size="40" placeholder="شماره موبایل">
                                                 </div>
                                             </div>
                                             <div class="col-md-12">

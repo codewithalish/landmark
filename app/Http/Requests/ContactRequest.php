@@ -26,8 +26,9 @@ class ContactRequest extends FormRequest
         return [
             //
             'name'=>['required','string'],
-            'mobile'=>['required','string'],
+            'mobile'=>['required'],
             'message'=>['required','string'],
+            'user_id'=>['required'],
         ];
     }
 
@@ -35,15 +36,17 @@ class ContactRequest extends FormRequest
     {
         return [
             'name'=>'نام',
-            'email'=>'ایمیل',
+            'mobile'=>'شماره موبایل',
             'message'=>'پیغام',
+            'user_id'=>'عضویت در سایت'
         ];
     }
 
     public function messages()
     {
         return [
-            'required'=>'فیلد :attribute اجباری است'
+            'required'=>' :attribute اجباری است.',
+
         ];
 
     }
