@@ -19,7 +19,7 @@
                             <div class="info-agent col-md-8">
                                 <div class="box-content">
                                     <h3 class="title">
-                                        <a href="/agent_detail/{{$item->id}}" title="Kent Pather">{{$item->name}}</a>
+                                        <a href="/agents/{{$item->id}}" title="Kent Pather">{{$item->name}}</a>
                                     </h3>
                                     <div class="box-info">
                                         <div class="item-info">
@@ -43,7 +43,7 @@
                         </div>
                         @endforeach
 
-                            <span class="pagination-loop" >
+                            <span class="pagination-loop" style="padding: 0 30%">
 								 {{$items->links()}}
 								</span>
                     </div>
