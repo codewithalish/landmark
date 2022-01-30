@@ -8,7 +8,7 @@
                 <div class="col-md-12">
                     <h2>ایجاد پست</h2>
                     <div class="my-account-wrap">
-                        <form class="login-form">
+                        <form class="login-form" method="post" action="/cases">
                             <div class="item-wrap">
                                 <label>عنوان <span class="required">*</span></label>
                                 <input type="text" id="title" name="title">
