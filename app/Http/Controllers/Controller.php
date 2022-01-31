@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Footer;
+use App\Models\Variable;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -18,5 +19,7 @@ class Controller extends BaseController
     {
         $item=Footer::query()->get();
         \Illuminate\Support\Facades\View::share('item',$item);
+
+        \Illuminate\Support\Facades\View::share('var' , Variable::query());
     }
 }

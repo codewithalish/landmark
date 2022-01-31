@@ -13,9 +13,12 @@ class PartnerComponent extends Component
      *
      * @return void
      */
+    public $items;
     public function __construct()
     {
-        //
+        $this->items=Partner::query()
+            ->orderBy('created_at', 'desc')
+            ->get();
     }
 
     /**
@@ -25,9 +28,6 @@ class PartnerComponent extends Component
      */
     public function render()
     {
-        $items=Partner::query()
-            ->orderBy('created_at', 'desc')
-            ->get();
-        return view('components.partner-component' ,compact('items'));
+        return view('components.partner-component' );
     }
 }

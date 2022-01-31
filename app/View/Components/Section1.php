@@ -12,11 +12,15 @@ class Section1 extends Component
      *
      * @return void
      */
+    public $item;
+
     public function __construct()
     {
-        //
+        $this->item = CaseModel::query()
+            ->orderBy('id', 'desc')
+            ->limit(1)
+            ->first();
     }
-
     /**
      * Get the view / contents that represent the component.
      *
@@ -24,11 +28,6 @@ class Section1 extends Component
      */
     public function render()
     {
-        $item=CaseModel::query()
-            ->limit(1)
-            ->orderBy('is_vip', 'desc')
-            ->get();
-
-        return view('components.section1' , compact('item'));
+        return view('components.section1');
     }
 }

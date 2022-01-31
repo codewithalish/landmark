@@ -4,10 +4,10 @@
             <div class="col-md-4">
                 <div class="property-box-meta">
                     <div class="property-box-meta-content">
-                        <span class="property-status">{{$item->contract}}</span>
+                        <span class="property-status">{{__('custom.contract')[$item->contract]}}</span>
                         <div class="item-head">
                             <h1 class="item-title">
-                                <a href="property-fullwidth.html" title="Store Space Greenville">
+                                <a href="/cases/{{$item->id}}" title="Store Space Greenville">
                                     {{$item->title}}
                                 </a>
                             </h1>

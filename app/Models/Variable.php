@@ -8,9 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Variable extends Model
 {
     use HasFactory;
-    protected $fillable = [
+    protected $table='variables';
 
+    protected $fillable = [
         'key',
-        'value',
+        'value'
     ];
+
+    public function scopeVal($query, $key)
+    {
+       return $query->where('Key', $key)->first()->value;
+    }
 }

@@ -12,10 +12,12 @@ class AgentComponent extends Component
      *
      * @return void
      */
-
+public $items;
     public function __construct()
     {
-
+        $this->items=User::query()
+            ->orderBy('created_at', 'desc')
+            ->get();
     }
 
     /**
@@ -25,9 +27,7 @@ class AgentComponent extends Component
      */
     public function render()
     {
-        $items=User::query()
-            ->orderBy('created_at', 'desc')
-            ->get();
-        return view('components.agent-component' , compact('items'));
+
+        return view('components.agent-component' );
     }
 }

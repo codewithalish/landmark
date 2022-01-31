@@ -12,9 +12,14 @@ class Section2 extends Component
      *
      * @return void
      */
+    public $item;
     public function __construct()
     {
-        //
+        $this->item=CaseModel::query()
+            ->limit(1)
+            ->orderBy('created_at', 'desc')
+            ->first();
+
     }
 
     /**
@@ -24,11 +29,7 @@ class Section2 extends Component
      */
     public function render()
     {
-        $item=CaseModel::query()
-            ->limit(1)
-            ->orderBy('created_at', 'desc')
-            ->get();
 
-        return view('components.section2' , compact('item'));
+        return view('components.section2' );
     }
 }

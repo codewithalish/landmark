@@ -12,9 +12,13 @@ class LastCaseComponent extends Component
      *
      * @return void
      */
+    public $items;
     public function __construct()
     {
-        //
+        $this->items=CaseModel::query()
+            ->limit(6)
+            ->orderBy('created_at', 'desc')
+            ->get();
     }
 
     /**
@@ -24,11 +28,6 @@ class LastCaseComponent extends Component
      */
     public function render()
     {
-        $items=CaseModel::query()
-            ->limit(6)
-            ->orderBy('created_at', 'desc')
-            ->get();
-
-        return view('components.last-case-component' , compact('items'));
+        return view('components.last-case-component' );
     }
 }

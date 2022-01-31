@@ -55,13 +55,18 @@ class CaseController extends Controller
             ->limit(3)
             ->get();
 
-        return view('cases/cases', compact('items' , 'request' ,'caseWidget'));
+        $agentWidget=User::query()
+            ->limit(3)
+            ->get();
+
+
+        return view('cases/cases', compact('items' , 'request' ,'caseWidget' , 'agentWidget'));
     }
 
 
     public function create(Request $request){
 
-        return view('case_detail');
+        return view('cases/create');
     }
 
     public function store(ContactRequest $request)
@@ -69,9 +74,9 @@ class CaseController extends Controller
         $inputs=$request->only('name','email','message','mobile');
         $result=Contact::create($inputs);
         if ($result){
-            return redirect('/case_detail/{id}')->with('success','با موفقیت ارسال شد');
+            return redirect('/cases/{id}')->with('success','با موفقیت ارسال شد');
         } else{
-            return redirect('/case_detail')->with('error');
+            return redirect('/cases')->with('error');
         }
 
     }

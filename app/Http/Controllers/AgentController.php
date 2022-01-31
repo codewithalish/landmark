@@ -12,18 +12,23 @@ use Illuminate\Http\Request;
 
 class AgentController extends Controller
 {
-    public function allAgents(Request $request)
+    public function index(Request $request)
     {
         $items = Agent::query()
             ->paginate(3);
 
-        return view('agents/agents', compact('items'));
+        $agentWidget=User::query()
+            ->limit(3)
+            ->get();
+
+
+        return view('agents/agents', compact('items', 'agentWidget'));
     }
 
 
-    public function create(Request $request)
+    public function create(Request $request )
     {
-        return view('agent_detail');
+        return view('agents/create');
     }
 
     public function store(ContactRequest $request)
@@ -31,9 +36,9 @@ class AgentController extends Controller
         $inputs = $request->only('name', 'email', 'message', 'mobile');
         $result = Contact::create($inputs);
         if ($result) {
-            return redirect('/agent_detail/{id}')->with('success', 'با موفقیت ارسال شد');
+            return redirect('/agents/{id}')->with('success', 'با موفقیت ارسال شد');
         } else {
-            return redirect('/agent_detail')->with('error');
+            return redirect('/agents')->with('error');
         }
 
     }
@@ -44,7 +49,10 @@ class AgentController extends Controller
         $cases = CaseModel::query()
             ->limit(2)
             ->get();
-        return view('agents/agent_detail', compact('item', 'cases'));
+
+
+
+        return view('agents/show', compact('item', 'cases'));
     }
 
 }

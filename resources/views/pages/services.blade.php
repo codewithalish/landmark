@@ -115,7 +115,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="text-center mt-1">
-                        <a class="button" href="#">ثبت ملک شما </a>
+                        <a class="button" href="/cases/create">ثبت ملک شما </a>
                     </div>
                 </div>
             </div>
