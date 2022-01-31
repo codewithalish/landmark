@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class ContactController extends Controller
 {
     //
-    public function store(ContactRequest $request , $id)
+    public function store(ContactRequest $request, $id = null)
     {
 
         $inputs = $request->only('name', 'mobile', 'message');
@@ -22,7 +22,7 @@ class ContactController extends Controller
             return back()->with('success', 'با موفقیت ارسال شد');
         }
 
-        return back()->with('error','خطا');
+        return back()->with('error', 'خطا');
 
 
     }
