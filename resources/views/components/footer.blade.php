@@ -7,11 +7,12 @@
                         <div class="widget widget_text">
                             <h4 class="widget-title">لندمارک</h4>
                             <div class="textwidget">
-{{--                                <p>{{$var->Val('description')}}</p>--}}
+                                <p>{{getVariable('description')}}</p>
                                 <ul class="contact-info">
-{{--                                    <li><i class="fa fa-map-marker"></i>{{$var->Val('address')}}</li>--}}
-{{--                                    <li><i class="fa fa-phone"></i><span class="ltr_text">{{$var->Val('phone')}}</span></li>--}}
-{{--                                    <li><i class="fa fa-envelope"></i>{{$var->Val('email')}}</li>--}}
+                                    <li><i class="fa fa-map-marker"></i>{{getVariable('address')}}</li>
+                                    <li><i class="fa fa-phone"></i><span
+                                            class="ltr_text">{{getVariable('phone')}}</span></li>
+                                    <li><i class="fa fa-envelope"></i>{{getVariable('email')}}</li>
                                 </ul>
                             </div>
                         </div>
@@ -21,10 +22,10 @@
                             <h4 class="widget-title">ساعات کاری</h4>
                             <div class="textwidget">
                                 <ul class="open-info">
-{{--                                    <li>{{$var->Val('saturday_wednesday')}}</li>--}}
-                                    <li>{{$var->Val('thursday')}}</li>
-{{--                                    <li>{{$var->Val('friday')}}</li>--}}
-{{--                                    <li>{{$var->Val('week_slogan')}}</li>--}}
+                                    <li>{{getVariable('saturday_wednesday')}}</li>
+                                    <li>{{getVariable('thursday')}}</li>
+                                    <li>{{getVariable('friday')}}</li>
+                                    <li>{{getVariable('week_slogan')}}</li>
                                 </ul>
                             </div>
                         </div>

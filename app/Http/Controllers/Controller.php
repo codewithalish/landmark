@@ -17,9 +17,5 @@ class Controller extends BaseController
 
     public function __construct()
     {
-        $item=Footer::query()->get();
-        \Illuminate\Support\Facades\View::share('item',$item);
-
-        \Illuminate\Support\Facades\View::share('var' , Variable::query());
     }
 }
