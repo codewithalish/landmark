@@ -16,6 +16,10 @@ use App\Http\Controllers\PageController;
 |
 |
 */
+
+Route::resource('tests', App\Http\Controllers\Dev\TestController::class)->only(['store','index']);
+
+
 Route::get('/test/users/{id}', function ($id) {
     return \App\Models\User::where('id',$id)->with('cases','comments','contacts')->first();
 });
