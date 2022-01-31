@@ -16,12 +16,11 @@ class Section1 extends Component
 
     public function __construct()
     {
-        $this->item=CaseModel::query()
+        $this->item = CaseModel::query()
+            ->orderBy('id', 'desc')
             ->limit(1)
-            ->orderBy('is_vip', 'desc')
-            ->get();
+            ->first();
     }
-
     /**
      * Get the view / contents that represent the component.
      *

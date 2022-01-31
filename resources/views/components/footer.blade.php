@@ -5,13 +5,13 @@
                 <div class="row">
                     <div class="footer-column-item col-md-3 col-sm-6">
                         <div class="widget widget_text">
-                            <h4 class="widget-title">title</h4>
+                            <h4 class="widget-title">لندمارک</h4>
                             <div class="textwidget">
-                                <p>description</p>
+{{--                                <p>{{$var->Val('description')}}</p>--}}
                                 <ul class="contact-info">
-                                    <li><i class="fa fa-map-marker"></i>address</li>
-                                    <li><i class="fa fa-phone"></i><span class="ltr_text">mobile</span></li>
-                                    <li><i class="fa fa-envelope"></i>email</li>
+{{--                                    <li><i class="fa fa-map-marker"></i>{{$var->Val('address')}}</li>--}}
+{{--                                    <li><i class="fa fa-phone"></i><span class="ltr_text">{{$var->Val('phone')}}</span></li>--}}
+{{--                                    <li><i class="fa fa-envelope"></i>{{$var->Val('email')}}</li>--}}
                                 </ul>
                             </div>
                         </div>
@@ -21,10 +21,10 @@
                             <h4 class="widget-title">ساعات کاری</h4>
                             <div class="textwidget">
                                 <ul class="open-info">
-                                    <li>شنبه تا چهارشنبه: 8AM - 10PM</li>
-                                    <li>پنجشنبه: 9AM - 8PM</li>
-                                    <li>{{$var->key('friday')}}</li>
-                                    <li>ما در تعطیلات رسمی هم کار میکنیم</li>
+{{--                                    <li>{{$var->Val('saturday_wednesday')}}</li>--}}
+                                    <li>{{$var->Val('thursday')}}</li>
+{{--                                    <li>{{$var->Val('friday')}}</li>--}}
+{{--                                    <li>{{$var->Val('week_slogan')}}</li>--}}
                                 </ul>
                             </div>
                         </div>

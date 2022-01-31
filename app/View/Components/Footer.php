@@ -16,25 +16,25 @@ class Footer extends Component
 
     public $cases;
     public $links;
-
-
+//    public $var;
 
     public function __construct()
     {
         //
 
-        $this->cases = CaseModel::orderBy('id','Desc')->limit(Variable::key('number_last_cases'))->get();
+//        $this->cases = CaseModel::orderBy('id','Desc')->limit(Variable::Val('number_last_cases'))->get();
+        $this->cases = CaseModel::orderBy('id', 'Desc')->limit(3)->get();
 
         $this->links = [
             [
                 'href' => '#',
                 'title' => 'قوانین و مقررات'
             ],
-             [
+            [
                 'href' => '#',
                 'title' => 'درباره ما'
             ],
-             [
+            [
                 'href' => '#',
                 'title' => 'راهنما'
             ],
@@ -44,9 +44,7 @@ class Footer extends Component
             ],
 
         ];
-
-
-
+        //$this->var=Variable::query();
 
     }
 

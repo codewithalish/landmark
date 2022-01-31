@@ -18,7 +18,7 @@ class Section2 extends Component
         $this->item=CaseModel::query()
             ->limit(1)
             ->orderBy('created_at', 'desc')
-            ->get();
+            ->first();
 
     }
 

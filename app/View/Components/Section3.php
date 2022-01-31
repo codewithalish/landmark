@@ -13,13 +13,13 @@ class Section3 extends Component
      *
      * @return void
      */
-    public $item;
+    public $items;
     public function __construct()
     {
-        $this->item=User::query()
-            ->limit(1)
-            ->orderBy('is_vip', 'desc')
-            ->get();
+        $this->items=User::query()
+            ->limit(5) ->get();
+//            ->orderBy('is_vip', 'desc')
+
     }
 
     /**
