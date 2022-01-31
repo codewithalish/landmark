@@ -36,4 +36,11 @@ class CaseModel extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+
+
+    public function scopeIsVIP($query)
+    {
+        return $query->where('is_vip', 1);
+    }
 }
