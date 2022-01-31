@@ -13,4 +13,9 @@ class Bookmark extends Model
         'bookmarkable_id',
         'bookmarkable_type'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

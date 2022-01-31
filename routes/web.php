@@ -21,7 +21,7 @@ use App\Http\Controllers\PageController;
 */
 
 Route::get('/test/users/{id}', function ($id) {
-    return \App\Models\User::where('id',$id)->with('cases','comments','contacts')->first;
+    return \App\Models\User::where('id',$id)->with('cases','comments','contacts')->first();
 });
 
 Route::get('/test/cases/{id}', function ($id) {
