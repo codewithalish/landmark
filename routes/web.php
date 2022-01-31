@@ -79,6 +79,7 @@ Route::post('agents/{id}/contacts', [ContactController::class , 'store']);
 */
 
 
+Route::get('cases/{id}/{act}', [CaseController::class , 'action']);
 Route::get('/', [PageController::class , 'welcome']);
 Route::get('cases', [CaseController::class , 'search']);
 Route::get('cases/create', [CaseController::class , 'create']);

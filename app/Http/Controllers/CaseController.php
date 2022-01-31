@@ -5,14 +5,24 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CaseRequest;
 use App\Http\Requests\ContactRequest;
 use App\Models\Agent;
+use App\Models\Bookmark;
 use App\Models\CaseModel;
 use App\Models\Contact;
 use App\Models\User;
+use App\Traits\Action;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Nette\Utils\Paginator;
 
 class CaseController extends Controller
 {
+    use Action;
+
+    public function __construct()
+    {
+        $this->modelName = CaseModel::class;
+    }
+
     public function search(Request $request)
     {
 //
@@ -120,4 +130,5 @@ class CaseController extends Controller
 
         return view('cases/show', compact('item', 'related_cases', 'agent'));
     }
+
 }
