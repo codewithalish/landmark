@@ -2,27 +2,28 @@
 @section('content')
     <div class="body flex-grow-1 px-3">
         <div class="container-lg">
-
+            <div class="callout callout-info bg-white">comments
+            </div>
             <div class="car"></div>
             <div class="card mb-4">
                 <div class="card-header">{{$titleCard ?? ''}}</div>
                 <div class="card-body">
-                    <img src="{{$item->image_path }}" alt="{{$item->title}}">
                     <hr>
                     <strong>id:</strong>
                     <span>{{$item->id}}</span>
                     <hr>
-                    <strong>name:</strong>
-                    <span>{{$item->name}}</span>
+                    <strong>user_id:</strong>
+                    <span>{{$item->user_id}}</span>
                     <hr>
-                    <strong>mobile:</strong>
-                    <span>{{$item->mobile}}</span>
+                    <strong>commentable_id:</strong>
+                    <span>{{$item->commentable_id}}</span>
                     <hr>
-                    <strong>email:</strong>
-                    <span>{{$item->email}}</span>
+                    <strong>commentable_type:</strong>
+                    <span>{{$item->commentable_type}}</span>
                     <hr>
-                    <strong>message:</strong>
-                    <span>{{$item->message}}</span>
+                    <strong>body:</strong>
+                    <span>{{$item->body}}</span>
+
                 </div>
             </div>
         </div>
