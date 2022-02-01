@@ -19,7 +19,7 @@ class ServiceController extends Controller
         //
 
         $titleCard = 'لیست';
-        $th = ['شناسه', 'title', 'price', 'operation'];
+        $th = ['شناسه', 'title', 'body', 'operation'];
         $query = Service::query()
             ->orderBy('id', 'DESC')
             ->get();
@@ -55,7 +55,7 @@ class ServiceController extends Controller
      */
     public function store(CaseRequest $request)
     {
-        $inputs = $request->only('title', 'price', 'body', 'image_path', 'details');
+        $inputs = $request->only('title', 'body', 'thumbnail_path');
         $result=Service::create($inputs);
         if ($result){
             return back()->with('success','با موفقیت ارسال شد');
@@ -101,7 +101,7 @@ class ServiceController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $query = $request->only(['title', 'price', 'body', 'image_path', 'details']);
+        $query = $request->only('title', 'body', 'thumbnail_path');
         Service::where('id', $id)->update($query);
         return back()->with('success', 'ویرایش با موفقیت انجام شد');
     }

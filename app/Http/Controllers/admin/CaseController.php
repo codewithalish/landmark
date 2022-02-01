@@ -22,7 +22,12 @@ class CaseController extends Controller
         //
 
         $titleCard = 'لیست';
-        $th = ['شناسه', 'title', 'price', 'operation'];
+        $th = ['شناسه',
+            'title',
+            'price',
+            'contract',
+            'type',
+            'operation'];
         $query = CaseModel::query()
             ->orderBy('id', 'DESC')
             ->get();
@@ -58,7 +63,26 @@ class CaseController extends Controller
      */
     public function store(CaseRequest $request)
     {
-        $inputs = $request->only('title', 'price', 'body', 'image_path', 'details');
+        $inputs = $request->only(
+            'title',
+            'price',
+            'user_id',
+            'address',
+            'room_number',
+            'parking_number',
+            'bath_number',
+            'area',
+            'deposit',
+            'rent',
+            'type',
+            'contract',
+            'is_vip',
+            'description',
+            'status',
+            'avatar_path',
+            'video_path',
+            'details'
+        );
         $result=CaseModel::create($inputs);
         if ($result){
             return back()->with('success','با موفقیت ارسال شد');
@@ -104,7 +128,26 @@ class CaseController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $query = $request->only(['title', 'price', 'body', 'image_path', 'details']);
+        $query = $request->only(
+            'title',
+            'price',
+            'user_id',
+            'address',
+            'room_number',
+            'parking_number',
+            'bath_number',
+            'area',
+            'deposit',
+            'rent',
+            'type',
+            'contract',
+            'is_vip',
+            'description',
+            'status',
+            'avatar_path',
+            'video_path',
+            'details'
+        );
         CaseModel::where('id', $id)->update($query);
         return back()->with('success', 'ویرایش با موفقیت انجام شد');
     }

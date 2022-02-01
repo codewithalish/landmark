@@ -19,7 +19,7 @@ class GalleryController extends Controller
         //
 
         $titleCard = 'لیست';
-        $th = ['شناسه', 'title', 'price', 'operation'];
+        $th = ['شناسه', 'title',  'operation'];
         $query = Gallery::query()
             ->orderBy('id', 'DESC')
             ->get();
@@ -55,7 +55,7 @@ class GalleryController extends Controller
      */
     public function store(CaseRequest $request)
     {
-        $inputs = $request->only('title', 'price', 'body', 'image_path', 'details');
+        $inputs = $request->only('title', 'avatar_path');
         $result=Gallery::create($inputs);
         if ($result){
             return back()->with('success','با موفقیت ارسال شد');
