@@ -22,7 +22,10 @@
                             <tr>
                                 <td>{{$item->id}}</td>
                                 <td>{{$item->title}}</td>
-                                <td>{{$item->body}}</td>
+                                <td>{{$item->address}}</td>
+                                <td>{{$item->area}}</td>
+                                <td>{{$item->price}}</td>
+
                                 <td>
                                     <a href="/admin/cases/{{$item->id}}">نمایش</a>|
                                     <a href="/admin/cases/{{$item->id}}/edit">ویرایش</a>|

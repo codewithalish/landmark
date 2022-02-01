@@ -2,7 +2,7 @@
 @section('content')
     <div class="body flex-grow-1 px-3">
         <div class="container-lg">
-            <div class="callout callout-info bg-white">پیام های ارسالی
+            <div class="callout callout-info bg-white">اطلاعات شرکا
             </div>
             <div class="car"></div>
             <div class="card mb-4">
@@ -21,15 +21,16 @@
                         @foreach($items as $item)
                             <tr>
                                 <td>{{$item->id}}</td>
-                                <td>{{$item->name}}</td>
-                                <td>{{$item->email}}</td>
-                                <td>{{$item->mobile}}</td>
-                                <td>{{$item->message}}</td>
-                                <td>
-                                    <a href="/admin/contacts/{{$item->id}}">نمایش</a>|
-                                    <a href="/admin/contacts/{{$item->id}}/edit">ویرایش</a>|
+                                <td>{{$item->title}}</td>
+                                <td>{{$item->avatar_path}}</td>
+                                <td>{{$item->url}}</td>
+                                <td>{{$item->body}}</td>
 
-                                    <form action="/admin/contacts/{{$item->id}}" method="post">
+                                <td>
+                                    <a href="/admin/partners/{{$item->id}}">نمایش</a>|
+                                    <a href="/admin/partners/{{$item->id}}/edit">ویرایش</a>|
+
+                                    <form action="/admin/partners/{{$item->id}}" method="post">
                                         @csrf
                                         @method('delete')
                                         <button>حذف</button>
