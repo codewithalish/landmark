@@ -2,7 +2,7 @@
 @section('content')
     <div class="body flex-grow-1 px-3">
         <div class="container-lg">
-            <div class="callout callout-info bg-white">ایجاد پست
+            <div class="callout callout-info bg-white">ایجاد کاربر جدید
             </div>
 
             {{--            <div class="callout callout-info bg-white">اطلاعات پیج</div>--}}
@@ -12,26 +12,26 @@
 
                 @include('layouts.partials.auth.alert')
 
-                <form action="/admin/services" method="post">
+                <form action="/admin/users" method="post">
                     @csrf
                     <div class="card-body">
                         <div class="mb-3">
-                            <label class="form-label" for="title">عنوان</label>
-                            <input class="form-control" id="title" type="text" placeholder="title" name="title">
+                            <label class="form-label" for="name">نام کاربری</label>
+                            <input class="form-control" id="name" type="text" placeholder="name" name="name">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="url">ادرس</label>
-                            <input class="form-control" id="url" type="text" placeholder="url" name="url">
+                            <label class="form-label" for="email">ایمیل</label>
+                            <input class="form-control" id="email" type="email" placeholder="email" name="email">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="body">توضیحات</label>
-                            <input class="form-control" id="body" type="text" placeholder="body" name="body">
+                            <label class="form-label" for="monile">شماره همراه</label>
+                            <input class="form-control" id="monile" type="number" placeholder="monile" name="monile">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="password">رمز عبور</label>
+                            <input class="form-control" id="password" type="text" placeholder="password" name="password">
                         </div>
 
-                        <div class="mb-3">
-                            <label class="form-label" for="avarat_path">اپلود تصویر</label>
-                            <input class="form-control" id="avarat_path" type="file" placeholder="avarat_path" name="avarat_path">
-                        </div>
                         <button type="submit">Send</button>
 
                     </div>

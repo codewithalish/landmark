@@ -2,7 +2,7 @@
 @section('content')
     <div class="body flex-grow-1 px-3">
         <div class="container-lg">
-            <div class="callout callout-info bg-white">آپلود تصویر
+            <div class="callout callout-info bg-white">create feedbacks
             </div>
 
             {{--            <div class="callout callout-info bg-white">اطلاعات پیج</div>--}}
@@ -12,17 +12,14 @@
 
                 @include('layouts.partials.auth.alert')
 
-                <form action="/admin/images" method="post">
+                <form action="/admin/permissions" method="post">
                     @csrf
                     <div class="card-body">
                         <div class="mb-3">
-                            <label class="form-label" for="title">عنوان</label>
-                            <input class="form-control" id="title" type="text" placeholder="title" name="title">
+                            <label class="form-label" for="name">name</label>
+                            <input class="form-control" id="name" type="text" placeholder="name" name="name">
                         </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="avatar_path">آپلود تصویر</label>
-                            <input class="form-control" id="avatar_path" type="file" placeholder="avatar_path" name="avatar_path">
-                        </div>
+
 
                         <button type="submit">Send</button>
 

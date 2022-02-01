@@ -20,52 +20,52 @@
                             <input class="form-control" id="title" type="text" placeholder="title" name="title">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="title">تعداد اتاق</label>
-                            <input class="form-control" id="title" type="number" placeholder="title" name="room_number">
+                            <label class="form-label" for="room_nimber">تعداد اتاق</label>
+                            <input class="form-control" id="room_nimber" type="number" placeholder="room_nimber" name="room_number">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="title">تعداد پارکینگ</label>
-                            <input class="form-control" id="title" type="number" placeholder="title" name="parking_number">
+                            <label class="form-label" for="parking_number">تعداد پارکینگ</label>
+                            <input class="form-control" id="parking_number" type="number" placeholder="parking_number" name="parking_number">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="title">تعداد سرویس بهداشتی</label>
-                            <input class="form-control" id="title" type="number" placeholder="title" name="bath_number">
+                            <label class="form-label" for="bath_number">تعداد سرویس بهداشتی</label>
+                            <input class="form-control" id="bath_number" type="number" placeholder="bath_number" name="bath_number">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="title">قیمت</label>
-                            <input class="form-control" id="title" type="number" placeholder="title" name="price">
+                            <label class="form-label" for="price">قیمت</label>
+                            <input class="form-control" id="price" type="number" placeholder="price" name="price">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="title">رهن</label>
-                            <input class="form-control" id="title" type="number" placeholder="title" name="rent">
+                            <label class="form-label" for="rent">رهن</label>
+                            <input class="form-control" id="rent" type="number" placeholder="rent" name="rent">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="title">اجاره</label>
-                            <input class="form-control" id="title" type="number" placeholder="title" name="deposit">
+                            <label class="form-label" for="deposit">اجاره</label>
+                            <input class="form-control" id="deposit" type="number" placeholder="deposit" name="deposit">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="title">وضعیت</label>
-                            <input class="form-control" id="title" type="" placeholder="title" name="contract">
+                            <label class="form-label" for="deposit">وضعیت</label>
+                            <input class="form-control" id="deposit" type="select" placeholder="deposit" name="contract">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="title">آدرس</label>
-                            <input class="form-control" id="title" type="text" placeholder="title" name="address">
+                            <label class="form-label" for="address">آدرس</label>
+                            <input class="form-control" id="address" type="text" placeholder="address" name="address">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="title">نوع ملک</label>
-                            <input class="form-control" id="title" type="" placeholder="title" name="type">
+                            <label class="form-label" for="type">نوع ملک</label>
+                            <input class="form-control" id="type" type="" placeholder="type" name="type">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="title">کیس vip</label>
-                            <input class="form-control" id="title" type="" placeholder="title" name="is_vip">
+                            <label class="form-label" for="is_vip">کیس vip</label>
+                            <input class="form-control" id="is_vip" type="" placeholder="is_vip" name="is_vip">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="title">توضیحات</label>
-                            <input class="form-control" id="title" type="text" placeholder="title" name="description">
+                            <label class="form-label" for="description">توضیحات</label>
+                            <input class="form-control" id="description" type="text" placeholder="description" name="description">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="title">اپلود تصویر</label>
-                            <input class="form-control" id="title" type="file" placeholder="title" name="avarat_path">
+                            <label class="form-label" for="avarat_path">اپلود تصویر</label>
+                            <input class="form-control" id="avarat_path" type="file" placeholder="avarat_path" name="avarat_path">
                         </div>
                         <button type="submit">Send</button>
 

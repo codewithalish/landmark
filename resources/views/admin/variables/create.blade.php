@@ -2,7 +2,7 @@
 @section('content')
     <div class="body flex-grow-1 px-3">
         <div class="container-lg">
-            <div class="callout callout-info bg-white">آپلود تصویر
+            <div class="callout callout-info bg-white">create variable
             </div>
 
             {{--            <div class="callout callout-info bg-white">اطلاعات پیج</div>--}}
@@ -12,18 +12,17 @@
 
                 @include('layouts.partials.auth.alert')
 
-                <form action="/admin/images" method="post">
+                <form action="/admin/variables" method="post">
                     @csrf
                     <div class="card-body">
                         <div class="mb-3">
-                            <label class="form-label" for="title">عنوان</label>
-                            <input class="form-control" id="title" type="text" placeholder="title" name="title">
+                            <label class="form-label" for="key">key</label>
+                            <input class="form-control" id="key" type="text" placeholder="key" name="key">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="avatar_path">آپلود تصویر</label>
-                            <input class="form-control" id="avatar_path" type="file" placeholder="avatar_path" name="avatar_path">
+                            <label class="form-label" for="value"> value</label>
+                            <input class="form-control" id="value" type="text" placeholder="value" name="value">
                         </div>
-
                         <button type="submit">Send</button>
 
                     </div>

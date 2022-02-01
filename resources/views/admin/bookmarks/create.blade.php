@@ -2,7 +2,7 @@
 @section('content')
     <div class="body flex-grow-1 px-3">
         <div class="container-lg">
-            <div class="callout callout-info bg-white">ایجاد پست
+            <div class="callout callout-info bg-white">create bookmark
             </div>
 
             {{--            <div class="callout callout-info bg-white">اطلاعات پیج</div>--}}
@@ -12,23 +12,22 @@
 
                 @include('layouts.partials.auth.alert')
 
-                <form action="/admin/services" method="post">
+                <form action="/admin/bookmarks" method="post">
                     @csrf
                     <div class="card-body">
                         <div class="mb-3">
-                            <label class="form-label" for="title">عنوان</label>
-                            <input class="form-control" id="title" type="text" placeholder="title" name="title">
+                            <label class="form-label" for="user_id">user_id</label>
+                            <input class="form-control" id="user_id" type="number" placeholder="user_id" name="user_id">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="bookmarkable_id">bookmarkable_id</label>
+                            <input class="form-control" id="bookmarkable_id" type="number" placeholder="bookmarkable_id" name="bookmarkable_id">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="bookmarkable_type"> bookmarkable_type</label>
+                            <input class="form-control" id="bookmarkable_type" type="text" placeholder="bookmarkable_type" name="bookmarkable_type">
                         </div>
 
-                        <div class="mb-3">
-                            <label class="form-label" for="body">توضیحات</label>
-                            <input class="form-control" id="body" type="text" placeholder="body" name="body">
-                        </div>
-
-                        <div class="mb-3">
-                            <label class="form-label" for="thumbnail_path">اپلود تصویر</label>
-                            <input class="form-control" id="thumbnail_path" type="file" placeholder="thumbnail_path" name="thumbnail_path">
-                        </div>
                         <button type="submit">Send</button>
 
                     </div>
