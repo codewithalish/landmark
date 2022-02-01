@@ -18,52 +18,52 @@
                             <input class="form-control" id="title" type="text" placeholder="title" name="title" value="{{$item->title}}">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="title">تعداد اتاق</label>
-                            <input class="form-control" id="title" type="number" placeholder="title" name="room_number" value="{{$item->room_number}}">
+                            <label class="form-label" for="room_number">تعداد اتاق</label>
+                            <input class="form-control" id="room_number" type="number" placeholder="room_number" name="room_number" value="{{$item->room_number}}">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="title">تعداد پارکینگ</label>
-                            <input class="form-control" id="title" type="number" placeholder="title" name="parking_number" value="{{$item->parking_number}}">
+                            <label class="form-label" for="parking_number">تعداد پارکینگ</label>
+                            <input class="form-control" id="parking_number" type="number" placeholder="parking_number" name="parking_number" value="{{$item->parking_number}}">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="title">تعداد سرویس بهداشتی</label>
-                            <input class="form-control" id="title" type="number" placeholder="title" name="bath_number" value="{{$item->bath_number}}">
+                            <label class="form-label" for="bath_number">تعداد سرویس بهداشتی</label>
+                            <input class="form-control" id="bath_number" type="number" placeholder="bath_number" name="bath_number" value="{{$item->bath_number}}">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="title">قیمت</label>
-                            <input class="form-control" id="title" type="number" placeholder="title" name="price" value="{{$item->}}">
+                            <label class="form-label" for="price">قیمت</label>
+                            <input class="form-control" id="price" type="number" placeholder="price" name="price" value="{{$item->price}}">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="title">رهن</label>
-                            <input class="form-control" id="title" type="number" placeholder="title" name="rent" value="{{$item->rent}}">
+                            <label class="form-label" for="rent">رهن</label>
+                            <input class="form-control" id="rent" type="number" placeholder="rent" name="rent" value="{{$item->rent}}">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="title">اجاره</label>
-                            <input class="form-control" id="title" type="number" placeholder="title" name="deposit" value="{{$item->deposit}}">
+                            <label class="form-label" for="deposit">اجاره</label>
+                            <input class="form-control" id="deposit" type="number" placeholder="deposit" name="deposit" value="{{$item->deposit}}">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="title">وضعیت</label>
-                            <input class="form-control" id="title" type="" placeholder="title" name="contract" value="{{$item->contract}}">
+                            <label class="form-label" for="contract">وضعیت</label>
+                            <input class="form-control" id="contract" type="" placeholder="contract" name="contract" value="{{$item->contract}}">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="title">آدرس</label>
-                            <input class="form-control" id="title" type="text" placeholder="title" name="address" value="{{$item->address}}">
+                            <label class="form-label" for="address">آدرس</label>
+                            <input class="form-control" id="address" type="text" placeholder="address" name="address" value="{{$item->address}}">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="title">نوع ملک</label>
-                            <input class="form-control" id="title" type="" placeholder="title" name="type" value="{{$item->type}}">
+                            <label class="form-label" for="type">نوع ملک</label>
+                            <input class="form-control" id="type" type="" placeholder="type" name="type" value="{{$item->type}}">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="title">کیس vip</label>
-                            <input class="form-control" id="title" type="" placeholder="title" name="is_vip" value="{{$item->is_vip}}">
+                            <label class="form-label" for="is_vip">کیس vip</label>
+                            <input class="form-control" id="is_vip" type="" placeholder="is_vip" name="is_vip" value="{{$item->is_vip}}">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="title">توضیحات</label>
-                            <input class="form-control" id="title" type="text" placeholder="title" name="description" value="{{$item->description}}">
+                            <label class="form-label" for="description">توضیحات</label>
+                            <input class="form-control" id="description" type="text" placeholder="description" name="description" value="{{$item->description}}">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="title">اپلود تصویر</label>
-                            <input class="form-control" id="title" type="file" placeholder="title" name="avarat_path" value="{{$item->avarat_path}}">
+                            <label class="form-label" for="avarat_path">اپلود تصویر</label>
+                            <input class="form-control" id="avarat_path" type="file" placeholder="avarat_path" name="avarat_path" value="{{$item->avarat_path}}">
                         </div>
 
                         <button type="submit">ویرایش</button>
