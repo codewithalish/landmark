@@ -139,8 +139,10 @@
     </footer>
 </div>
 <!-- CoreUI and necessary plugins-->
-<script src="/node_modules/@coreui/coreui/dist/js/coreui.bundle.min.js"></script>
-<script src="/node_modules/simplebar/dist/simplebar.min.js"></script>
+{{--<script src="/node_modules/@coreui/coreui/dist/js/coreui.bundle.min.js"></script>--}}
+{{--<script src="/node_modules/simplebar/dist/simplebar.min.js"></script>--}}
+<script src="{{asset('/vendor/coreui.bundle.min.js')}}"></script>
+<script src="{{asset('/vendor/simplebar.min.js')}}"></script>
 <!-- We use those scripts to show code examples, you should remove them in your application.-->
 <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/prism.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
@@ -148,10 +150,13 @@
     src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/plugins/unescaped-markup/prism-unescaped-markup.min.js"></script>
 <script
     src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/plugins/normalize-whitespace/prism-normalize-whitespace.js"></script>
-<script src="/node_modules/chart.js/dist/chart.min.js"></script>
-<script src="/node_modules/@coreui/chartjs/dist/js/coreui-chartjs.js"></script>
-<script src="/node_modules/@coreui/utils/dist/coreui-utils.js"></script>
-<script src="/admin/js/main.js"></script>
+
+<script src="{{asset('/js/app.js')}}"></script>
+
+{{--<script src="/node_modules/chart.js/dist/chart.min.js"></script>--}}
+{{--<script src="/node_modules/@coreui/chartjs/dist/js/coreui-chartjs.js"></script>--}}
+{{--<script src="/node_modules/@coreui/utils/dist/coreui-utils.js"></script>--}}
+
 
 </body>
 </html>
