@@ -43,7 +43,21 @@
                             </div>
                             <div class="item-wrap">
                                 <label>نوع ملک <span class="required">*</span></label>
-                                <input type="text" id="type" name="type">
+                                <select class="form-control" name="type" >
+                                    <option value="">همه انواع ملک</option>
+                                    <option value="APARTMENT" >آپارتمان</option>
+                                    <option value="VILLA" >ویلایی</option>
+                                    <option value="FIELD" >زمین</option>
+                                    <option value="ُSHARED_HOUSE" >منزل مشترک</option>
+                                </select>
+                            </div>
+                            <div class="item-wrap">
+                                <label>نوع قرارداد <span class="required">*</span></label>
+                                <select class="form-control" name="contract" >
+                                    <option value="">نوع قرارداد</option>
+                                    <option value="FOR_SALE" >برای فروش</option>
+                                    <option value="FOR_RENT" >برای اجاره</option>
+                                </select>
                             </div>
                             <div class="item-wrap">
                                 <label>اپلود تصاویر <span class="required">*</span></label>
@@ -64,13 +78,9 @@
                             </div>
                             <div class="item-wrap form-submit">
                                 <input type="submit" class="button-2" name="login" value="ثبت">
-                                <input class="checkbox" name="rememberme" type="checkbox" id="rememberme" value="forever">
-                                <span class="fw-bolder">به خاطر سپاری</span>
                             </div>
                         </form>
-                        <div class="lost-password">
-                            <a href="#">رمز عبور خود را فراموش کرده اید؟</a>
-                        </div>
+
                     </div>
                 </div>
             </div>

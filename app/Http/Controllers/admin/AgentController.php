@@ -19,7 +19,7 @@ class AgentController extends Controller
         //
 
         $titleCard = 'لیست';
-        $th = ['شناسه', 'title', 'price', 'operation'];
+        $th = ['شناسه', 'name', 'mobile','email', 'operation'];
         $query = Agent::query()
             ->orderBy('id', 'DESC')
             ->get();
@@ -55,7 +55,17 @@ class AgentController extends Controller
      */
     public function store(CaseRequest $request)
     {
-        $inputs = $request->only('title', 'price', 'body', 'image_path', 'details');
+        $inputs = $request->only(
+            'name',
+            'mobile',
+            'password',
+            'email',
+            'address',
+            'bio',
+            'avatar_path',
+            'telegram',
+            'whatsapp'
+        );
         $result=Agent::create($inputs);
         if ($result){
             return back()->with('success','با موفقیت ارسال شد');
@@ -101,7 +111,17 @@ class AgentController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $query = $request->only(['title', 'price', 'body', 'image_path', 'details']);
+        $query = $request->only(
+            'name',
+            'mobile',
+            'password',
+            'email',
+            'address',
+            'bio',
+            'avatar_path',
+            'telegram',
+            'whatsapp'
+        );
         Agent::where('id', $id)->update($query);
         return back()->with('success', 'ویرایش با موفقیت انجام شد');
     }

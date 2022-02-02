@@ -2,7 +2,7 @@
 @section('content')
     <div class="body flex-grow-1 px-3">
         <div class="container-lg">
-            <div class="callout callout-info bg-white">اطلاعات پیج
+            <div class="callout callout-info bg-white">پیام های ارسالی
             </div>
             <div class="car"></div>
             <div class="card mb-4">
@@ -23,11 +23,13 @@
                                 <td>{{$item->id}}</td>
                                 <td>{{$item->name}}</td>
                                 <td>{{$item->email}}</td>
+                                <td>{{$item->mobile}}</td>
+                                <td>{{$item->message}}</td>
                                 <td>
-                                    <a href="/admin/portfolio/{{$item->id}}">نمایش</a>|
-                                    <a href="/admin/portfolio/{{$item->id}}/edit">ویرایش</a>|
+                                    <a href="/admin/contacts/{{$item->id}}">نمایش</a>|
+                                    <a href="/admin/contacts/{{$item->id}}/edit">ویرایش</a>|
 
-                                    <form action="/admin/portfolio/{{$item->id}}" method="post">
+                                    <form action="/admin/contacts/{{$item->id}}" method="post">
                                         @csrf
                                         @method('delete')
                                         <button>حذف</button>

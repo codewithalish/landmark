@@ -15,7 +15,7 @@ class LoginController extends Controller
     //
     public function login()
     {
-        return view('auth.login');
+        return view('auth.login'); #email, password
     }
 
     public function checklogin(LoginRequest $request)
@@ -24,9 +24,9 @@ class LoginController extends Controller
         $result = auth::attempt($login_field);
         if ($result) {
             return redirect('/admin');
-        } else {
-            return redirect('/login')->with('error', 'نام کاربری یا کلمه عبور اشتباه است');
         }
+            return redirect('/login')->with('error', 'نام کاربری یا کلمه عبور اشتباه است');
+
     }
 
     public function create()

@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ContactRequest;
 use App\Models\CaseModel;
+use App\Models\Contact;
+use App\Models\Newsletter;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -22,5 +25,18 @@ class PageController extends Controller
         return view('pages/welcome');
     }
 
+    public function store(Request $request, $id = null)
+    {
+
+        $inputs = $request->only('email');
+        $inputs['user_id'] = $id;
+
+        $result = Newsletter::create($inputs);
+
+        if ($result) {
+            return back()->with('success', 'با موفقیت ارسال شد');
+        }
+
+    }
 
 }

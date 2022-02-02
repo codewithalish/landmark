@@ -12,15 +12,17 @@
                     <strong>id:</strong>
                     <span>{{$item->id}}</span>
                     <hr>
-                    <strong>title:</strong>
-                    <span>{{$item->title}}</span>
+                    <strong>name:</strong>
+                    <span>{{$item->name}}</span>
                     <hr>
-                    <strong>price:</strong>
-                    <span>{{$item->price}}</span>
+                    <strong>mobile:</strong>
+                    <span>{{$item->mobile}}</span>
                     <hr>
-                    <strong>body:</strong>
-                    <span>{{$item->body}}</span>
-
+                    <strong>email:</strong>
+                    <span>{{$item->email}}</span>
+                    <hr>
+                    <strong>message:</strong>
+                    <span>{{$item->message}}</span>
                 </div>
             </div>
         </div>

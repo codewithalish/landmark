@@ -2,6 +2,9 @@
 
 namespace App\View\Components;
 
+use App\Http\Requests\ContactRequest;
+use App\Models\Contact;
+use App\Models\Newsletter;
 use Illuminate\View\Component;
 
 class NewsLetterComponent extends Component
@@ -11,9 +14,10 @@ class NewsLetterComponent extends Component
      *
      * @return void
      */
+
     public function __construct()
     {
-        //
+
     }
 
     /**

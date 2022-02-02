@@ -19,7 +19,7 @@ class ContactController extends Controller
         //
 
         $titleCard = 'لیست';
-        $th = ['شناسه', 'title', 'price', 'operation'];
+        $th = ['شناسه', 'name', 'mobile','massage', 'operation'];
         $query = Contact::query()
             ->orderBy('id', 'DESC')
             ->get();
@@ -55,7 +55,7 @@ class ContactController extends Controller
      */
     public function store(CaseRequest $request)
     {
-        $inputs = $request->only('title', 'price', 'body', 'image_path', 'details');
+        $inputs = $request->only('name', 'mobile','massage','user_id');
         $result=Contact::create($inputs);
         if ($result){
             return back()->with('success','با موفقیت ارسال شد');
@@ -101,7 +101,7 @@ class ContactController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $query = $request->only(['title', 'price', 'body', 'image_path', 'details']);
+        $query = $request->only('name', 'mobile','massage','user_id');
         Contact::where('id', $id)->update($query);
         return back()->with('success', 'ویرایش با موفقیت انجام شد');
     }
