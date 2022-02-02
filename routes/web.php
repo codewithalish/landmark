@@ -137,7 +137,7 @@ Route::get('logout',function (){
 |--------------------------------------------------------------------------
 |
 */
-Route::get('/admin',[AdminController::class,'dashboard'])->middleware('auth');
+Route::get('/admin/dashboard',[AdminController::class,'dashboard']);
 Route::resource('/admin/contacts',\App\Http\Controllers\ContactController::class)->middleware('auth');
 Route::resource('/admin/agents',\App\Http\Controllers\admin\AgentController::class)->middleware('auth');
 Route::resource('/admin/cases',\App\Http\Controllers\admin\CaseController::class)->middleware('auth');
