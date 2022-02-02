@@ -1,4 +1,5 @@
 <div class="section section-bg-6 section-overlay section-fixed mt-5 newsletter">
+    @include('layouts.partials.auth.alert')
     <div class="container">
         <div class="row">
             <div class="col-md-12">

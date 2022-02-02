@@ -49,10 +49,6 @@
                                     <input type="file" id="avatar_path" name="avatar_path">
                                 </div>
 
-                                <div class="item-wrap form-submit">
-                                    <input class="checkbox" name="rememberme" type="checkbox" id="rememberme"
-                                           value="forever">
-                                    <span class="fw-bolder">به خاطر سپاری</span>
                                     <br>
                                     <br>
                                     <input type="submit" class="button-2" name="login" value="ثبت">

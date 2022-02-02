@@ -29,6 +29,15 @@ Route::get('/test/cases/{id}', function ($id) {
 });
 
 
+/*
+|--------------------------------------------------------------------------
+| welcome
+|--------------------------------------------------------------------------
+|
+*/
+Route::get('/', [PageController::class , 'welcome']);
+Route::post('pages/store', [\App\Http\Controllers\PageController::class , 'store']);
+
 
 /*
 |--------------------------------------------------------------------------
@@ -39,21 +48,30 @@ Route::get('/test/cases/{id}', function ($id) {
 Route::get('partner', [\App\Http\Controllers\PartnerController::class , 'partner']);
 Route::get('gallery', [\App\Http\Controllers\GalleryController::class , 'gallery']);
 Route::view('services','pages/services');
+Route::view('abouts','pages/abouts');
 
 
 
 /*
 |--------------------------------------------------------------------------
-| need to sort
+| contact
+|--------------------------------------------------------------------------
+|
+*/
+Route::view('contacts','pages/contacts');
+Route::post('/contacts', [ContactController::class , 'store']);
+Route::get('agents/{id}/contacts', [ContactController::class , 'create']);
+Route::post('agents/{id}/contacts', [ContactController::class , 'store']);
+
+/*
+|--------------------------------------------------------------------------
+| user
 |--------------------------------------------------------------------------
 |
 */
 
 Route::get('agents/create', [\App\Http\Controllers\UserController::class , 'create']);
 Route::post('agents/create', [\App\Http\Controllers\UserController::class , 'store']);
-
-
-
 
 /*
 |--------------------------------------------------------------------------
@@ -67,10 +85,6 @@ Route::get('agents/create', [AgentController::class , 'create']);
 Route::post('agents', [AgentController::class , 'store']);
 Route::get('agents/{id}', [AgentController::class , 'show']);
 
-Route::get('agents/{id}/contacts', [ContactController::class , 'create']);
-Route::post('agents/{id}/contacts', [ContactController::class , 'store']);
-
-
 /*
 |--------------------------------------------------------------------------
 | cases
@@ -78,26 +92,11 @@ Route::post('agents/{id}/contacts', [ContactController::class , 'store']);
 |
 */
 
-
 Route::get('cases/{id}/{act}', [CaseController::class , 'action']);
-Route::get('/', [PageController::class , 'welcome']);
 Route::get('cases', [CaseController::class , 'search']);
 Route::get('cases/create', [CaseController::class , 'create']);
 Route::post('cases', [CaseController::class , 'store']);
 Route::get('cases/{id}', [CaseController::class , 'show']);
-
-
-
-/*
-|--------------------------------------------------------------------------
-| pages & other
-|--------------------------------------------------------------------------
-|
-*/
-Route::view('abouts','pages/abouts');
-Route::view('contacts','pages/contacts');
-Route::post('/contacts', [ContactController::class , 'store']);
-
 
 /*
 |--------------------------------------------------------------------------

@@ -5,7 +5,7 @@ namespace App\View\Components;
 use App\Models\CaseModel;
 use Illuminate\View\Component;
 
-class Section1 extends Component
+class LatestComponent extends Component
 {
     /**
      * Create a new component instance.
@@ -13,14 +13,14 @@ class Section1 extends Component
      * @return void
      */
     public $item;
-
     public function __construct()
     {
-        $this->item = CaseModel::query()
-            ->orderBy('id', 'desc')
+        $this->item=CaseModel::query()
             ->limit(1)
+            ->orderBy('created_at', 'desc')
             ->first();
     }
+
     /**
      * Get the view / contents that represent the component.
      *
@@ -28,6 +28,6 @@ class Section1 extends Component
      */
     public function render()
     {
-        return view('components.section1');
+        return view('components.latest-component');
     }
 }
