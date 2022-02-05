@@ -70,8 +70,8 @@ Route::post('agents/{id}/contacts', [ContactController::class , 'store']);
 |
 */
 
-Route::get('agents/create', [\App\Http\Controllers\UserController::class , 'create']);
-Route::post('agents/create', [\App\Http\Controllers\UserController::class , 'store']);
+Route::get('users/create', [\App\Http\Controllers\UserController::class , 'create']);
+Route::post('users/create', [\App\Http\Controllers\UserController::class , 'store']);
 
 /*
 |--------------------------------------------------------------------------

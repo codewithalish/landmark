@@ -10,18 +10,22 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    //
-    public function store(UserRequest $request)
-    {
-        $inputs=$request->only('name','email','password','mobile','bio','address','whatsapp','telegram','avatar_path');
-        $result=User::create($inputs);
-        if ($result){
-            return redirect('/register_user')->with('success','با موفقیت ارسال شد');
-        } else{
-            return redirect('/register_user')->with('error');
+
+     public function create(Request $request)
+        {
+            return view('users/create');
         }
 
+        public function store(UserRequest $request)
+    {
+        $inputs = $request->only('name', 'email', 'message', 'mobile');
 
+        $result=User::create($inputs);
+        if ($result){
+            return redirect('/users/create')->with('success','با موفقیت ارسال شد');
+        } else{
+            return redirect('/users/create')->with('error');
+        }
 
     }
 }
