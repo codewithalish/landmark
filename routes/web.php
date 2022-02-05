@@ -17,6 +17,21 @@ use App\Http\Controllers\PageController;
 |
 |
 */
+Route::get('/test/mail', function () {
+
+    $emails=\App\Models\User::query()->pluck('email');
+
+    foreach ($emails as $email){
+        \Illuminate\Support\Facades\Mail::send('emails.first', [], function ($message) use ($email) {
+            $message->to($email, 'landmark')->subject('test mail');
+            $message->from('fa.mozaffarii111@gmail.com', 'landmark');
+        });
+    }
+
+
+
+});
+
 
 Route::resource('tests', App\Http\Controllers\Dev\TestController::class)->only(['store', 'index']);
 
