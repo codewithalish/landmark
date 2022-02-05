@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CaseController;
 use App\Http\Controllers\AgentController;
@@ -9,7 +9,6 @@ use App\Http\Controllers\ShopController;
 use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\PageController;
-
 /*
 |--------------------------------------------------------------------------
 | test & dev
@@ -87,6 +86,8 @@ Route::post('agents/{id}/contacts', [ContactController::class, 'store']);
 
 Route::get('agents/create', [\App\Http\Controllers\UserController::class, 'create']);
 Route::post('agents/create', [\App\Http\Controllers\UserController::class, 'store']);
+Route::get('users/create', [\App\Http\Controllers\UserController::class , 'create']);
+Route::post('users/create', [\App\Http\Controllers\UserController::class , 'store']);
 
 /*
 |--------------------------------------------------------------------------
@@ -107,25 +108,11 @@ Route::get('agents/{id}', [AgentController::class, 'show']);
 |
 */
 
-Route::get('cases/{id}/{act}', [CaseController::class, 'action']);
-Route::get('cases/{id}/{act}', [CaseController::class, 'action']);
-Route::get('/', [PageController::class, 'welcome']);
-Route::get('cases', [CaseController::class, 'search']);
-Route::get('cases/create', [CaseController::class, 'create']);
-Route::post('cases', [CaseController::class, 'store']);
-Route::get('cases/{id}', [CaseController::class, 'show']);
-
-
-/*
-|--------------------------------------------------------------------------
-| pages & other
-|--------------------------------------------------------------------------
-|
-*/
-Route::view('abouts', 'pages/abouts');
-Route::view('contacts', 'pages/contacts');
-Route::post('/contacts', [ContactController::class, 'store']);
-
+Route::get('cases/{id}/{act}', [CaseController::class , 'action']);
+Route::get('cases', [CaseController::class , 'search']);
+Route::get('cases/create', [CaseController::class , 'create']);
+Route::post('cases', [CaseController::class , 'store']);
+Route::get('cases/{id}', [CaseController::class , 'show']);
 
 /*
 |--------------------------------------------------------------------------

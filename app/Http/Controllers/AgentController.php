@@ -33,8 +33,8 @@ class AgentController extends Controller
 
     public function store(ContactRequest $request)
     {
-        $inputs = $request->only('name', 'email', 'message', 'mobile');
-        $result = Contact::create($inputs);
+        $inputs=$request->only('name','email','password','mobile','bio','address','whatsapp','telegram','avatar_path');
+        $result = User::create($inputs);
         if ($result) {
             return redirect('/agents/{id}')->with('success', 'با موفقیت ارسال شد');
         } else {

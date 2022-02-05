@@ -32,15 +32,21 @@ class CaseModel extends Model
 
     ];
 
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
-
-
-
     public function scopeIsVIP($query)
     {
         return $query->where('is_vip', 1);
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class );
+    }
+
+
+    public function agent()
+    {
+        return $this->belongsTo(User::class , 'user_id');
+    }
+
+
 }

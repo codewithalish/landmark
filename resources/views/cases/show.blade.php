@@ -27,15 +27,20 @@
                     <div class="col-md-12">
                         <ul class="header-control tabs">
                             <li class="active">
-                                <a data-toggle="tab" href="#tab-gallery" aria-expanded="true"><i class="fa fa-picture-o" aria-hidden="true"></i> تصاویر</a>
+                                <a data-toggle="tab" href="#tab-gallery" aria-expanded="true"><i class="fa fa-picture-o"
+                                                                                                 aria-hidden="true"></i>
+                                    تصاویر</a>
                             </li>
                             <li>
-                                <a data-toggle="tab" href="#tab-map" aria-expanded="false"><i class="fa fa-map-marker" aria-hidden="true"></i> موقعیت مکانی</a>
+                                <a data-toggle="tab" href="#tab-map" aria-expanded="false"><i class="fa fa-map-marker"
+                                                                                              aria-hidden="true"></i>
+                                    موقعیت مکانی</a>
                             </li>
                         </ul>
                         <div class="tab-content">
                             <div class="tab-pane fade active in" id="tab-gallery">
-                                <div class="property-detail-carousel owl-carousel owl-theme" data-auto-play="false" data-desktop="1" data-laptop="1" data-tablet="1" data-mobile="1">
+                                <div class="property-detail-carousel owl-carousel owl-theme" data-auto-play="false"
+                                     data-desktop="1" data-laptop="1" data-tablet="1" data-mobile="1">
                                     <div class="item">
                                         <img src="images/property/slides/property_1.jpg" alt="">
                                     </div>
@@ -54,7 +59,8 @@
                                 </div>
                             </div>
                             <div id="tab-map" class="tab-pane fade">
-                                <div id="googleMap2" data-icon="images/icon_location.png" data-lat="38.066082" data-lon="46.323638"></div>
+                                <div id="googleMap2" data-icon="images/icon_location.png" data-lat="38.066082"
+                                     data-lon="46.323638"></div>
                             </div>
                         </div>
                     </div>
@@ -68,14 +74,17 @@
                         <div class="single-property-detail tab">
                             <div class="detail-header style-2">
                                 <div class="action-post">
-                                    <a data-toggle="tooltip" data-placement="top" title="" data-original-title="چاپ" class="compare" href="#">
+                                    <a data-toggle="tooltip" data-placement="top" title="" data-original-title="چاپ"
+                                       class="compare" href="#">
                                         <i class="ion-printer"></i>
                                     </a>
-                                    <a data-toggle="tooltip" data-placement="top" title="" data-original-title="علاقه‌مندی‌ها" href="#">
+                                    <a data-toggle="tooltip" data-placement="top" title=""
+                                       data-original-title="علاقه‌مندی‌ها" href="#">
                                         <i class="fa fa-heart-o"></i>
                                     </a>
                                     <div class="property-sharing">
-                                        <a data-toggle="tooltip" data-placement="top" title="" data-original-title="اشتراک گذاری" class="like" href="#">
+                                        <a data-toggle="tooltip" data-placement="top" title=""
+                                           data-original-title="اشتراک گذاری" class="like" href="#">
                                             <i class="ion-android-share-alt"></i>
                                         </a>
                                         <div class="social-property">
@@ -104,20 +113,28 @@
                                         <a data-toggle="tab" href="#tab-desc" aria-expanded="true">توضیحات</a>
                                     </li>
                                     <li>
-                                        <a data-toggle="tab" href="#tab-address" aria-expanded="false">{{$item->address}}</a>
+                                        <a data-toggle="tab" href="#tab-address"
+                                           aria-expanded="false">{{$item->address}}</a>
                                     </li>
                                     <li>
-                                        <a data-toggle="tab" href="#tab-detail" aria-expanded="false">{{$item->description}}</a>
+                                        <a data-toggle="tab" href="#tab-detail"
+                                           aria-expanded="false">{{$item->description}}</a>
                                     </li>
                                     <li>
-                                        <a data-toggle="tab" href="#tab-video" aria-expanded="false">{{$item->video_path}}</a>
+                                        <a data-toggle="tab" href="#tab-video"
+                                           aria-expanded="false">{{$item->video_path}}</a>
                                     </li>
                                 </ul>
                                 <div class="tab-content">
                                     <div class="tab-pane fade active in" id="tab-desc">
-                                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>
+                                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از
+                                            طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که
+                                            لازم است</p>
                                         <h3>لورم ایپسوم متن ساختگی با تولید</h3>
-                                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود</p>
+                                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از
+                                            طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که
+                                            لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف
+                                            بهبود</p>
                                     </div>
                                     <div id="tab-address" class="tab-pane fade">
                                         <div class="row">
@@ -296,43 +313,44 @@
                                         </div>
                                     </div>
                                     <div id="tab-video" class="tab-pane fade">
-                                        <iframe height="420" src="https://www.youtube.com/embed/BR-x5eoYkw8" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                        <iframe height="420" src="https://www.youtube.com/embed/BR-x5eoYkw8"
+                                                allow="autoplay; encrypted-media" allowfullscreen></iframe>
                                     </div>
                                 </div>
                             </div>
-{{--                            <div class="detail-header">--}}
-{{--                                <h3 class="detail-title">نقشه ملک</h3>--}}
-{{--                            </div>--}}
-{{--                            <div class="detail-content">--}}
-{{--                                <div class="floor-plan-carousel owl-carousel owl-theme" data-auto-play="false" data-desktop="1" data-laptop="1" data-tablet="1" data-mobile="1">--}}
-{{--                                    <div class="item text-center">--}}
-{{--                                        <a href="images/floor_plan/plan_1.jpg" class="mfp-image gallery-item">--}}
-{{--                                            <img src="images/floor_plan/plan_1.jpg" alt="">--}}
-{{--                                        </a>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="item text-center">--}}
-{{--                                        <a href="images/floor_plan/plan_2.jpg" class="mfp-image gallery-item">--}}
-{{--                                            <img src="images/floor_plan/plan_2.jpg" alt="">--}}
-{{--                                        </a>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="item text-center">--}}
-{{--                                        <a href="images/floor_plan/plan_3.jpg" class="mfp-image gallery-item">--}}
-{{--                                            <img src="images/floor_plan/plan_3.jpg" alt="">--}}
-{{--                                        </a>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="item text-center">--}}
-{{--                                        <a href="images/floor_plan/plan_4.jpg" class="mfp-image gallery-item">--}}
-{{--                                            <img src="images/floor_plan/plan_4.jpg" alt="">--}}
-{{--                                        </a>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                            <div class="detail-header">--}}
-{{--                                <h3 class="detail-title">موقعیت مکانی</h3>--}}
-{{--                            </div>--}}
-{{--                            <div class="detail-content">--}}
-{{--                                <div id="googleMap" data-icon="images/icon_location.png" data-lat="38.066082" data-lon="46.323638"></div>--}}
-{{--                            </div>--}}
+                            {{--                            <div class="detail-header">--}}
+                            {{--                                <h3 class="detail-title">نقشه ملک</h3>--}}
+                            {{--                            </div>--}}
+                            {{--                            <div class="detail-content">--}}
+                            {{--                                <div class="floor-plan-carousel owl-carousel owl-theme" data-auto-play="false" data-desktop="1" data-laptop="1" data-tablet="1" data-mobile="1">--}}
+                            {{--                                    <div class="item text-center">--}}
+                            {{--                                        <a href="images/floor_plan/plan_1.jpg" class="mfp-image gallery-item">--}}
+                            {{--                                            <img src="images/floor_plan/plan_1.jpg" alt="">--}}
+                            {{--                                        </a>--}}
+                            {{--                                    </div>--}}
+                            {{--                                    <div class="item text-center">--}}
+                            {{--                                        <a href="images/floor_plan/plan_2.jpg" class="mfp-image gallery-item">--}}
+                            {{--                                            <img src="images/floor_plan/plan_2.jpg" alt="">--}}
+                            {{--                                        </a>--}}
+                            {{--                                    </div>--}}
+                            {{--                                    <div class="item text-center">--}}
+                            {{--                                        <a href="images/floor_plan/plan_3.jpg" class="mfp-image gallery-item">--}}
+                            {{--                                            <img src="images/floor_plan/plan_3.jpg" alt="">--}}
+                            {{--                                        </a>--}}
+                            {{--                                    </div>--}}
+                            {{--                                    <div class="item text-center">--}}
+                            {{--                                        <a href="images/floor_plan/plan_4.jpg" class="mfp-image gallery-item">--}}
+                            {{--                                            <img src="images/floor_plan/plan_4.jpg" alt="">--}}
+                            {{--                                        </a>--}}
+                            {{--                                    </div>--}}
+                            {{--                                </div>--}}
+                            {{--                            </div>--}}
+                            {{--                            <div class="detail-header">--}}
+                            {{--                                <h3 class="detail-title">موقعیت مکانی</h3>--}}
+                            {{--                            </div>--}}
+                            {{--                            <div class="detail-content">--}}
+                            {{--                                <div id="googleMap" data-icon="images/icon_location.png" data-lat="38.066082" data-lon="46.323638"></div>--}}
+                            {{--                            </div>--}}
                         </div>
                         <div class="property-agent-contact">
                             <div> @include('layouts.partials.auth.alert')</div>
@@ -343,29 +361,37 @@
                                 </div>
                                 <div class="box-info col-md-6">
                                     <h4 class="agent-name">
-                                        <a href="/agent_detail" title="Bruck Banner">{{$agent->name}}</a>
+                                        <a href="/agent_detail" title="Bruck Banner">{{$item->name}}</a>
                                     </h4>
                                     <div class="item-info">
-                                        <span class="position">توسعه دهنده </span>
+
+
+                                        @foreach($item->agent->roles as $roles)
+                                            <span class="position">{{$roles->title}}</span>
+                                        @endforeach
                                     </div>
                                     <ul class="item-info">
                                         <li class="agent-email">
-                                            <a href="mailto:contact.usa@landmark.com" target="_top">{{$agent->email}}</a>
+                                            <a href="mailto:contact.usa@landmark.com"
+                                               target="_top">{{$item->agent->email}}</a>
                                         </li>
                                         <li class="agent-phone">
-                                            <a href="tel:123456789" target="_top" class="ltr_text">{{$agent->mobile}}</a>
+                                            <a href="tel:123456789" target="_top"
+                                               class="ltr_text">{{$item->agent->mobile}}</a>
                                         </li>
-                                        <li class="agent-address">{{$agent->address}}</li>
+                                        <li class="agent-address">{{$item->agent->address}}</li>
                                     </ul>
                                     <div class="agent-about">
-                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله
+                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
+                                        گرافیک است. چاپگرها و متون بلکه روزنامه و مجله
                                     </div>
                                 </div>
                             </div>
                             <div class="box-contact-property col-md-6">
                                 <div class="box-contact">
                                     <div class="box-form">
-                                        <form class="box-contact-agent" method="post" action="/agents/{{$item->user_id}}/contacts">
+                                        <form class="box-contact-agent" method="post"
+                                              action="/agents/{{$item->user_id}}/contacts">
                                             @csrf
                                             <div class="item-wrap">
                                                 <input type="text" name="name" placeholder="نام *">
@@ -392,7 +418,7 @@
             </div>
         </div>
 
-        <x-related-case :cases="$related_cases" ></x-related-case>
+        <x-related-case :cases="$related_cases"></x-related-case>
 
     </div>
 @endsection

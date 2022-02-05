@@ -142,7 +142,7 @@
                             <li>
                                 <a href="#">صفحات</a>
                                 <ul class="sub-menu">
-                                    <li><a href="/agents/create">عضویت در سایت</a></li>
+                                    <li><a href="/users/create">عضویت در سایت</a></li>
                                     <li><a href="/gallery">گالری</a></li>
                                     <li><a href="/partner">شرکا</a></li>
                                     <li><a href="/services">خدمات</a></li>

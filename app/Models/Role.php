@@ -12,4 +12,13 @@ class Role extends Model
         'name',
         'title'
     ];
+
+    public function agents()
+    {
+        return $this->belongsToMany(Agent::class);
+    }
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
 }
