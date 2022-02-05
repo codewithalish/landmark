@@ -23,12 +23,12 @@
                             <div class="item-head">
                                 <h4 class="item-title">
                                     <i class="ion-bookmark">{{$item->is_vip}}</i>
-                                    <a href="property-fullwidth.html" title="Vilayi 2 tabage">{{$item->title}}</a>
+                                    <a href="/cases/{{$item->id}}" title="Vilayi 2 tabage">{{$item->title}}</a>
                                 </h4>
                                 <span class="location">{{$item->address}}</span>
                             </div>
                             <div class="item-featured">
-                                <a href="property-fullwidth.html" title="Family House in Hudson">
+                                <a href="/cases/{{$item->id}}" title="Family House in Hudson">
                                     <img src="/landmark/images/property/property_1.jpg" alt="Family House in Hudson">
                                 </a>
                                 <span class="property-status">{{$item->contract}}</span>

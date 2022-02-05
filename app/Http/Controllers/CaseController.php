@@ -70,13 +70,11 @@ class CaseController extends Controller
             ->limit(3)
             ->get();
 
-
         return view('cases/cases', compact('items', 'request', 'caseWidget', 'agentWidget'));
     }
 
     public function create(Request $request)
     {
-
         return view('cases/create');
     }
 
@@ -98,15 +96,12 @@ class CaseController extends Controller
             'address',
         ]);
 
-
         $inputs['status'] = 'NEW';
 
         $result = CaseModel::create($inputs);
 
-
         if ($result)
             return redirect('/cases/{id}')->with('success', 'با موفقیت ارسال شد');
-
 
         return redirect('/cases')->with('error');
 
@@ -114,8 +109,7 @@ class CaseController extends Controller
 
     public function show(Request $request, $id)
     {
-        $item = CaseModel::find($id);
-
+        $item = CaseModel::with('agent')->find($id);
 
         $related_cases = CaseModel::query()
             ->where('title', 'like', '%' . $item->title . '%')
@@ -123,15 +117,8 @@ class CaseController extends Controller
             ->limit(2)
             ->get();
 
-
-        # todo wrong cod
-        $agent = Agent::query()
-            ->first();
-
-        return view('cases/show', compact('item', 'related_cases', 'agent'));
+        return view('cases/show', compact('item', 'related_cases'));
     }
-
-
 
     public function action($id ,$act)
     {

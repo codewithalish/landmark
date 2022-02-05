@@ -343,19 +343,21 @@
                                 </div>
                                 <div class="box-info col-md-6">
                                     <h4 class="agent-name">
-                                        <a href="/agent_detail" title="Bruck Banner">{{$agent->name}}</a>
+                                        <a href="/agent_detail" title="Bruck Banner">{{$item->name}}</a>
                                     </h4>
                                     <div class="item-info">
-                                        <span class="position">توسعه دهنده </span>
+                                        @foreach($item->agent->roles() as $roles)
+                                        <span class="position">{{$roles->title}}</span>
+                                        @endforeach
                                     </div>
                                     <ul class="item-info">
                                         <li class="agent-email">
-                                            <a href="mailto:contact.usa@landmark.com" target="_top">{{$agent->email}}</a>
+                                            <a href="mailto:contact.usa@landmark.com" target="_top">{{$item->agent()->email}}</a>
                                         </li>
                                         <li class="agent-phone">
-                                            <a href="tel:123456789" target="_top" class="ltr_text">{{$agent->mobile}}</a>
+                                            <a href="tel:123456789" target="_top" class="ltr_text">{{$item->agent()->mobile}}</a>
                                         </li>
-                                        <li class="agent-address">{{$agent->address}}</li>
+                                        <li class="agent-address">{{$item->agent()->address}}</li>
                                     </ul>
                                     <div class="agent-about">
                                         لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله

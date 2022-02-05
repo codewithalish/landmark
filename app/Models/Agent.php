@@ -32,4 +32,13 @@ protected $fillable=[
     {
         return $this->hasMany(CaseModel::class);
     }
+
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class);
+    }
+    public function contacts()
+    {
+        return $this->hasMany(Contact::class);
+    }
 }
