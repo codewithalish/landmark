@@ -54,7 +54,7 @@
                                         </div>
                                         <div class="content">
                                             <div class="item-title">
-                                                <a href="property-fullwidth.html" title="Family House in Hudson">
+                                                <a href="/cases/{{$case->id}}" title="Family House in Hudson">
                                                     {{$case->title}}
                                                 </a>
                                             </div>

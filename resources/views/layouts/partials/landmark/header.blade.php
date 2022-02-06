@@ -93,7 +93,7 @@
                     <div class="pull-right navbar-meta meta-property">
                         <div class="meta-content">
                             <a href="/login" class="meta-property button">
-                                <span><i class="fa fa-plus-circle"></i></span>افزودن ملک
+                                <span><i class="fa fa-plus-circle"></i></span>ورود کاربران
                             </a>
                         </div>
                     </div>

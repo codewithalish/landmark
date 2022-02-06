@@ -50,8 +50,8 @@ Route::get('/test/cases/{id}', function ($id) {
 |--------------------------------------------------------------------------
 |
 */
-Route::get('/', [PageController::class, 'welcome']);
-Route::post('pages/store', [\App\Http\Controllers\PageController::class, 'store']);
+Route::get('/', [PageController::class, 'index']);
+Route::post('/', [\App\Http\Controllers\PageController::class, 'store']);
 
 
 /*
@@ -76,6 +76,7 @@ Route::view('contacts', 'pages/contacts');
 Route::post('/contacts', [ContactController::class, 'store']);
 Route::get('agents/{id}/contacts', [ContactController::class, 'create']);
 Route::post('agents/{id}/contacts', [ContactController::class, 'store']);
+
 
 /*
 |--------------------------------------------------------------------------

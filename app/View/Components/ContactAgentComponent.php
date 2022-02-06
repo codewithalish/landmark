@@ -2,27 +2,28 @@
 
 namespace App\View\Components;
 
-use App\Models\CaseModel;
-use App\Models\Feedbacks;
+use App\Http\Requests\ContactRequest;
+use App\Models\Contact;
+use App\Models\Newsletter;
 use App\Models\User;
+use http\Env\Request;
 use Illuminate\View\Component;
 
-class Section3 extends Component
+class ContactAgentComponent extends Component
 {
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public $feedback;
+
+
+
     public function __construct()
     {
-        $this->feedback=Feedbacks::query()
-            ->limit(3)
-            ->get();
-
 
     }
+
 
     /**
      * Get the view / contents that represent the component.
@@ -31,6 +32,6 @@ class Section3 extends Component
      */
     public function render()
     {
-        return view('components.section3' );
+        return view('components.contact-agent-component');
     }
 }

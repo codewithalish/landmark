@@ -109,7 +109,7 @@ class CaseController extends Controller
 
     public function show(Request $request, $id)
     {
-        $item = CaseModel::with(['agent'])->find($id);
+        $item = CaseModel::with(['agent','user'])->find($id);
 
         $related_cases = CaseModel::query()
             ->where('title', 'like', '%' . $item->title . '%')
@@ -119,6 +119,10 @@ class CaseController extends Controller
 
         return view('cases/show', compact('item', 'related_cases'));
     }
+
+
+
+
 
 
 }

@@ -14,8 +14,9 @@ class AgentController extends Controller
 {
     public function index(Request $request)
     {
-        $items = Agent::query()
-            ->paginate(3);
+        $items = User::query()
+            ->with(['roles'])
+           ->paginate(3);
 
         $agentWidget=User::query()
             ->limit(3)
@@ -33,24 +34,38 @@ class AgentController extends Controller
 
     public function store(ContactRequest $request)
     {
-        $inputs=$request->only('name','email','password','mobile','bio','address','whatsapp','telegram','avatar_path');
-        $result = User::create($inputs);
-        if ($result) {
-            return redirect('/agents/{id}')->with('success', 'با موفقیت ارسال شد');
-        } else {
-            return redirect('/agents')->with('error');
-        }
+        $inputs=$request->only(
+            'name',
+            'email',
+            'password',
+            'mobile',
+            'bio',
+            'address',
+            'whatsapp',
+            'telegram',
+            'avatar_path',
+            'message'
+        );
 
+#ارسال پیام در صفحه agent/show
+        $result = Contact::create($inputs);
+        if ($result) {
+            return back()->with('success', 'با موفقیت ارسال شد');
+        } else {
+            return back()->with('error');
+        }
     }
+
+
     public function show($id)
     {
-        $item = User::find($id);
+        $item = User::query()
+            ->with(['roles'])
+            ->find($id);
 
         $cases = CaseModel::query()
             ->limit(2)
             ->get();
-
-
 
         return view('agents/show', compact('item', 'cases'));
     }
