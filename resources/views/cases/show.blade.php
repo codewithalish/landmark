@@ -361,7 +361,7 @@
                                 </div>
                                 <div class="box-info col-md-6">
                                     <h4 class="agent-name">
-                                        <a href="/agent_detail" title="Bruck Banner">{{$item->name}}</a>
+                                        <a href="/agents/{{$item->id}}" title="Bruck Banner">{{$item->agent->name}}</a>
                                     </h4>
                                     <div class="item-info">
 

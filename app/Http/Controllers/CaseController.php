@@ -80,6 +80,7 @@ class CaseController extends Controller
 
     public function store(CaseRequest $request)
     {
+
         $inputs = $request->only([
             'title',
             'room_number',
@@ -111,8 +112,6 @@ class CaseController extends Controller
     {
         $item = CaseModel::with(['agent','user'])->find($id);
 
-
-//        return $item;
         $related_cases = CaseModel::query()
             ->where('title', 'like', '%' . $item->title . '%')
             ->where('id', '<>', $item->id)
@@ -122,52 +121,9 @@ class CaseController extends Controller
         return view('cases/show', compact('item', 'related_cases'));
     }
 
-    public function action($id ,$act)
-    {
-        $user=User::find(1);
-        Auth::login($user);
 
-        $actions=['like','dislike'];
-        $casesId=CaseModel::pluck('id')->toArray();
 
-        if(!in_array($act ,$actions))
-        return 'اکشن مورد نظر اشتباه است';
 
-        if(!in_array($id ,$casesId))
-        return 'کیس مورد نظر اشتباه است';
-
-        $bookmarkedCase=Bookmark::query()
-            ->where('bookmarkable_id',$id)
-            ->where('bookmarkable_type',CaseModel::class)
-            ->count();
-
-        if ($act=='like') {
-            $bookmark = [
-                'bookmarkable_id' => $id,
-                'bookmarkable_type' => CaseModel::class,
-                'user_id' => Auth::id()
-            ];
-
-            if ($bookmarkedCase < 1) {
-                Bookmark::create($bookmark);
-                return 'با موفقیت لایک شد';
-            } else
-                return 'قبلا لایک شده';
-        }
-
-           elseif ($act=='dislike'){
-
-                if ($bookmarkedCase>0){
-                    Bookmark::query()
-                        ->where('bookmarkable_id',$id)
-                        ->where('bookmarkable_type',CaseModel::class)
-                        ->delete();
-                    return 'با موفقیت دیس لایک شد';
-                }else
-                    return 'قبلا همچین کیسی رو لایک نکردی';
-               }
-
-    }
 
 
 }

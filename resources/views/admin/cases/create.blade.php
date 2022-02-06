@@ -44,16 +44,26 @@
                             <input class="form-control" id="deposit" type="number" placeholder="deposit" name="deposit">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="deposit">وضعیت</label>
-                            <input class="form-control" id="deposit" type="select" placeholder="deposit" name="contract">
-                        </div>
+                            <label>نوع قرارداد <span class="required">*</span></label>
+                            <select class="form-control" name="contract" >
+                                <option value="">نوع قرارداد</option>
+                                <option value="FOR_SALE" >برای فروش</option>
+                                <option value="FOR_RENT" >برای اجاره</option>
+                            </select>
+                             </div>
                         <div class="mb-3">
                             <label class="form-label" for="address">آدرس</label>
                             <input class="form-control" id="address" type="text" placeholder="address" name="address">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="type">نوع ملک</label>
-                            <input class="form-control" id="type" type="" placeholder="type" name="type">
+                            <label>نوع ملک <span class="required">*</span></label>
+                            <select class="form-control" name="type" >
+                                <option value="">همه انواع ملک</option>
+                                <option value="APARTMENT" >آپارتمان</option>
+                                <option value="VILLA" >ویلایی</option>
+                                <option value="FIELD" >زمین</option>
+                                <option value="ُSHARED_HOUSE" >منزل مشترک</option>
+                            </select>
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="is_vip">کیس vip</label>
