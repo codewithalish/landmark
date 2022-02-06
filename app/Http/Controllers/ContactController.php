@@ -8,7 +8,14 @@ use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
-    //
+
+    public function create()
+    {
+        return view('contacts.create');
+
+    }
+
+
     public function store(ContactRequest $request, $id = null)
     {
 
@@ -16,7 +23,6 @@ class ContactController extends Controller
         $inputs['user_id'] = $id;
 
         $result = Contact::create($inputs);
-
 
         if ($result) {
             return back()->with('success', 'با موفقیت ارسال شد');
@@ -27,11 +33,7 @@ class ContactController extends Controller
 
     }
 
-    public function create()
-    {
-        return view('contacts.create');
 
-    }
 
 
 }
