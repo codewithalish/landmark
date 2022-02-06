@@ -23,7 +23,9 @@
                                     </h3>
                                     <div class="box-info">
                                         <div class="item-info">
-                                            <span class="position">{{$item->role}}</span>
+                                            @foreach($item->roles as $roles)
+                                                <span class="position">{{$roles->title}}</span>
+                                            @endforeach
                                         </div>
                                         <ul class="item-info">
                                             <li class="agent-email">
