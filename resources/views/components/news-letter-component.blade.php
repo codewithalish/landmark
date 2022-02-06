@@ -1,15 +1,15 @@
 <div class="section section-bg-6 section-overlay section-fixed mt-5 newsletter">
-    @include('layouts.partials.auth.alert')
     <div class="container">
         <div class="row">
             <div class="col-md-12">
+                @include('layouts.partials.auth.alert')
                 <div class="mailchimp">
                     <h3 class="title">عضویت در خبرنامه</h3>
                     <span class="sub-title">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم</span>
-                    <form action="/welcome" method="post">
+                    <form action="/" method="post">
                         @csrf
                         <div class="mailchimp-main">
-                            <input type="email" name="EMAIL" placeholder="ایمیل خود را وارد کنید" required="">
+                            <input type="email" name="email" placeholder="ایمیل خود را وارد کنید" required="">
                             <input type="submit" value="Subscribe">
                             <i class="ion-ios-paperplane"></i>
                         </div>

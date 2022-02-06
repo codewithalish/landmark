@@ -3,6 +3,7 @@
 namespace App\View\Components;
 
 use App\Models\CaseModel;
+use App\Models\Feedbacks;
 use App\Models\User;
 use Illuminate\View\Component;
 
@@ -13,12 +14,13 @@ class Section3 extends Component
      *
      * @return void
      */
-    public $items;
+    public $feedback;
     public function __construct()
     {
-        $this->items=User::query()
-            ->limit(5) ->get();
-//            ->orderBy('is_vip', 'desc')
+        $this->feedback=Feedbacks::query()
+            ->limit(3)
+            ->get();
+
 
     }
 
@@ -29,8 +31,6 @@ class Section3 extends Component
      */
     public function render()
     {
-
-
         return view('components.section3' );
     }
 }

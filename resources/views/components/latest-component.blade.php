@@ -33,7 +33,7 @@
                         </div>
                         <div class="view">
                             <p>{{$item->description}}</p>
-                            <a class="readmore" href="#">بیشتر بخوانید</a>
+                            <a class="readmore" href="/cases/{{$item->id}}">بیشتر بخوانید</a>
                         </div>
                     </div>
                 </div>
