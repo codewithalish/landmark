@@ -61,8 +61,9 @@ class CaseController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(CaseRequest $request)
+    public function store(Request $request)
     {
+
         $inputs = $request->only(
             'title',
             'price',
@@ -83,10 +84,15 @@ class CaseController extends Controller
             'video_path',
             'details'
         );
-        $result=CaseModel::create($inputs);
-        if ($result){
-            return back()->with('success','با موفقیت ارسال شد');
-        } else{
+
+        if ($request->has('avatar_path'))
+            $inputs['avatar_path'] = $this->uploadMedia($request->file('avatar_path'));
+
+
+        $result = CaseModel::create($inputs);
+        if ($result) {
+            return back()->with('success', 'با موفقیت ارسال شد');
+        } else {
             return back()->with('error');
         }
 
@@ -163,5 +169,15 @@ class CaseController extends Controller
         //
         CaseModel::query()->where('id', $id)->delete();
         return back();
+    }
+
+    public function uploadMedia($file)
+    {
+        $path='\images';
+        $fileName=uniqid().'-'.$file->getClientOriginalName();
+        $destination=public_path().'/'.$path;
+        $file->move($destination,$fileName);
+
+        return $path.'/'.$fileName;
     }
 }

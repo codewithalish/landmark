@@ -26,6 +26,8 @@ trait Action
 
         $this->doAct($act, $id);
 
+        return back();
+
     }
 
     public function bookmarkedCount($id)
@@ -51,9 +53,11 @@ trait Action
 
         if ($this->bookmarkedCount($id) < 1) {
             Bookmark::create($bookmark);
-            dd('یا موفقیت لایکش کردی');
-        } else
-            dd('قبلا لایکش کرده بودی');
+            //dd('یا موفقیت لایکش کردی');
+        } else{
+            // dd('قبلا لایکش کرده بودی');
+
+        }
     }
 
     /**
@@ -67,9 +71,11 @@ trait Action
                 ->where('bookmarkable_type', CaseModel::class)
                 ->delete();
 
-            dd('یا موفقیت دیس لایکش کردی');
-        } else
-            dd('اصلا لایکش نکرده بودی');
+           // dd('یا موفقیت دیس لایکش کردی');
+        } else{
+            //   dd('اصلا لایکش نکرده بودی');
+
+        }
     }
 
     /**
@@ -81,8 +87,10 @@ trait Action
         $casesIds = CaseModel::pluck('id');
         $casesIds = $casesIds->toArray();
 
-        if (!in_array($id, $casesIds))
-            dd('آیدی کیس در دیتابیس ما نیست');
+        if (!in_array($id, $casesIds)){
+            //            dd('آیدی کیس در دیتابیس ما نیست');
+
+        }
     }
 
     /**
@@ -90,8 +98,10 @@ trait Action
      */
     public function isActionValid($act): void
     {
-        if (!in_array($act, $this->actions))
-            dd('your selected act is wrong');
+        if (!in_array($act, $this->actions)){
+         //   dd('your selected act is wrong');
+
+        }
     }
 
     public function ManualLogin(): void

@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class CaseModel extends Model
 {
-
+    protected $appends = ['liked'];
     protected $table = 'cases';
     use HasFactory;
 
@@ -39,14 +40,26 @@ class CaseModel extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class );
+        return $this->belongsTo(User::class);
     }
 
 
     public function agent()
     {
-        return $this->belongsTo(User::class , 'user_id');
+        return $this->belongsTo(User::class, 'user_id');
     }
 
+    public function getLikedAttribute()
+    {
+        $bookmarked = Bookmark::query()
+            ->where('bookmarkable_type', CaseModel::class)
+            ->where('bookmarkable_id', $this->id)
+            ->where('user_id',Auth::id())
+            ->pluck('bookmarkable_id')->toArray();
 
+        if (in_array($this->id, $bookmarked))
+            return true;
+        else
+            return false;
+    }
 }
