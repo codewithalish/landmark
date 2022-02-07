@@ -19,7 +19,7 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="body">body</label>
-                            <input class="form-control" id="body" type="" placeholder="body" name="body" value="{{$item->body}}">
+                            <input class="form-control" id="body" type="text" placeholder="body" name="body" value="{{$item->body}}">
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="user_id">user_id</label>
