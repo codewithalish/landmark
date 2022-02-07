@@ -26,7 +26,7 @@ class RegisterRequest extends FormRequest
         return [
             //
             'name'=>['required','string'],
-            'email' => ['required', 'email'],
+            'mobile' => ['required', 'string'],
             'password' => ['required', 'string', 'min:5']
         ];
     }
@@ -35,7 +35,7 @@ class RegisterRequest extends FormRequest
     {
         return [
             'name'=>'نام',
-            'email' => 'ایمیل',
+            'mobile' => 'تلفن همراه',
             'password' => 'رمز عبور'
         ];
     }
@@ -45,7 +45,7 @@ class RegisterRequest extends FormRequest
         return [
             'required' => 'فیلد :attribute اجباری است',
             'min' => 'فیلد :attribute باید حداقل :min تا کاراکتر داشته باشد',
-            'email' => 'ایمیل با فرمت معتبر وارد کنید'
+            'mobile' => 'تلفن همراه با فرمت معتبر وارد کنید'
         ];
     }
 }
