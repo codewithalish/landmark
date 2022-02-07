@@ -80,6 +80,9 @@ class CaseController extends Controller
 
     public function store(CaseRequest $request)
     {
+
+        $this->uploadMedia($request->file('avatar_path'));
+
         $inputs = $request->only([
             'title',
             'room_number',
@@ -96,6 +99,9 @@ class CaseController extends Controller
             'address',
         ]);
 
+        if ($request->has('avatar_path'))
+            $inputs['avatar_path'] = $this->uploadMedia($request->file('avatar_path'));
+
         $inputs['status'] = 'NEW';
 
         $result = CaseModel::create($inputs);
@@ -105,6 +111,16 @@ class CaseController extends Controller
 
         return redirect('/cases')->with('error');
 
+    }
+
+    public function uploadMedia($file)
+    {
+        $path='\images';
+        $fileName=uniqid().'-'.$file->getClientOriginalName();
+        $destination=public_path().'/'.$path;
+        $file->move($destination,$fileName);
+
+        return $path.'/'.$fileName;
     }
 
     public function show(Request $request, $id)

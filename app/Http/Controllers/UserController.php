@@ -18,7 +18,7 @@ class UserController extends Controller
 
         public function store(UserRequest $request)
     {
-        $inputs = $request->only('name', 'email', 'message', 'mobile');
+        $inputs = $request->only('name', 'email', 'message', 'mobile','password');
 
         $result=User::create($inputs);
         if ($result){

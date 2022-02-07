@@ -13,19 +13,19 @@
                                 @csrf
                                 <div class="item-wrap">
                                     <label>نام کاربری <span class="required">*</span></label>
-                                    <input type="text" id="name" name="name">
+                                    <input type="text" id="name" name="name" value="{{old('name') ?? ''}}">
                                 </div>
                                 <div class="item-wrap">
                                     <label>رمز عبور <span class="required">*</span></label>
-                                    <input type="text" id="room_number" name="password">
+                                    <input type="text" id="room_number" name="password" value="{{old('password') ?? ''}}">
                                 </div>
                                 <div class="item-wrap">
                                     <label>تلفن همراه <span class="required">*</span></label>
-                                    <input type="text" id="mobile" name="mobile">
+                                    <input type="text" id="mobile" name="mobile" value="{{old('mobile') ?? ''}}">
                                 </div>
                                 <div class="item-wrap">
                                     <label>ایمیل <span class="required">*</span></label>
-                                    <input type="text" id="email" name="email">
+                                    <input type="text" id="email" name="email" value="{{old('email') ?? ''}}">
                                 </div>
 
                                     <br>

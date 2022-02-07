@@ -53,6 +53,15 @@ Route::get('/test/cases/{id}', function ($id) {
 Route::get('/', [PageController::class, 'index']);
 Route::post('/', [\App\Http\Controllers\PageController::class, 'store']);
 
+Route::get('/admin_create', function () {
+    return view('admin.create_case');
+});
+Route::get('login', function () {
+    return view('auth.login');
+});
+Route::get('register', function () {
+    return view('auth.register');
+});
 
 /*
 |--------------------------------------------------------------------------

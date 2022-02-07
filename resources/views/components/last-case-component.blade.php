@@ -52,9 +52,21 @@
                                     <span class="amount">{{$item->price}} تومان</span>
                                 </div>
                                 <div class="action-post">
-                                    <a data-toggle="tooltip" data-placement="top" title="" data-original-title="علاقه‌مندی‌ها" href="#">
-                                        <i class="fa fa-heart-o"></i>
-                                    </a>
+                                    @if($item->liked)
+                                        <a data-toggle="tooltip" data-placement="top" title=""
+                                           data-original-title="علاقه‌مندی‌ها"
+                                           href="cases/{{$item->id}}/dislike">
+                                            <i class="fa fa-heart"></i>
+                                        </a>
+
+                                    @else
+                                        <a data-toggle="tooltip" data-placement="top" title=""
+                                           data-original-title="علاقه‌مندی‌ها"
+                                           href="cases/{{$item->id}}/like">
+                                            <i class="fa fa-heart-o"></i>
+                                        </a>
+
+                                    @endif
                                     <div class="property-sharing">
                                         <a data-toggle="tooltip" data-placement="top" title="" data-original-title="علاقه‌مندی‌ها" class="like" href="#">
                                             <i class="ion-android-share-alt"></i>
