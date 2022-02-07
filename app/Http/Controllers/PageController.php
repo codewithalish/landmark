@@ -6,11 +6,17 @@ use App\Http\Requests\ContactRequest;
 use App\Models\CaseModel;
 use App\Models\Contact;
 use App\Models\Newsletter;
+use App\Traits\Action;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
-    //
+    use Action;
+
+    public function __construct()
+    {
+        $this->modelName = CaseModel::class;
+    }
 
     public function index(Request $request)
     {
