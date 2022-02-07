@@ -19,15 +19,15 @@ class RoleSeeder extends Seeder
 
         Role::create([
             'name'=>'admin',
-            'title'=>'ادمین'
+            'guard_name'=>'web',
         ]);
         Role::create([
             'name'=>'agent',
-            'title'=>'نماینده'
+            'guard_name'=>'web',
         ]);
         Role::create([
             'name'=>'user',
-            'title'=>'کاربر'
+            'guard_name'=>'web',
         ]);
 
 
