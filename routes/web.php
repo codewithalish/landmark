@@ -16,6 +16,8 @@ use App\Http\Controllers\PageController;
 |
 |
 */
+Route::get('/live', [\App\Http\Controllers\Dev\TestController::class, 'livewire']);
+
 Route::get('/test/mail', function () {
 
     $emails=\App\Models\User::query()->pluck('email');
@@ -26,6 +28,8 @@ Route::get('/test/mail', function () {
             $message->from('fa.mozaffarii111@gmail.com', 'landmark');
         });
     }
+
+
 
 
 
