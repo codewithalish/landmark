@@ -33,17 +33,17 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-item">
-                                                    <input type="text" name="name" value="" size="40" placeholder="نام">
+                                                    <input type="text" name="name" value="{{old('name') ?? ''}}" size="40" placeholder="نام">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-item">
-                                                    <input type="text" name="mobile" value="" size="40" placeholder="شماره موبایل">
+                                                    <input type="text" name="mobile" value="{{old('mobile') ?? ''}}" size="40" placeholder="شماره موبایل">
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="form-item form-textarea">
-                                                    <textarea name="message" cols="40" rows="10" placeholder="دیدگاه شما ..."></textarea>
+                                                    <textarea name="message" value="{{old('message') ?? ''}}" cols="40" rows="10" placeholder="دیدگاه شما ..."></textarea>
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
