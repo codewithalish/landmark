@@ -20,7 +20,7 @@ class LoginController extends Controller
 
     public function checklogin(LoginRequest $request)
     {
-        $login_field = $request->only(['email', 'password']);
+        $login_field = $request->only(['mobile', 'password']);
         $result = auth::attempt($login_field);
         if ($result) {
             return redirect('/admin');
@@ -36,7 +36,7 @@ class LoginController extends Controller
 
     public function register(RegisterRequest $request)
     {
-        $inputs = $request->only(['name', 'email', 'password']);
+        $inputs = $request->only(['name', 'mobile', 'password']);
         $inputs['password'] = Hash::make($inputs['password']);
         User::create($inputs);
         return redirect('/login')->with('success', 'با موفقیت ثبت شد');
