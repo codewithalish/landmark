@@ -11,84 +11,45 @@ use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\PageController;
 /*
 |--------------------------------------------------------------------------
-| test & dev
+| test
 |--------------------------------------------------------------------------
 |
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/test/mail', function () {
 
-    $emails=\App\Models\User::query()->pluck('email');
-
-    foreach ($emails as $email){
-        \Illuminate\Support\Facades\Mail::send('emails.first', [], function ($message) use ($email) {
-            $message->to($email, 'landmark')->subject('test mail');
-            $message->from('fa.mozaffarii111@gmail.com', 'landmark');
-        });
-    }
-
-
-
+Route::get('/admin_create', function () {
+    return view('admin.create_case');
+});
+Route::get('login', function () {
+    return view('auth.login');
+});
+Route::get('register', function () {
+    return view('auth.register');
 });
 
-
-Route::resource('tests', App\Http\Controllers\Dev\TestController::class)->only(['store', 'index']);
-
-
-Route::get('/test/users/{id}', function ($id) {
-    return \App\Models\User::where('id', $id)->with('cases', 'comments', 'contacts')->first();
+Route::get('cases', function () {
+    return view('cases/cases');
 });
 
-Route::get('/test/cases/{id}', function ($id) {
-    return \App\Models\CaseModel::where('id', $id)->with('user')->first();
-});
-
-
-/*
-|--------------------------------------------------------------------------
-| welcome
-|--------------------------------------------------------------------------
-|
-*/
-Route::get('/', [PageController::class, 'index']);
-Route::post('/', [\App\Http\Controllers\PageController::class, 'store']);
-
-
-/*
-|--------------------------------------------------------------------------
-| pages
-|--------------------------------------------------------------------------
-|
-*/
-Route::get('partner', [\App\Http\Controllers\PartnerController::class, 'partner']);
-Route::get('gallery', [\App\Http\Controllers\GalleryController::class, 'gallery']);
-Route::view('services', 'pages/services');
-Route::view('abouts', 'pages/abouts');
-
-
-/*
-|--------------------------------------------------------------------------
-| contact
-|--------------------------------------------------------------------------
-|
-*/
-Route::view('contacts', 'pages/contacts');
-Route::post('/contacts', [ContactController::class, 'store']);
-Route::get('agents/{id}/contacts', [ContactController::class, 'create']);
-Route::post('agents/{id}/contacts', [ContactController::class, 'store']);
-
-
-/*
-|--------------------------------------------------------------------------
-| user
-|--------------------------------------------------------------------------
-|
-*/
-
-Route::get('agents/create', [\App\Http\Controllers\UserController::class, 'create']);
-Route::post('agents/create', [\App\Http\Controllers\UserController::class, 'store']);
-Route::get('users/create', [\App\Http\Controllers\UserController::class , 'create']);
-Route::post('users/create', [\App\Http\Controllers\UserController::class , 'store']);
+Route::view('/','pages/index');
+Route::view('shop','pages/shop');
+Route::view('cart','pages/cart');
+Route::view('cart_empty','pages/cart_empty');
+Route::view('checkout','pages/checkout');
+Route::view('gallery','pages/gallery');
+Route::view('my_account','pages/my_account');
+Route::view('shop_detail','pages/shop_detail');
+Route::view('partner','pages/partner');
+Route::view('services','pages/services');
+Route::view('agents','agents/agents');
+Route::view('agent_detail','agents/agent_detail');
+Route::view('case_detail','cases/case_detail');
+Route::view('create','pages/create_case');
+Route::view('create_user','pages/create_user');
+Route::view('cases','cases/cases');
 
 /*
 |--------------------------------------------------------------------------
@@ -96,11 +57,8 @@ Route::post('users/create', [\App\Http\Controllers\UserController::class , 'stor
 |--------------------------------------------------------------------------
 |
 */
-
-Route::get('agents', [AgentController::class, 'index']);
-Route::get('agents/create', [AgentController::class, 'create']);
-Route::post('agents', [AgentController::class, 'store']);
-Route::get('agents/{id}', [AgentController::class, 'show']);
+Route::get('agents', [AgentController::class , 'allAgents']);
+Route::get('agent_detail/{id}', [AgentController::class , 'show']);
 
 /*
 |--------------------------------------------------------------------------
@@ -108,12 +66,31 @@ Route::get('agents/{id}', [AgentController::class, 'show']);
 |--------------------------------------------------------------------------
 |
 */
+Route::get('/', [PageController::class , 'welcome']);
 
-Route::get('cases/{id}/{act}', [CaseController::class , 'action']);
 Route::get('cases', [CaseController::class , 'search']);
-Route::get('cases/create', [CaseController::class , 'create']);
-Route::post('cases', [CaseController::class , 'store']);
-Route::get('cases/{id}', [CaseController::class , 'show']);
+Route::get('case_detail/{id}', [CaseController::class , 'show']);
+
+/*
+|--------------------------------------------------------------------------
+|contact and about
+|--------------------------------------------------------------------------
+|
+*/
+Route::view('about_us','pages/about_us');
+Route::view('contact_us','pages/contact_us');
+Route::post('/contact_us', [ContactController::class , 'store']);
+/*
+|--------------------------------------------------------------------------
+|shop
+|--------------------------------------------------------------------------
+|
+*/
+
+
+Route::get('shop_detail/{id}', [ShopController::class , 'show']);
+Route::get('shop', [ShopController::class , 'index']);
+
 
 /*
 |--------------------------------------------------------------------------
@@ -121,13 +98,11 @@ Route::get('cases/{id}', [CaseController::class , 'show']);
 |--------------------------------------------------------------------------
 |
 */
-
-
-Route::get('login', [LoginController::class, 'login'])->name('login');
-Route::get('register', [LoginController::class, 'register'])->name('register');
-Route::post('login', [LoginController::class, 'login']);
-Route::post('register', [LoginController::class, 'register']);
-Route::get('logout', function () {
+Route::get('login', [LoginController::class , 'login'])->name('login');
+Route::get('register', [LoginController::class , 'create'])->name('register');
+Route::post('login', [LoginController::class , 'login']);
+Route::post('register', [LoginController::class , 'register']);
+Route::get('logout',function (){
     session::flush();
     auth::logout();
     return redirect('login');
@@ -139,14 +114,5 @@ Route::get('logout', function () {
 |--------------------------------------------------------------------------
 |
 */
-Route::prefix('admin')->group(function () {
-    Route::get('dashboard', [AdminController::class, 'dashboard']);
-    Route::resource('contacts', \App\Http\Controllers\Admin\ContactController::class);
-    Route::resource('agents', \App\Http\Controllers\Admin\AgentController::class);
-    Route::resource('cases', \App\Http\Controllers\Admin\CaseController::class);
-    Route::resource('galleries', \App\Http\Controllers\Admin\GalleryController::class);
-    Route::resource('partners', \App\Http\Controllers\Admin\PartnerController::class);
-    Route::resource('services', \App\Http\Controllers\Admin\ServiceController::class);
-    Route::resource('users', \App\Http\Controllers\Admin\userController::class);
-
-});
+Route::get('/admin',[\App\Http\Controllers\Admin\AdminController::class,'dashboard'])->middleware('auth');
+Route::resource('/admin/contacts',\App\Http\Controllers\ContactController::class)->middleware('auth');
