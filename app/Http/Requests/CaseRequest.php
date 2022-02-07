@@ -24,17 +24,16 @@ class CaseRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => ['required', 'string', 'max:10', 'min:8'],
-            'price' => ['required', 'number'],
-            'body' => ['required', 'string', 'min:5'],
-            'image_path' => ['required', 'string'],
-            'details' => ['required', 'string', 'min:10'],
+            'title' => ['required', 'string', 'min:8'],
+            'price' => ['numeric'],
+            'body' => ['string', 'min:5'],
+            'details' => [ 'string', 'min:10'],
         ];
     }
     public function attributes()
     {
         return [
-            'title'=>'نام',
+            'title'=>'عنوان',
             'price'=>'قیمت',
             'detail'=>'جزئیات',
             'body'=>'توضیحات',
@@ -45,7 +44,7 @@ class CaseRequest extends FormRequest
     {
         return [
             'required' => ' فیلد :attribute اجباری است',
-            'min' => 'فیلد شما باید حداقل :min تا کاراکتر داشته باشد'
+            'min' => 'فیلد :attribute باید حداقل :min تا کاراکتر داشته باشد'
         ];
 
     }

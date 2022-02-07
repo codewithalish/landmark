@@ -28,8 +28,6 @@ class UserRequest extends FormRequest
             'name'=>['required','string'],
             'email'=>['required','email'],
             'mobile'=>['required','string'],
-            'whatsapp'=>['required','string'],
-            'telegram'=>['required','string'],
             'password'=>['required','min:6'],
         ];
     }
@@ -41,8 +39,7 @@ class UserRequest extends FormRequest
             'email'=>'ایمیل',
             'password'=>'رمز عبور',
             'mobile'=>'شماره موبایل',
-            'whatsapp'=>'واتساپ',
-            'telegram'=>'تلگرام'
+
         ];
     }
 
