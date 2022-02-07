@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CaseController;
 use App\Http\Controllers\AgentController;
@@ -148,5 +148,6 @@ Route::prefix('admin')->group(function () {
     Route::resource('partners', \App\Http\Controllers\Admin\PartnerController::class);
     Route::resource('services', \App\Http\Controllers\Admin\ServiceController::class);
     Route::resource('users', \App\Http\Controllers\Admin\userController::class);
+    Route::resource('posts', \App\Http\Controllers\Admin\PostController::class);
 
 });
