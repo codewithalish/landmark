@@ -22,10 +22,14 @@ class LoginController extends Controller
     {
         $login_field = $request->only(['mobile', 'password']);
         $result = auth::attempt($login_field);
+
         if ($result) {
+
+            $userRoles = [];
+
             return redirect('/admin');
         }
-            return redirect('/login')->with('error', 'نام کاربری یا کلمه عبور اشتباه است');
+        return redirect('/login')->with('error', 'نام کاربری یا کلمه عبور اشتباه است');
 
     }
 

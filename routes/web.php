@@ -9,6 +9,10 @@ use App\Http\Controllers\ShopController;
 use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\PageController;
+
+
+Route::get('/spatie/role', [\App\Http\Controllers\UserPermissionController::class, 'addRolePermission']);
+
 /*
 |--------------------------------------------------------------------------
 | test & dev
