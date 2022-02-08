@@ -177,8 +177,8 @@ return [
 
 
         /*
-                * added by me
-                */
+        * Added by me
+        */
         Spatie\Permission\PermissionServiceProvider::class,
 
     ],

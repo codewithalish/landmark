@@ -15,10 +15,14 @@
     <link rel="stylesheet" href="/landmark/css/style.css" type="text/css" media="all">
     <link rel="stylesheet" href="/landmark/css/custom.css" type="text/css" media="all">
 
+    <livewire:styles />
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
     <script src="/landmark/js/html5shiv.min.js"></script>
     <script src="/landmark/js/respond.min.js"></script>
     <![endif]-->
+    <livewire:scripts />
+
 </head>

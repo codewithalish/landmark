@@ -9,14 +9,21 @@ use Illuminate\Http\Request;
 class TestController extends Controller
 {
 
+
+
+
+    public function livewire()
+    {
+        return view('livewire.users');
+
+    }
+
     public function index()
     {
         //
 
         return CaseModel::isVIP()->get();
     }
-
-
 
 
     public function store(Request $request)

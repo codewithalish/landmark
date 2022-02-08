@@ -81,7 +81,8 @@ class CaseController extends Controller
     public function store(CaseRequest $request)
     {
 
-        $this->uploadMedia($request->file('avatar_path'));
+
+
 
         $inputs = $request->only([
             'title',
@@ -99,15 +100,19 @@ class CaseController extends Controller
             'address',
         ]);
 
-        if ($request->has('avatar_path'))
-            $inputs['avatar_path'] = $this->uploadMedia($request->file('avatar_path'));
+
+
+        if ($request->file('avatar_path')){
+                        $inputs['avatar_path'] = $this->uploadMedia($request->file('avatar_path'));
+        }
+
 
         $inputs['status'] = 'NEW';
 
         $result = CaseModel::create($inputs);
 
         if ($result)
-            return redirect('/cases/{id}')->with('success', 'با موفقیت ارسال شد');
+            return redirect('/cases/')->with('success', 'با موفقیت ارسال شد');
 
         return redirect('/cases')->with('error');
 
