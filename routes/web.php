@@ -9,6 +9,29 @@ use App\Http\Controllers\ShopController;
 use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\PageController;
+
+
+/*
+|--------------------------------------------------------------------------
+| spatie
+|--------------------------------------------------------------------------
+|
+|
+*/
+
+
+Route::get('/spatie/add-roles', [\App\Http\Controllers\Dev\SpatiePermissionController::class, 'addRoles']);
+Route::get('/spatie/updateRoles', [\App\Http\Controllers\Dev\SpatiePermissionController::class, 'updateRoles']);
+Route::get('/spatie/assign-roles', [\App\Http\Controllers\Dev\SpatiePermissionController::class, 'assignRoles']);
+Route::get('/spatie/showRoles', [\App\Http\Controllers\Dev\SpatiePermissionController::class, 'showRoles']);
+Route::get('/spatie/getAllPermissions', [\App\Http\Controllers\Dev\SpatiePermissionController::class, 'getAllPermissions']);
+Route::get('/spatie/users', [\App\Http\Controllers\Dev\SpatiePermissionController::class, 'users']);
+Route::get('/spatie/usersByPermission', [\App\Http\Controllers\Dev\SpatiePermissionController::class, 'usersByPermission']);
+Route::get('/spatie/createUser', [\App\Http\Controllers\Dev\SpatiePermissionController::class, 'createUser']);
+Route::get('/spatie/afterLogin', [\App\Http\Controllers\Dev\SpatiePermissionController::class, 'afterLogin']);
+
+
+
 /*
 |--------------------------------------------------------------------------
 | test & dev

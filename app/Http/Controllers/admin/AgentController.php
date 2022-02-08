@@ -67,6 +67,11 @@ class AgentController extends Controller
             'whatsapp'
         );
         $result=Agent::create($inputs);
+
+        $roleUser = Role::where('name', 'agent')->first();
+        $result->assignRole($roleUser);
+
+
         if ($result){
             return back()->with('success','با موفقیت ارسال شد');
         } else{

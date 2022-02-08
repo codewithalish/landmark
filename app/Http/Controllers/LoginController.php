@@ -25,7 +25,7 @@ class LoginController extends Controller
         if ($result) {
             return redirect('/admin');
         }
-            return redirect('/login')->with('error', 'نام کاربری یا کلمه عبور اشتباه است');
+        return redirect('/login')->with('error', 'نام کاربری یا کلمه عبور اشتباه است');
 
     }
 
@@ -38,7 +38,10 @@ class LoginController extends Controller
     {
         $inputs = $request->only(['name', 'mobile', 'password']);
         $inputs['password'] = Hash::make($inputs['password']);
-        User::create($inputs);
+        $newUser = User::create($inputs);
+        $roleUser = Role::where('name', 'user')->first();
+        $newUser->assignRole($roleUser);
+
         return redirect('/login')->with('success', 'با موفقیت ثبت شد');
     }
 }
