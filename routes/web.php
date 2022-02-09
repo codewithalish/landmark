@@ -189,5 +189,16 @@ Route::prefix('admin')->group(function () {
     Route::resource('services', \App\Http\Controllers\Admin\ServiceController::class);
     Route::resource('users', \App\Http\Controllers\Admin\userController::class);
     Route::resource('posts', \App\Http\Controllers\Admin\PostController::class);
+    Route::resource('bookmarks', \App\Http\Controllers\Admin\BookmarkController::class);
+    Route::resource('categories', \App\Http\Controllers\Admin\CategoryController::class);
+    Route::resource('comments', \App\Http\Controllers\Admin\CommentController::class);
+    Route::resource('features', \App\Http\Controllers\Admin\FeatureController::class);
+    Route::resource('feedbacks', \App\Http\Controllers\Admin\FeedbackController::class);
+    Route::resource('newsletters', \App\Http\Controllers\Admin\NewsletterController::class);
+    Route::resource('permissions', \App\Http\Controllers\Admin\PermissionController::class);
+    Route::resource('tags', \App\Http\Controllers\Admin\TagController::class);
+    Route::resource('variables', \App\Http\Controllers\Admin\VariableController::class);
+    Route::resource('roles', \App\Http\Controllers\Admin\RoleController::class);
+
 
 });

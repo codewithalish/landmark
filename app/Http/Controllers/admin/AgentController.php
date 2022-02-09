@@ -66,6 +66,9 @@ class AgentController extends Controller
             'telegram',
             'whatsapp'
         );
+        if ($request->file('avatar_path')){
+            $inputs['avatar_path'] = $this->uploadMedia($request->file('avatar_path'));
+        }
         $result=Agent::create($inputs);
 
         $roleUser = Role::where('name', 'agent')->first();
@@ -127,6 +130,10 @@ class AgentController extends Controller
             'telegram',
             'whatsapp'
         );
+
+        if ($request->file('avatar_path')){
+            $query['avatar_path'] = $this->uploadMedia($request->file('avatar_path'));
+        }
         Agent::where('id', $id)->update($query);
         return back()->with('success', 'ویرایش با موفقیت انجام شد');
     }
@@ -142,5 +149,15 @@ class AgentController extends Controller
         //
         Agent::query()->where('id', $id)->delete();
         return back();
+    }
+
+    public function uploadMedia($file)
+    {
+        $path='\images';
+        $fileName=uniqid().'-'.$file->getClientOriginalName();
+        $destination=public_path().'/'.$path;
+        $file->move($destination,$fileName);
+
+        return $path.'/'.$fileName;
     }
 }

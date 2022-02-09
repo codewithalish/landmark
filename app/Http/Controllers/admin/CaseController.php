@@ -28,9 +28,11 @@ class CaseController extends Controller
             'contract',
             'type',
             'operation'];
+
         $query = CaseModel::query()
             ->orderBy('id', 'DESC')
             ->get();
+
         return view('admin.cases.index',
             [
                 'items' => $query,
@@ -85,7 +87,7 @@ class CaseController extends Controller
             'details'
         );
 
-        if ($request->has('avatar_path'))
+        if ($request->file('avatar_path'))
             $inputs['avatar_path'] = $this->uploadMedia($request->file('avatar_path'));
 
 
@@ -154,6 +156,9 @@ class CaseController extends Controller
             'video_path',
             'details'
         );
+        if ($request->file('avatar_path'))
+            $query['avatar_path'] = $this->uploadMedia($request->file('avatar_path'));
+
         CaseModel::where('id', $id)->update($query);
         return back()->with('success', 'ویرایش با موفقیت انجام شد');
     }
