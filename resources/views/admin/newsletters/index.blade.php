@@ -27,7 +27,7 @@
                                     <form action="/admin/newsletter/{{$item->id}}" method="post">
                                         @csrf
                                         @method('delete')
-                                        <button>حذف</button>
+                                        <button class="btn btn-outline-danger" type="button" style="padding: 3px">حذف</button>
                                     </form>
                                 </td>
                             </tr>

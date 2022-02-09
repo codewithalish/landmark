@@ -26,13 +26,13 @@
 
 
                             <td>
-                                <a href="/admin/roles/{{$item->id}}">نمایش</a>|
-                                <a href="/admin/roles/{{$item->id}}/edit">ویرایش</a>|
+                                <a href="/admin/roles/{{$item->id}}" class="btn btn-outline-success" type="button" style="padding: 3px">نمایش</a>
+                                <a href="/admin/roles/{{$item->id}}/edit" class="btn btn-outline-warning" type="button" style="padding: 3px">ویرایش</a>
 
                                 <form action="/admin/roles/{{$item->id}}" method="post">
                                     @csrf
                                     @method('delete')
-                                    <button>حذف</button>
+                                    <button class="btn btn-outline-danger" type="button" style="padding: 3px">حذف</button>
                                 </form>
                             </td>
                         </tr>

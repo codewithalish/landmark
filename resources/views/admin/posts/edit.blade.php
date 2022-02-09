@@ -30,7 +30,7 @@
                             <input class="form-control" id="avarat_path" type="file" placeholder="avarat_path" name="avarat_path" value="{{$item->avarat_path}}">
                         </div>
 
-                        <button type="submit">ویرایش</button>
+                        <button type="submit" class="btn btn-primary active" type="button">ویرایش</button>
 
                     </div>
                 </form>

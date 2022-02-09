@@ -28,7 +28,7 @@
                             <input class="form-control" id="bookmarkable_type" type="text" placeholder="bookmarkable_type" name="bookmarkable_type">
                         </div>
 
-                        <button type="submit">Send</button>
+                        <button type="submit" class="btn btn-primary active" type="button">Send</button>
 
                     </div>
                 </form>

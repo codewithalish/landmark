@@ -24,7 +24,7 @@
                             <input class="form-control" id="avatar_path" type="file" placeholder="avatar_path" name="avatar_path">
                         </div>
 
-                        <button type="submit">Send</button>
+                        <button type="submit" class="btn btn-primary active" type="button">Send</button>
 
                     </div>
                 </form>

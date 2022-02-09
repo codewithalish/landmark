@@ -29,7 +29,7 @@
                             <label class="form-label" for="thumbnail_path">اپلود تصویر</label>
                             <input class="form-control" id="thumbnail_path" type="file" placeholder="thumbnail_path" name="thumbnail_path">
                         </div>
-                        <button type="submit">Send</button>
+                        <button type="submit" class="btn btn-primary active" type="button">Send</button>
 
                     </div>
                 </form>

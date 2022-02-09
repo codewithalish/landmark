@@ -27,13 +27,13 @@
                             <td>{{$item->body}}</td>
 
                             <td>
-                                <a href="/admin/comments/{{$item->id}}">نمایش</a>|
-                                <a href="/admin/comments/{{$item->id}}/edit">ویرایش</a>|
+                                <a href="/admin/comments/{{$item->id}}" class="btn btn-outline-success" type="button" style="padding: 3px">نمایش</a>
+                                <a href="/admin/comments/{{$item->id}}/edit" class="btn btn-outline-warning" type="button" style="padding: 3px">ویرایش</a>
 
                                 <form action="/admin/comments/{{$item->id}}" method="post">
                                     @csrf
                                     @method('delete')
-                                    <button>حذف</button>
+                                    <button class="btn btn-outline-danger" type="button" style="padding: 3px">حذف</button>
                                 </form>
                             </td>
                         </tr>

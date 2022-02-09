@@ -32,7 +32,7 @@
                             <input class="form-control" id="password" type="text" placeholder="password" name="password">
                         </div>
 
-                        <button type="submit">Send</button>
+                        <button type="submit" class="btn btn-primary active" type="button">Send</button>
 
                     </div>
                 </form>

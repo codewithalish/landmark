@@ -23,7 +23,7 @@
                             <label class="form-label" for="value"> value</label>
                             <input class="form-control" id="value" type="text" placeholder="value" name="value">
                         </div>
-                        <button type="submit">Send</button>
+                        <button type="submit" class="btn btn-primary active" type="button">Send</button>
 
                     </div>
                 </form>

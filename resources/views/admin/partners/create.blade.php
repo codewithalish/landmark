@@ -32,7 +32,7 @@
                             <label class="form-label" for="avarat_path">اپلود تصویر</label>
                             <input class="form-control" id="avarat_path" type="file" placeholder="avarat_path" name="avarat_path">
                         </div>
-                        <button type="submit">Send</button>
+                        <button type="submit" class="btn btn-primary active" type="button">Send</button>
 
                     </div>
                 </form>

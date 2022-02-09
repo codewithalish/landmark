@@ -30,7 +30,7 @@
                             <input class="form-control" id="password" type="text" placeholder="password" name="password" value="{{$item->password}}">
                         </div>
 
-                        <button type="submit">ویرایش</button>
+                        <button type="submit" class="btn btn-primary active" type="button">ویرایش</button>
 
                     </div>
                 </form>

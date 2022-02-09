@@ -48,7 +48,7 @@
                             <label class="form-label" for="whatsapp">ادرس واتساپ</label>
                             <input class="form-control" id="whatsapp" type="text" placeholder="whatsapp" name="whatsapp" value="{{$item->whatsapp}}">
                         </div>
-                        <button type="submit">ویرایش</button>
+                        <button type="submit" class="btn btn-primary active" type="button">ویرایش</button>
 
                     </div>
                 </form>

@@ -26,13 +26,13 @@
                                 <td>{{$item->thumbnail_path}}</td>
 
                                 <td>
-                                    <a href="/admin/services/{{$item->id}}">نمایش</a>|
-                                    <a href="/admin/services/{{$item->id}}/edit">ویرایش</a>|
+                                    <a href="/admin/services/{{$item->id}}" class="btn btn-outline-success" type="button" style="padding: 3px">نمایش</a>
+                                    <a href="/admin/services/{{$item->id}}/edit" class="btn btn-outline-warning" type="button" style="padding: 3px">ویرایش</a>
 
                                     <form action="/admin/services/{{$item->id}}" method="post">
                                         @csrf
                                         @method('delete')
-                                        <button>حذف</button>
+                                        <button class="btn btn-outline-danger" type="button" style="padding: 3px">حذف</button>
                                     </form>
                                 </td>
                             </tr>
