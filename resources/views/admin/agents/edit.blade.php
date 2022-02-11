@@ -22,8 +22,8 @@
                             <input class="form-control" id="email" type="email" placeholder="email" name="email" value="{{$item->email}}">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="monile">شماره همراه</label>
-                            <input class="form-control" id="monile" type="number" placeholder="monile" name="monile" value="{{$item->monile}}">
+                            <label class="form-label" for="mobile">شماره همراه</label>
+                            <input class="form-control" id="mobile" type="number" placeholder="mobile" name="mobile" value="{{$item->mobile}}">
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="password">رمز عبور</label>
