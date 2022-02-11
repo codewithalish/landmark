@@ -20,8 +20,8 @@
                             <input class="form-control" id="title" type="text" placeholder="title" name="title">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="room_nimber">تعداد اتاق</label>
-                            <input class="form-control" id="room_nimber" type="number" placeholder="room_nimber" name="room_number">
+                            <label class="form-label" for="room_number">تعداد اتاق</label>
+                            <input class="form-control" id="room_number" type="number" placeholder="room_number" name="room_number">
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="parking_number">تعداد پارکینگ</label>
@@ -51,6 +51,10 @@
                                 <option value="FOR_RENT" >برای اجاره</option>
                             </select>
                              </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="area">متراژ</label>
+                            <input class="form-control" id="area" type="text" placeholder="area" name="area">
+                        </div>
                         <div class="mb-3">
                             <label class="form-label" for="address">آدرس</label>
                             <input class="form-control" id="address" type="text" placeholder="address" name="address">

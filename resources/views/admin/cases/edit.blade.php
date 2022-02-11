@@ -50,6 +50,10 @@
                             </select>
                               </div>
                         <div class="mb-3">
+                            <label class="form-label" for="area">متراژ</label>
+                            <input class="form-control" id="area" type="text" placeholder="area" name="area">
+                        </div>
+                        <div class="mb-3">
                             <label class="form-label" for="address">آدرس</label>
                             <input class="form-control" id="address" type="text" placeholder="address" name="address" value="{{$item->address}}">
                         </div>
