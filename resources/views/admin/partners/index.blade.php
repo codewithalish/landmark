@@ -28,12 +28,12 @@
 
                                 <td>
                                     <a href="/admin/partners/{{$item->id}}" class="btn btn-outline-success" type="button" style="padding: 3px">نمایش</a>
-                                    <a href="/admin/partners/{{$item->id}}/edit" class="btn btn-outline-warning" type="button" style="padding: 3px">ویرایش</a>
+
 
                                     <form action="/admin/partners/{{$item->id}}" method="post">
                                         @csrf
                                         @method('delete')
-                                        <button class="btn btn-outline-danger" type="button" style="padding: 3px">حذف</button>
+                                        <button class="btn btn-outline-danger" type="submit" style="padding: 3px">حذف</button>
                                     </form>
                                 </td>
                             </tr>

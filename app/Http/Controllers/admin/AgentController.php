@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\CaseRequest;
 use App\Models\Agent;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class AgentController extends Controller
 {
@@ -69,8 +70,9 @@ class AgentController extends Controller
         if ($request->file('avatar_path')){
             $inputs['avatar_path'] = $this->uploadMedia($request->file('avatar_path'));
         }
-        $result=Agent::create($inputs);
+        $inputs['password'] = Hash::make($inputs['password']);
 
+        $result=Agent::create($inputs);
         $roleUser = Role::where('name', 'agent')->first();
         $result->assignRole($roleUser);
 
