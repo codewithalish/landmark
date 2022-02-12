@@ -48,9 +48,9 @@ class VariableController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(CaseRequest $request)
+    public function store(Request $request)
     {
-        $inputs = $request->only('key');
+        $inputs = $request->only('key', 'value');
         $result=Variable::create($inputs);
         if ($result){
             return back()->with('success','با موفقیت ارسال شد');

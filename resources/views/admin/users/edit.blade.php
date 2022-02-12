@@ -9,7 +9,7 @@
                 <div class="card-header">{{$cardTitle ?? ''}}</div>
                 @include('layouts.partials.auth.alert')
 
-                <form action="/admin/users/{{$item->id}}" method="post">
+                <form action="/admin/users/{{$item->id}}" method="post" enctype="multipart/form-data">
                     @csrf
                     @method('put')
                     <div class="card-body">

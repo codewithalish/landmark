@@ -23,11 +23,9 @@
                                 <td>{{$item->id}}</td>
                                 <td>{{$item->title}}</td>
                                 <td>{{$item->body}}</td>
-                                <td>{{$item->thumbnail_path}}</td>
 
                                 <td>
                                     <a href="/admin/services/{{$item->id}}" class="btn btn-outline-success" type="button" style="padding: 3px">نمایش</a>
-
 
                                     <form action="/admin/services/{{$item->id}}" method="post">
                                         @csrf

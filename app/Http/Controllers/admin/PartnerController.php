@@ -53,7 +53,7 @@ class PartnerController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(CaseRequest $request)
+    public function store(Request $request)
     {
         $inputs = $request->only('title', 'url', 'body', 'avatar_path');
         $result=Partner::create($inputs);
