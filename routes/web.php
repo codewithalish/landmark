@@ -9,7 +9,7 @@ use App\Http\Controllers\ShopController;
 use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\PageController;
-
+use \Illuminate\Support\Facades\Mail;
 
 /*
 |--------------------------------------------------------------------------
@@ -202,3 +202,21 @@ Route::prefix('admin')->group(function () {
 
 
 });
+
+
+/*
+|--------------------------------------------------------------------------
+| newsletter mail
+|--------------------------------------------------------------------------
+|
+*/
+
+Route::get('/test/mail', function () {
+    $emails=\App\Models\Newsletter::query()->pluck('email');
+
+    foreach ($emails as $email){
+       $address=new \App\Mail\NewsletterMail($email);
+       Mail::send($address);
+    }
+        });
+
