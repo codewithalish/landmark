@@ -9,7 +9,7 @@
                         <h2>عضویت</h2>
                         <div class="my-account-wrap">
                             @include('layouts.partials.auth.alert')
-                            <form class="login-form" method="post" action="/users/create">
+                            <form class="login-form" method="post" action="/users/register">
                                 @csrf
                                 <div class="item-wrap">
                                     <label>نام کاربری <span class="required">*</span></label>

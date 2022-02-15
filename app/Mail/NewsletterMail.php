@@ -18,9 +18,10 @@ class NewsletterMail extends Mailable
      */
 
     public $email;
+
     public function __construct($email)
     {
-$this->email=$email;
+        $this->email = $email;
     }
 
     /**
@@ -31,6 +32,6 @@ $this->email=$email;
     public function build()
     {
         return $this->view('newsletters.sendMail')
-            ->to('fatemem1990@yahoo.com ');
+            ->to($this->email);
     }
 }

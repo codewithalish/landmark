@@ -113,4 +113,9 @@ class NewsletterController extends Controller
         Newsletter::query()->where('id', $id)->delete();
         return back();
     }
+
+
+
+
+
 }

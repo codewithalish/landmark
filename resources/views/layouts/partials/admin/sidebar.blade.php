@@ -167,18 +167,8 @@
                 </svg>
                 گالری</a>
             <ul class="nav-group-items">
-                <li class="nav-item"><a class="nav-link" href="/admin/galleries"><span class="nav-icon"></span>لیست</a></li>
-                <li class="nav-item"><a class="nav-link" href="/admin/galleries/create"><span class="nav-icon"></span>ایجاد</a></li>
-            </ul>
-        </li>
-        <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
-                <svg class="nav-icon">
-                    <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-puzzle"></use>
-                </svg>
-                variables</a>
-            <ul class="nav-group-items">
-                <li class="nav-item"><a class="nav-link" href="/admin/variables"><span class="nav-icon"></span>لیست</a></li>
-                <li class="nav-item"><a class="nav-link" href="/admin/variables/create"><span class="nav-icon"></span>ایجاد</a></li>
+                <li class="nav-item"><a class="nav-link" href="/admin/images"><span class="nav-icon"></span>لیست</a></li>
+                <li class="nav-item"><a class="nav-link" href="/admin/images/create"><span class="nav-icon"></span>ایجاد</a></li>
             </ul>
         </li>
     </ul>

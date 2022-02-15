@@ -15,7 +15,7 @@ class LoginController extends Controller
     //
     public function login()
     {
-        return view('auth.login'); #email, password
+        return view('/'); #email, password
     }
 
     public function checklogin(LoginRequest $request)
@@ -27,25 +27,27 @@ class LoginController extends Controller
 
             $userRoles = [];
 
-            return redirect('/admin');
+            return back();
         }
-        return redirect('/login')->with('error', 'نام کاربری یا کلمه عبور اشتباه است');
+        return redirect('/users/create')->with('error', 'نام کاربری یا کلمه عبور اشتباه است');
 
     }
 
     public function create()
     {
-        return view('auth.register');
+        return view('/users/create');
     }
 
     public function register(RegisterRequest $request)
     {
-        $inputs = $request->only(['name', 'mobile', 'password']);
+        $inputs = $request->only(['name', 'mobile', 'password','email']);
         $inputs['password'] = Hash::make($inputs['password']);
-        $newUser = User::create($inputs);
-        $roleUser = Role::where('name', 'user')->first();
-        $newUser->assignRole($roleUser);
+        $result=User::create($inputs);
 
-        return redirect('/login')->with('success', 'با موفقیت ثبت شد');
+        if ($result){
+            return back()->with('success','با موفقیت ارسال شد');
+        } else{
+            return redirect('/users/create')->with('error');
+        }
     }
 }

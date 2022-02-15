@@ -25,10 +25,10 @@
                                 <td>{{$item->avatar_path}}</td>
 
                                 <td>
-                                    <a href="/admin/images/{{$item->id}}" class="btn btn-outline-success" type="button" style="padding: 3px">نمایش</a>
-                                    <a href="/admin/images/{{$item->id}}/edit" class="btn btn-outline-warning" type="button" style="padding: 3px">ویرایش</a>
+                                    <a href="/admin/galleries/{{$item->id}}" class="btn btn-outline-success" type="button" style="padding: 3px">نمایش</a>
+                                    <a href="/admin/galleries/{{$item->id}}/edit" class="btn btn-outline-warning" type="button" style="padding: 3px">ویرایش</a>
 
-                                    <form action="/admin/images/{{$item->id}}" method="post">
+                                    <form action="/admin/galleries/{{$item->id}}" method="post">
                                         @csrf
                                         @method('delete')
                                         <button class="btn btn-outline-danger" type="submit" style="padding: 3px">حذف</button>

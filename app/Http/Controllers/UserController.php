@@ -3,14 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ContactRequest;
+use App\Http\Requests\LoginRequest;
 use App\Http\Requests\UserRequest;
 use App\Models\Contact;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
+
 
      public function create(Request $request)
         {
@@ -24,9 +27,9 @@ class UserController extends Controller
 
         $result=User::create($inputs);
         if ($result){
-            return redirect('/users/create')->with('success','با موفقیت ارسال شد');
+            return back()->with('success','با موفقیت ارسال شد');
         } else{
-            return redirect('/users/create')->with('error');
+            return back()->with('error');
         }
 
     }

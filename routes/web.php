@@ -29,11 +29,6 @@ Route::get('/spatie/users', [\App\Http\Controllers\Dev\SpatiePermissionControlle
 Route::get('/spatie/usersByPermission', [\App\Http\Controllers\Dev\SpatiePermissionController::class, 'usersByPermission']);
 Route::get('/spatie/createUser', [\App\Http\Controllers\Dev\SpatiePermissionController::class, 'createUser']);
 Route::get('/spatie/afterLogin', [\App\Http\Controllers\Dev\SpatiePermissionController::class, 'afterLogin']);
-
-
-
-
-
 Route::get('/spatie/role', [\App\Http\Controllers\UserPermissionController::class, 'addRolePermission']);
 
 /*
@@ -47,9 +42,9 @@ Route::get('/live', [\App\Http\Controllers\Dev\TestController::class, 'livewire'
 
 Route::get('/test/mail', function () {
 
-    $emails=\App\Models\User::query()->pluck('email');
+    $emails = \App\Models\User::query()->pluck('email');
 
-    foreach ($emails as $email){
+    foreach ($emails as $email) {
         \Illuminate\Support\Facades\Mail::send('emails.first', [], function ($message) use ($email) {
             $message->to($email, 'landmark')->subject('test mail');
             $message->from('fa.mozaffarii111@gmail.com', 'landmark');
@@ -57,15 +52,12 @@ Route::get('/test/mail', function () {
     }
 
 
-
-
-
 });
 
 
 Route::resource('tests', App\Http\Controllers\Dev\TestController::class)->only(['store', 'index']);
 
-
+#--------------relation----------------
 Route::get('/test/users/{id}', function ($id) {
     return \App\Models\User::where('id', $id)->with('cases', 'comments', 'contacts')->first();
 });
@@ -89,7 +81,7 @@ Route::get('/admin_create', function () {
 });
 Route::get('login', function () {
     return view('auth.login');
-});
+}); #zang bezan
 Route::get('register', function () {
     return view('auth.register');
 });
@@ -125,10 +117,11 @@ Route::post('agents/{id}/contacts', [ContactController::class, 'store']);
 |
 */
 
-Route::get('agents/create', [\App\Http\Controllers\UserController::class, 'create']);
-Route::post('agents/create', [\App\Http\Controllers\UserController::class, 'store']);
-Route::get('users/create', [\App\Http\Controllers\UserController::class , 'create']);
-Route::post('users/create', [\App\Http\Controllers\UserController::class , 'store']);
+//Route::get('agents/create', [\App\Http\Controllers\UserController::class, 'create']);
+//Route::post('agents/create', [\App\Http\Controllers\UserController::class, 'store']);
+//Route::get('users/create', [\App\Http\Controllers\UserController::class , 'create']);
+//Route::post('users/create', [\App\Http\Controllers\UserController::class , 'store']);
+
 
 /*
 |--------------------------------------------------------------------------
@@ -149,28 +142,48 @@ Route::get('agents/{id}', [AgentController::class, 'show']);
 |
 */
 
-Route::get('cases/{id}/{act}', [CaseController::class , 'action']);
-Route::get('cases', [CaseController::class , 'search']);
-Route::get('cases/create', [CaseController::class , 'create']);
-Route::post('cases', [CaseController::class , 'store']);
-Route::get('cases/{id}', [CaseController::class , 'show']);
+Route::get('cases/{id}/{act}', [CaseController::class, 'action']);
+Route::get('cases', [CaseController::class, 'search']);
+Route::get('cases/create', [CaseController::class, 'create']);
+Route::post('cases', [CaseController::class, 'store']);
+Route::get('cases/{id}', [CaseController::class, 'show']);
 
 /*
 |--------------------------------------------------------------------------
-| Authentication Routes
+|users Authentication Routes
+|--------------------------------------------------------------------------
+|
+*/
+
+Route::get('/users/login', [LoginController::class, 'login'])->name('login');
+Route::get('/users/register', [LoginController::class, 'create']);
+Route::post('/users/login', [LoginController::class, 'checklogin']);
+Route::post('/users/register', [LoginController::class, 'register']);
+Route::get('logout', function () {
+    session::flush();
+    auth::logout();
+    return redirect('login');
+});
+
+
+/*
+|--------------------------------------------------------------------------
+|Admin Authentication Routes
 |--------------------------------------------------------------------------
 |
 */
 
 
-Route::get('login', [LoginController::class, 'login'])->name('login');
-Route::get('register', [LoginController::class, 'register'])->name('register');
-Route::post('login', [LoginController::class, 'login']);
-Route::post('register', [LoginController::class, 'register']);
-Route::get('logout', function () {
-    session::flush();
-    auth::logout();
-    return redirect('login');
+Route::prefix('admin')->group(function () {
+    Route::get('login', [\App\Http\Controllers\admin\LoginController::class, 'login'])->name('login');
+    Route::get('register', [\App\Http\Controllers\admin\LoginController::class, 'create']);
+    Route::post('login', [\App\Http\Controllers\admin\LoginController::class, 'checklogin']);
+    Route::post('register', [\App\Http\Controllers\admin\LoginController::class, 'register']);
+    Route::get('logout', function () {
+        session::flush();
+        auth::logout();
+        return redirect('login');
+    });
 });
 
 /*
@@ -199,6 +212,8 @@ Route::prefix('admin')->group(function () {
     Route::resource('tags', \App\Http\Controllers\Admin\TagController::class);
     Route::resource('variables', \App\Http\Controllers\Admin\VariableController::class);
     Route::resource('roles', \App\Http\Controllers\Admin\RoleController::class);
+    Route::resource('assign', \App\Http\Controllers\admin\AssignController::class);
+
 
 
 });
@@ -214,7 +229,7 @@ Route::prefix('admin')->group(function () {
 Route::get('/test/mail', function () {
     $emails=\App\Models\Newsletter::query()->pluck('email');
 
-    foreach ($emails as $email){
+    foreach (['ali@yahoo.com','majid@yahoo.com'] as $email){
        $address=new \App\Mail\NewsletterMail($email);
        Mail::send($address);
     }
