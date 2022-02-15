@@ -8,6 +8,8 @@
                             <i class="fa fa-mobile"></i>
                             هم اکنون تماس بگیرید <a href="tel:(+1)-800-555-6789" class="ltr_text">(+1)-800-555-6789</a>
                         </div>
+
+                        <a href="logout">خروج
                     </div>
                     <div class="col-sm-6">
                         <div class="topmeta topmeta-right pull-right">

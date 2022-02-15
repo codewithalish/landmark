@@ -24,12 +24,10 @@ class LoginController extends Controller
         $result = auth::attempt($login_field);
 
         if ($result) {
-
             $userRoles = [];
-
-            return back();
+            return redirect('/');
         }
-        return redirect('/users/create')->with('error', 'نام کاربری یا کلمه عبور اشتباه است');
+        return back()->with('error', 'نام کاربری یا کلمه عبور اشتباه است');
 
     }
 

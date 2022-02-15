@@ -174,14 +174,16 @@ Route::get('logout', function () {
 */
 
 
+
+
 Route::prefix('admin')->group(function () {
     Route::get('login', [\App\Http\Controllers\admin\LoginController::class, 'login'])->name('login');
     Route::get('register', [\App\Http\Controllers\admin\LoginController::class, 'create']);
     Route::post('login', [\App\Http\Controllers\admin\LoginController::class, 'checklogin']);
     Route::post('register', [\App\Http\Controllers\admin\LoginController::class, 'register']);
     Route::get('logout', function () {
-        session::flush();
         auth::logout();
+        session::flush();
         return redirect('login');
     });
 });
