@@ -106,7 +106,7 @@ class GalleryController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $query = $request->only(['title', 'price', 'body', 'image_path', 'details']);
+        $query = $request->only(['title', 'avatar_path']);
         Gallery::where('id', $id)->update($query);
         return back()->with('success', 'ویرایش با موفقیت انجام شد');
     }

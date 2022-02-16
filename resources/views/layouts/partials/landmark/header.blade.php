@@ -8,8 +8,6 @@
                             <i class="fa fa-mobile"></i>
                             هم اکنون تماس بگیرید <a href="tel:(+1)-800-555-6789" class="ltr_text">(+1)-800-555-6789</a>
                         </div>
-
-                        <a href="logout">خروج
                     </div>
                     <div class="col-sm-6">
                         <div class="topmeta topmeta-right pull-right">
@@ -25,6 +23,7 @@
                                            class="google"><i class="fa fa-telegram"></i></a>
                                         <a href="instagram/#" target="_blank" class="twitter"><i
                                                 class="fa fa-instagram"></i></a>
+                                        <a href="/logout">خروج</a>
                                     </div>
                                 </div>
                             </div>
@@ -49,7 +48,7 @@
                         <div class="meta-content">
 
                            @auth
-                                <a href="/" class="meta-property button">
+                                <a href="/cases/create" class="meta-property button">
                                     <span><i class="fa fa-plus-circle"></i></span>ثبت ملک جدید
                                 </a>
                             @endauth
@@ -132,7 +131,7 @@
                                 <a href="/cases">ملک ها</a>
                                 <ul class="sub-menu">
                                     <li><a href="/cases">جستجو در ملک ها</a></li>
-                                    <li><a href="/cases/create">ثبت ملک جدید</a></li>
+                                    <li><a href="/bookmarks/show">منتخب های من</a></li>
 
                                 </ul>
                                 <i class="fa fa-angle-down"></i>
