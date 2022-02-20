@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\CaseRequest;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -50,11 +51,16 @@ class PostController extends Controller
      */
     public function store(CaseRequest $request)
     {
+
+
+        $inputs = $request->only('title', 'body');
+
         if ($request->file('avatar_path')){
             $inputs['avatar_path'] = $this->uploadMedia($request->file('avatar_path'));
         }
 
-        $inputs = $request->only('title', 'body','user_id','avatar_path');
+        $inputs['user_id'] = Auth::id();
+
         $result=Post::create($inputs);
         if ($result){
             return back()->with('success','با موفقیت ارسال شد');
@@ -63,15 +69,7 @@ class PostController extends Controller
         }
 
     }
-    public function uploadMedia($file)
-    {
-        $path='\images';
-        $fileName=uniqid().'-'.$file->getClientOriginalName();
-        $destination=public_path().'/'.$path;
-        $file->move($destination,$fileName);
 
-        return $path.'/'.$fileName;
-    }
 
     /**
      * Display the specified resource.

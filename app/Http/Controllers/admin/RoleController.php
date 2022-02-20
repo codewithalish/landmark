@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\CaseRequest;
 use App\Models\Role;
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Traits\HasRoles;
 
 class RoleController extends Controller
 {
@@ -51,10 +53,10 @@ class RoleController extends Controller
     public function store(CaseRequest $request)
     {
         $inputs = $request->only('name', 'title');
-        $result=Role::create($inputs);
-        if ($result){
-            return back()->with('success','با موفقیت ارسال شد');
-        } else{
+        $result = Role::create($inputs);
+        if ($result) {
+            return back()->with('success', 'با موفقیت ارسال شد');
+        } else {
             return back()->with('error');
         }
 
@@ -112,5 +114,31 @@ class RoleController extends Controller
         //
         Role::query()->where('id', $id)->delete();
         return back();
+    }
+
+    public function syncPermission(Request $request)
+    {
+
+        $role = Role::where('name', $request->get('role'))->first();
+
+        $role->syncPermissions($request->get('permissions'));
+
+        return back()->withSuccess('همه چیز اوکیه');
+
+    }
+
+
+    public function assignPermissionForm(Request $request)
+    {
+
+        $roles = \Spatie\Permission\Models\Role::all();
+
+        $permissions = Permission::all();
+
+        return view('roles.assign')->with([
+            'roles' => $roles,
+            'permissions' => $permissions
+        ]);
+
     }
 }

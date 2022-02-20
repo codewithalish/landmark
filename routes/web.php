@@ -145,7 +145,23 @@ Route::get('cases', [CaseController::class, 'search']);
 Route::get('cases/create', [CaseController::class, 'create']);
 Route::post('cases', [CaseController::class, 'store']);
 Route::get('cases/{id}', [CaseController::class, 'show']);
-Route::view('/bookmarks/show','bookmarks.show');
+
+/*
+|--------------------------------------------------------------------------
+| currentUser
+|--------------------------------------------------------------------------
+|
+*/
+Route::prefix('users/current')->middleware('auth')->group(function () {
+    Route::get('bookmarks', [\App\Http\Controllers\UserController::class, 'bookmarks']);
+
+    //لطفا متدهای زیر اضافه شود
+
+//    Route::get('/', [\App\Http\Controllers\UserController::class, 'show']);
+//    Route::get('/edit', [\App\Http\Controllers\UserController::class, 'edit']);
+//    Route::put('/update', [\App\Http\Controllers\UserController::class, 'update']);
+});
+
 
 /*
 |--------------------------------------------------------------------------
@@ -169,14 +185,12 @@ Route::get('/users/logout', [LoginController::class, 'logout']);
 */
 
 
-
-
 Route::prefix('admin')->group(function () {
     Route::get('login', [\App\Http\Controllers\admin\LoginController::class, 'login'])->name('login');
     Route::get('register', [\App\Http\Controllers\admin\LoginController::class, 'create']);
     Route::post('login', [\App\Http\Controllers\admin\LoginController::class, 'checklogin']);
     Route::post('register', [\App\Http\Controllers\admin\LoginController::class, 'register']);
-    Route::get('logout', [\App\Http\Controllers\admin\LoginController::class , 'logout']);
+    Route::get('logout', [\App\Http\Controllers\admin\LoginController::class, 'logout']);
 });
 
 /*
@@ -185,8 +199,12 @@ Route::prefix('admin')->group(function () {
 |--------------------------------------------------------------------------
 |
 */
-Route::prefix('admin')->group(function () {
+Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::get('dashboard', [AdminController::class, 'dashboard']);
+
+    Route::get('assign', [\App\Http\Controllers\admin\RoleController::class, 'assignPermissionForm']);
+    Route::post('assign', [\App\Http\Controllers\admin\RoleController::class, 'syncPermission']);
+
     Route::resource('contacts', \App\Http\Controllers\Admin\ContactController::class);
     Route::resource('menu', \App\Http\Controllers\Admin\MenuController::class);
     Route::resource('agents', \App\Http\Controllers\Admin\AgentController::class);
@@ -209,7 +227,6 @@ Route::prefix('admin')->group(function () {
     Route::resource('assign', \App\Http\Controllers\admin\AssignController::class);
 
 
-
 });
 
 
@@ -221,11 +238,11 @@ Route::prefix('admin')->group(function () {
 */
 
 Route::get('/test/mail', function () {
-    $emails=\App\Models\Newsletter::query()->pluck('email');
+    $emails = \App\Models\Newsletter::query()->pluck('email');
 
-    foreach (['ali@yahoo.com','majid@yahoo.com'] as $email){
-       $address=new \App\Mail\NewsletterMail($email);
-       Mail::send($address);
+    foreach (['ali@yahoo.com', 'majid@yahoo.com'] as $email) {
+        $address = new \App\Mail\NewsletterMail($email);
+        Mail::send($address);
     }
-        });
+});
 

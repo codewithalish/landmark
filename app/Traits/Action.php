@@ -18,7 +18,6 @@ trait Action
 
     public function action($id, $act)
     {
-        $this->ManualLogin();
 
         $this->isActionValid($act);
 
@@ -104,11 +103,6 @@ trait Action
         }
     }
 
-    public function ManualLogin(): void
-    {
-        $user = User::find(3);
-        Auth::login($user);
-    }
 
     /**
      * @param $act
