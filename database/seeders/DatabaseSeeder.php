@@ -18,12 +18,14 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
 //            RoleSeeder::class,
-            UserSeeder::class,
+//            UserSeeder::class,
 //            RoleUserSeeder::class,
-            CaseSeeder::class,
-            VariableSeeder::class,
-            GallerySeeder::class,
-            PartnerSeeder::class
+//            CaseSeeder::class,
+//            VariableSeeder::class,
+//            GallerySeeder::class,
+//            PartnerSeeder::class,
+            MenuSeeder::class
+
         ]);
 
     }

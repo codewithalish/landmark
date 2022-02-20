@@ -188,6 +188,7 @@ Route::prefix('admin')->group(function () {
 Route::prefix('admin')->group(function () {
     Route::get('dashboard', [AdminController::class, 'dashboard']);
     Route::resource('contacts', \App\Http\Controllers\Admin\ContactController::class);
+    Route::resource('menu', \App\Http\Controllers\Admin\MenuController::class);
     Route::resource('agents', \App\Http\Controllers\Admin\AgentController::class);
     Route::resource('cases', \App\Http\Controllers\Admin\CaseController::class);
     Route::resource('galleries', \App\Http\Controllers\Admin\GalleryController::class);
