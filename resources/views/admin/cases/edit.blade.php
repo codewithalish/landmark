@@ -9,7 +9,7 @@
                 <div class="card-header">{{$cardTitle ?? ''}}</div>
                 @include('layouts.partials.auth.alert')
 
-                <form action="/admin/cases/{{$item->id}}" method="post">
+                <form action="/admin/cases/{{$item->id}}" method="post" enctype="multipart/form-data">
                     @csrf
                     @method('put')
                     <div class="card-body">
@@ -50,6 +50,10 @@
                             </select>
                               </div>
                         <div class="mb-3">
+                            <label class="form-label" for="area">متراژ</label>
+                            <input class="form-control" id="area" type="text" placeholder="area" name="area" value="{{$item->area}}">
+                        </div>
+                        <div class="mb-3">
                             <label class="form-label" for="address">آدرس</label>
                             <input class="form-control" id="address" type="text" placeholder="address" name="address" value="{{$item->address}}">
                         </div>
@@ -72,11 +76,11 @@
                             <input class="form-control" id="description" type="text" placeholder="description" name="description" value="{{$item->description}}">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="avarat_path">اپلود تصویر</label>
-                            <input class="form-control" id="avarat_path" type="file" placeholder="avarat_path" name="avarat_path" value="{{$item->avarat_path}}">
+                            <label class="form-label" for="avatar_path">اپلود تصویر</label>
+                            <input class="form-control" id="avatar_path" type="file" placeholder="avatar_path" name="avatar_path" value="{{$item->avatar_path}}">
                         </div>
 
-                        <button type="submit">ویرایش</button>
+                        <button type="submit" class="btn btn-primary active" type="button">ویرایش</button>
 
                     </div>
                 </form>

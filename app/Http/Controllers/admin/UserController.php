@@ -4,8 +4,10 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CaseRequest;
+use App\Http\Requests\UserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -53,7 +55,7 @@ class UserController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(CaseRequest $request)
+    public function store(UserRequest $request)
     {
         $inputs = $request->only(
             'name',
@@ -66,6 +68,8 @@ class UserController extends Controller
             'telegram',
             'whatsapp'
         );
+        $inputs['password'] = Hash::make($inputs['password']);
+
         $result=User::create($inputs);
         if ($result){
             return back()->with('success','با موفقیت ارسال شد');

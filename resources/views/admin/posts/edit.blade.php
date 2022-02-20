@@ -9,7 +9,7 @@
                 <div class="card-header">{{$cardTitle ?? ''}}</div>
                 @include('layouts.partials.auth.alert')
 
-                <form action="/admin/posts/{{$item->id}}" method="post">
+                <form action="/admin/posts/{{$item->id}}" method="post" enctype="multipart/form-data">
                     @csrf
                     @method('put')
                     <div class="card-body">
@@ -26,11 +26,11 @@
                             <input class="form-control" id="user_id" type="text" placeholder="user_id" name="user_id" value="{{$item->user_id}}">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="avarat_path">اپلود تصویر</label>
-                            <input class="form-control" id="avarat_path" type="file" placeholder="avarat_path" name="avarat_path" value="{{$item->avarat_path}}">
+                            <label class="form-label" for="avatar_path">اپلود تصویر</label>
+                            <input class="form-control" id="avatar_path" type="file" placeholder="avatar_path" name="avatar_path" value="{{$item->avatar_path}}">
                         </div>
 
-                        <button type="submit">ویرایش</button>
+                        <button type="submit" class="btn btn-primary active" type="button">ویرایش</button>
 
                     </div>
                 </form>

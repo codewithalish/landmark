@@ -56,6 +56,10 @@ class ServiceController extends Controller
     public function store(CaseRequest $request)
     {
         $inputs = $request->only('title', 'body', 'thumbnail_path');
+
+        if ($request->file('avatar_path'))
+            $inputs['avatar_path'] = $this->uploadMedia($request->file('avatar_path'));
+
         $result=Service::create($inputs);
         if ($result){
             return back()->with('success','با موفقیت ارسال شد');
@@ -102,6 +106,10 @@ class ServiceController extends Controller
     {
         //
         $query = $request->only('title', 'body', 'thumbnail_path');
+
+        if ($request->file('avatar_path'))
+            $query['avatar_path'] = $this->uploadMedia($request->file('avatar_path'));
+
         Service::where('id', $id)->update($query);
         return back()->with('success', 'ویرایش با موفقیت انجام شد');
     }
@@ -117,5 +125,15 @@ class ServiceController extends Controller
         //
         Service::query()->where('id', $id)->delete();
         return back();
+    }
+
+    public function uploadMedia($file)
+    {
+        $path='\images';
+        $fileName=uniqid().'-'.$file->getClientOriginalName();
+        $destination=public_path().'/'.$path;
+        $file->move($destination,$fileName);
+
+        return $path.'/'.$fileName;
     }
 }

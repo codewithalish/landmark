@@ -9,19 +9,7 @@ use App\Http\Controllers\ShopController;
 use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\PageController;
-
-
-/*
-|--------------------------------------------------------------------------
-| livewire
-|--------------------------------------------------------------------------
-|
-|
-*/
-
-
-Route::get('wire/first', \App\Http\Livewire\Countor::class);
-
+use \Illuminate\Support\Facades\Mail;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,7 +29,7 @@ Route::get('/spatie/users', [\App\Http\Controllers\Dev\SpatiePermissionControlle
 Route::get('/spatie/usersByPermission', [\App\Http\Controllers\Dev\SpatiePermissionController::class, 'usersByPermission']);
 Route::get('/spatie/createUser', [\App\Http\Controllers\Dev\SpatiePermissionController::class, 'createUser']);
 Route::get('/spatie/afterLogin', [\App\Http\Controllers\Dev\SpatiePermissionController::class, 'afterLogin']);
-
+Route::get('/spatie/role', [\App\Http\Controllers\UserPermissionController::class, 'addRolePermission']);
 
 /*
 |--------------------------------------------------------------------------
@@ -69,7 +57,7 @@ Route::get('/test/mail', function () {
 
 Route::resource('tests', App\Http\Controllers\Dev\TestController::class)->only(['store', 'index']);
 
-
+#--------------relation----------------
 Route::get('/test/users/{id}', function ($id) {
     return \App\Models\User::where('id', $id)->with('cases', 'comments', 'contacts')->first();
 });
@@ -93,7 +81,7 @@ Route::get('/admin_create', function () {
 });
 Route::get('login', function () {
     return view('auth.login');
-});
+}); #zang bezan
 Route::get('register', function () {
     return view('auth.register');
 });
@@ -118,12 +106,6 @@ Route::view('abouts', 'pages/abouts');
 */
 Route::view('contacts', 'pages/contacts');
 Route::post('/contacts', [ContactController::class, 'store']);
-
-
-Route::view('/ajax/contacts', 'pages/contacts_ajax');
-Route::post('/ajax/contacts', [ContactController::class, 'storeAjax']);
-
-
 Route::get('agents/{id}/contacts', [ContactController::class, 'create']);
 Route::post('agents/{id}/contacts', [ContactController::class, 'store']);
 
@@ -135,10 +117,11 @@ Route::post('agents/{id}/contacts', [ContactController::class, 'store']);
 |
 */
 
-Route::get('agents/create', [\App\Http\Controllers\UserController::class, 'create']);
-Route::post('agents/create', [\App\Http\Controllers\UserController::class, 'store']);
-Route::get('users/create', [\App\Http\Controllers\UserController::class, 'create']);
-Route::post('users/create', [\App\Http\Controllers\UserController::class, 'store']);
+//Route::get('agents/create', [\App\Http\Controllers\UserController::class, 'create']);
+//Route::post('agents/create', [\App\Http\Controllers\UserController::class, 'store']);
+//Route::get('users/create', [\App\Http\Controllers\UserController::class , 'create']);
+//Route::post('users/create', [\App\Http\Controllers\UserController::class , 'store']);
+
 
 /*
 |--------------------------------------------------------------------------
@@ -167,20 +150,42 @@ Route::get('cases/{id}', [CaseController::class, 'show']);
 
 /*
 |--------------------------------------------------------------------------
-| Authentication Routes
+|users Authentication Routes
+|--------------------------------------------------------------------------
+|
+*/
+
+Route::get('/users/login', [LoginController::class, 'login'])->name('login');
+Route::get('/users/register', [LoginController::class, 'create']);
+Route::post('/users/login', [LoginController::class, 'checklogin']);
+Route::post('/users/register', [LoginController::class, 'register']);
+Route::get('logout', function () {
+    session::flush();
+    auth::logout();
+    return redirect('login');
+});
+
+
+/*
+|--------------------------------------------------------------------------
+|Admin Authentication Routes
 |--------------------------------------------------------------------------
 |
 */
 
 
-Route::get('login', [LoginController::class, 'login'])->name('login');
-Route::get('register', [LoginController::class, 'register'])->name('register');
-Route::post('login', [LoginController::class, 'login']);
-Route::post('register', [LoginController::class, 'register']);
-Route::get('logout', function () {
-    session::flush();
-    auth::logout();
-    return redirect('login');
+
+
+Route::prefix('admin')->group(function () {
+    Route::get('login', [\App\Http\Controllers\admin\LoginController::class, 'login'])->name('login');
+    Route::get('register', [\App\Http\Controllers\admin\LoginController::class, 'create']);
+    Route::post('login', [\App\Http\Controllers\admin\LoginController::class, 'checklogin']);
+    Route::post('register', [\App\Http\Controllers\admin\LoginController::class, 'register']);
+    Route::get('logout', function () {
+        auth::logout();
+        session::flush();
+        return redirect('login');
+    });
 });
 
 /*
@@ -199,5 +204,36 @@ Route::prefix('admin')->group(function () {
     Route::resource('services', \App\Http\Controllers\Admin\ServiceController::class);
     Route::resource('users', \App\Http\Controllers\Admin\userController::class);
     Route::resource('posts', \App\Http\Controllers\Admin\PostController::class);
+    Route::resource('bookmarks', \App\Http\Controllers\Admin\BookmarkController::class);
+    Route::resource('categories', \App\Http\Controllers\Admin\CategoryController::class);
+    Route::resource('comments', \App\Http\Controllers\Admin\CommentController::class);
+    Route::resource('features', \App\Http\Controllers\Admin\FeatureController::class);
+    Route::resource('feedbacks', \App\Http\Controllers\Admin\FeedbackController::class);
+    Route::resource('newsletters', \App\Http\Controllers\Admin\NewsletterController::class);
+    Route::resource('permissions', \App\Http\Controllers\Admin\PermissionController::class);
+    Route::resource('tags', \App\Http\Controllers\Admin\TagController::class);
+    Route::resource('variables', \App\Http\Controllers\Admin\VariableController::class);
+    Route::resource('roles', \App\Http\Controllers\Admin\RoleController::class);
+    Route::resource('assign', \App\Http\Controllers\admin\AssignController::class);
+
+
 
 });
+
+
+/*
+|--------------------------------------------------------------------------
+| newsletter mail
+|--------------------------------------------------------------------------
+|
+*/
+
+Route::get('/test/mail', function () {
+    $emails=\App\Models\Newsletter::query()->pluck('email');
+
+    foreach (['ali@yahoo.com','majid@yahoo.com'] as $email){
+       $address=new \App\Mail\NewsletterMail($email);
+       Mail::send($address);
+    }
+        });
+

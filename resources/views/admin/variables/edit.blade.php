@@ -22,7 +22,7 @@
                             <input class="form-control" id="value" type="text" placeholder="value" name="value" value="{{$item->value}}">
                         </div>
 
-                        <button type="submit">ویرایش</button>
+                        <button type="submit" class="btn btn-primary active">ویرایش</button>
 
                     </div>
                 </form>

@@ -26,13 +26,13 @@
                             <td>{{$item->mobile}}</td>
 
                             <td>
-                                <a href="/admin/users/{{$item->id}}">نمایش</a>|
-                                <a href="/admin/users/{{$item->id}}/edit">ویرایش</a>|
+                                <a href="/admin/users/{{$item->id}}" class="btn btn-outline-success" type="button" style="padding: 3px">نمایش</a>
+                                <a href="/admin/users/{{$item->id}}/edit" class="btn btn-outline-warning" type="button" style="padding: 3px">ویرایش</a>
 
                                 <form action="/admin/users/{{$item->id}}" method="post">
                                     @csrf
                                     @method('delete')
-                                    <button>حذف</button>
+                                    <button class="btn btn-outline-danger" type="submit" style="padding: 3px">حذف</button>
                                 </form>
                             </td>
                         </tr>

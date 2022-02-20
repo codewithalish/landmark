@@ -12,6 +12,7 @@
                         لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ
                     </p>
                 </div>
+            </div>
             @foreach($items as $item)
             <div class="col-md-3 col-sm-6">
                 <div class="service-item">

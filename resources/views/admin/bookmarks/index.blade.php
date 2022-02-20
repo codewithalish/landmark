@@ -26,13 +26,12 @@
                             <td>{{$item->bookmarkable_type}}</td>
 
                             <td>
-                                <a href="/admin/bookmarks/{{$item->id}}">نمایش</a>|
-                                <a href="/admin/bookmarks/{{$item->id}}/edit">ویرایش</a>|
+
 
                                 <form action="/admin/bookmarks/{{$item->id}}" method="post">
                                     @csrf
                                     @method('delete')
-                                    <button>حذف</button>
+                                    <button class="btn btn-outline-danger" type="submit" style="padding: 3px">حذف</button>
                                 </form>
                             </td>
                         </tr>

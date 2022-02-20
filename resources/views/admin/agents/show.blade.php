@@ -8,7 +8,7 @@
             <div class="card mb-4">
                 <div class="card-header">{{$titleCard ?? ''}}</div>
                 <div class="card-body">
-                    <img src="{{$item->image_path }}" alt="{{$item->title}}">
+                    <img src="{{$item->avatar_path }}" alt="{{$item->title}}">
                     <hr>
                     <strong>id:</strong>
                     <span>{{$item->id}}</span>
@@ -38,8 +38,7 @@
                     <strong>whatsapp:</strong>
                     <span>{{$item->whatsapp}}</span>
                     <hr>
-                    <strong>avatar_path:</strong>
-                    <span>{{$item->avatar_path}}</span>
+
 
                 </div>
             </div>

@@ -4,8 +4,11 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CaseRequest;
+use App\Http\Requests\UserRequest;
 use App\Models\Agent;
+use App\Models\Role;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class AgentController extends Controller
 {
@@ -53,7 +56,7 @@ class AgentController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(CaseRequest $request)
+    public function store(UserRequest $request)
     {
         $inputs = $request->only(
             'name',
@@ -66,8 +69,12 @@ class AgentController extends Controller
             'telegram',
             'whatsapp'
         );
-        $result=Agent::create($inputs);
+        if ($request->file('avatar_path')){
+            $inputs['avatar_path'] = $this->uploadMedia($request->file('avatar_path'));
+        }
+        $inputs['password'] = Hash::make($inputs['password']);
 
+        $result=Agent::create($inputs);
         $roleUser = Role::where('name', 'agent')->first();
         $result->assignRole($roleUser);
 
@@ -127,6 +134,10 @@ class AgentController extends Controller
             'telegram',
             'whatsapp'
         );
+
+        if ($request->file('avatar_path')){
+            $query['avatar_path'] = $this->uploadMedia($request->file('avatar_path'));
+        }
         Agent::where('id', $id)->update($query);
         return back()->with('success', 'ویرایش با موفقیت انجام شد');
     }
@@ -142,5 +153,15 @@ class AgentController extends Controller
         //
         Agent::query()->where('id', $id)->delete();
         return back();
+    }
+
+    public function uploadMedia($file)
+    {
+        $path='\images';
+        $fileName=uniqid().'-'.$file->getClientOriginalName();
+        $destination=public_path().'/'.$path;
+        $file->move($destination,$fileName);
+
+        return $path.'/'.$fileName;
     }
 }

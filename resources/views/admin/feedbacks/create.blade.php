@@ -24,7 +24,7 @@
                             <input class="form-control" id="body" type="text" placeholder="body" name="body">
                         </div>
 
-                        <button type="submit">Send</button>
+                        <button type="submit" class="btn btn-primary active" type="button">Send</button>
 
                     </div>
                 </form>

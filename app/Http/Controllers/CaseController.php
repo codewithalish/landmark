@@ -62,7 +62,7 @@ class CaseController extends Controller
         $items = $items->where('status', 'CONFIRMED')->paginate(6);
 
         $caseWidget = CaseModel::query()
-            ->orderBy('created_at', 'desc')
+            ->orderBy('id', 'DESC')
             ->limit(3)
             ->get();
 

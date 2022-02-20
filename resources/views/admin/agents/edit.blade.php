@@ -9,7 +9,7 @@
                 <div class="card-header">{{$cardTitle ?? ''}}</div>
                 @include('layouts.partials.auth.alert')
 
-                <form action="/admin/agents/{{$item->id}}" method="post">
+                <form action="/admin/agents/{{$item->id}}" method="post" enctype="multipart/form-data">
                     @csrf
                     @method('put')
                     <div class="card-body">
@@ -22,8 +22,8 @@
                             <input class="form-control" id="email" type="email" placeholder="email" name="email" value="{{$item->email}}">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="monile">شماره همراه</label>
-                            <input class="form-control" id="monile" type="number" placeholder="monile" name="monile" value="{{$item->monile}}">
+                            <label class="form-label" for="mobile">شماره همراه</label>
+                            <input class="form-control" id="mobile" type="number" placeholder="mobile" name="mobile" value="{{$item->mobile}}">
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="password">رمز عبور</label>
@@ -48,7 +48,7 @@
                             <label class="form-label" for="whatsapp">ادرس واتساپ</label>
                             <input class="form-control" id="whatsapp" type="text" placeholder="whatsapp" name="whatsapp" value="{{$item->whatsapp}}">
                         </div>
-                        <button type="submit">ویرایش</button>
+                        <button type="submit" class="btn btn-primary active" type="button">ویرایش</button>
 
                     </div>
                 </form>

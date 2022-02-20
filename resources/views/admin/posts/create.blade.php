@@ -12,7 +12,7 @@
 
                 @include('layouts.partials.auth.alert')
 
-                <form action="/admin/posts" method="post">
+                <form action="/admin/posts" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="card-body">
                         <div class="mb-3">
@@ -31,7 +31,7 @@
                             <label class="form-label" for="avatar_path">اپلود تصویر</label>
                             <input class="form-control" id="avatar_path" type="file" placeholder="avatar_path" name="avatar_path">
                         </div>
-                        <button type="submit">Send</button>
+                        <button type="submit" class="btn btn-primary active" type="button">Send</button>
 
                     </div>
                 </form>

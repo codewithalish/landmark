@@ -55,8 +55,8 @@
             <ul class="header-nav ms-3">
                 <li class="nav-item dropdown"><a class="nav-link py-0" data-coreui-toggle="dropdown" href="#"
                                                  role="button" aria-haspopup="true" aria-expanded="false">
-                        <div class="avatar avatar-md">
-                            welcome {{\Illuminate\Support\Facades\Auth::user()->name ?? ''}}</div>
+                        <div >
+                             {{\Illuminate\Support\Facades\Auth::user()->name ?? ''}} <span>خوش امدید</span> </div>
                     </a>
                     <div class="dropdown-menu dropdown-menu-end pt-0">
                         <div class="dropdown-header bg-light py-2">
@@ -108,7 +108,7 @@
                             <svg class="icon me-2">
                                 <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-lock-locked"></use>
                             </svg>
-                            Lock Account</a><a class="dropdown-item" href="#">
+                            Lock Account</a><a class="dropdown-item" href="/logout">
                             <svg class="icon me-2">
                                 <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-account-logout"></use>
                             </svg>

@@ -9,6 +9,7 @@ use App\Models\Contact;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class AgentController extends Controller
 {
@@ -46,6 +47,7 @@ class AgentController extends Controller
             'avatar_path',
             'message'
         );
+        $inputs['password'] = Hash::make($inputs['password']);
 
 #ارسال پیام در صفحه agent/show
         $result = Contact::create($inputs);

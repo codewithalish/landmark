@@ -12,7 +12,7 @@
 
                 @include('layouts.partials.auth.alert')
 
-                <form action="/admin/users" method="post">
+                <form action="/admin/users" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="card-body">
                         <div class="mb-3">
@@ -29,10 +29,10 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="password">رمز عبور</label>
-                            <input class="form-control" id="password" type="text" placeholder="password" name="password">
+                            <input class="form-control" id="password" type="password" placeholder="password" name="password">
                         </div>
 
-                        <button type="submit">Send</button>
+                        <button type="submit" class="btn btn-primary active" type="button">Send</button>
 
                     </div>
                 </form>

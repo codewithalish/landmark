@@ -50,6 +50,10 @@ class PostController extends Controller
      */
     public function store(CaseRequest $request)
     {
+        if ($request->file('avatar_path')){
+            $inputs['avatar_path'] = $this->uploadMedia($request->file('avatar_path'));
+        }
+
         $inputs = $request->only('title', 'body','user_id','avatar_path');
         $result=Post::create($inputs);
         if ($result){
@@ -58,6 +62,15 @@ class PostController extends Controller
             return back()->with('error');
         }
 
+    }
+    public function uploadMedia($file)
+    {
+        $path='\images';
+        $fileName=uniqid().'-'.$file->getClientOriginalName();
+        $destination=public_path().'/'.$path;
+        $file->move($destination,$fileName);
+
+        return $path.'/'.$fileName;
     }
 
     /**
@@ -97,6 +110,10 @@ class PostController extends Controller
     {
         //
         $query = $request->only('title', 'body','user_id','avatar_path');
+
+        if ($request->file('avatar_path')){
+            $query['avatar_path'] = $this->uploadMedia($request->file('avatar_path'));
+        }
         Post::where('id', $id)->update($query);
         return back()->with('success', 'ویرایش با موفقیت انجام شد');
     }

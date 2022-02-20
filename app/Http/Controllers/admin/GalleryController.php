@@ -55,7 +55,12 @@ class GalleryController extends Controller
      */
     public function store(CaseRequest $request)
     {
+
         $inputs = $request->only('title', 'avatar_path');
+
+        if ($request->file('avatar_path'))
+            $inputs['avatar_path'] = $this->uploadMedia($request->file('avatar_path'));
+
         $result=Gallery::create($inputs);
         if ($result){
             return back()->with('success','با موفقیت ارسال شد');
@@ -101,7 +106,7 @@ class GalleryController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $query = $request->only(['title', 'price', 'body', 'image_path', 'details']);
+        $query = $request->only(['title', 'avatar_path']);
         Gallery::where('id', $id)->update($query);
         return back()->with('success', 'ویرایش با موفقیت انجام شد');
     }
@@ -117,5 +122,15 @@ class GalleryController extends Controller
         //
         Gallery::query()->where('id', $id)->delete();
         return back();
+    }
+
+    public function uploadMedia($file)
+    {
+        $path='\images';
+        $fileName=uniqid().'-'.$file->getClientOriginalName();
+        $destination=public_path().'/'.$path;
+        $file->move($destination,$fileName);
+
+        return $path.'/'.$fileName;
     }
 }

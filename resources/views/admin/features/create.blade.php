@@ -20,7 +20,7 @@
                             <input class="form-control" id="title" type="text" placeholder="title" name="title">
                         </div>
 
-                        <button type="submit">Send</button>
+                        <button type="submit" class="btn btn-primary active" type="button">Send</button>
 
                     </div>
                 </form>
