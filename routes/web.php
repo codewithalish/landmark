@@ -79,9 +79,7 @@ Route::post('/', [\App\Http\Controllers\PageController::class, 'store']);
 Route::get('/admin_create', function () {
     return view('admin.create_case');
 });
-Route::get('login', function () {
-    return view('auth.login');
-}); #zang bezan
+
 Route::get('register', function () {
     return view('auth.register');
 });
@@ -147,6 +145,7 @@ Route::get('cases', [CaseController::class, 'search']);
 Route::get('cases/create', [CaseController::class, 'create']);
 Route::post('cases', [CaseController::class, 'store']);
 Route::get('cases/{id}', [CaseController::class, 'show']);
+Route::view('/bookmarks/show','bookmarks.show');
 
 /*
 |--------------------------------------------------------------------------
@@ -159,7 +158,7 @@ Route::get('/users/login', [LoginController::class, 'login'])->name('login');
 Route::get('/users/register', [LoginController::class, 'create']);
 Route::post('/users/login', [LoginController::class, 'checklogin']);
 Route::post('/users/register', [LoginController::class, 'register']);
-Route::get('logout', function () {
+Route::get('/users/logout', function () {
     session::flush();
     auth::logout();
     return redirect('login');

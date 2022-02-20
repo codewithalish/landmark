@@ -26,7 +26,7 @@ class LoginController extends Controller
 
             $userRoles = [];
 
-            return redirect('/admin');
+            return redirect('/admin/dashboard');
         }
         return redirect('/login')->with('error', 'نام کاربری یا کلمه عبور اشتباه است');
 

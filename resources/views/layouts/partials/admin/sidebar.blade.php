@@ -20,8 +20,12 @@
                 </svg>
                 مطالب</a>
             <ul class="nav-group-items">
-                <li class="nav-item"><a class="nav-link" href="/admin/posts"><span class="nav-icon"></span>لیست</a></li>
-                <li class="nav-item"><a class="nav-link" href="/admin/posts/create"><span class="nav-icon"></span>ایجاد</a></li>
+{{--                @if(Auth::user()->hasPermissionTo('posts_read'))--}}
+                    <li class="nav-item"><a class="nav-link" href="/admin/posts"><span class="nav-icon"></span>لیست</a>
+                    </li>
+{{--                @endif--}}
+                <li class="nav-item"><a class="nav-link" href="/admin/posts/create"><span class="nav-icon"></span>ایجاد</a>
+                </li>
             </ul>
         </li>
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
@@ -30,8 +34,10 @@
                 </svg>
                 نماینده ها</a>
             <ul class="nav-group-items">
-                <li class="nav-item"><a class="nav-link" href="/admin/agents"><span class="nav-icon"></span>لیست</a></li>
-                <li class="nav-item"><a class="nav-link" href="/admin/agents/create"><span class="nav-icon"></span>ایجاد</a></li>
+                <li class="nav-item"><a class="nav-link" href="/admin/agents"><span class="nav-icon"></span>لیست</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="/admin/agents/create"><span class="nav-icon"></span>ایجاد</a>
+                </li>
             </ul>
         </li>
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
@@ -41,7 +47,8 @@
                 پرونده</a>
             <ul class="nav-group-items">
                 <li class="nav-item"><a class="nav-link" href="/admin/cases"><span class="nav-icon"></span>لیست</a></li>
-                <li class="nav-item"><a class="nav-link" href="/admin/cases/create"><span class="nav-icon"></span>ایجاد</a></li>
+                <li class="nav-item"><a class="nav-link" href="/admin/cases/create"><span class="nav-icon"></span>ایجاد</a>
+                </li>
             </ul>
         </li>
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
@@ -50,8 +57,10 @@
                 </svg>
                 دسته بندی ها</a>
             <ul class="nav-group-items">
-                <li class="nav-item"><a class="nav-link" href="/admin/categories"><span class="nav-icon"></span>لیست</a></li>
-                <li class="nav-item"><a class="nav-link" href="/admin/categories/create"><span class="nav-icon"></span>ایجاد</a></li>
+                <li class="nav-item"><a class="nav-link" href="/admin/categories"><span class="nav-icon"></span>لیست</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="/admin/categories/create"><span class="nav-icon"></span>ایجاد</a>
+                </li>
             </ul>
         </li>
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
@@ -61,7 +70,8 @@
                 کاربران</a>
             <ul class="nav-group-items">
                 <li class="nav-item"><a class="nav-link" href="/admin/users"><span class="nav-icon"></span>لیست</a></li>
-                <li class="nav-item"><a class="nav-link" href="/admin/users/create"><span class="nav-icon"></span>ایجاد</a></li>
+                <li class="nav-item"><a class="nav-link" href="/admin/users/create"><span class="nav-icon"></span>ایجاد</a>
+                </li>
             </ul>
         </li>
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
@@ -70,7 +80,8 @@
                 </svg>
                 پیام ها</a>
             <ul class="nav-group-items">
-                <li class="nav-item"><a class="nav-link" href="/admin/comments"><span class="nav-icon"></span>لیست</a></li>
+                <li class="nav-item"><a class="nav-link" href="/admin/comments"><span class="nav-icon"></span>لیست</a>
+                </li>
             </ul>
         </li>
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
@@ -79,17 +90,20 @@
                 </svg>
                 تماس ها</a>
             <ul class="nav-group-items">
-                <li class="nav-item"><a class="nav-link" href="/admin/contacts"><span class="nav-icon"></span>لیست</a></li>
+                <li class="nav-item"><a class="nav-link" href="/admin/contacts"><span class="nav-icon"></span>لیست</a>
+                </li>
             </ul>
         </li>
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
                 <svg class="nav-icon">
                     <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-puzzle"></use>
                 </svg>
-             ویژگی ها</a>
+                ویژگی ها</a>
             <ul class="nav-group-items">
-                <li class="nav-item"><a class="nav-link" href="/admin/features"><span class="nav-icon"></span>لیست</a></li>
-                <li class="nav-item"><a class="nav-link" href="/admin/features/create"><span class="nav-icon"></span>ایجاد</a></li>
+                <li class="nav-item"><a class="nav-link" href="/admin/features"><span class="nav-icon"></span>لیست</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="/admin/features/create"><span class="nav-icon"></span>ایجاد</a>
+                </li>
             </ul>
         </li>
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
@@ -98,17 +112,19 @@
                 </svg>
                 بازخوردها</a>
             <ul class="nav-group-items">
-                <li class="nav-item"><a class="nav-link" href="/admin/feedbacks"><span class="nav-icon"></span>لیست</a></li>
+                <li class="nav-item"><a class="nav-link" href="/admin/feedbacks"><span class="nav-icon"></span>لیست</a>
+                </li>
             </ul>
         </li>
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
                 <svg class="nav-icon">
                     <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-puzzle"></use>
                 </svg>
-               خبرنامه ها</a>
+                خبرنامه ها</a>
             <ul class="nav-group-items">
-                <li class="nav-item"><a class="nav-link" href="/admin/newsletters"><span class="nav-icon"></span>لیست</a></li>
-{{--                <li class="nav-item"><a class="nav-link" href="/admin/newsletters/create"><span class="nav-icon"></span>ایجاد</a></li>--}}
+                <li class="nav-item"><a class="nav-link" href="/admin/newsletters"><span
+                            class="nav-icon"></span>لیست</a></li>
+                {{--                <li class="nav-item"><a class="nav-link" href="/admin/newsletters/create"><span class="nav-icon"></span>ایجاد</a></li>--}}
             </ul>
         </li>
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
@@ -117,8 +133,10 @@
                 </svg>
                 شرکا</a>
             <ul class="nav-group-items">
-                <li class="nav-item"><a class="nav-link" href="/admin/partners"><span class="nav-icon"></span>لیست</a></li>
-                <li class="nav-item"><a class="nav-link" href="/admin/partners/create"><span class="nav-icon"></span>ایجاد</a></li>
+                <li class="nav-item"><a class="nav-link" href="/admin/partners"><span class="nav-icon"></span>لیست</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="/admin/partners/create"><span class="nav-icon"></span>ایجاد</a>
+                </li>
             </ul>
         </li>
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
@@ -127,8 +145,10 @@
                 </svg>
                 مجوزها</a>
             <ul class="nav-group-items">
-                <li class="nav-item"><a class="nav-link" href="/admin/permissions"><span class="nav-icon"></span>لیست</a></li>
-                <li class="nav-item"><a class="nav-link" href="/admin/permissions/create"><span class="nav-icon"></span>ایجاد</a></li>
+                <li class="nav-item"><a class="nav-link" href="/admin/permissions"><span
+                            class="nav-icon"></span>لیست</a></li>
+                <li class="nav-item"><a class="nav-link" href="/admin/permissions/create"><span class="nav-icon"></span>ایجاد</a>
+                </li>
             </ul>
         </li>
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
@@ -138,7 +158,8 @@
                 نقش ها</a>
             <ul class="nav-group-items">
                 <li class="nav-item"><a class="nav-link" href="/admin/roles"><span class="nav-icon"></span>لیست</a></li>
-                <li class="nav-item"><a class="nav-link" href="/admin/roles/create"><span class="nav-icon"></span>ایجاد</a></li>
+                <li class="nav-item"><a class="nav-link" href="/admin/roles/create"><span class="nav-icon"></span>ایجاد</a>
+                </li>
             </ul>
         </li>
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
@@ -147,8 +168,10 @@
                 </svg>
                 خدمات</a>
             <ul class="nav-group-items">
-                <li class="nav-item"><a class="nav-link" href="/admin/services"><span class="nav-icon"></span>لیست</a></li>
-                <li class="nav-item"><a class="nav-link" href="/admin/services/create"><span class="nav-icon"></span>ایجاد</a></li>
+                <li class="nav-item"><a class="nav-link" href="/admin/services"><span class="nav-icon"></span>لیست</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="/admin/services/create"><span class="nav-icon"></span>ایجاد</a>
+                </li>
             </ul>
         </li>
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
@@ -158,7 +181,8 @@
                 برچسب ها</a>
             <ul class="nav-group-items">
                 <li class="nav-item"><a class="nav-link" href="/admin/tags"><span class="nav-icon"></span>لیست</a></li>
-                <li class="nav-item"><a class="nav-link" href="/admin/tags/create"><span class="nav-icon"></span>ایجاد</a></li>
+                <li class="nav-item"><a class="nav-link" href="/admin/tags/create"><span
+                            class="nav-icon"></span>ایجاد</a></li>
             </ul>
         </li>
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
@@ -167,8 +191,10 @@
                 </svg>
                 گالری</a>
             <ul class="nav-group-items">
-                <li class="nav-item"><a class="nav-link" href="/admin/images"><span class="nav-icon"></span>لیست</a></li>
-                <li class="nav-item"><a class="nav-link" href="/admin/images/create"><span class="nav-icon"></span>ایجاد</a></li>
+                <li class="nav-item"><a class="nav-link" href="/admin/images"><span class="nav-icon"></span>لیست</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="/admin/images/create"><span class="nav-icon"></span>ایجاد</a>
+                </li>
             </ul>
         </li>
     </ul>

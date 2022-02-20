@@ -12,7 +12,7 @@
 
                     @include('layouts.partials.auth.alert')
 
-                    <form action="/login" method="post">
+                    <form action="/admin/login" method="post">
                         @csrf
                         <div class="card-group d-block d-md-flex row">
                             <div class="card col-md-7 p-4 mb-0">

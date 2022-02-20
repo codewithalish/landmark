@@ -108,7 +108,7 @@
                             <svg class="icon me-2">
                                 <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-lock-locked"></use>
                             </svg>
-                            Lock Account</a><a class="dropdown-item" href="/logout">
+                            Lock Account</a><a class="dropdown-item" href="/admin/logout">
                             <svg class="icon me-2">
                                 <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-account-logout"></use>
                             </svg>
