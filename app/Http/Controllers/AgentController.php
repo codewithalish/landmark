@@ -16,8 +16,12 @@ class AgentController extends Controller
     public function index(Request $request)
     {
         $items = User::query()
-            ->with(['roles'])
+            ->role('agent')
            ->paginate(3);
+
+
+
+
 
         $agentWidget=User::query()
             ->limit(3)

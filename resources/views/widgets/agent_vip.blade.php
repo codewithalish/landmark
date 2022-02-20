@@ -12,7 +12,7 @@
                 <div class="item-title">
                     <a href="/agents/{{$item->id}}" title="Clark Darik">{{$item->name}}</a>
                 </div>
-                <span class="total-property">0 ملک </span>
+                <span class="total-property">{{$item->cases->count()}} ملک </span>
             </div>
         </div>
         @endforeach

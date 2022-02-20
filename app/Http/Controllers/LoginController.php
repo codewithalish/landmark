@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\RegisterRequest;
 use App\Http\Requests\LoginRequest;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 
 class LoginController extends Controller
@@ -38,14 +39,21 @@ class LoginController extends Controller
 
     public function register(RegisterRequest $request)
     {
-        $inputs = $request->only(['name', 'mobile', 'password','email']);
+        $inputs = $request->only(['name', 'mobile', 'password', 'email']);
         $inputs['password'] = Hash::make($inputs['password']);
-        $result=User::create($inputs);
+        $result = User::create($inputs);
 
-        if ($result){
-            return back()->with('success','با موفقیت ارسال شد');
-        } else{
+        if ($result) {
+            return back()->with('success', 'با موفقیت ارسال شد');
+        } else {
             return redirect('/users/create')->with('error');
         }
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        Session::flush();
+        return redirect('/users/login');
     }
 }
