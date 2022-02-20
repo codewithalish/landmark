@@ -27,5 +27,6 @@
 <script src="/landmark/js/slider.min.js"></script>
 <script src="/landmark/js/jquery.ui.touch-punch.js"></script>
 <script src="/landmark/js/price-slider.js"></script>
+@livewireScripts
 </body>
 </html>

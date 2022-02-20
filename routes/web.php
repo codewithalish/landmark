@@ -13,6 +13,18 @@ use App\Http\Controllers\PageController;
 
 /*
 |--------------------------------------------------------------------------
+| livewire
+|--------------------------------------------------------------------------
+|
+|
+*/
+
+
+Route::get('wire/first', \App\Http\Livewire\Countor::class);
+
+
+/*
+|--------------------------------------------------------------------------
 | spatie
 |--------------------------------------------------------------------------
 |
@@ -31,7 +43,6 @@ Route::get('/spatie/createUser', [\App\Http\Controllers\Dev\SpatiePermissionCont
 Route::get('/spatie/afterLogin', [\App\Http\Controllers\Dev\SpatiePermissionController::class, 'afterLogin']);
 
 
-
 /*
 |--------------------------------------------------------------------------
 | test & dev
@@ -43,17 +54,14 @@ Route::get('/live', [\App\Http\Controllers\Dev\TestController::class, 'livewire'
 
 Route::get('/test/mail', function () {
 
-    $emails=\App\Models\User::query()->pluck('email');
+    $emails = \App\Models\User::query()->pluck('email');
 
-    foreach ($emails as $email){
+    foreach ($emails as $email) {
         \Illuminate\Support\Facades\Mail::send('emails.first', [], function ($message) use ($email) {
             $message->to($email, 'landmark')->subject('test mail');
             $message->from('fa.mozaffarii111@gmail.com', 'landmark');
         });
     }
-
-
-
 
 
 });
@@ -110,6 +118,12 @@ Route::view('abouts', 'pages/abouts');
 */
 Route::view('contacts', 'pages/contacts');
 Route::post('/contacts', [ContactController::class, 'store']);
+
+
+Route::view('/ajax/contacts', 'pages/contacts_ajax');
+Route::post('/ajax/contacts', [ContactController::class, 'storeAjax']);
+
+
 Route::get('agents/{id}/contacts', [ContactController::class, 'create']);
 Route::post('agents/{id}/contacts', [ContactController::class, 'store']);
 
@@ -123,8 +137,8 @@ Route::post('agents/{id}/contacts', [ContactController::class, 'store']);
 
 Route::get('agents/create', [\App\Http\Controllers\UserController::class, 'create']);
 Route::post('agents/create', [\App\Http\Controllers\UserController::class, 'store']);
-Route::get('users/create', [\App\Http\Controllers\UserController::class , 'create']);
-Route::post('users/create', [\App\Http\Controllers\UserController::class , 'store']);
+Route::get('users/create', [\App\Http\Controllers\UserController::class, 'create']);
+Route::post('users/create', [\App\Http\Controllers\UserController::class, 'store']);
 
 /*
 |--------------------------------------------------------------------------
@@ -145,11 +159,11 @@ Route::get('agents/{id}', [AgentController::class, 'show']);
 |
 */
 
-Route::get('cases/{id}/{act}', [CaseController::class , 'action']);
-Route::get('cases', [CaseController::class , 'search']);
-Route::get('cases/create', [CaseController::class , 'create']);
-Route::post('cases', [CaseController::class , 'store']);
-Route::get('cases/{id}', [CaseController::class , 'show']);
+Route::get('cases/{id}/{act}', [CaseController::class, 'action']);
+Route::get('cases', [CaseController::class, 'search']);
+Route::get('cases/create', [CaseController::class, 'create']);
+Route::post('cases', [CaseController::class, 'store']);
+Route::get('cases/{id}', [CaseController::class, 'show']);
 
 /*
 |--------------------------------------------------------------------------
