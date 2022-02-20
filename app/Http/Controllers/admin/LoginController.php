@@ -47,4 +47,11 @@ class LoginController extends Controller
 
         return redirect('/login')->with('success', 'با موفقیت ثبت شد');
     }
+
+    public function logout() {
+        \Illuminate\Support\Facades\Auth::logout();
+  Session::flush();
+        return redirect('login');
+    }
+
 }
