@@ -52,9 +52,9 @@ trait Action
 
         if ($this->bookmarkedCount($id) < 1) {
             Bookmark::create($bookmark);
-            //dd('یا موفقیت لایکش کردی');
+            //return 'یا موفقیت لایکش کردی';
         } else{
-            // dd('قبلا لایکش کرده بودی');
+            // return 'قبلا لایکش کرده بودی';
 
         }
     }
@@ -70,9 +70,9 @@ trait Action
                 ->where('bookmarkable_type', CaseModel::class)
                 ->delete();
 
-           // dd('یا موفقیت دیس لایکش کردی');
+           // return 'یا موفقیت دیس لایکش کردی';
         } else{
-            //   dd('اصلا لایکش نکرده بودی');
+            //   return 'اصلا لایکش نکرده بودی';
 
         }
     }
@@ -87,7 +87,7 @@ trait Action
         $casesIds = $casesIds->toArray();
 
         if (!in_array($id, $casesIds)){
-            //            dd('آیدی کیس در دیتابیس ما نیست');
+            // return 'آیدی کیس در دیتابیس ما نیست';
 
         }
     }
@@ -98,7 +98,7 @@ trait Action
     public function isActionValid($act): void
     {
         if (!in_array($act, $this->actions)){
-         //   dd('your selected act is wrong');
+         //   return 'your selected act is wrong';
 
         }
     }

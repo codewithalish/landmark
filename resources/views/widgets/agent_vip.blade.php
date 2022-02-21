@@ -5,7 +5,7 @@
         <div class="agent-item">
             <div class="thumbnail">
                 <a href="/agents/{{$item->id}}" title="{{$item->name}}">
-                    <img src="/landmark/images/team/thumb/agent_1.png" alt="Clark Darik">
+                    <img src="{{$item->avatar_path ?? '/landmark/images/team/thumb/agent_1.png'}}" alt="Clark Darik">
                 </a>
             </div>
             <div class="content">
