@@ -35,6 +35,38 @@ class UserController extends Controller
 
     }
 
+    public function show($id)
+    {
+        //
+        $query = User::find($id);
+        return view('users.show', ['item' => $query]);
+    }
+
+    public function edit($id)
+    {
+        //
+        $query = User::where('id', $id)->first();
+        return view('users.edit', ['item' => $query]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        //
+        $query = $request->only(
+            'name',
+            'mobile',
+            'password',
+            'email',
+
+        );
+        User::where('id', $id)->update($query);
+        return back()->with('success', 'ویرایش با موفقیت انجام شد');
+    }
+
+
+
+
+
     public function bookmarks()
     {
         $items = CaseModel::isLiked()->get();

@@ -33,9 +33,7 @@ class UserController extends Controller
             ]
         );
 
-//
-//        $query=Post::get();
-//        return view('admin.posts.index',['items'=>$query]);
+
     }
 
     /**
