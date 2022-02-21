@@ -29,7 +29,7 @@ class LoginController extends Controller
 
             return redirect('/admin/dashboard');
         }
-        return redirect('/login')->with('error', 'نام کاربری یا کلمه عبور اشتباه است');
+        return redirect('/admin/login')->with('error', 'نام کاربری یا کلمه عبور اشتباه است');
 
     }
 

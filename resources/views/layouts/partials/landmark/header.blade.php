@@ -23,7 +23,7 @@
                                            class="google"><i class="fa fa-telegram"></i></a>
                                         <a href="instagram/#" target="_blank" class="twitter"><i
                                                 class="fa fa-instagram"></i></a>
-                                        <a href="/logout">خروج</a>
+                                        <a href="/users/logout">خروج</a>
                                     </div>
                                 </div>
                             </div>

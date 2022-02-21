@@ -38,8 +38,12 @@ Route::get('/spatie/role', [\App\Http\Controllers\UserPermissionController::clas
 |
 |
 */
+Route::resource('tests', App\Http\Controllers\Dev\TestController::class)->only(['store', 'index']);
+
+#-----------------livewire-----------------
 Route::get('/live', [\App\Http\Controllers\Dev\TestController::class, 'livewire']);
 
+#-----------------email--------------------
 Route::get('/test/mail', function () {
 
     $emails = \App\Models\User::query()->pluck('email');
@@ -50,12 +54,7 @@ Route::get('/test/mail', function () {
             $message->from('fa.mozaffarii111@gmail.com', 'landmark');
         });
     }
-
-
 });
-
-
-Route::resource('tests', App\Http\Controllers\Dev\TestController::class)->only(['store', 'index']);
 
 #--------------relation----------------
 Route::get('/test/users/{id}', function ($id) {
@@ -107,18 +106,18 @@ Route::post('/contacts', [ContactController::class, 'store']);
 Route::get('agents/{id}/contacts', [ContactController::class, 'create']);
 Route::post('agents/{id}/contacts', [ContactController::class, 'store']);
 
-
 /*
 |--------------------------------------------------------------------------
-| user
+| currentUser
 |--------------------------------------------------------------------------
 |
 */
-
-//Route::get('agents/create', [\App\Http\Controllers\UserController::class, 'create']);
-//Route::post('agents/create', [\App\Http\Controllers\UserController::class, 'store']);
-//Route::get('users/create', [\App\Http\Controllers\UserController::class , 'create']);
-//Route::post('users/create', [\App\Http\Controllers\UserController::class , 'store']);
+Route::prefix('users/current')->middleware('auth')->group(function () {
+    Route::get('bookmarks', [\App\Http\Controllers\UserController::class, 'bookmarks']);
+    Route::get('/', [\App\Http\Controllers\UserController::class, 'show']);
+    Route::get('/edit', [\App\Http\Controllers\UserController::class, 'edit']);
+    Route::put('/update', [\App\Http\Controllers\UserController::class, 'update']);
+});
 
 
 /*
@@ -148,23 +147,6 @@ Route::get('cases/{id}', [CaseController::class, 'show']);
 
 /*
 |--------------------------------------------------------------------------
-| currentUser
-|--------------------------------------------------------------------------
-|
-*/
-Route::prefix('users/current')->middleware('auth')->group(function () {
-    Route::get('bookmarks', [\App\Http\Controllers\UserController::class, 'bookmarks']);
-
-    //لطفا متدهای زیر اضافه شود
-
-//    Route::get('/', [\App\Http\Controllers\UserController::class, 'show']);
-//    Route::get('/edit', [\App\Http\Controllers\UserController::class, 'edit']);
-//    Route::put('/update', [\App\Http\Controllers\UserController::class, 'update']);
-});
-
-
-/*
-|--------------------------------------------------------------------------
 |users Authentication Routes
 |--------------------------------------------------------------------------
 |
@@ -176,15 +158,12 @@ Route::post('/users/login', [LoginController::class, 'checklogin']);
 Route::post('/users/register', [LoginController::class, 'register']);
 Route::get('/users/logout', [LoginController::class, 'logout']);
 
-
 /*
 |--------------------------------------------------------------------------
 |Admin Authentication Routes
 |--------------------------------------------------------------------------
 |
 */
-
-
 Route::prefix('admin')->group(function () {
     Route::get('login', [\App\Http\Controllers\admin\LoginController::class, 'login'])->name('login');
     Route::get('register', [\App\Http\Controllers\admin\LoginController::class, 'create']);
@@ -212,7 +191,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::resource('galleries', \App\Http\Controllers\Admin\GalleryController::class);
     Route::resource('partners', \App\Http\Controllers\Admin\PartnerController::class);
     Route::resource('services', \App\Http\Controllers\Admin\ServiceController::class);
-    Route::resource('users', \App\Http\Controllers\Admin\userController::class);
+    Route::resource('users', \App\Http\Controllers\Admin\UserController::class);
     Route::resource('posts', \App\Http\Controllers\Admin\PostController::class);
     Route::resource('bookmarks', \App\Http\Controllers\Admin\BookmarkController::class);
     Route::resource('categories', \App\Http\Controllers\Admin\CategoryController::class);
