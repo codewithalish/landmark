@@ -10,7 +10,7 @@
                     <div class="about-agent">
                         <div class="row agent-detail">
                             <div class="thumbnail col-md-5">
-                                <img src="/landmark/images/team/team_detail.png" alt="">
+                                <img src="{{$item->avatar_path ?? '/landmark/images/team/team_5.png'}}" alt="">
                             </div>
                             <div class="info-agent col-md-7">
                                 <div class="box-content">

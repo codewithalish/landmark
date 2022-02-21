@@ -18,7 +18,7 @@
                         <div class="agent-item">
                             <div class="thumbnail">
                                 <a href="/agents/{{$item->id}}" title="Kent Pather">
-                                    <img src="/landmark/images/team/team_2.png" alt="Kent Pather">
+                                    <img src="{{$item->avatar_path ?? '/landmark/images/team/team_2.png'}}" alt="Kent Pather">
                                 </a>
                                 <span class="line"><span></span></span>
                             </div>
