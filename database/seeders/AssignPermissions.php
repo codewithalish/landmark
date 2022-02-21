@@ -19,12 +19,24 @@ class AssignPermissions extends Seeder
         $roleAgent->givePermissionTo([
             'users_read',
             'posts_read',
+            'posts_create',
+            'posts_update',
+            'posts_delete',
             'galleries_create',
+            'galleries_delete',
             'variables_read',
             'cases_read',
             'cases_create',
+            'cases_update',
+            'cases_delete',
             'comments_read',
-            'contacts_read'
+            'contacts_read',
+            'feedbacks_read',
+            'menu_read',
+            'newsletters_read',
+            'partners_read',
+            'services_read',
+
         ]);
 
 

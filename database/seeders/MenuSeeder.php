@@ -27,5 +27,51 @@ class MenuSeeder extends Seeder
         Menu::create([
             'route' => 'users'
         ]);
+        Menu::create([
+            'route' => 'assign'
+        ]);
+        Menu::create([
+            'route' => 'bookmarks'
+        ]);
+        Menu::create([
+            'route' => 'categories'
+        ]);
+        Menu::create([
+            'route' => 'comments'
+        ]);
+        Menu::create([
+            'route' => 'contacts'
+        ]);
+        Menu::create([
+            'route' => 'feedbacks'
+        ]);
+        Menu::create([
+            'route' => 'galleries'
+        ]);
+        Menu::create([
+            'route' => 'newsletters'
+        ]);
+        Menu::create([
+            'route' => 'partners'
+        ]);
+        Menu::create([
+            'route' => 'permissions'
+        ]);
+        Menu::create([
+            'route' => 'roles'
+        ]);
+        Menu::create([
+            'route' => 'services'
+        ]);
+        Menu::create([
+            'route' => 'tags'
+        ]);
+        Menu::create([
+            'route' => 'variables'
+        ]);
+        Menu::create([
+            'route' => 'menu'
+        ]);
+
     }
 }
