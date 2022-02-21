@@ -1,4 +1,4 @@
-<div class="col-sm-6">
+<div class="col-sm-6 ">
     <div class="property-item">
         <div class="property-item-wrap">
             <div class="item-head">
@@ -11,7 +11,7 @@
             </div>
             <div class="item-featured">
                 <a href="/cases/{{$item->id}}" title="Family House in Hudson">
-                    <img src="/landmark/images/property/property_1.jpg"
+                    <img src="{{$item->avatar_path ?? '/landmark/images/property/property_2.jpg'}}"
                          alt="Family House in Hudson">
                 </a>
                 <span

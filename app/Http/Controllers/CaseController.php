@@ -118,15 +118,7 @@ class CaseController extends Controller
 
     }
 
-    public function uploadMedia($file)
-    {
-        $path='\images';
-        $fileName=uniqid().'-'.$file->getClientOriginalName();
-        $destination=public_path().'/'.$path;
-        $file->move($destination,$fileName);
 
-        return $path.'/'.$fileName;
-    }
 
     public function show(Request $request, $id)
     {
