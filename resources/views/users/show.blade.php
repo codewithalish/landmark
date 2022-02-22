@@ -1,7 +1,8 @@
 @extends('layouts.masterPages.landmark')
 @section('content')
 
-<div id="main">
+
+    <div id="main">
     <div class="section mt-7 mb-7">
         <div class="container">
             <div class="row">
@@ -10,7 +11,7 @@
                     <div class="about-agent">
                         <div class="row agent-detail">
                             <div class="thumbnail col-md-5">
-                                <img src="{{$item->avatar_path ?? '/landmark/images/team/team_5.png'}}" alt="">
+                                <img src="/landmark/images/team/team_detail.png" alt="">
                             </div>
                             <div class="info-agent col-md-7">
                                 <div class="box-content">
@@ -30,11 +31,9 @@
                                             <li class="agent-mobile">
                                                 <a class="ltr_text" href="tel:0" target="_top">{{$item->mobile}}</a>
                                             </li>
-                                            <li class="agent-address">{{$item->address}}</li>
+                                            <li class="agent-address">{{$item->password}}</li>
                                         </ul>
-                                        <div class="agent-about">
-                                            {{$item->body}}
-                                        </div>
+
                                         <div class="agent-action">
                                             <div class="col-sm-6 contact-now">
                                                 <a href="#" title="Johnny Sanders" class="button">هم اکنون تماس بگیرید </a>

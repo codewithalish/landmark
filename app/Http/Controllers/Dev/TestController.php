@@ -5,11 +5,10 @@ namespace App\Http\Controllers\Dev;
 use App\Http\Controllers\Controller;
 use App\Models\CaseModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TestController extends Controller
 {
-
-
 
 
     public function livewire()
@@ -20,9 +19,13 @@ class TestController extends Controller
 
     public function index()
     {
-        //
+        Auth::loginUsingId(1);
 
-        return CaseModel::isVIP()->get();
+
+        return CaseModel::isLiked()->get();
+
+
+
     }
 
 

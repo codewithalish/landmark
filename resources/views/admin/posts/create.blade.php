@@ -24,10 +24,6 @@
                             <input class="form-control" id="body" type="text" placeholder="body" name="body">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="user_id">user_id</label>
-                            <input class="form-control" id="user_id" type="text" placeholder="user_id" name="user_id">
-                        </div>
-                        <div class="mb-3">
                             <label class="form-label" for="avatar_path">اپلود تصویر</label>
                             <input class="form-control" id="avatar_path" type="file" placeholder="avatar_path" name="avatar_path">
                         </div>

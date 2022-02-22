@@ -8,7 +8,6 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
 class Controller extends BaseController
@@ -18,6 +17,17 @@ class Controller extends BaseController
 
     public function __construct()
     {
+    }
+
+
+    public function uploadMedia($file)
+    {
+        $path = '\images';
+        $fileName = uniqid() . '-' . $file->getClientOriginalName();
+        $destination = public_path() . '/' . $path;
+        $file->move($destination, $fileName);
+
+        return $path . '/' . $fileName;
     }
 
     public function checkPermission($permission){

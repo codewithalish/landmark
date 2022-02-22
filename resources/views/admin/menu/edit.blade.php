@@ -2,25 +2,24 @@
 @section('content')
     <div class="body flex-grow-1 px-3">
         <div class="container-lg">
-            <div class="callout callout-info bg-white">send mail
-            </div>
 
             {{--            <div class="callout callout-info bg-white">اطلاعات پیج</div>--}}
             <div class="car"></div>
             <div class="card mb-4">
                 <div class="card-header">{{$cardTitle ?? ''}}</div>
-
                 @include('layouts.partials.auth.alert')
 
-                <form action="/" method="post">
+                <form action="/admin/menu/{{$item->id}}" method="post" enctype="multipart/form-data">
                     @csrf
+                    @method('put')
                     <div class="card-body">
+
                         <div class="mb-3">
-                            <label class="form-label" for="title">متن پیام</label>
-                            <input class="form-control" id="title" type="text" placeholder="title">
+                            <label class="form-label" for="route">اسم</label>
+                            <input class="form-control" id="route" type="text" placeholder="route" name="route" value="{{$item->route}}">
                         </div>
 
-                        <button type="submit" class="btn btn-primary active">Send</button>
+                        <button type="submit" class="btn btn-primary active" type="button">ویرایش</button>
 
                     </div>
                 </form>
@@ -28,5 +27,4 @@
             </div>
         </div>
     </div>
-
 @endsection

@@ -5,7 +5,7 @@
         <div class="recent-property-item">
             <div class="thumbnail">
                 <a href="/cases/{{$item->id}}" title="{{$item->title}}">
-                    <img src="/landmark/images/property/thumb/property_3.jpg" alt="Villa on Hollywood Boulevard">
+                    <img src="{{$item->avatar_path ?? '/landmark/images/property/thumb/property_3.jpg'}}" alt="Villa on Hollywood Boulevard">
                 </a>
             </div>
             <div class="content">

@@ -16,8 +16,9 @@ class AgentController extends Controller
     public function index(Request $request)
     {
         $items = User::query()
-            ->with(['roles'])
+            ->role('agent')
            ->paginate(3);
+
 
         $agentWidget=User::query()
             ->limit(3)
@@ -70,6 +71,35 @@ class AgentController extends Controller
             ->get();
 
         return view('agents/show', compact('item', 'cases'));
+    }
+
+    public function edit($id)
+    {
+        //
+        $query = Agent::where('id', $id)->first();
+        return view('agents.edit', ['item' => $query]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        //
+        $query = $request->only(
+            'name',
+            'mobile',
+            'password',
+            'email',
+            'address',
+            'bio',
+            'avatar_path',
+            'telegram',
+            'whatsapp'
+        );
+
+        if ($request->file('avatar_path')){
+            $query['avatar_path'] = $this->uploadMedia($request->file('avatar_path'));
+        }
+        Agent::where('id', $id)->update($query);
+        return back()->with('success', 'ویرایش با موفقیت انجام شد');
     }
 
 }

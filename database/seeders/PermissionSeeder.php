@@ -45,6 +45,11 @@ class PermissionSeeder extends Seeder
         $permission_contacts_update = Permission::create(['name' => 'contacts_update']);
         $permission_contacts_delete = Permission::create(['name' => 'contacts_delete']);
 
+        $permission_comments_create = Permission::create(['name' => 'comments_create']);
+        $permission_comments_read = Permission::create(['name' => 'comments_read']);
+        $permission_comments_update = Permission::create(['name' => 'comments_update']);
+        $permission_comments_delete = Permission::create(['name' => 'comments_delete']);
+
 
         $permission_features_create = Permission::create(['name' => 'features_create']);
         $permission_features_read = Permission::create(['name' => 'features_read']);

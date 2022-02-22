@@ -9,6 +9,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
@@ -28,7 +29,7 @@ class LoginController extends Controller
 
             return redirect('/admin/dashboard');
         }
-        return redirect('/login')->with('error', 'نام کاربری یا کلمه عبور اشتباه است');
+        return redirect('/admin/login')->with('error', 'نام کاربری یا کلمه عبور اشتباه است');
 
     }
 
@@ -48,10 +49,11 @@ class LoginController extends Controller
         return redirect('/login')->with('success', 'با موفقیت ثبت شد');
     }
 
-    public function logout() {
-        \Illuminate\Support\Facades\Auth::logout();
-  Session::flush();
-        return redirect('login');
+    public function logout()
+    {
+        Auth::logout();
+        Session::flush();
+        return redirect('/admin/login');
     }
 
 }

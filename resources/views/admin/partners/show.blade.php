@@ -22,7 +22,7 @@
                     <span>{{$item->url}}</span>
                     <hr>
                     <strong>avatar_path:</strong>
-                    <img src="{{$item->avatar_path }}" alt="{{$item->title}}">
+                    <a href="{{$item->avatar_path }}"> <img src="{{$item->avatar_path }}" alt="{{$item->title}}" width="100"></a>
                     <hr>
 
 

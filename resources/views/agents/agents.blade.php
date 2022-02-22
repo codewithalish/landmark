@@ -8,7 +8,7 @@
                         @foreach($items as $item)
                         <div class="row agent-detail style-2">
                             <div class="thumbnail col-md-4">
-                                <img src="/landmark/images/team/team_5.png" alt="/agent_detail/{{$item->id}}">
+                                <img src="{{$item->avatar_path ?? '/landmark/images/team/team_5.png'}}" alt="/agent_detail/{{$item->id}}">
                                 <div class="agent-social text-center">
                                     <a class="fa fa-facebook" href="#"></a>
                                     <a class="fa fa-twitter" href="#"></a>

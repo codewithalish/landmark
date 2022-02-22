@@ -38,6 +38,15 @@ class CaseModel extends Model
         return $query->where('is_vip', 1);
     }
 
+    public function scopeIsLiked($query)
+    {
+        return $query->select('cases.*')
+            ->leftJoin('bookmarks', 'bookmarks.bookmarkable_id', '=', 'cases.id')
+            ->where('bookmarks.user_id', Auth::id())
+            ->where('bookmarkable_type', CaseModel::class);
+    }
+
+
     public function user()
     {
         return $this->belongsTo(User::class);
@@ -54,7 +63,7 @@ class CaseModel extends Model
         $bookmarked = Bookmark::query()
             ->where('bookmarkable_type', CaseModel::class)
             ->where('bookmarkable_id', $this->id)
-            ->where('user_id',Auth::id())
+            ->where('user_id', Auth::id())
             ->pluck('bookmarkable_id')->toArray();
 
         if (in_array($this->id, $bookmarked))
