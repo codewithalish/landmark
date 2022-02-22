@@ -21,6 +21,8 @@ class CaseController extends Controller
     {
         //
 
+        $this->checkPermission('cases_read');
+
         $titleCard = 'لیست';
         $th = ['شناسه',
             'title',
@@ -54,6 +56,8 @@ class CaseController extends Controller
     public function create()
     {
         //
+        $this->checkPermission('cases_create');
+
         return view('admin.cases.create');
     }
 
@@ -65,6 +69,7 @@ class CaseController extends Controller
      */
     public function store(Request $request)
     {
+        $this->checkPermission('cases_create');
 
         $inputs = $request->only(
             'title',
@@ -109,6 +114,8 @@ class CaseController extends Controller
     public function show($id)
     {
         //
+        $this->checkPermission('cases_read');
+
         $query = CaseModel::find($id);
         return view('admin.cases.show', ['item' => $query]);
     }
@@ -122,6 +129,8 @@ class CaseController extends Controller
     public function edit($id)
     {
         //
+        $this->checkPermission('cases_update');
+
         $query = CaseModel::where('id', $id)->first();
         return view('admin.cases.edit', ['item' => $query]);
     }
@@ -136,6 +145,8 @@ class CaseController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $this->checkPermission('cases_update');
+
         $query = $request->only(
             'title',
             'price',
@@ -172,6 +183,8 @@ class CaseController extends Controller
     public function destroy($id)
     {
         //
+        $this->checkPermission('cases_delete');
+
         CaseModel::query()->where('id', $id)->delete();
         return back();
     }

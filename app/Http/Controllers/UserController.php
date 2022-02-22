@@ -5,15 +5,17 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ContactRequest;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\UserRequest;
+use App\Models\CaseModel;
 use App\Models\Contact;
 use App\Models\User;
+use App\Traits\Action;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-
+use Action;
 
      public function create(Request $request)
         {
@@ -31,6 +33,13 @@ class UserController extends Controller
         } else{
             return back()->with('error');
         }
+
+    }
+    public function bookmarks(){
+
+         $items=CaseModel::query()->limit('5')->get();
+         return view('/bookmarks/show', compact('items'));
+
 
     }
 }

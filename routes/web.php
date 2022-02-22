@@ -145,7 +145,7 @@ Route::get('cases', [CaseController::class, 'search']);
 Route::get('cases/create', [CaseController::class, 'create']);
 Route::post('cases', [CaseController::class, 'store']);
 Route::get('cases/{id}', [CaseController::class, 'show']);
-Route::view('/bookmarks/show','bookmarks.show');
+Route::get('/bookmarks',[\App\Http\Controllers\UserController::class,'bookmarks']);
 
 /*
 |--------------------------------------------------------------------------
@@ -180,11 +180,7 @@ Route::prefix('admin')->group(function () {
     Route::get('register', [\App\Http\Controllers\admin\LoginController::class, 'create']);
     Route::post('login', [\App\Http\Controllers\admin\LoginController::class, 'checklogin']);
     Route::post('register', [\App\Http\Controllers\admin\LoginController::class, 'register']);
-    Route::get('logout', function () {
-        auth::logout();
-        session::flush();
-        return redirect('login');
-    });
+    Route::get('logout', );
 });
 
 /*
