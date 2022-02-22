@@ -32,7 +32,7 @@ class AssignPermissions extends Seeder
             'comments_read',
             'contacts_read',
             'feedbacks_read',
-            'menu_read',
+            'menus_read',
             'newsletters_read',
             'partners_read',
             'services_read',

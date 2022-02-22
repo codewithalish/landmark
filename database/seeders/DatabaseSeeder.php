@@ -24,8 +24,9 @@ class DatabaseSeeder extends Seeder
 //            VariableSeeder::class,
 //            GallerySeeder::class,
 //            PartnerSeeder::class,
-            MenuSeeder::class
-
+//            MenuSeeder::class,
+//        PermissionSeeder::class,
+//            AssignPermissions::class
         ]);
 
     }

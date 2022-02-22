@@ -107,6 +107,10 @@ class PermissionSeeder extends Seeder
         $permission_variables_update = Permission::create(['name' => 'variables_update']);
         $permission_variables_delete = Permission::create(['name' => 'variables_delete']);
 
+        $permission_menus_create = Permission::create(['name' => 'menus_create']);
+        $permission_menus_read = Permission::create(['name' => 'menus_read']);
+        $permission_menus_update = Permission::create(['name' => 'menus_update']);
+        $permission_menus_delete = Permission::create(['name' => 'menus_delete']);
 
 
 
