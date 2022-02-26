@@ -22,6 +22,7 @@
                     </svg>
                     {{__('menu.'.$menu->route)}}
                 </a>
+
                 <ul class="nav-group-items">
 
                     @can($menu->route.'_read')
@@ -36,6 +37,7 @@
                         </li>
                     @endcan
                 </ul>
+                <hr>
             </li>
         @endforeach
 

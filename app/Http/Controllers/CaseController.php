@@ -133,7 +133,82 @@ class CaseController extends Controller
         return view('cases/show', compact('item', 'related_cases'));
     }
 
+    public function edit($id)
+    {
+        //
+//        $this->checkPermission('cases_update');
 
+        $query = CaseModel::where('id', $id)->first();
+        return view('admin.cases.edit', ['item' => $query]);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function update(Request $request, $id)
+    {
+
+
+        $query = $request->only(
+            'title',
+            'price',
+            'user_id',
+            'address',
+            'room_number',
+            'parking_number',
+            'bath_number',
+            'area',
+            'deposit',
+            'rent',
+            'type',
+            'contract',
+            'is_vip',
+            'description',
+            'status',
+            'avatar_path',
+            'video_path',
+            'details'
+        );
+        if ($request->file('avatar_path'))
+            $query['avatar_path'] = $this->uploadMedia($request->file('avatar_path'));
+
+        CaseModel::where('id', $id)->update($query);
+        return back()->with('success', 'ویرایش با موفقیت انجام شد');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+
+
+        CaseModel::query()->where('id', $id)->delete();
+        return back();
+    }
+
+
+
+public function myCases(){
+      $my_cases=CaseModel::query()
+//          ->where('user_id' , Auth::id())
+          ->get();
+      dd($my_cases);
+      if ($my_cases){
+          return view('/cases/myCases', compact('my_cases'));
+
+      }
+      else{
+          return view('/pages/empty');
+      }
+}
 
 
 

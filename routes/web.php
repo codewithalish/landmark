@@ -145,6 +145,7 @@ Route::get('cases/create', [CaseController::class, 'create']);
 Route::post('cases', [CaseController::class, 'store']);
 Route::get('cases/{id}', [CaseController::class, 'show']);
 Route::get('/bookmarks',[\App\Http\Controllers\UserController::class,'bookmarks']);
+Route::get('/cases/myCases',[CaseController::class,'myCases']);
 
 /*
 |--------------------------------------------------------------------------
@@ -200,11 +201,11 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::resource('features', \App\Http\Controllers\Admin\FeatureController::class);
     Route::resource('feedbacks', \App\Http\Controllers\Admin\FeedbackController::class);
     Route::resource('newsletters', \App\Http\Controllers\Admin\NewsletterController::class);
-    Route::resource('permissions', \App\Http\Controllers\Admin\PermissionController::class);
     Route::resource('tags', \App\Http\Controllers\Admin\TagController::class);
     Route::resource('variables', \App\Http\Controllers\Admin\VariableController::class);
     Route::resource('roles', \App\Http\Controllers\Admin\RoleController::class);
     Route::resource('assign', \App\Http\Controllers\admin\AssignController::class);
+    Route::resource('permissions', \App\Http\Controllers\Admin\PermissionController::class);
 
 
 });
@@ -217,10 +218,11 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
 |
 */
 
-Route::get('/test/mail', function () {
+Route::get('/admin/newsletters/create', function () {
     $emails = \App\Models\Newsletter::query()->pluck('email');
 
-    foreach (['ali@yahoo.com', 'majid@yahoo.com'] as $email) {
+    foreach ($emails as $email) {
+
         $address = new \App\Mail\NewsletterMail($email);
         Mail::send($address);
     }
