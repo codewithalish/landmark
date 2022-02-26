@@ -131,7 +131,8 @@
                                 <a href="/cases">ملک ها</a>
                                 <ul class="sub-menu">
                                     <li><a href="/cases">جستجو در ملک ها</a></li>
-                                    <li><a href="/bookmarks/show">منتخب های من</a></li>
+                                    <li><a href="/bookmarks">منتخب های من</a></li>
+                                    <li><a href="/cases/myCases">آگهی های من</a></li>
 
                                 </ul>
                                 <i class="fa fa-angle-down"></i>

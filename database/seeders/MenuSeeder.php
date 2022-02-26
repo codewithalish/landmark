@@ -23,24 +23,29 @@ class MenuSeeder extends Seeder
         Menu::create([
             'route' => 'cases'
         ]);
-
+        Menu::create([
+            'route' => 'agents'
+        ]);
         Menu::create([
             'route' => 'users'
+        ]);
+        Menu::create([
+            'route' => 'roles'
         ]);
         Menu::create([
             'route' => 'assign'
         ]);
         Menu::create([
-            'route' => 'bookmarks'
-        ]);
-        Menu::create([
-            'route' => 'categories'
+            'route' => 'permissions'
         ]);
         Menu::create([
             'route' => 'comments'
         ]);
         Menu::create([
             'route' => 'contacts'
+        ]);
+        Menu::create([
+            'route' => 'bookmarks'
         ]);
         Menu::create([
             'route' => 'feedbacks'
@@ -52,26 +57,25 @@ class MenuSeeder extends Seeder
             'route' => 'newsletters'
         ]);
         Menu::create([
+            'route' => 'variables'
+        ]);
+
+        Menu::create([
             'route' => 'partners'
         ]);
-        Menu::create([
-            'route' => 'permissions'
-        ]);
-        Menu::create([
-            'route' => 'roles'
-        ]);
+
         Menu::create([
             'route' => 'services'
         ]);
         Menu::create([
             'route' => 'tags'
         ]);
+
         Menu::create([
-            'route' => 'variables'
+            'route' => 'categories'
         ]);
         Menu::create([
             'route' => 'menu'
         ]);
-
     }
 }

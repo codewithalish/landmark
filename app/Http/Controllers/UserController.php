@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ContactRequest;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\UserRequest;
+use App\Models\CaseModel;
 use App\Models\Contact;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -13,7 +14,7 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-use Action;
+
 
     public function create(Request $request)
     {
@@ -70,7 +71,7 @@ use Action;
     {
         $items = CaseModel::isLiked()->get();
 
-        return view('bookmarks.show')->with('items', $items);
+        return view('bookmarks.index')->with('items', $items);
 
     }
 }

@@ -3,7 +3,7 @@
 return [
     'list' => 'لیست',
     'create' => 'ایجاد',
-    'cases' => 'مورد ها',
+    'cases' => 'کیس ها',
     'users' => 'کاربران',
     'posts' => 'مطالب',
     'menu' => 'منو',
@@ -15,11 +15,12 @@ return [
     'galleries'=>'گالری',
     'newsletters'=>'خبرنامه',
     'partners'=>'شرکا',
-    'permissions'=>'دسترسی ها',
+    'assign'=>'تخصیص نقش به کاربر',
+    'permissions'=>'تخصیص دسترسی به نقش ها',
     'roles'=>'نقش ها',
     'services'=>'خدمات',
     'tags'=>'تگ',
     'variables'=>'متغیرها',
-    'assign'=>'تخصیص دسترسی',
+
 
 ];
