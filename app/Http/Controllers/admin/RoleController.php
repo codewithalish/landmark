@@ -16,7 +16,7 @@ class RoleController extends Controller
         //
 
         $titleCard = 'لیست';
-        $th = ['شناسه', 'name', 'title', 'operation'];
+        $th = ['شناسه', 'name',  'operation'];
         $query = Role::query()
             ->orderBy('id', 'DESC')
             ->get();
@@ -50,12 +50,14 @@ class RoleController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(CaseRequest $request)
+    public function store(Request $request)
     {
-        $inputs = $request->only('name', 'title');
-        $result = Role::create($inputs);
+        $gaurd_name='web';
+        $inputs= $request->only('name',$gaurd_name);
+
+        $result = \Spatie\Permission\Models\Role::create($inputs);
         if ($result) {
-            return back()->with('success', 'با موفقیت ارسال شد');
+            return redirect('/admin/roles')->with('success', 'با موفقیت ارسال شد');
         } else {
             return back()->with('error');
         }

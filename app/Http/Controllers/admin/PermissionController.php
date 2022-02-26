@@ -15,7 +15,7 @@ class PermissionController extends Controller
 
         $titleCard = 'لیست';
         $th = ['شناسه', 'name', 'operation'];
-        $query = Permission::query()
+        $query = \Spatie\Permission\Models\Permission::query()
             ->orderBy('id', 'DESC')
             ->get();
         return view('admin.permissions.index',
@@ -48,10 +48,11 @@ class PermissionController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(CaseRequest $request)
+    public function store(Request $request)
     {
-        $inputs = $request->only('name');
-        $result=Permission::create($inputs);
+        $gaurd_name='web';
+        $inputs = $request->only('name',$gaurd_name);
+        $result=\Spatie\Permission\Models\Permission::create($inputs);
         if ($result){
             return back()->with('success','با موفقیت ارسال شد');
         } else{
@@ -69,7 +70,7 @@ class PermissionController extends Controller
     public function show($id)
     {
         //
-        $query = Permission::find($id);
+        $query = \Spatie\Permission\Models\Permission::find($id);
         return view('admin.permissions.show', ['item' => $query]);
     }
 
@@ -82,7 +83,7 @@ class PermissionController extends Controller
     public function edit($id)
     {
         //
-        $query = Permission::where('id', $id)->first();
+        $query = \Spatie\Permission\Models\Permission::where('id', $id)->first();
         return view('admin.permissions.edit', ['item' => $query]);
     }
 
@@ -97,7 +98,7 @@ class PermissionController extends Controller
     {
         //
         $query = $request->only('name');
-        Permission::where('id', $id)->update($query);
+        \Spatie\Permission\Models\Permission::where('id', $id)->update($query);
         return back()->with('success', 'ویرایش با موفقیت انجام شد');
     }
 
@@ -110,7 +111,7 @@ class PermissionController extends Controller
     public function destroy($id)
     {
         //
-        Permission::query()->where('id', $id)->delete();
+        \Spatie\Permission\Models\Permission::query()->where('id', $id)->delete();
         return back();
     }
 }

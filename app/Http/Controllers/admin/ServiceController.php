@@ -57,8 +57,8 @@ class ServiceController extends Controller
     {
         $inputs = $request->only('title', 'body', 'thumbnail_path');
 
-        if ($request->file('avatar_path'))
-            $inputs['avatar_path'] = $this->uploadMedia($request->file('avatar_path'));
+        if ($request->file('thumbnail_path'))
+            $inputs['thumbnail_path'] = $this->uploadMedia($request->file('thumbnail_path'));
 
         $result=Service::create($inputs);
         if ($result){
@@ -107,8 +107,8 @@ class ServiceController extends Controller
         //
         $query = $request->only('title', 'body', 'thumbnail_path');
 
-        if ($request->file('avatar_path'))
-            $query['avatar_path'] = $this->uploadMedia($request->file('avatar_path'));
+        if ($request->file('thumbnail_path'))
+            $query['thumbnail_path'] = $this->uploadMedia($request->file('thumbnail_path'));
 
         Service::where('id', $id)->update($query);
         return back()->with('success', 'ویرایش با موفقیت انجام شد');
