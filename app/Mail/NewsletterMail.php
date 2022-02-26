@@ -31,7 +31,8 @@ class NewsletterMail extends Mailable
      */
     public function build()
     {
-        return $this->view('newsletters.sendMail')
-            ->to($this->email);
+        return $this->view('admin.newsletters.sendMail')
+            ->to($this->email)
+            ->from('fa.mozaffarii111@gmail.com');
     }
 }
