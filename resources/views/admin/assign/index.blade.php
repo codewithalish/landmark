@@ -2,7 +2,7 @@
 @section('content')
 <div class="body flex-grow-1 px-3">
     <div class="container-lg">
-        <div class="callout callout-info bg-white">اطلاعات پیج
+        <div class="callout callout-info bg-white">(assign)نمایش دسترسی ها
         </div>
         <div class="car"></div>
         <div class="card mb-4">
@@ -24,13 +24,11 @@
                             <td>{{$item->name}}</td>
                             <td>{{$item->role}}</td>
                             <td>
-                                <a href="/admin/agents/{{$item->id}}" class="btn btn-outline-success" type="button" aria-pressed="true" style="padding: 3px">نمایش</a>
-                                <a href="/admin/agents/{{$item->id}}/edit" class="btn btn-outline-warning" type="button" style="padding: 3px">ویرایش</a>
 
                                 <form action="/admin/agents/{{$item->id}}" method="post">
                                     @csrf
                                     @method('delete')
-                                    <button class="btn btn-outline-danger" type="button" style="padding: 3px">حذف</button>
+                                    <button class="btn btn-outline-danger" type="submit" style="padding: 3px">حذف</button>
                                 </form>
                             </td>
                         </tr>

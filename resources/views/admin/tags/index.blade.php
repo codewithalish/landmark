@@ -2,7 +2,7 @@
 @section('content')
 <div class="body flex-grow-1 px-3">
     <div class="container-lg">
-        <div class="callout callout-info bg-white">bookmark
+        <div class="callout callout-info bg-white">تگ ها
         </div>
         <div class="car"></div>
         <div class="card mb-4">
@@ -25,8 +25,6 @@
 
 
                             <td>
-                                <a href="/admin/tags/{{$item->id}}" class="btn btn-outline-success" type="button" style="padding: 3px">نمایش</a>
-
 
                                 <form action="/admin/tags/{{$item->id}}" method="post">
                                     @csrf

@@ -2,14 +2,14 @@
 @section('content')
     <div class="body flex-grow-1 px-3">
         <div class="container-lg">
-            <div class="callout callout-info bg-white">اطلاعات پست
+            <div class="callout callout-info bg-white">نمایش کاربر{{$item->name}}
             </div>
             <div class="car"></div>
             <div class="card mb-4">
                 <div class="card-header">{{$titleCard ?? ''}}</div>
                 <div class="card-body">
 {{--                    <img src="{{$item->image_path }}" alt="{{$item->title}}">--}}
-                    <a href="{{$item->avatar_path }}"> <img src="{{$item->avatar_path }}" alt="{{$item->title}}" width="100"></a>
+{{--                    <a href="{{$item->avatar_path }}"> <img src="{{$item->avatar_path }}" alt="{{$item->title}}" width="100"></a>--}}
 
                     <hr>
                     <strong>id:</strong>
@@ -21,8 +21,10 @@
                     <strong>mobile:</strong>
                     <span>{{$item->mobile}}</span>
                     <hr>
-                    <strong>password:</strong>
-                    <span>{{$item->password}}</span>
+                    <strong>email:</strong>
+                    <span>{{$item->email}}</span>
+                    <hr>
+
 
                 </div>
             </div>

@@ -2,7 +2,7 @@
 @section('content')
     <div class="body flex-grow-1 px-3">
         <div class="container-lg">
-            <div class="callout callout-info bg-white">ایجاد پست
+            <div class="callout callout-info bg-white">ایجاد پست جدید
             </div>
 
             {{--            <div class="callout callout-info bg-white">اطلاعات پیج</div>--}}
@@ -27,7 +27,7 @@
                             <label class="form-label" for="avatar_path">اپلود تصویر</label>
                             <input class="form-control" id="avatar_path" type="file" placeholder="avatar_path" name="avatar_path">
                         </div>
-                        <button type="submit" class="btn btn-primary active" type="button">Send</button>
+                        <button type="submit" class="btn btn-primary active">Send</button>
 
                     </div>
                 </form>

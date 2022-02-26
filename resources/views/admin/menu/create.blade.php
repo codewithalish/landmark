@@ -2,7 +2,7 @@
 @section('content')
     <div class="body flex-grow-1 px-3">
         <div class="container-lg">
-            <div class="callout callout-info bg-white">ایجاد کاربر جدید
+            <div class="callout callout-info bg-white">ایجاد منو جدید
             </div>
 
             {{--            <div class="callout callout-info bg-white">اطلاعات پیج</div>--}}
@@ -17,11 +17,11 @@
                     @csrf
                     <div class="card-body">
                         <div class="mb-3">
-                            <label class="form-label" for="route">اسم</label>
+                            <label class="form-label" for="route">نام منو جدید</label>
                             <input class="form-control" id="route" type="text" placeholder="route" name="route" value="{{old('route') ?? ''}}">
                         </div>
 
-                        <button type="submit" class="btn btn-primary active" type="button">Send</button>
+                        <button type="submit" class="btn btn-primary active">Send</button>
 
                     </div>
                 </form>

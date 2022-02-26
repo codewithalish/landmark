@@ -2,7 +2,7 @@
 @section('content')
     <div class="body flex-grow-1 px-3">
         <div class="container-lg">
-            <div class="callout callout-info bg-white">اطلاعات پست
+            <div class="callout callout-info bg-white">{{$item->name}}نمایش کاربر
             </div>
             <div class="car"></div>
             <div class="card mb-4">
@@ -18,9 +18,6 @@
                     <hr>
                     <strong>mobile:</strong>
                     <span>{{$item->mobile}}</span>
-                    <hr>
-                    <strong>password:</strong>
-                    <span>{{$item->password}}</span>
 
                     <hr>
                     <strong>address:</strong>

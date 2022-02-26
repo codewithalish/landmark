@@ -3,7 +3,7 @@
     <div class="body flex-grow-1 px-3">
         <div class="container-lg">
 
-            {{--            <div class="callout callout-info bg-white">اطلاعات پیج</div>--}}
+                        <div class="callout callout-info bg-white">ویرایش اطلاعات کاربر</div>
             <div class="car"></div>
             <div class="card mb-4">
                 <div class="card-header">{{$cardTitle ?? ''}}</div>
@@ -30,7 +30,7 @@
                             <input class="form-control" id="password" type="text" placeholder="password" name="password" value="{{$item->password}}">
                         </div>
 
-                        <button type="submit" class="btn btn-primary active" type="button">ویرایش</button>
+                        <button type="submit" class="btn btn-primary active" >ویرایش</button>
 
                     </div>
                 </form>

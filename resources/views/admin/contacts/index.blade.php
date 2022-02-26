@@ -22,17 +22,15 @@
                             <tr>
                                 <td>{{$item->id}}</td>
                                 <td>{{$item->name}}</td>
-                                <td>{{$item->email}}</td>
                                 <td>{{$item->mobile}}</td>
                                 <td>{{$item->message}}</td>
                                 <td>
                                     <a href="/admin/contacts/{{$item->id}}" class="btn btn-outline-success" type="button" style="padding: 3px">نمایش</a>
-                                    <a href="/admin/contacts/{{$item->id}}/edit" class="btn btn-outline-warning" type="button" style="padding: 3px">ویرایش</a>
 
                                     <form action="/admin/contacts/{{$item->id}}" method="post">
                                         @csrf
                                         @method('delete')
-                                        <button class="btn btn-outline-danger" type="button" style="padding: 3px">حذف</button>
+                                        <button class="btn btn-outline-danger" type="submit" style="padding: 3px">حذف</button>
                                     </form>
                                 </td>
                             </tr>

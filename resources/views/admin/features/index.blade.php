@@ -2,7 +2,7 @@
 @section('content')
 <div class="body flex-grow-1 px-3">
     <div class="container-lg">
-        <div class="callout callout-info bg-white">bookmark
+        <div class="callout callout-info bg-white">feature
         </div>
         <div class="car"></div>
         <div class="card mb-4">
@@ -31,7 +31,7 @@
                                 <form action="/admin/features/{{$item->id}}" method="post">
                                     @csrf
                                     @method('delete')
-                                    <button class="btn btn-outline-danger" type="button" style="padding: 3px">حذف</button>
+                                    <button class="btn btn-outline-danger" type="submit" style="padding: 3px">حذف</button>
                                 </form>
                             </td>
                         </tr>

@@ -2,7 +2,7 @@
 @section('content')
     <div class="body flex-grow-1 px-3">
         <div class="container-lg">
-            <div class="callout callout-info bg-white">ایجاد دسته بندی
+            <div class="callout callout-info bg-white">ارسال ایمیل
             </div>
 
             {{--            <div class="callout callout-info bg-white">اطلاعات پیج</div>--}}
@@ -12,15 +12,16 @@
 
                 @include('layouts.partials.auth.alert')
 
-                <form action="/admin/categories" method="post">
+                <form action="/admin/newsletters/create" method="post">
                     @csrf
                     <div class="card-body">
                         <div class="mb-3">
-                            <label class="form-label" for="title">نام دسته</label>
-                            <input class="form-control" id="title" type="text" placeholder="title" name="title">
+                            <label class="form-label" for="title">متن پیام</label>
+                            <br>
+                            <textarea name="title" id="title" cols="90%" rows="5" value="{{old('title') ?? ''}}"></textarea>
                         </div>
 
-                        <button type="submit" class="btn btn-primary active" >Send</button>
+                        <button type="submit" class="btn btn-primary active">Send</button>
 
                     </div>
                 </form>
@@ -28,4 +29,5 @@
             </div>
         </div>
     </div>
+
 @endsection

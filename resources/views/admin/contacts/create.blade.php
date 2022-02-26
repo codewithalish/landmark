@@ -2,7 +2,7 @@
 @section('content')
     <div class="body flex-grow-1 px-3">
         <div class="container-lg">
-            <div class="callout callout-info bg-white">create bookmark
+            <div class="callout callout-info bg-white">
             </div>
 
             {{--            <div class="callout callout-info bg-white">اطلاعات پیج</div>--}}
@@ -12,7 +12,7 @@
 
 {{--                @include('layouts.partials.auth.alert')--}}
 
-{{--                <form action="/admin/bookmarks" method="post">--}}
+{{--                <form action="/admin/comments" method="post">--}}
 {{--                    @csrf--}}
 {{--                    <div class="card-body">--}}
 {{--                        <div class="mb-3">--}}
@@ -20,14 +20,17 @@
 {{--                            <input class="form-control" id="user_id" type="number" placeholder="user_id" name="user_id">--}}
 {{--                        </div>--}}
 {{--                        <div class="mb-3">--}}
-{{--                            <label class="form-label" for="bookmarkable_id">bookmarkable_id</label>--}}
-{{--                            <input class="form-control" id="bookmarkable_id" type="number" placeholder="bookmarkable_id" name="bookmarkable_id">--}}
+{{--                            <label class="form-label" for="commentable_id">commentable_id</label>--}}
+{{--                            <input class="form-control" id="commentable_id" type="number" placeholder="commentable_id" name="commentable_id">--}}
 {{--                        </div>--}}
 {{--                        <div class="mb-3">--}}
-{{--                            <label class="form-label" for="bookmarkable_type"> bookmarkable_type</label>--}}
-{{--                            <input class="form-control" id="bookmarkable_type" type="text" placeholder="bookmarkable_type" name="bookmarkable_type">--}}
+{{--                            <label class="form-label" for="commentable_type"> commentable_type</label>--}}
+{{--                            <input class="form-control" id="commentable_type" type="text" placeholder="commentable_type" name="commentable_type">--}}
 {{--                        </div>--}}
-
+{{--                        <div class="mb-3">--}}
+{{--                            <label class="form-label" for="body"> body</label>--}}
+{{--                            <input class="form-control" id="body" type="text" placeholder="body" name="body">--}}
+{{--                        </div>--}}
 {{--                        <button type="submit" class="btn btn-primary active">Send</button>--}}
 
 {{--                    </div>--}}

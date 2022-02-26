@@ -2,7 +2,7 @@
 @section('content')
     <div class="body flex-grow-1 px-3">
         <div class="container-lg">
-            <div class="callout callout-info bg-white">create role
+            <div class="callout callout-info bg-white">ایجاد نقش جدید
             </div>
 
             {{--            <div class="callout callout-info bg-white">اطلاعات پیج</div>--}}
@@ -19,12 +19,9 @@
                             <label class="form-label" for="name">name</label>
                             <input class="form-control" id="name" type="text" placeholder="name" name="name">
                         </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="title">title</label>
-                            <input class="form-control" id="title" type="text" placeholder="title" name="title">
-                        </div>
 
-                        <button type="submit" class="btn btn-primary active" type="button">Send</button>
+
+                        <button type="submit" class="btn btn-primary active">Send</button>
 
                     </div>
                 </form>

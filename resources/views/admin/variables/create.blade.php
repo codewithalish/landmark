@@ -2,7 +2,7 @@
 @section('content')
     <div class="body flex-grow-1 px-3">
         <div class="container-lg">
-            <div class="callout callout-info bg-white">create variable
+            <div class="callout callout-info bg-white">ایجاد متغیر جدید
             </div>
 
             {{--            <div class="callout callout-info bg-white">اطلاعات پیج</div>--}}

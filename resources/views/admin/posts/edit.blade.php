@@ -3,7 +3,7 @@
     <div class="body flex-grow-1 px-3">
         <div class="container-lg">
 
-            {{--            <div class="callout callout-info bg-white">اطلاعات پیج</div>--}}
+                        <div class="callout callout-info bg-white">ویرایش پست{{$item->title}} </div>
             <div class="car"></div>
             <div class="card mb-4">
                 <div class="card-header">{{$cardTitle ?? ''}}</div>
@@ -22,15 +22,11 @@
                             <input class="form-control" id="body" type="text" placeholder="body" name="body" value="{{$item->body}}">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="user_id">user_id</label>
-                            <input class="form-control" id="user_id" type="text" placeholder="user_id" name="user_id" value="{{$item->user_id}}">
-                        </div>
-                        <div class="mb-3">
                             <label class="form-label" for="avatar_path">اپلود تصویر</label>
                             <input class="form-control" id="avatar_path" type="file" placeholder="avatar_path" name="avatar_path" value="{{$item->avatar_path}}">
                         </div>
 
-                        <button type="submit" class="btn btn-primary active" type="button">ویرایش</button>
+                        <button type="submit" class="btn btn-primary active" >ویرایش</button>
 
                     </div>
                 </form>

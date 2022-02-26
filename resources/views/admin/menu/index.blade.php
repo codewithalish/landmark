@@ -2,7 +2,7 @@
 @section('content')
 <div class="body flex-grow-1 px-3">
     <div class="container-lg">
-        <div class="callout callout-info bg-white">اطلاعات پیج
+        <div class="callout callout-info bg-white">لیست منو ها
         </div>
         <div class="car"></div>
         <div class="card mb-4">

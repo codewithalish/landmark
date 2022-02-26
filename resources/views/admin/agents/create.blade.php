@@ -50,7 +50,7 @@
                             <label class="form-label" for="whatsapp">ادرس واتساپ</label>
                             <input class="form-control" id="whatsapp" type="text" placeholder="whatsapp" name="whatsapp" value="{{old('whatsapp') ?? ''}}">
                         </div>
-                        <button type="submit" class="btn btn-primary active" type="button">Send</button>
+                        <button type="submit" class="btn btn-primary active" >Send</button>
 
                     </div>
                 </form>

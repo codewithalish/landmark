@@ -2,7 +2,7 @@
 @section('content')
     <div class="body flex-grow-1 px-3">
         <div class="container-lg">
-            <div class="callout callout-info bg-white">assign permission to role
+            <div class="callout callout-info bg-white">تخصیص دسترسی به نقش(assign)
             </div>
 
             {{--            <div class="callout callout-info bg-white">اطلاعات پیج</div>--}}
@@ -16,7 +16,7 @@
                     @csrf
                     <div class="card-body">
                         <div class="mb-3">
-                            <label class="form-label" for="name">role</label>
+                            <label class="form-label" for="name">کاربر</label>
                             <select name="" id="">
                                 @foreach(\App\Models\User::all(['id','name']) as $item)
                                 <option value="{{$item->id}}">{{$item->id}}-{{$item->name}}</option>
@@ -24,7 +24,7 @@
                             </select>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="name">permission</label>
+                            <label class="form-label" for="name">نقش</label>
                             <select name="" id="">
                                 <option value="admin">admin</option>
                                 <option value="agent">agent</option>
@@ -32,7 +32,7 @@
                             </select>
                         </div>
 
-                        <button type="submit" class="btn btn-primary active" type="button">Send</button>
+                        <button type="submit" class="btn btn-primary active" >Send</button>
 
                     </div>
                 </form>

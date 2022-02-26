@@ -2,7 +2,7 @@
 @section('content')
 <div class="body flex-grow-1 px-3">
     <div class="container-lg">
-        <div class="callout callout-info bg-white">variables
+        <div class="callout callout-info bg-white">لیست متغر ها
         </div>
         <div class="car"></div>
         <div class="card mb-4">

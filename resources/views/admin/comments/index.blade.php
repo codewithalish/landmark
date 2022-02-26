@@ -2,7 +2,7 @@
 @section('content')
 <div class="body flex-grow-1 px-3">
     <div class="container-lg">
-        <div class="callout callout-info bg-white">bookmark
+        <div class="callout callout-info bg-white">نمایش کامنت ها
         </div>
         <div class="car"></div>
         <div class="card mb-4">
@@ -28,12 +28,12 @@
 
                             <td>
                                 <a href="/admin/comments/{{$item->id}}" class="btn btn-outline-success" type="button" style="padding: 3px">نمایش</a>
-                                <a href="/admin/comments/{{$item->id}}/edit" class="btn btn-outline-warning" type="button" style="padding: 3px">ویرایش</a>
+
 
                                 <form action="/admin/comments/{{$item->id}}" method="post">
                                     @csrf
                                     @method('delete')
-                                    <button class="btn btn-outline-danger" type="button" style="padding: 3px">حذف</button>
+                                    <button class="btn btn-outline-danger" type="submit" style="padding: 3px">حذف</button>
                                 </form>
                             </td>
                         </tr>

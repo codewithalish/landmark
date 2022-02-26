@@ -2,7 +2,7 @@
 @section('content')
     <div class="body flex-grow-1 px-3">
         <div class="container-lg">
-            <div class="callout callout-info bg-white">partners
+            <div class="callout callout-info bg-white">نمایش سرویس
             </div>
             <div class="car"></div>
             <div class="card mb-4">
@@ -19,7 +19,8 @@
                     <span>{{$item->body}}</span>
                     <hr>
                     <strong>avatar_path:</strong>
-                    <a href="{{$item->avatar_path }}"> <img src="{{$item->avatar_path }}" alt="{{$item->title}}" width="100"></a>
+                    <br>
+                    <a href="{{$item->thumbnail_path }}"> <img src="{{$item->thumbnail_path }}" alt="{{$item->title}}" width="100"></a>
                     <hr>
 
 
