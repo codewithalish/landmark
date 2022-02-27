@@ -115,7 +115,7 @@ Route::post('agents/{id}/contacts', [ContactController::class, 'store']);
 Route::prefix('users/current')->middleware('auth')->group(function () {
     Route::get('bookmarks', [\App\Http\Controllers\UserController::class, 'bookmarks']);
     Route::get('/', [\App\Http\Controllers\UserController::class, 'show']);
-    Route::get('/edit', [\App\Http\Controllers\UserController::class, 'edit']);
+    Route::get('/{id}/edit', [\App\Http\Controllers\UserController::class, 'edit']);
     Route::put('/update', [\App\Http\Controllers\UserController::class, 'update']);
 });
 

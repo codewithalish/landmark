@@ -6,7 +6,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2>عضویت</h2>
+                        <h2>ویرایش اطلاعات کاربری</h2>
                         <div class="my-account-wrap">
                             @include('layouts.partials.auth.alert')
                             <form class="login-form" method="post" action="/users/{{$item->id}}">

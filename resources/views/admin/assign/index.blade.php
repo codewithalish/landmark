@@ -25,7 +25,7 @@
                             <td>{{$item->role}}</td>
                             <td>
 
-                                <form action="/admin/agents/{{$item->id}}" method="post">
+                                <form action="/admin/assign/{{$item->id}}" method="post">
                                     @csrf
                                     @method('delete')
                                     <button class="btn btn-outline-danger" type="submit" style="padding: 3px">حذف</button>

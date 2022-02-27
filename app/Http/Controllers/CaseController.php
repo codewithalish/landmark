@@ -188,8 +188,6 @@ class CaseController extends Controller
      */
     public function destroy($id)
     {
-
-
         CaseModel::query()->where('id', $id)->delete();
         return back();
     }
@@ -197,17 +195,17 @@ class CaseController extends Controller
 
 
 public function myCases(){
-      $my_cases=CaseModel::query()
-//          ->where('user_id' , Auth::id())
-          ->get();
-      dd($my_cases);
-      if ($my_cases){
-          return view('/cases/myCases', compact('my_cases'));
+    $my_cases = CaseModel::query()
+        ->get();
+    return view('cases/myCases', compact('my_cases'));
 
-      }
-      else{
-          return view('/pages/empty');
-      }
+//      if ($my_cases){
+//          return view('cases.myCases', compact('my_cases'));
+//
+//      }
+//      else{
+//          return view('/pages/empty');
+//      }
 }
 
 
