@@ -9,7 +9,7 @@
                     @include('layouts.partials.auth.alert')
                     <h2>ایجاد پست</h2>
                     <div class="my-account-wrap">
-                        <form class="login-form" method="post" action="/cases">
+                        <form class="login-form" method="post" action="/cases" enctype="multipart/form-data">
                             @csrf
                             <div class="item-wrap">
                                 <label>عنوان <span class="required">*</span></label>
@@ -66,10 +66,6 @@
                                 <input type="file" id="avatar_path" name="avatar_path" value="{{old('avatar_path') ?? ''}}">
                             </div>
 
-                            <div class="item-wrap">
-                                <label>ویژه <span class="required">*</span></label>
-                                <input type="text" id="is_vip" name="is_vip">
-                            </div>
                             <div class="item-wrap">
                                 <label>توضیحات تکمیلی <span class="required">*</span></label>
                                 <input type="text" id="description" name="description" value="{{old('description') ?? ''}}">

@@ -8,6 +8,7 @@ use App\Models\CaseModel;
 use App\Models\Contact;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class CaseController extends Controller
@@ -32,6 +33,7 @@ class CaseController extends Controller
             'operation'];
 
         $query = CaseModel::query()
+            ->where('user_id',Auth::id())
             ->orderBy('id', 'DESC')
             ->get();
 
@@ -67,7 +69,7 @@ class CaseController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(Request $request)
+    public function store(Request $request,$id = null)
     {
 //        $this->checkPermission('cases_create');
 
@@ -91,10 +93,10 @@ class CaseController extends Controller
             'video_path',
             'details'
         );
+        $inputs['user_id'] = $id;
 
         if ($request->file('avatar_path'))
             $inputs['avatar_path'] = $this->uploadMedia($request->file('avatar_path'));
-
 
         $result = CaseModel::create($inputs);
         if ($result) {

@@ -14,6 +14,15 @@
                     @method('put')
                     <div class="card-body">
                         <div class="mb-3">
+                            <label>وضعیت <span class="required">*</span></label>
+                            <select class="form-control" name="status" >
+                                <option value="NEW" >جدید</option>
+                                <option value="CONFIRMED" >تایید شده</option>
+                                <option value="REJECTED" >رد شده</option>
+                                <option value="IN_PROGRESS" >در حال بررسی</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
                             <label class="form-label" for="title">عنوان</label>
                             <input class="form-control" id="title" type="text" placeholder="title" name="title" value="{{$item->title}}">
                         </div>
@@ -44,7 +53,6 @@
                         <div class="mb-3">
                             <label>نوع قرارداد <span class="required">*</span></label>
                             <select class="form-control" name="contract" >
-                                <option value="">نوع قرارداد</option>
                                 <option value="FOR_SALE" >برای فروش</option>
                                 <option value="FOR_RENT" >برای اجاره</option>
                             </select>
@@ -60,7 +68,6 @@
                         <div class="mb-3">
                             <label>نوع ملک <span class="required">*</span></label>
                             <select class="form-control" name="type" >
-                                <option value="">همه انواع ملک</option>
                                 <option value="APARTMENT" >آپارتمان</option>
                                 <option value="VILLA" >ویلایی</option>
                                 <option value="FIELD" >زمین</option>

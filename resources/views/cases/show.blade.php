@@ -9,12 +9,12 @@
                             <h1 class="page-title">{{$item->title}}</h1>
                             <div class="page-breadcrumb">
 										<span>
-											<a title="بازگشت به خانه" href="../pages" class="home"><span>خانه</span></a>
+											<a title="بازگشت به خانه" href="../pages" class="home"><span>{{__('custom.contract')[$item->contract]}}</span></a>
 										</span>
                                 <i class="icon ion-ios-arrow-forward"></i>
-                                <span><a title="بازگشت به لیست ملک ها" href="#"><span>ملک ها</span></a></span>
+                                <span><a title="بازگشت به لیست ملک ها" href="#"><span>{{__('custom.type')[$item->type]}}</span></a></span>
                                 <i class="icon ion-ios-arrow-forward"></i>
-                                <span><span>منزل ویلایی دو طبقه</span></span>
+                                <span><span>{{$item->title}}</span></span>
                             </div>
                         </div>
                     </div>
@@ -25,37 +25,15 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <ul class="header-control tabs">
-                            <li class="active">
-                                <a data-toggle="tab" href="#tab-gallery" aria-expanded="true"><i class="fa fa-picture-o"
-                                                                                                 aria-hidden="true"></i>
-                                    تصاویر</a>
-                            </li>
-                            <li>
-                                <a data-toggle="tab" href="#tab-map" aria-expanded="false"><i class="fa fa-map-marker"
-                                                                                              aria-hidden="true"></i>
-                                    موقعیت مکانی</a>
-                            </li>
-                        </ul>
                         <div class="tab-content">
                             <div class="tab-pane fade active in" id="tab-gallery">
                                 <div class="property-detail-carousel owl-carousel owl-theme" data-auto-play="false"
                                      data-desktop="1" data-laptop="1" data-tablet="1" data-mobile="1">
-                                    <div class="item">
-                                        <img src="images/property/slides/property_1.jpg" alt="">
+{{--                                    @endforeach()--}}
+                                    <div class="item" >
+                                        <a href="{{$item->avatar_path ?? "landmark/images/property/slides/property_2.jpg"}}"> <img src="{{$item->avatar_path }}" alt="{{$item->title}}" style=" height: 100px; width: 150px"  ></a>
                                     </div>
-                                    <div class="item">
-                                        <img src="images/property/slides/property_2.jpg" alt="">
-                                    </div>
-                                    <div class="item">
-                                        <img src="images/property/slides/property_3.jpg" alt="">
-                                    </div>
-                                    <div class="item">
-                                        <img src="images/property/slides/property_4.jpg" alt="">
-                                    </div>
-                                    <div class="item">
-                                        <img src="images/property/slides/property_5.jpg" alt="">
-                                    </div>
+{{--                                    @endforeach--}}
                                 </div>
                             </div>
                             <div id="tab-map" class="tab-pane fade">
@@ -78,10 +56,23 @@
                                        class="compare" href="#">
                                         <i class="ion-printer"></i>
                                     </a>
-                                    <a data-toggle="tooltip" data-placement="top" title=""
-                                       data-original-title="علاقه‌مندی‌ها" href="#">
-                                        <i class="fa fa-heart-o"></i>
-                                    </a>
+
+                                    @if($item->liked)
+                                        <a data-toggle="tooltip" data-placement="top" title=""
+                                           data-original-title="علاقه‌مندی‌ها"
+                                           href="/cases/{{$item->id}}/dislike">
+                                            <i class="fa fa-heart"></i>
+                                        </a>
+
+                                    @else
+                                        <a data-toggle="tooltip" data-placement="top" title=""
+                                           data-original-title="علاقه‌مندی‌ها"
+                                           href="/cases/{{$item->id}}/like">
+                                            <i class="fa fa-heart-o"></i>
+                                        </a>
+
+                                    @endif
+
                                     <div class="property-sharing">
                                         <a data-toggle="tooltip" data-placement="top" title=""
                                            data-original-title="اشتراک گذاری" class="like" href="#">
@@ -318,39 +309,7 @@
                                     </div>
                                 </div>
                             </div>
-                            {{--                            <div class="detail-header">--}}
-                            {{--                                <h3 class="detail-title">نقشه ملک</h3>--}}
-                            {{--                            </div>--}}
-                            {{--                            <div class="detail-content">--}}
-                            {{--                                <div class="floor-plan-carousel owl-carousel owl-theme" data-auto-play="false" data-desktop="1" data-laptop="1" data-tablet="1" data-mobile="1">--}}
-                            {{--                                    <div class="item text-center">--}}
-                            {{--                                        <a href="images/floor_plan/plan_1.jpg" class="mfp-image gallery-item">--}}
-                            {{--                                            <img src="images/floor_plan/plan_1.jpg" alt="">--}}
-                            {{--                                        </a>--}}
-                            {{--                                    </div>--}}
-                            {{--                                    <div class="item text-center">--}}
-                            {{--                                        <a href="images/floor_plan/plan_2.jpg" class="mfp-image gallery-item">--}}
-                            {{--                                            <img src="images/floor_plan/plan_2.jpg" alt="">--}}
-                            {{--                                        </a>--}}
-                            {{--                                    </div>--}}
-                            {{--                                    <div class="item text-center">--}}
-                            {{--                                        <a href="images/floor_plan/plan_3.jpg" class="mfp-image gallery-item">--}}
-                            {{--                                            <img src="images/floor_plan/plan_3.jpg" alt="">--}}
-                            {{--                                        </a>--}}
-                            {{--                                    </div>--}}
-                            {{--                                    <div class="item text-center">--}}
-                            {{--                                        <a href="images/floor_plan/plan_4.jpg" class="mfp-image gallery-item">--}}
-                            {{--                                            <img src="images/floor_plan/plan_4.jpg" alt="">--}}
-                            {{--                                        </a>--}}
-                            {{--                                    </div>--}}
-                            {{--                                </div>--}}
-                            {{--                            </div>--}}
-                            {{--                            <div class="detail-header">--}}
-                            {{--                                <h3 class="detail-title">موقعیت مکانی</h3>--}}
-                            {{--                            </div>--}}
-                            {{--                            <div class="detail-content">--}}
-                            {{--                                <div id="googleMap" data-icon="images/icon_location.png" data-lat="38.066082" data-lon="46.323638"></div>--}}
-                            {{--                            </div>--}}
+
                         </div>
                         <div class="property-agent-contact">
                             <div> @include('layouts.partials.auth.alert')</div>

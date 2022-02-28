@@ -11,7 +11,7 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="topmeta topmeta-right pull-right">
-                                <a class="popup-login" href="/users/current/{{$item->id}}/edit" > {{\Illuminate\Support\Facades\Auth::user()->name ?? ''}} خوش امدید
+{{--                                <a class="popup-login" href="/users/current/{{$item->id}}/edit" > {{\Illuminate\Support\Facades\Auth::user()->name ?? ''}} خوش امدید--}}
                                 </a>
 
                             <div class="widget widget-social">

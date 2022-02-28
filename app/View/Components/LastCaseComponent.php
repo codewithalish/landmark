@@ -16,6 +16,7 @@ class LastCaseComponent extends Component
     public function __construct()
     {
         $this->items=CaseModel::query()
+            ->where( 'status' , 'CONFIRMED')
             ->limit(6)
             ->orderBy('created_at', 'desc')
             ->get();

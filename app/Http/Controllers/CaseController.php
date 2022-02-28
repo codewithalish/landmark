@@ -30,7 +30,7 @@ class CaseController extends Controller
 //            abort(401);
 //            Cases::query()->where('user_id',  Auth::user()->id);
 
-        $items = CaseModel::query();
+        $items = CaseModel::query()->orderBy('id', 'DESC');
 
         if ($request->get('q'))
             $items = $items->where('title', 'like', '%' . $request->get('q') . '%');
@@ -62,6 +62,7 @@ class CaseController extends Controller
         $items = $items->where('status', 'CONFIRMED')->paginate(6);
 
         $caseWidget = CaseModel::query()
+            ->where('status', 'CONFIRMED')
             ->orderBy('id', 'DESC')
             ->limit(3)
             ->get();
@@ -73,16 +74,13 @@ class CaseController extends Controller
         return view('cases/cases', compact('items', 'request', 'caseWidget', 'agentWidget'));
     }
 
-    public function create(Request $request)
+    public function create()
     {
         return view('cases/create');
     }
 
-    public function store(CaseRequest $request)
+    public function store(CaseRequest $request, $id = null)
     {
-
-
-
 
         $inputs = $request->only([
             'title',
@@ -99,23 +97,18 @@ class CaseController extends Controller
             'description',
             'address',
         ]);
-
-
-
-        if ($request->file('avatar_path')){
-                        $inputs['avatar_path'] = $this->uploadMedia($request->file('avatar_path'));
-        }
-
-
+        $inputs['user_id'] = $id;
         $inputs['status'] = 'NEW';
 
+        if ($request->file('avatar_path'))
+            $inputs['avatar_path'] = $this->uploadMedia($request->file('avatar_path'));
+
         $result = CaseModel::create($inputs);
-
-        if ($result)
-            return redirect('/cases/')->with('success', 'با موفقیت ارسال شد');
-
-        return redirect('/cases')->with('error');
-
+        if ($result) {
+            return redirect('/cases')->with('success', 'با موفقیت ارسال شد');
+        } else {
+            return redirect('/cases')->with('error');
+        }
     }
 
 
@@ -196,6 +189,7 @@ class CaseController extends Controller
 
 public function myCases(){
     $my_cases = CaseModel::query()
+        ->where('user_id',Auth::id())
         ->get();
     return view('cases/myCases', compact('my_cases'));
 

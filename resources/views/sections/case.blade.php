@@ -12,7 +12,7 @@
             <div class="item-featured">
                 <a href="/cases/{{$item->id}}" title="Family House in Hudson">
                     <img src="{{$item->avatar_path ?? '/landmark/images/property/property_2.jpg'}}"
-                         alt="Family House in Hudson">
+                         alt="Family House in Hudson" style="height: 200px">
                 </a>
                 <span
                     class="property-status">{{__('custom.contract')[$item->contract]}}</span>
