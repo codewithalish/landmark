@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
 //            MenuSeeder::class,
 //        PermissionSeeder::class,
 //            AssignPermissions::class
+            ServiceSeeder::class
         ]);
 
     }

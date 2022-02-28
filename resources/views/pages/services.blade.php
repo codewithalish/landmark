@@ -20,42 +20,17 @@
                 </div>
             </div>
             <div class="row">
+                @foreach($servives as $item)
                 <div class="col-md-3 col-sm-6">
                     <div class="service-item">
                         <div class="service-icon icon-mapmarker">
-                            <span class="icon icon-price-house"></span>
+                            <span class="{{$item->thumbnail_path}}"></span>
                         </div>
-                        <h4 class="service-title">خدمات فروش</h4>
-                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
+                        <h4 class="service-title">{{$item->title}}</h4>
+                        <p>{{$item->body}}</p>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="service-item">
-                        <div class="service-icon icon-mapmarker">
-                            <span class="icon icon-rent"></span>
-                        </div>
-                        <h4 class="service-title">خدمات اجاره</h4>
-                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="service-item">
-                        <div class="service-icon icon-mapmarker">
-                            <span class="icon icon-painting"></span>
-                        </div>
-                        <h4 class="service-title">لیست ملک ها</h4>
-                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="service-item">
-                        <div class="service-icon icon-mapmarker">
-                            <span class="icon icon-safe-house"></span>
-                        </div>
-                        <h4 class="service-title">مدیریت ملک</h4>
-                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها</p>
-                    </div>
-                </div>
+                @endforeach
             </div>
             <div class="row">
                 <div class="col-md-12">
