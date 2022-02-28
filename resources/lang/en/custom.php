@@ -6,7 +6,11 @@ return [
         'FOR_SALE'=>'برای فروش',
         'FOR_RENT'=>'برای اجاره'
     ],
-
+    "type"=>[
+        'APARTMENT'=>'آپارتمان',
+        'VILLA'=>'ویلا',
+        'FIELD'=>'زمین'
+    ],
 
     'case_status' => [
         'NEW' => 'درخواست جدید',

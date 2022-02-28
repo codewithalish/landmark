@@ -93,6 +93,8 @@ Route::get('partner', [\App\Http\Controllers\PartnerController::class, 'partner'
 Route::get('gallery', [\App\Http\Controllers\GalleryController::class, 'gallery']);
 Route::view('services', 'pages/services');
 Route::view('abouts', 'pages/abouts');
+Route::get('/users/create', [\App\Http\Controllers\UserController::class, 'create']);
+Route::get('/services', [\App\Http\Controllers\ServiceController::class, 'services']);
 
 
 /*

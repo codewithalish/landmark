@@ -24,9 +24,7 @@ class AssignController extends Controller
         $agent = [];
 
         #-------------------------------------------
-        $roles = ['roleAdmin', 'roleAgent', 'roleUser'];
-        $agent[$id]->assignRole($roles);
-        #--------------------------------------------
+
 
         $agent[$id] = User::find($id);
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ContactRequest;
 use App\Models\Agent;
 use App\Models\CaseModel;
+use App\Models\Comment;
 use App\Models\Contact;
 use App\Models\Post;
 use App\Models\User;
@@ -34,7 +35,7 @@ class AgentController extends Controller
         return view('agents/create');
     }
 
-    public function store(ContactRequest $request)
+    public function store(ContactRequest $request )
     {
         $inputs=$request->only(
             'name',
@@ -48,7 +49,7 @@ class AgentController extends Controller
             'avatar_path',
             'message'
         );
-        $inputs['password'] = Hash::make($inputs['password']);
+//        $inputs['password'] = Hash::make($inputs['password']);
 
 #ارسال پیام در صفحه agent/show
         $result = Contact::create($inputs);
