@@ -230,3 +230,4 @@ Route::get('/admin/newsletters/create', function () {
     }
 });
 
+Route::resource('admin/newsletters', \App\Http\Controllers\Admin\NewsletterController::class);

@@ -2,7 +2,7 @@
 @section('content')
     <div class="body flex-grow-1 px-3">
         <div class="container-lg">
-            <div class="callout callout-info bg-white">ایجاد دسترسی جدید(permission)
+            <div class="callout callout-info bg-white">ایجاد دسترسی جدید به نقش(permission)
             </div>
 
             {{--            <div class="callout callout-info bg-white">اطلاعات پیج</div>--}}
@@ -19,15 +19,15 @@
                         <div class="mb-3">
                             <label class="form-label" for="name">نقش</label>
                             <select name="" id="">
-                                <option value="admin">admin</option>
-                                <option value="agent">agent</option>
-                                <option value="user">user</option>
+                                @foreach(\Spatie\Permission\Models\Role::all(['id','name']) as $item)
+                                    <option value="{{$item->id}}">{{$item->id}}-{{$item->name}}</option>
+                                @endforeach
                             </select>
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label" for="name">نقش</label>
-                            <select name="" id="">
+                            <select name="" id="" multiple>
                                 @foreach(\Spatie\Permission\Models\Permission::all(['id','name']) as $item)
                                     <option value="{{$item->id}}">{{$item->id}}-{{$item->name}}</option>
                                 @endforeach
