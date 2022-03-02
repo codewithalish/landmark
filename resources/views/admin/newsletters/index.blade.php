@@ -2,7 +2,7 @@
 @section('content')
     <div class="body flex-grow-1 px-3">
         <div class="container-lg">
-            <div class="callout callout-info bg-white">feedbacks
+            <div class="callout callout-info bg-white">newsletter
             </div>
             <div class="car"></div>
             <div class="card mb-4">
@@ -22,6 +22,7 @@
                             <tr>
                                 <td>{{$item->id}}</td>
                                 <td>{{$item->email}}</td>
+                                <td>{{$item->body}}</td>
 
                                 <td>
                                     <form action="/admin/newsletter/{{$item->id}}" method="post">

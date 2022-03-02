@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CaseRequest;
+use App\Models\Newsletter;
 use App\Models\Permission_Role;
 use App\Models\Role;
 use App\Models\User;
@@ -36,7 +37,6 @@ class AssignController extends Controller
 
     public function index()
     {
-        //
 
         $titleCard = 'لیست';
         $th = ['شناسه', 'name', 'title', 'operation'];
@@ -54,19 +54,18 @@ class AssignController extends Controller
 
     public function create()
     {
-        //
         return view('admin.assign.create');
     }
 
-    public function store(Request $request)
+    public function store(Request $request,$id )
     {
-        $inputs = $request->only('permission_id', 'role_id');
-        $result = Permission_Role::create($inputs);
-        if ($result) {
-            return back()->with('success', 'با موفقیت ارسال شد');
-        } else {
-            return back()->with('error');
-        }
+        $inputs = $request->only('role_id','model_id','model_type');
+
+        $role_id=\Spatie\Permission\Models\Role::all();
+        $model_id = User::find($id);
+        $model_id->assignRole($role_id);
+
+
 
     }
 }
