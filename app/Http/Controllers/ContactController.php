@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ContactRequest;
 use App\Models\Contact;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ContactController extends Controller
 {
@@ -16,11 +17,11 @@ class ContactController extends Controller
     }
 
 
-    public function store(ContactRequest $request, $id = null)
+    public function store(ContactRequest $request)
     {
 
-        $inputs = $request->only('name', 'mobile', 'message');
-        $inputs['user_id'] = $id;
+        $inputs = $request->only('name', 'mobile', 'message',);
+        $inputs['user_id'] = Auth::user()->id;
 
         $result = Contact::create($inputs);
 

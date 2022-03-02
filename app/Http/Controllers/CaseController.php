@@ -79,7 +79,7 @@ class CaseController extends Controller
         return view('cases/create');
     }
 
-    public function store(CaseRequest $request, $id = null)
+    public function store(CaseRequest $request)
     {
 
         $inputs = $request->only([
@@ -97,7 +97,7 @@ class CaseController extends Controller
             'description',
             'address',
         ]);
-        $inputs['user_id'] = $id;
+        $inputs['user_id'] = Auth::user()->id;
         $inputs['status'] = 'NEW';
 
         if ($request->file('avatar_path'))

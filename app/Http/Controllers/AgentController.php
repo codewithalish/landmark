@@ -10,6 +10,7 @@ use App\Models\Contact;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class AgentController extends Controller
@@ -52,6 +53,7 @@ class AgentController extends Controller
 //        $inputs['password'] = Hash::make($inputs['password']);
 
 #ارسال پیام در صفحه agent/show
+        $inputs['user_id'] = auth()->user()->id;
         $result = Contact::create($inputs);
         if ($result) {
             return back()->with('success', 'با موفقیت ارسال شد');

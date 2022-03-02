@@ -69,7 +69,7 @@ class CaseController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(Request $request,$id = null)
+    public function store(Request $request)
     {
 //        $this->checkPermission('cases_create');
 
@@ -93,7 +93,7 @@ class CaseController extends Controller
             'video_path',
             'details'
         );
-        $inputs['user_id'] = $id;
+        $inputs['user_id'] = Auth::user()->id;
 
         if ($request->file('avatar_path'))
             $inputs['avatar_path'] = $this->uploadMedia($request->file('avatar_path'));
