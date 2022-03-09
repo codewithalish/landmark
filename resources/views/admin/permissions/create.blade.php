@@ -18,7 +18,8 @@
 
                         <div class="mb-3">
                             <label class="form-label" for="name">نقش</label>
-                            <select name="" id="">
+                            <br>
+                            <select name="role_id" id="">
                                 @foreach(\Spatie\Permission\Models\Role::all(['id','name']) as $item)
                                     <option value="{{$item->id}}">{{$item->id}}-{{$item->name}}</option>
                                 @endforeach
@@ -26,8 +27,9 @@
                         </div>
 
                         <div class="mb-3">
-                            <label class="form-label" for="name">نقش</label>
-                            <select name="" id="" multiple>
+                            <label class="form-label" for="name">دسترسی ها</label>
+                            <br>
+                            <select name="permission_id" id="" multiple>
                                 @foreach(\Spatie\Permission\Models\Permission::all(['id','name']) as $item)
                                     <option value="{{$item->id}}">{{$item->id}}-{{$item->name}}</option>
                                 @endforeach

@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 
 class AssignController extends Controller
 {
-    //
+
 
     public function assignRole($id)
     {
@@ -57,15 +57,20 @@ class AssignController extends Controller
         return view('admin.assign.create');
     }
 
-    public function store(Request $request,$id )
+    public function store(Request $request)
     {
-        $inputs = $request->only('role_id','model_id','model_type');
+//        $inputs = $request->only('role_id','model_id','model_type');
 
-        $role_id=\Spatie\Permission\Models\Role::all();
-        $model_id = User::find($id);
-        $model_id->assignRole($role_id);
+        $model_id = $request->get('model_id');
+        $role_id = $request->get('role_id');
 
+       $result= $model_id->assignRole($role_id);
+        dd($result);
 
+//        return back()->with([
+//            'role_id' =>  $role_id,
+//            'model_id' => $model_id
+//        ]);
 
     }
 }
