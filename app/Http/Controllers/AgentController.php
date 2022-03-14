@@ -18,7 +18,7 @@ class AgentController extends Controller
     public function index(Request $request)
     {
         $items = User::query()
-            ->role('agent')
+            ->role(['agent','admin'])
            ->paginate(3);
 
 

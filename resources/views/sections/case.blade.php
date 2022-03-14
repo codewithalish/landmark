@@ -5,7 +5,7 @@
                 <h4 class="item-title">
                     <i class="ion-bookmark">{{$item->is_vip}}</i>
                     <a href="/cases/{{$item->id}}"
-                       title="Vilayi 2 tabage">{{$item->title}}</a>
+                       title="{{$item->title}}">{{$item->title}}</a>
                 </h4>
                 <span class="location">{{$item->address}}</span>
             </div>
@@ -57,11 +57,11 @@
                             <i class="ion-android-share-alt"></i>
                         </a>
                         <div class="social-property">
-                            <a title="اشتراک‌گذاری در فیسبوک" class="share">
-                                <i class="fa fa-facebook"></i>
+                            <a title="اشتراک‌گذاری در واتساپ" class="share">
+                                <i class="fa fa-whatsapp"></i>
                             </a>
-                            <a title="اشتراک‌گذاری در توییتر" class="share">
-                                <i class="fa fa-twitter"></i>
+                            <a title="اشتراک‌گذاری در اینستاگرام" class="share">
+                                <i class="fa fa-instagram"></i>
                             </a>
                             <a title="اشتراک‌گذاری در تلگرام" class="share">
                                 <i class="fa fa-telegram"></i>

@@ -28,8 +28,8 @@
                                 </h4>
                                 <span class="position">body</span>
                                 <div class="agent-social">
-                                    <a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
-                                    <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
+                                    <a class="instagram" href="#"><i class="fa fa-instagram"></i></a>
+                                    <a class="whatsapp" href="#"><i class="fa fa-whatsapp"></i></a>
                                     <a class="google_plus" href="#"><i class="fa fa-telegram"></i></a>
                                     <a class="vimeo" href="#"><i class="fa fa-vimeo"></i></a>
                                 </div>

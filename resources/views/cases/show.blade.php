@@ -79,11 +79,11 @@
                                             <i class="ion-android-share-alt"></i>
                                         </a>
                                         <div class="social-property">
-                                            <a title="اشتراک‌گذاری در فیسبوک" class="share">
-                                                <i class="fa fa-facebook"></i>
+                                            <a title="اشتراک‌گذاری در اینستاگرام" class="share">
+                                                <i class="fa fa-instagram"></i>
                                             </a>
-                                            <a title="اشتراک‌گذاری در توییتر" class="share">
-                                                <i class="fa fa-twitter"></i>
+                                            <a title="اشتراک‌گذاری در واتساپ" class="share">
+                                                <i class="fa fa-whatsapp"></i>
                                             </a>
                                             <a title="اشتراک‌گذاری در تلگرام" class="share">
                                                 <i class="fa fa-telegram"></i>
@@ -320,7 +320,7 @@
                                 </div>
                                 <div class="box-info col-md-6">
                                     <h4 class="agent-name">
-                                        <a href="/agent_detail" title="Bruck Banner">{{$item->agent->name}}</a>
+                                        <a href="/agents/{{$item->id}}" title="Bruck Banner">{{$item->agent->name}}</a>
                                     </h4>
                                     <div class="item-info">
 
