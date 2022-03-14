@@ -88,147 +88,147 @@
                             </div>
                         </div>
                         <div class="row box-action">
-                            <div class="col-md-9 box-show-features">
-                                <span class="show-features">فیلتر های بیشتر</span>
-                            </div>
+{{--                            <div class="col-md-9 box-show-features">--}}
+{{--                                <span class="show-features">فیلتر های بیشتر</span>--}}
+{{--                            </div>--}}
                             <div class="col-md-3 box-button">
                                 <button type="submit" class="button">
                                     <span class="ion-search"></span> جستجوی ملک
                                 </button>
                             </div>
                         </div>
-                        <div class="row box-features">
-                            <div class="col-md-12 box-features-content">
-                                <div class="item-wrap">
-                                    <div class="item-checkbox col-md-3 col-sm-4 col-xs-6">
-                                        <div class="checked">
-                                            <input type="checkbox" name="property_basement" value="1">
-                                            <label class="checkbox"></label>
-                                        </div>
-                                        <label class="text">زیرزمین</label>
-                                    </div>
-                                    <div class="item-checkbox col-md-3 col-sm-4 col-xs-6">
-                                        <div class="checked">
-                                            <input type="checkbox" name="property_swimming_pool" value="1">
-                                            <label class="checkbox"></label>
-                                        </div>
-                                        <label class="text">استخر شنا</label>
-                                    </div>
-                                    <div class="item-checkbox col-md-3 col-sm-4 col-xs-6">
-                                        <div class="checked">
-                                            <input type="checkbox" name="property_cooling_system" value="1">
-                                            <label class="checkbox"></label>
-                                        </div>
-                                        <label class="text">سیستم سرمایش</label>
-                                    </div>
-                                    <div class="item-checkbox col-md-3 col-sm-4 col-xs-6">
-                                        <div class="checked">
-                                            <input type="checkbox" name="property_fence" value="1">
-                                            <label class="checkbox"></label>
-                                        </div>
-                                        <label class="text">حصار</label>
-                                    </div>
-                                    <div class="item-checkbox col-md-3 col-sm-4 col-xs-6">
-                                        <div class="checked">
-                                            <input type="checkbox" name="property_gas_heat" value="1">
-                                            <label class="checkbox"></label>
-                                        </div>
-                                        <label class="text">گرمایش گازی</label>
-                                    </div>
-                                    <div class="item-checkbox col-md-3 col-sm-4 col-xs-6">
-                                        <div class="checked">
-                                            <input type="checkbox" name="property_balcony" value="1">
-                                            <label class="checkbox"></label>
-                                        </div>
-                                        <label class="text">بالکن</label>
-                                    </div>
-                                    <div class="item-checkbox col-md-3 col-sm-4 col-xs-6">
-                                        <div class="checked">
-                                            <input type="checkbox" name="property_central_vacuum" value="1">
-                                            <label class="checkbox"></label>
-                                        </div>
-                                        <label class="text">تهویه مرکزی</label>
-                                    </div>
-                                    <div class="item-checkbox col-md-3 col-sm-4 col-xs-6">
-                                        <div class="checked">
-                                            <input type="checkbox" name="property_security_system" value="1">
-                                            <label class="checkbox"></label>
-                                        </div>
-                                        <label class="text">سیستم امنیتی</label>
-                                    </div>
-                                    <div class="item-checkbox col-md-3 col-sm-4 col-xs-6">
-                                        <div class="checked">
-                                            <input type="checkbox" name="property_cable_tv_available" value="1">
-                                            <label class="checkbox"></label>
-                                        </div>
-                                        <label class="text">تلویزیون کابلی</label>
-                                    </div>
-                                    <div class="item-checkbox col-md-3 col-sm-4 col-xs-6">
-                                        <div class="checked">
-                                            <input type="checkbox" name="property_lake_view" value="1">
-                                            <label class="checkbox"></label>
-                                        </div>
-                                        <label class="text">منظره دریاچه</label>
-                                    </div>
-                                    <div class="item-checkbox col-md-3 col-sm-4 col-xs-6">
-                                        <div class="checked">
-                                            <input type="checkbox" name="property_attic" value="1">
-                                            <label class="checkbox"></label>
-                                        </div>
-                                        <label class="text">اتاق زیر شیروانی</label>
-                                    </div>
-                                    <div class="item-checkbox col-md-3 col-sm-4 col-xs-6">
-                                        <div class="checked">
-                                            <input type="checkbox" name="property_solar_heat" value="1">
-                                            <label class="checkbox"></label>
-                                        </div>
-                                        <label class="text">گرمایش خورشیدی</label>
-                                    </div>
-                                    <div class="item-checkbox col-md-3 col-sm-4 col-xs-6">
-                                        <div class="checked">
-                                            <input type="checkbox" name="property_golf_course" value="1">
-                                            <label class="checkbox"></label>
-                                        </div>
-                                        <label class="text">زمین گلف</label>
-                                    </div>
-                                    <div class="item-checkbox col-md-3 col-sm-4 col-xs-6">
-                                        <div class="checked">
-                                            <input type="checkbox" name="property_wet_bar" value="1">
-                                            <label class="checkbox"></label>
-                                        </div>
-                                        <label class="text">رخت شویی</label>
-                                    </div>
-                                    <div class="item-checkbox col-md-3 col-sm-4 col-xs-6">
-                                        <div class="checked">
-                                            <input type="checkbox" name="property_backyard" value="1">
-                                            <label class="checkbox"></label>
-                                        </div>
-                                        <label class="text">حیاط خلوت</label>
-                                    </div>
-                                    <div class="item-checkbox col-md-3 col-sm-4 col-xs-6">
-                                        <div class="checked">
-                                            <input type="checkbox" name="property_skylights" value="1">
-                                            <label class="checkbox"></label>
-                                        </div>
-                                        <label class="text">پنجره های سقنی</label>
-                                    </div>
-                                    <div class="item-checkbox col-md-3 col-sm-4 col-xs-6">
-                                        <div class="checked">
-                                            <input type="checkbox" name="property_office_den" value="1">
-                                            <label class="checkbox"></label>
-                                        </div>
-                                        <label class="text">دفتر کار</label>
-                                    </div>
-                                    <div class="item-checkbox col-md-3 col-sm-4 col-xs-6">
-                                        <div class="checked">
-                                            <input type="checkbox" name="property_fireplace" value="1">
-                                            <label class="checkbox"></label>
-                                        </div>
-                                        <label class="text">جعبه آتش نشانی</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+{{--                        <div class="row box-features">--}}
+{{--                            <div class="col-md-12 box-features-content">--}}
+{{--                                <div class="item-wrap">--}}
+{{--                                    <div class="item-checkbox col-md-3 col-sm-4 col-xs-6">--}}
+{{--                                        <div class="checked">--}}
+{{--                                            <input type="checkbox" name="property_basement" value="1">--}}
+{{--                                            <label class="checkbox"></label>--}}
+{{--                                        </div>--}}
+{{--                                        <label class="text">زیرزمین</label>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="item-checkbox col-md-3 col-sm-4 col-xs-6">--}}
+{{--                                        <div class="checked">--}}
+{{--                                            <input type="checkbox" name="property_swimming_pool" value="1">--}}
+{{--                                            <label class="checkbox"></label>--}}
+{{--                                        </div>--}}
+{{--                                        <label class="text">استخر شنا</label>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="item-checkbox col-md-3 col-sm-4 col-xs-6">--}}
+{{--                                        <div class="checked">--}}
+{{--                                            <input type="checkbox" name="property_cooling_system" value="1">--}}
+{{--                                            <label class="checkbox"></label>--}}
+{{--                                        </div>--}}
+{{--                                        <label class="text">سیستم سرمایش</label>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="item-checkbox col-md-3 col-sm-4 col-xs-6">--}}
+{{--                                        <div class="checked">--}}
+{{--                                            <input type="checkbox" name="property_fence" value="1">--}}
+{{--                                            <label class="checkbox"></label>--}}
+{{--                                        </div>--}}
+{{--                                        <label class="text">حصار</label>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="item-checkbox col-md-3 col-sm-4 col-xs-6">--}}
+{{--                                        <div class="checked">--}}
+{{--                                            <input type="checkbox" name="property_gas_heat" value="1">--}}
+{{--                                            <label class="checkbox"></label>--}}
+{{--                                        </div>--}}
+{{--                                        <label class="text">گرمایش گازی</label>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="item-checkbox col-md-3 col-sm-4 col-xs-6">--}}
+{{--                                        <div class="checked">--}}
+{{--                                            <input type="checkbox" name="property_balcony" value="1">--}}
+{{--                                            <label class="checkbox"></label>--}}
+{{--                                        </div>--}}
+{{--                                        <label class="text">بالکن</label>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="item-checkbox col-md-3 col-sm-4 col-xs-6">--}}
+{{--                                        <div class="checked">--}}
+{{--                                            <input type="checkbox" name="property_central_vacuum" value="1">--}}
+{{--                                            <label class="checkbox"></label>--}}
+{{--                                        </div>--}}
+{{--                                        <label class="text">تهویه مرکزی</label>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="item-checkbox col-md-3 col-sm-4 col-xs-6">--}}
+{{--                                        <div class="checked">--}}
+{{--                                            <input type="checkbox" name="property_security_system" value="1">--}}
+{{--                                            <label class="checkbox"></label>--}}
+{{--                                        </div>--}}
+{{--                                        <label class="text">سیستم امنیتی</label>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="item-checkbox col-md-3 col-sm-4 col-xs-6">--}}
+{{--                                        <div class="checked">--}}
+{{--                                            <input type="checkbox" name="property_cable_tv_available" value="1">--}}
+{{--                                            <label class="checkbox"></label>--}}
+{{--                                        </div>--}}
+{{--                                        <label class="text">تلویزیون کابلی</label>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="item-checkbox col-md-3 col-sm-4 col-xs-6">--}}
+{{--                                        <div class="checked">--}}
+{{--                                            <input type="checkbox" name="property_lake_view" value="1">--}}
+{{--                                            <label class="checkbox"></label>--}}
+{{--                                        </div>--}}
+{{--                                        <label class="text">منظره دریاچه</label>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="item-checkbox col-md-3 col-sm-4 col-xs-6">--}}
+{{--                                        <div class="checked">--}}
+{{--                                            <input type="checkbox" name="property_attic" value="1">--}}
+{{--                                            <label class="checkbox"></label>--}}
+{{--                                        </div>--}}
+{{--                                        <label class="text">اتاق زیر شیروانی</label>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="item-checkbox col-md-3 col-sm-4 col-xs-6">--}}
+{{--                                        <div class="checked">--}}
+{{--                                            <input type="checkbox" name="property_solar_heat" value="1">--}}
+{{--                                            <label class="checkbox"></label>--}}
+{{--                                        </div>--}}
+{{--                                        <label class="text">گرمایش خورشیدی</label>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="item-checkbox col-md-3 col-sm-4 col-xs-6">--}}
+{{--                                        <div class="checked">--}}
+{{--                                            <input type="checkbox" name="property_golf_course" value="1">--}}
+{{--                                            <label class="checkbox"></label>--}}
+{{--                                        </div>--}}
+{{--                                        <label class="text">زمین گلف</label>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="item-checkbox col-md-3 col-sm-4 col-xs-6">--}}
+{{--                                        <div class="checked">--}}
+{{--                                            <input type="checkbox" name="property_wet_bar" value="1">--}}
+{{--                                            <label class="checkbox"></label>--}}
+{{--                                        </div>--}}
+{{--                                        <label class="text">رخت شویی</label>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="item-checkbox col-md-3 col-sm-4 col-xs-6">--}}
+{{--                                        <div class="checked">--}}
+{{--                                            <input type="checkbox" name="property_backyard" value="1">--}}
+{{--                                            <label class="checkbox"></label>--}}
+{{--                                        </div>--}}
+{{--                                        <label class="text">حیاط خلوت</label>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="item-checkbox col-md-3 col-sm-4 col-xs-6">--}}
+{{--                                        <div class="checked">--}}
+{{--                                            <input type="checkbox" name="property_skylights" value="1">--}}
+{{--                                            <label class="checkbox"></label>--}}
+{{--                                        </div>--}}
+{{--                                        <label class="text">پنجره های سقنی</label>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="item-checkbox col-md-3 col-sm-4 col-xs-6">--}}
+{{--                                        <div class="checked">--}}
+{{--                                            <input type="checkbox" name="property_office_den" value="1">--}}
+{{--                                            <label class="checkbox"></label>--}}
+{{--                                        </div>--}}
+{{--                                        <label class="text">دفتر کار</label>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="item-checkbox col-md-3 col-sm-4 col-xs-6">--}}
+{{--                                        <div class="checked">--}}
+{{--                                            <input type="checkbox" name="property_fireplace" value="1">--}}
+{{--                                            <label class="checkbox"></label>--}}
+{{--                                        </div>--}}
+{{--                                        <label class="text">جعبه آتش نشانی</label>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
                     </div>
                 </form>
             </div>

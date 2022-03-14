@@ -18,10 +18,12 @@ class NewsletterMail extends Mailable
      */
 
     public $email;
+    public $body;
 
-    public function __construct($email)
+    public function __construct($email,$body)
     {
         $this->email = $email;
+        $this->body = $body;
     }
 
     /**
