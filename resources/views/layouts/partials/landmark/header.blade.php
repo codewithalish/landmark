@@ -11,7 +11,7 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="topmeta topmeta-right pull-right">
-{{--                                <a class="popup-login" href="/users/current/{{$item->id}}/edit" > {{\Illuminate\Support\Facades\Auth::user()->name ?? ''}} خوش امدید--}}
+                                <a class="popup-login"  > {{\Illuminate\Support\Facades\Auth::user()->name ?? ''}} خوش امدید
                                 </a>
 
                             <div class="widget widget-social">
@@ -105,6 +105,51 @@
                                         </button>
                                         <p>
                                             <span>حساب کاربری ندارید؟</span>
+                                            <a class="color" href="#popup_02" data-init="magnificPopup"
+                                               data-options='{"type":"inline","removalDelay":700}' data-effect="mfp-3d-unfold"
+                                                title="Register now!">هم اکنون
+                                                ثبت نام کنید!</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- End / popup-content mfp-with-anim mfp-hide -->
+                        <!-- popup-content mfp-with-anim mfp-hide -->
+                        <div class="popup-content box-login mfp-with-anim mfp-hide" id="popup_02">
+                            <h4 class="title">ثبت نام</h4>
+                            @include('layouts.partials.auth.alert')
+                            <form class="login-member-container" method="post" action="/users/register">
+                                @csrf
+                                <div class="login-member-wrap">
+                                    <div class="register-member-left">
+                                        <div class="item-wrap">
+                                            <label>نام کاربری</label>
+                                            <input type="text" id="user_name_login" name="name" value="{{old('name') ?? ''}}"
+                                                   class="required">
+                                        </div>
+                                        <div class="item-wrap">
+                                            <label>ایمیل</label>
+                                            <input type="text" id="user_name_login" name="email" value="{{old('email') ?? ''}}"
+                                                   class="required">
+                                        </div>
+                                        <div class="item-wrap">
+                                            <label>شماره موبایل</label>
+                                            <input type="text" id="user_name_login" name="mobile" value="{{old('mobile') ?? ''}}"
+                                                   class="required">
+                                        </div>
+                                        <div class="item-wrap">
+                                            <label>رمز عبور</label>
+                                            <input type="password" id="password_login" name="password"
+                                                   value="{{old('password') ?? ''}}" class="required">
+                                        </div>
+                                    </div>
+                                    <div class="login-member-action">
+                                        <button type="submit" name="login-account" class="button">
+                                            ورود <i class="fa-li fa fa-spinner fa-spin hide"></i>
+                                        </button>
+                                        <p>
+                                            <span>حساب کاربری ندارید؟</span>
                                             <a class="color" href="/users/register" title="Register now!">هم اکنون
                                                 ثبت نام کنید!</a>
                                         </p>
@@ -132,7 +177,7 @@
                                 <ul class="sub-menu">
                                     <li><a href="/cases">جستجو در ملک ها</a></li>
                                     <li><a href="/bookmarks">منتخب های من</a></li>
-                                    <li><a href="/cases/myCases">آگهی های من</a></li>
+                                    <li><a href="/myCases">آگهی های من</a></li>
 
                                 </ul>
                                 <i class="fa fa-angle-down"></i>
