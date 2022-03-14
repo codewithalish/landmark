@@ -188,18 +188,16 @@ class CaseController extends Controller
 
 
 public function myCases(){
-    $my_cases = CaseModel::query()
+    $myCases = CaseModel::query()
         ->where('user_id',Auth::id())
         ->get();
-    return view('cases/myCases', compact('my_cases'));
 
-//      if ($my_cases){
-//          return view('cases.myCases', compact('my_cases'));
-//
-//      }
-//      else{
-//          return view('/pages/empty');
-//      }
+      if ($myCases){
+          return view('cases.myCases', compact('myCases'));
+      }
+      else{
+          return view('/pages/empty');
+      }
 }
 
 

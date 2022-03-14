@@ -6,7 +6,7 @@
 
         </div>
         <div class="row">
-            @foreach($my_cases as $item)
+            @foreach($myCases as $item)
                 @include('sections.case')
             @endforeach
 
