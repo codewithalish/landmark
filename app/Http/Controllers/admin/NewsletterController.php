@@ -5,13 +5,15 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CaseRequest;
 use App\Models\Newsletter;
+use App\Models\NewsletterBody;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class NewsletterController extends Controller
 {
-    public function index()
+
+        public function index()
     {
-        //
 
         $titleCard = 'لیست';
         $th = ['شناسه', 'email', 'operation'];
@@ -25,10 +27,6 @@ class NewsletterController extends Controller
                 'titleCard' => $titleCard,
             ]
         );
-
-//
-//        $query=Post::get();
-//        return view('admin.posts.index',['items'=>$query]);
     }
 
     /**
@@ -38,8 +36,20 @@ class NewsletterController extends Controller
      */
     public function create()
     {
-        //
-        return view('admin.newsletters.create');
+        $titleCard = 'لیست';
+        $th = ['شناسه', 'body', 'operation'];
+        $query = NewsletterBody::query()
+            ->orderBy('id', 'DESC')
+            ->limit(10)
+            ->get();
+        return view('admin.newsletters.create',
+            [
+                'items' => $query,
+                'th' => $th,
+                'titleCard' => $titleCard,
+            ]
+        );
+//        return view('admin.newsletters.create');
     }
 
     /**
@@ -50,11 +60,16 @@ class NewsletterController extends Controller
      */
     public function store(Request $request)
     {
-        $inputs = $request->only('email');
-        $result=Newsletter::create($inputs);
-        if ($result){
-            return back()->with('success','با موفقیت ارسال شد');
-        } else{
+        $inputs = $request->only(
+            'body'
+        );
+        $inputs['user_id'] = Auth::user()->id;
+
+        $result = NewsletterBody::create($inputs);
+
+        if ($result) {
+            return back()->with('success', 'با موفقیت ارسال شد');
+        } else {
             return back()->with('error');
         }
 

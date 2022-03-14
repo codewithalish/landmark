@@ -22,10 +22,10 @@
                             <tr>
                                 <td>{{$item->id}}</td>
                                 <td>{{$item->email}}</td>
-                                <td>{{$item->body}}</td>
+
 
                                 <td>
-                                    <form action="/admin/newsletter/{{$item->id}}" method="post">
+                                    <form action="/admin/newsletters/{{$item->id}}" method="post">
                                         @csrf
                                         @method('delete')
                                         <button class="btn btn-outline-danger" type="submit" style="padding: 3px">حذف</button>
