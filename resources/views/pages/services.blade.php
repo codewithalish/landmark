@@ -20,7 +20,7 @@
                 </div>
             </div>
             <div class="row">
-                @foreach($servives as $item)
+                @foreach($services as $item)
                 <div class="col-md-3 col-sm-6">
                     <div class="service-item">
                         <div class="service-icon icon-mapmarker">
@@ -35,7 +35,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="btlink">
-                        <a class="readmore" href="#">بیشتر بخوانید </a>
+{{--                        <a class="readmore" href="#">بیشتر بخوانید </a>--}}
                     </div>
                 </div>
             </div>
