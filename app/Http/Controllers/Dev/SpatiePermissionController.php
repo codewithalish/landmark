@@ -45,13 +45,13 @@ class SpatiePermissionController extends Controller
         $roleUser = Role::where('name', 'user')->first();
 
 
-        $majid = User::find(1);
-        $msMozafari = User::find(2);
-        $ali = User::find(3);
+        $admin = User::find(1);
+        $agent = User::find(2);
+        $user = User::find(3);
 
-        $majid->assignRole($roleAdmin);
-        $msMozafari->assignRole($roleAgent);
-        $ali->assignRole($roleUser);
+        $admin->assignRole($roleAdmin);
+        $agent->assignRole($roleAgent);
+        $user->assignRole($roleUser);
 
 
         return 'رول ها با موفقیت اختصاص یافت';
@@ -64,9 +64,9 @@ class SpatiePermissionController extends Controller
         $roleAgent = Role::where('name', 'agent')->first();
         $roleUser = Role::where('name', 'user')->first();
 
-        $majid = User::find($request->get('userId'));
+        $user1 = User::find($request->get('userId'));
 
-        $majid->syncRoles(['admin']);
+        $user1->syncRoles(['admin']);
 
 
         return User::where('id', $request->get('userId'))->with('roles')->get();
@@ -75,16 +75,16 @@ class SpatiePermissionController extends Controller
 
     public function showRoles()
     {
-        $majid = User::find(1);
+        $user1 = User::find(1);
 
-        return $majid->getRoleNames();
+        return $user1->getRoleNames();
     }
 
     public function getAllPermissions()
     {
-        $majid = User::find(1);
+        $user1 = User::find(1);
 
-        return $majid->getAllPermissions();
+        return $user1->getAllPermissions();
     }
 
 
