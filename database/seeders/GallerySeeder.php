@@ -16,35 +16,35 @@ class GallerySeeder extends Seeder
     public function run()
     {
         Gallery::create([
-            'title'=>'فاطمه مظفری',
+            'title'=>'admin',
             'avatar_path'=>'/landmark/images/gallery/gallery_thumb_1.jpg'
             ]);
         Gallery::create([
-            'title'=>'فاطمه مظفری',
+            'title'=>'admin',
             'avatar_path'=>'/landmark/images/gallery/gallery_thumb_2.jpg'
         ]);
         Gallery::create([
-            'title'=>'فاطمه مظفری',
+            'title'=>'admin',
             'avatar_path'=>'/landmark/images/gallery/gallery_thumb_3.jpg'
         ]);
         Gallery::create([
-            'title'=>'فاطمه مظفری',
+            'title'=>'admin',
             'avatar_path'=>'/landmark/images/gallery/gallery_thumb_4.jpg'
         ]);
         Gallery::create([
-            'title'=>'فاطمه مظفری',
+            'title'=>'admin',
             'avatar_path'=>'/landmark/images/gallery/gallery_thumb_5.jpg'
         ]);
         Gallery::create([
-            'title'=>'فاطمه مظفری',
+            'title'=>'admin',
             'avatar_path'=>'/landmark/images/gallery/gallery_thumb_6.jpg'
         ]);
         Gallery::create([
-            'title'=>'فاطمه مظفری',
+            'title'=>'admin',
             'avatar_path'=>'/landmark/images/gallery/gallery_thumb_7.jpg'
         ]);
         Gallery::create([
-            'title'=>'فاطمه مظفری',
+            'title'=>'admin',
             'avatar_path'=>'/landmark/images/gallery/gallery_thumb_8.jpg'
         ]);
     }

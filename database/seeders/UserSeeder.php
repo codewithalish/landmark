@@ -19,20 +19,20 @@ class UserSeeder extends Seeder
 
 
         User::create([
-            'name'=>'مجید صالحی',
+            'name'=>'admin',
             'mobile'=>'09181230001',
-            'email'=>'majid@gmail.com',
-            'address'=>'mostafa khomeini',
+            'email'=>'admin@gmail.com',
+            'address'=>'',
             #'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),
 
         ]);
         User::create([
-            'name'=>'فاطمه مظفری',
+            'name'=>'agent',
             'mobile'=>'09181230002',
-            'email'=>'fateme@gmail.com',
-            'address'=>'fatemieh',
+            'email'=>'agent@gmail.com',
+            'address'=>'',
 
             #'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
@@ -41,10 +41,10 @@ class UserSeeder extends Seeder
 
         ]);
         User::create([
-            'name'=>'علی شریفی نیستانی',
+            'name'=>'user',
             'mobile'=>'09181230003',
-            'email'=>'ali@gmail.com',
-            'address'=>'hafezieh',
+            'email'=>'user@gmail.com',
+            'address'=>'',
 
             #'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
