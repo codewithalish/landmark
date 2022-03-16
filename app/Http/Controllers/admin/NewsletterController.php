@@ -4,10 +4,13 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CaseRequest;
+use App\Mail\NewsletterMail;
 use App\Models\Newsletter;
 use App\Models\NewsletterBody;
+use App\Models\NewsletterSent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class NewsletterController extends Controller
 {
@@ -38,7 +41,7 @@ class NewsletterController extends Controller
     {
         $titleCard = 'لیست';
         $th = ['شناسه', 'body', 'operation'];
-        $query = NewsletterBody::query()
+        $query = NewsletterSent::query()
             ->orderBy('id', 'DESC')
             ->limit(10)
             ->get();
@@ -60,18 +63,21 @@ class NewsletterController extends Controller
      */
     public function store(Request $request)
     {
-        $inputs = $request->only(
-            'body'
-        );
-        $inputs['user_id'] = Auth::user()->id;
+      $body=$request->get('body');
+      $emails=Newsletter::query()->pluck('email');
 
-        $result = NewsletterBody::create($inputs);
+      foreach ($emails as $email){
+          $address=new NewsletterMail($email,$body);
+          Mail::send($address,$body);
 
-        if ($result) {
+      }
+        NewsletterSent::create([
+            'user_id'=>Auth::id(),
+            'body'=>$body,
+        ]);
+
             return back()->with('success', 'با موفقیت ارسال شد');
-        } else {
-            return back()->with('error');
-        }
+
 
     }
 

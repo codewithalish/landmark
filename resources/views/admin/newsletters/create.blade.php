@@ -24,7 +24,9 @@
             <div class="card mb-4">
                 <div class="card-header">{{$titleCard ?? ''}}</div>
                 <div class="card-body">
-                    <table class="table">
+                    <table class="table"
+
+                    >
                         <thead>
                         <tr>
                             @foreach($th as $title)
