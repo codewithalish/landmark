@@ -59,18 +59,17 @@ class AssignController extends Controller
 
     public function store(Request $request)
     {
-//        $inputs = $request->only('role_id','model_id','model_type');
 
-        $model_id = $request->get('model_id');
+
+        $user_id = $request->get('user_id');
         $role_id = $request->get('role_id');
 
-       $result= $model_id->assignRole($role_id);
-        dd($result);
+        $user=User::find($user_id);
+        $role=\Spatie\Permission\Models\Role::find($role_id);
 
-//        return back()->with([
-//            'role_id' =>  $role_id,
-//            'model_id' => $model_id
-//        ]);
+       $result= $user->assignRole($role);
+       return back();
+
 
     }
 }

@@ -17,7 +17,7 @@
                     <div class="card-body">
                         <div class="mb-3">
                             <label class="form-label" for="name">کاربر</label>
-                            <select name="model_id" id="">
+                            <select name="user_id" id="">
                                 @foreach(\App\Models\User::all(['id','name']) as $item)
                                 <option value="{{$item->id}}">{{$item->id}}-{{$item->name}}</option>
                                 @endforeach

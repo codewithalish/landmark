@@ -60,17 +60,17 @@ class PermissionController extends Controller
 //            return back()->with('error');
 //        }
 
-        $inputs = $request->only('permission_id','model_id','model_type');
 
-        $permission_id=\Spatie\Permission\Models\Permission::all();
-        $model_id = User::find();
-        $model_id->assignRole($permission_id);
 
-        return back()->with([
-            'permission_id' =>  $permission_id,
-            'model_id' => $model_id
-        ]);
+        $permission_id=$request->get('permission_id');
+        $user_id =  $request->get('user_id');
 
+        $user=User::find($user_id);
+        $permission=\Spatie\Permission\Models\Role::find($permission_id);
+
+        $user->assignRole($permission);
+
+        return back();
     }
 
     /**

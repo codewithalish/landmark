@@ -203,7 +203,6 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::resource('features', \App\Http\Controllers\Admin\FeatureController::class);
     Route::resource('feedbacks', \App\Http\Controllers\Admin\FeedbackController::class);
     Route::resource('newsletters', \App\Http\Controllers\admin\NewsletterController::class);
-//    Route::resource('newsletters', \App\Http\Controllers\admin\NewsletterBodyController::class);
     Route::resource('tags', \App\Http\Controllers\Admin\TagController::class);
     Route::resource('variables', \App\Http\Controllers\Admin\VariableController::class);
     Route::resource('roles', \App\Http\Controllers\Admin\RoleController::class);
@@ -221,17 +220,17 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
 |
 */
 
-Route::get('/admin/newsletters/create', function () {
-    $body=\App\Models\NewsletterBody::query()
-        ->select('body')
-        ->orderBy('id','DESC')
-        ->first();
-    $emails = \App\Models\Newsletter::query()
-        ->pluck('email');
-
-    foreach ($emails as $email) {
-        $address = new \App\Mail\NewsletterMail($email);
-        Mail::send($address,[$body]);
-    }
-});
+//Route::get('/admin/newsletters/create', function () {
+//    $body=\App\Models\NewsletterBody::query()
+//        ->select('body')
+//        ->orderBy('id','DESC')
+//        ->first();
+//    $emails = \App\Models\Newsletter::query()
+//        ->pluck('email');
+//
+//    foreach ($emails as $email) {
+//        $address = new \App\Mail\NewsletterMail($email);
+//        Mail::send($address,[$body]);
+//    }
+//});
 
