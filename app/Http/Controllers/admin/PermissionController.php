@@ -7,6 +7,7 @@ use App\Http\Requests\CaseRequest;
 use App\Models\Permission;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Role;
 
 class PermissionController extends Controller
 {
@@ -51,26 +52,16 @@ class PermissionController extends Controller
      */
     public function store(Request $request)
     {
-//        $gaurd_name='web';
-//        $inputs = $request->only('name',$gaurd_name);
-//        $result=\Spatie\Permission\Models\Permission::create($inputs);
-//        if ($result){
-//            return back()->with('success','با موفقیت ارسال شد');
-//        } else{
-//            return back()->with('error');
-//        }
-
-
 
         $permission_id=$request->get('permission_id');
-        $user_id =  $request->get('user_id');
+        $role_id =  $request->get('role_id');
 
-        $user=User::find($user_id);
-        $permission=\Spatie\Permission\Models\Role::find($permission_id);
+        $role=Role::find($role_id);
+        $permission=\Spatie\Permission\Models\Permission::find($permission_id);
 
-        $user->assignRole($permission);
+        $role->givePermissionTo($permission);
 
-        return back();
+        return back()->with('success','با موفقیت ثبت شد');
     }
 
     /**

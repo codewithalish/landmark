@@ -3,9 +3,6 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\CaseRequest;
-use App\Models\Newsletter;
-use App\Models\Permission_Role;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -13,25 +10,11 @@ use Illuminate\Http\Request;
 class AssignController extends Controller
 {
 
-
     public function assignRole($id)
     {
-
-
         $roleAdmin = \Spatie\Permission\Models\Role::where('name', 'admin')->first();
         $roleAgent = Role::where('name', 'agent')->first();
         $roleUser = Role::where('name', 'user')->first();
-
-        $agent = [];
-
-        #-------------------------------------------
-
-
-        $agent[$id] = User::find($id);
-
-        $agent[$id]->assignRole($roleAdmin);
-        $agent[2]->assignRole($roleAgent);
-        $agent[3]->assignRole($roleUser);
 
     }
 
@@ -40,9 +23,10 @@ class AssignController extends Controller
 
         $titleCard = 'لیست';
         $th = ['شناسه', 'name', 'title', 'operation'];
-        $query = Role::query()
+        $query = \Spatie\Permission\Models\Role::query()
             ->orderBy('id', 'DESC')
             ->get();
+
         return view('admin.assign.index',
             [
                 'items' => $query,
@@ -68,7 +52,7 @@ class AssignController extends Controller
         $role=\Spatie\Permission\Models\Role::find($role_id);
 
        $result= $user->assignRole($role);
-       return back();
+       return back()->with('success','با موفقیت ثبت شد');
 
 
     }
