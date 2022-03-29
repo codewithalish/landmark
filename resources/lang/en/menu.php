@@ -21,6 +21,7 @@ return [
     'services'=>'خدمات',
     'tags'=>'تگ',
     'variables'=>'متغیرها',
+    'agents'=>'نماینده فروش'
 
 
 ];

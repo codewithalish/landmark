@@ -32,12 +32,12 @@ class MenuSeeder extends Seeder
         Menu::create([
             'route' => 'roles'
         ]);
-//        Menu::create([
-//            'route' => 'assign'
-//        ]);
-//        Menu::create([
-//            'route' => 'permissions'
-//        ]);
+        Menu::create([
+            'route' => 'assign'
+        ]);
+        Menu::create([
+            'route' => 'permissions'
+        ]);
         Menu::create([
             'route' => 'comments'
         ]);
