@@ -67,6 +67,8 @@ class UserController extends Controller
             'whatsapp'
         );
         $inputs['password'] = Hash::make($inputs['password']);
+        if ($request->file('avatar_path'))
+            $inputs['avatar_path'] = $this->uploadMedia($request->file('avatar_path'));
 
         $result=User::create($inputs);
         if ($result){
@@ -124,8 +126,11 @@ class UserController extends Controller
             'telegram',
             'whatsapp'
             );
+        if ($request->file('avatar_path'))
+            $query['avatar_path'] = $this->uploadMedia($request->file('avatar_path'));
+
         User::where('id', $id)->update($query);
-        return back()->with('success', 'ویرایش با موفقیت انجام شد');
+        return redirect('/admin/users')->with('success', 'ویرایش با موفقیت انجام شد');
     }
 
     /**
