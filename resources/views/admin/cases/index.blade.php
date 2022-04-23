@@ -22,10 +22,10 @@
                             <tr>
                                 <td>{{$item->id}}</td>
                                 <td>{{$item->title}}</td>
-                                <td>{{$item->address}}</td>
-                                <td>{{$item->area}}</td>
                                 <td>{{$item->price}}</td>
-
+                                <td>{{$item->contract}}</td>
+                                <td>{{$item->type}}</td>
+                                <td>{{$item->status}}</td>
                                 <td>
                                     <a href="/admin/cases/{{$item->id}}" class="btn btn-outline-success" type="button" style="padding: 3px">نمایش</a>
                                     <a href="/admin/cases/{{$item->id}}/edit" class="btn btn-outline-warning" type="button" style="padding: 3px">ویرایش</a>
