@@ -44,9 +44,9 @@ class LoginController extends Controller
         $result = User::create($inputs);
 
         if ($result) {
-            return back()->with('success', 'با موفقیت ارسال شد');
+            return back()->with('success', 'با موفقیت ثبت شدید.');
         } else {
-            return redirect('/users/create')->with('error');
+            return back()->with('error');
         }
     }
 
