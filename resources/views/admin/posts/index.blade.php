@@ -22,9 +22,7 @@
                             <tr>
                                 <td>{{$item->id}}</td>
                                 <td>{{$item->title}}</td>
-                                <td>{{$item->user_id}}</td>
                                 <td>{{$item->body}}</td>
-
                                 <td>
                                     <a href="/admin/posts/{{$item->id}}" class="btn btn-outline-success" type="button" style="padding: 3px">نمایش</a>
                                     <a href="/admin/posts/{{$item->id}}/edit" class="btn btn-outline-warning" type="button" style="padding: 3px">ویرایش</a>
