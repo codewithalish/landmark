@@ -15,7 +15,6 @@ use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
 
-
     public function create(Request $request)
     {
         return view('users/create');
@@ -28,9 +27,9 @@ class UserController extends Controller
 
         $result = User::create($inputs);
         if ($result) {
-            return back()->with('success', 'با موفقیت ارسال شد');
+            return back()->with('success', 'با موفقیت ثبت شدید.');
         } else {
-            return back()->with('error');
+            return back()->with('error','ایمیل یا موبایل تکراری است');
         }
 
     }
@@ -45,8 +44,8 @@ class UserController extends Controller
     public function edit($id)
     {
         //
-        $query = User::where('id', $id)->first();
-        return view('users.edit', ['item' => $query]);
+        $item = User::where('id', $id)->first();
+        return view('users.edit',compact('item'));
     }
 
     public function update(Request $request, $id)
@@ -57,15 +56,10 @@ class UserController extends Controller
             'mobile',
             'password',
             'email',
-
         );
         User::where('id', $id)->update($query);
         return back()->with('success', 'ویرایش با موفقیت انجام شد');
     }
-
-
-
-
 
     public function bookmarks()
     {
