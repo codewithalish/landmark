@@ -11,8 +11,8 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="topmeta topmeta-right pull-right">
-                                <a class="popup-login"  > {{\Illuminate\Support\Facades\Auth::user()->name ?? ''}} خوش امدید
-                                </a>
+                            <a class="popup-login"> {{\Illuminate\Support\Facades\Auth::user()->name ?? ''}} خوش امدید
+                            </a>
 
                             <div class="widget widget-social">
                                 <div class="social">
@@ -47,7 +47,7 @@
                     <div class="pull-right navbar-meta meta-property">
                         <div class="meta-content">
 
-                           @auth
+                            @auth
                                 <a href="/cases/create" class="meta-property button">
                                     <span><i class="fa fa-plus-circle"></i></span>ثبت ملک جدید
                                 </a>
@@ -58,7 +58,7 @@
                                    title="">
                                     <span><i class="fa fa-plus-circle"></i></span>ورود کاربران
                                 </a>
-                               @endguest
+                            @endguest
                         </div>
                         <!-- popup-content mfp-with-anim mfp-hide -->
                         <div class="popup-content box-login mfp-with-anim mfp-hide" id="popup_01">
@@ -106,8 +106,9 @@
                                         <p>
                                             <span>حساب کاربری ندارید؟</span>
                                             <a class="color" href="#popup_02" data-init="magnificPopup"
-                                               data-options='{"type":"inline","removalDelay":700}' data-effect="mfp-3d-unfold"
-                                                title="Register now!">هم اکنون
+                                               data-options='{"type":"inline","removalDelay":700}'
+                                               data-effect="mfp-3d-unfold"
+                                               title="Register now!">هم اکنون
                                                 ثبت نام کنید!</a>
                                         </p>
                                     </div>
@@ -125,17 +126,20 @@
                                     <div class="register-member-left">
                                         <div class="item-wrap">
                                             <label>نام کاربری</label>
-                                            <input type="text" id="user_name_login" name="name" value="{{old('name') ?? ''}}"
+                                            <input type="text" id="user_name_login" name="name"
+                                                   value="{{old('name') ?? ''}}"
                                                    class="required">
                                         </div>
                                         <div class="item-wrap">
                                             <label>ایمیل</label>
-                                            <input type="text" id="user_name_login" name="email" value="{{old('email') ?? ''}}"
+                                            <input type="text" id="user_name_login" name="email"
+                                                   value="{{old('email') ?? ''}}"
                                                    class="required">
                                         </div>
                                         <div class="item-wrap">
                                             <label>شماره موبایل</label>
-                                            <input type="text" id="user_name_login" name="mobile" value="{{old('mobile') ?? ''}}"
+                                            <input type="text" id="user_name_login" name="mobile"
+                                                   value="{{old('mobile') ?? ''}}"
                                                    class="required">
                                         </div>
                                         <div class="item-wrap">
@@ -164,20 +168,35 @@
                         <ul class="nav-collapse navbar-nav">
                             <li class="current">
                                 <a href="/">خانه</a>
-                                <ul class="sub-menu">
-                                    <li><a href="/">خانه</a></li>
-                                    <li class="current"><a href="/cases">جستجوی پیشرفته</a></li>
+                                @auth
+                                    <ul class="sub-menu">
+                                        <li>
+                                            <a href="users/current/{{\Illuminate\Support\Facades\Auth::id()}}/edit">ویرایش
+                                                پروفایل</a>
+                                        </li>
+                                        <li><a href="/bookmarks">منتخب های من</a></li>
+                                        <li><a href="/myCases">آگهی های من</a></li>
+                                    </ul>
+                                @endauth
+                                @guest
+                                    <ul class="sub-menu">
+                                        <li><a href="#popup_01" data-init="magnificPopup"
+                                               data-options='{"type":"inline","removalDelay":700}'
+                                               data-effect="mfp-3d-unfold"
+                                               title="">ورود به پروفایل
+                                            </a></li>
+                                    </ul>
+
+                                @endguest
 
 
-                                </ul>
                                 <i class="fa fa-angle-down"></i>
                             </li>
                             <li>
                                 <a href="/cases">ملک ها</a>
                                 <ul class="sub-menu">
-                                    <li><a href="/cases">جستجو در ملک ها</a></li>
-                                    <li><a href="/bookmarks">منتخب های من</a></li>
-                                    <li><a href="/myCases">آگهی های من</a></li>
+                                    <li><a href="/cases">جستجوی پیشرفته</a></li>
+
 
                                 </ul>
                                 <i class="fa fa-angle-down"></i>
@@ -194,7 +213,7 @@
                             <li>
                                 <a href="#">صفحات</a>
                                 <ul class="sub-menu">
-                                    <li><a href="/users/create">عضویت در سایت</a></li>
+                                    <li><a href="/users/register">عضویت در سایت</a></li>
                                     <li><a href="/gallery">گالری</a></li>
                                     <li><a href="/partner">شرکا</a></li>
                                     <li><a href="/services">خدمات</a></li>
