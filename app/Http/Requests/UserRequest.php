@@ -49,7 +49,7 @@ class UserRequest extends FormRequest
             'required'=>'فیلد :attribute اجباری است',
             'min'=>'فیلد :attribute حداقل 6 کاراکتر باشد',
             'email'=>'فیلد :attribute با فرمت معتبر وارد شود',
-
+'unique'=>'با این  :attribute  قبلا در سایت عضو شده اید.'
         ];
 
     }
