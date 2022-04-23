@@ -42,7 +42,7 @@ class PageController extends Controller
         $result = Newsletter::create($inputs);
 
         if ($result) {
-            return back()->with('success', 'با موفقیت ارسال شد');
+            return back()->with('success', 'با موفقیت در خبرنامه عضو شدید.');
         }
 
     }
