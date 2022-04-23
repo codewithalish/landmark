@@ -15,7 +15,7 @@ class PostController extends Controller
         //
 
         $titleCard = 'لیست';
-        $th = ['شناسه', 'title', 'body','user_id', 'operation'];
+        $th = ['شناسه', 'title', 'body', 'operation'];
         $query = Post::query()
             ->orderBy('id', 'DESC')
             ->get();
@@ -49,7 +49,7 @@ class PostController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(CaseRequest $request)
+    public function store(Request $request)
     {
 
 
