@@ -1,6 +1,6 @@
 @extends('layouts.masterPages.landmark')
 @section('content')
-
+    @include('layouts.partials.auth.alert')
     <div id="main">
       <x-hero-component></x-hero-component>
         <x-search-case-component></x-search-case-component>
