@@ -31,15 +31,15 @@ class Footer extends Component
                 'title' => 'قوانین و مقررات'
             ],
             [
-                'href' => '#',
+                'href' => '/abouts',
                 'title' => 'درباره ما'
             ],
             [
-                'href' => '#',
+                'href' => '/services',
                 'title' => 'راهنما'
             ],
             [
-                'href' => '#',
+                'href' => '/cases',
                 'title' => 'آخرین کیس'
             ],
 
