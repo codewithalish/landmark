@@ -38,18 +38,18 @@ class MenuSeeder extends Seeder
         Menu::create([
             'route' => 'permissions'
         ]);
-        Menu::create([
-            'route' => 'comments'
-        ]);
+//        Menu::create([
+//            'route' => 'comments'
+//        ]);
         Menu::create([
             'route' => 'contacts'
         ]);
 //        Menu::create([
 //            'route' => 'bookmarks'
 //        ]);
-        Menu::create([
-            'route' => 'feedbacks'
-        ]);
+//        Menu::create([
+//            'route' => 'feedbacks'
+//        ]);
         Menu::create([
             'route' => 'galleries'
         ]);
