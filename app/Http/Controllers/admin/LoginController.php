@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
+use Spatie\Permission\Models\Role;
 
 class LoginController extends Controller
 {
@@ -29,7 +30,7 @@ class LoginController extends Controller
 
             return redirect('/admin/dashboard');
         }
-        return redirect('/admin/login')->with('error', 'نام کاربری یا کلمه عبور اشتباه است');
+        return redirect('/admins/login')->with('error', 'نام کاربری یا کلمه عبور اشتباه است');
 
     }
 
@@ -40,20 +41,20 @@ class LoginController extends Controller
 
     public function register(RegisterRequest $request)
     {
-        $inputs = $request->only(['name', 'mobile', 'password']);
+        $inputs = $request->only(['name', 'mobile', 'password','email']);
         $inputs['password'] = Hash::make($inputs['password']);
         $newUser = User::create($inputs);
         $roleUser = Role::where('name', 'user')->first();
         $newUser->assignRole($roleUser);
 
-        return redirect('/login')->with('success', 'با موفقیت ثبت شد');
+        return redirect('admins/login')->with('success', 'با موفقیت ثبت شد');
     }
 
     public function logout()
     {
         Auth::logout();
         Session::flush();
-        return redirect('/admin/login');
+        return redirect('/admins/login');
     }
 
 }

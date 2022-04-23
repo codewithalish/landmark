@@ -12,7 +12,7 @@
 
                     @include('layouts.partials.auth.alert')
 
-                    <form action="/admin/login" method="post">
+                    <form action="/admins/login" method="post">
                         @csrf
                         <div class="card-group d-block d-md-flex row">
                             <div class="card col-md-7 p-4 mb-0">
@@ -23,7 +23,7 @@
                       <svg class="icon">
                         <use xlink:href="/admin/login/node_modules/@coreui/icons/sprites/free.svg#cil-user"></use>
                       </svg></span>
-                                        <input class="form-control" type="text" placeholder="نام کاربری" name="mobile">
+                                        <input class="form-control" type="text" placeholder="تلفن همراه" name="mobile">
                                     </div>
                                     {{--                                @error('password')--}}
                                     {{--                                <span style="color: red">{{$message}}</span>--}}
@@ -52,7 +52,7 @@
                                     <div>
                                         <h2>ثبت نام</h2>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                        <a href="/register">
+                                        <a href="/admins/register">
                                             <button class="btn btn-lg btn-outline-light mt-3" type="button">همین الان ثبت نام کنید</button>
                                         </a>
                                     </div>
