@@ -31,9 +31,9 @@
                 </svg>
             </a>
             <ul class="header-nav d-none d-md-flex">
-                <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Users</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Settings</a></li>
+                <li class="nav-item"><a class="nav-link" href="/admin/dashboard">Dashboard</a></li>
+                <li class="nav-item"><a class="nav-link" href="/admin/users">Users</a></li>
+                <li class="nav-item"><a class="nav-link" href="/admin/users/{{\Illuminate\Support\Facades\Auth::id()}}">Settings</a></li>
             </ul>
             <ul class="header-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="#">
@@ -85,7 +85,7 @@
                         <div class="dropdown-header bg-light py-2">
                             <div class="fw-semibold">Settings</div>
                         </div>
-                        <a class="dropdown-item" href="#">
+                        <a class="dropdown-item" href="/admin/users/{{\Illuminate\Support\Facades\Auth::id()}}/edit">
                             <svg class="icon me-2">
                                 <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-user"></use>
                             </svg>
@@ -108,7 +108,7 @@
                             <svg class="icon me-2">
                                 <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-lock-locked"></use>
                             </svg>
-                            Lock Account</a><a class="dropdown-item" href="/admin/logout">
+                            Lock Account</a><a class="dropdown-item" href="/admins/logout">
                             <svg class="icon me-2">
                                 <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-account-logout"></use>
                             </svg>
