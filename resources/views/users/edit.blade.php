@@ -9,7 +9,7 @@
                         <h2>ویرایش اطلاعات کاربری</h2>
                         <div class="my-account-wrap">
                             @include('layouts.partials.auth.alert')
-                            <form class="login-form" method="post" action="/users/{{$item->id}}">
+                            <form class="login-form" action="/users/current/{{$item->id}}" method="post" >
                                 @csrf
                                 @method('put')
                                 <div class="item-wrap">
