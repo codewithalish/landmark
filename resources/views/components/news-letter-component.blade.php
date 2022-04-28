@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                @include('layouts.partials.auth.alert')
+
                 <div class="mailchimp">
                     <h3 class="title">عضویت در خبرنامه</h3>
                     <span class="sub-title">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم</span>
