@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CaseRequest;
 use App\Mail\NewsletterMail;
+use App\Models\CaseModel;
 use App\Models\Newsletter;
 use App\Models\NewsletterBody;
 use App\Models\NewsletterSent;
@@ -15,7 +16,7 @@ use Illuminate\Support\Facades\Mail;
 class NewsletterController extends Controller
 {
 
-        public function index()
+    public function index()
     {
 
         $titleCard = 'لیست';
@@ -91,7 +92,7 @@ class NewsletterController extends Controller
     {
         //
         $query = Newsletter::find($id);
-        return view('admin.newsletters.show', ['item' => $query]);
+        return view('admin.newsletters.show')->with('success', 'با موفقیت ارسال شد.');
     }
 
     /**
@@ -134,9 +135,12 @@ class NewsletterController extends Controller
         Newsletter::query()->where('id', $id)->delete();
         return back();
     }
-
-
-
+    public function destroySent($id)
+    {
+        //
+        NewsletterSent::query()->where('id', $id)->delete();
+        return back();
+    }
 
 
 }
