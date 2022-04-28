@@ -7,6 +7,7 @@
             <div class="car"></div>
             <div class="card mb-4">
                 <div class="card-header">{{$titleCard ?? ''}}</div>
+                @include('layouts.partials.auth.alert')
                 <div class="card-body">
                     <table class="table">
                         <thead>
@@ -14,7 +15,6 @@
                             @foreach($th as $title)
                                 <th scope="col">{{$title}}</th>
                             @endforeach
-
                         </tr>
                         </thead>
                         <tbody>
@@ -22,8 +22,6 @@
                             <tr>
                                 <td>{{$item->id}}</td>
                                 <td>{{$item->email}}</td>
-
-
                                 <td>
                                     <form action="/admin/newsletters/{{$item->id}}" method="post">
                                         @csrf
@@ -35,7 +33,6 @@
                         @endforeach
                         </tbody>
                     </table>
-
                 </div>
             </div>
         </div>
