@@ -76,7 +76,7 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="is_vip">کیس vip</label>
-                            <input class="form-control" id="is_vip" type="" placeholder="is_vip" name="is_vip" value="{{$item->is_vip}}">
+                            <input class="form-control" id="is_vip" type="text" placeholder="is_vip" name="is_vip" value="{{$item->is_vip}}">
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="description">توضیحات</label>
