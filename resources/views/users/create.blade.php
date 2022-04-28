@@ -17,7 +17,8 @@
                                 </div>
                                 <div class="item-wrap">
                                     <label>رمز عبور <span class="required">*</span></label>
-                                    <input type="text" id="room_number" name="password" value="{{old('password') ?? ''}}">
+                                    <input type="text" id="room_number" name="password"
+                                           value="{{old('password') ?? ''}}">
                                 </div>
                                 <div class="item-wrap">
                                     <label>تلفن همراه <span class="required">*</span></label>
@@ -27,7 +28,7 @@
                                     <label>ایمیل <span class="required">*</span></label>
                                     <input type="text" id="email" name="email" value="{{old('email') ?? ''}}">
                                 </div>
-
+                                <div>
                                     <br>
                                     <br>
                                     <input type="submit" class="button-2" name="login" value="ثبت">
