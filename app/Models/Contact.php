@@ -14,6 +14,7 @@ class Contact extends Model
         'user_id',
         'mobile',
         'message',
+        'user_id'
 
     ];
 

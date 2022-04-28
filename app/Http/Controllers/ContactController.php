@@ -20,8 +20,9 @@ class ContactController extends Controller
     public function store(ContactRequest $request)
     {
 
-        $inputs = $request->only('name', 'mobile', 'message',);
-        $inputs['user_id'] = Auth::user()->id;
+        $inputs = $request->only('name', 'mobile', 'message','user_id');
+//        $inputs['user_id'] = Auth::user()->id;
+        $inputs['user_id'] = Auth::id();
 
         $result = Contact::create($inputs);
 
@@ -29,7 +30,7 @@ class ContactController extends Controller
             return back()->with('success', 'با موفقیت ارسال شد');
         }
 
-        return back()->with('error', 'خطا');
+        return back()->with('error');
 
 
     }

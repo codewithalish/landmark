@@ -14,7 +14,7 @@ class ContactRequest extends FormRequest
             'name'=>['required','string'],
             'mobile'=>['required'],
             'message'=>['required','string'],
-            'user_id'=>[],
+            'user_id'=>['exists:contacts,user_id,NOT_NULL'],
         ];
     }
 
@@ -24,7 +24,7 @@ class ContactRequest extends FormRequest
             'name'=>'نام',
             'mobile'=>'شماره موبایل',
             'message'=>'پیغام',
-            'user_id'=>'عضویت در سایت'
+            'user_id'=>' برای ارسال پیام ورود به سایت'
         ];
     }
 
