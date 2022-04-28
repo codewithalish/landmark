@@ -13,9 +13,9 @@
                     @csrf
                     <div class="card-body">
                         <div class="mb-3">
-                            <label class="form-label" for="title">متن پیام</label>
+                            <label class="form-label" for="body">متن پیام</label>
                             <br>
-                            <textarea name="body" id="title" cols="90%" rows="5" value="{{old('body') ?? ''}}"></textarea>
+                            <textarea name="body" id="body" cols="90%" rows="5" >{{old('body') ?? ''}}</textarea>
                         </div>
                         <button type="submit" class="btn btn-primary active">ایجاد پیام</button>
                     </div>
@@ -24,9 +24,7 @@
             <div class="card mb-4">
                 <div class="card-header">{{$titleCard ?? ''}}</div>
                 <div class="card-body">
-                    <table class="table"
-
-                    >
+                    <table class="table">
                         <thead>
                         <tr>
                             @foreach($th as $title)
@@ -43,6 +41,12 @@
                                     <form action="/admin/newsletters/sendMail" method="get">
                                         @csrf
                                             <button type="submit" class="btn btn-outline-success">ارسال پیام</button>
+                                    </form>
+
+                                <form action="/admin/newslettersent/{{$item->id}}" method="post">
+                                        @csrf
+                                        @method('delete')
+                                        <button class="btn btn-outline-danger" type="submit" style="padding: 3px">حذف</button>
                                     </form>
                                 </td>
                             </tr>
