@@ -57,6 +57,7 @@ class UserController extends Controller
             'password',
             'email',
         );
+        $query['password'] = Hash::make($query['password']);
         User::where('id', $id)->update($query);
         return back()->with('success', 'ویرایش با موفقیت انجام شد');
     }
