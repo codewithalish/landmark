@@ -25,9 +25,12 @@ class CaseRequest extends FormRequest
     {
         return [
             'title' => ['required', 'string', 'min:8'],
-            'price' => ['numeric'],
             'body' => ['string', 'min:5'],
-            'details' => [ 'string', 'min:10'],
+            'details' => [ 'string'],
+            'area'=>['required'],
+            'contract'=>['required'],
+            'type'=>['required'],
+            'address'=>['required'],
         ];
     }
     public function attributes()
@@ -37,6 +40,11 @@ class CaseRequest extends FormRequest
             'price'=>'قیمت',
             'detail'=>'جزئیات',
             'body'=>'توضیحات',
+            'type'=>' نوع ملک',
+            'area'=>'مساحت',
+            'contract'=>'نوع قرارداد',
+            'address'=>'آدرس',
+
         ];
     }
 
@@ -44,7 +52,8 @@ class CaseRequest extends FormRequest
     {
         return [
             'required' => ' فیلد :attribute اجباری است',
-            'min' => 'فیلد :attribute باید حداقل :min تا کاراکتر داشته باشد'
+            'min' => 'فیلد :attribute باید حداقل :min تا کاراکتر داشته باشد',
+            'numeric'=>'مبلغ را به عدد وارد کنید.'
         ];
 
     }

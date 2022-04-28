@@ -97,7 +97,8 @@ class CaseController extends Controller
             'description',
             'address',
         ]);
-        $inputs['user_id'] = Auth::user()->id;
+//        $inputs['user_id'] = Auth::user()->id;
+        $inputs['user_id'] = Auth::id();
         $inputs['status'] = 'NEW';
 
         if ($request->file('avatar_path'))
@@ -105,7 +106,7 @@ class CaseController extends Controller
 
         $result = CaseModel::create($inputs);
         if ($result) {
-            return redirect('/cases')->with('success', 'با موفقیت ارسال شد');
+            return redirect('/cases')->with('success', 'با موفقیت ارسال شد, در حال انتظار برای تایید.');
         } else {
             return redirect('/cases')->with('error');
         }

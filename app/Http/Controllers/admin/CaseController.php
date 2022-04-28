@@ -30,10 +30,11 @@ class CaseController extends Controller
             'price',
             'contract',
             'type',
+            'status',
             'operation'];
 
         $query = CaseModel::query()
-            ->where('user_id',Auth::id())
+//            ->where('user_id',Auth::id())
             ->orderBy('id', 'DESC')
             ->get();
 

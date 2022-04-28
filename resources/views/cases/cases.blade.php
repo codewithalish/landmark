@@ -1,5 +1,6 @@
 @extends('layouts.masterPages.landmark')
 @section('content')
+    @include('layouts.partials.auth.alert')
     <div id="main">
         <div class="section pt-7 pb-7">
             <div class="container">
