@@ -75,13 +75,7 @@ Route::get('/test/cases/{id}', function ($id) {
 Route::get('/', [PageController::class, 'index']);
 Route::post('/', [\App\Http\Controllers\PageController::class, 'store']);
 
-Route::get('/admin_create', function () {
-    return view('admin.create_case');
-});
 
-Route::get('register', function () {
-    return view('auth.register');
-});
 
 /*
 |--------------------------------------------------------------------------
@@ -93,7 +87,6 @@ Route::get('partner', [\App\Http\Controllers\PartnerController::class, 'partner'
 Route::get('gallery', [\App\Http\Controllers\GalleryController::class, 'gallery']);
 Route::view('services', 'pages/services');
 Route::view('abouts', 'pages/abouts');
-Route::get('/users/create', [\App\Http\Controllers\UserController::class, 'create']);
 Route::get('/services', [\App\Http\Controllers\ServiceController::class, 'services']);
 
 
@@ -107,32 +100,6 @@ Route::view('contacts', 'pages/contacts');
 Route::post('/contacts', [ContactController::class, 'store']);
 Route::get('agents/{id}/contacts', [ContactController::class, 'create']);
 Route::post('agents/{id}/contacts', [ContactController::class, 'store']);
-
-/*
-|--------------------------------------------------------------------------
-| currentUser
-|--------------------------------------------------------------------------
-|
-*/
-Route::prefix('users/current')->middleware('auth')->group(function () {
-    Route::get('bookmarks', [\App\Http\Controllers\UserController::class, 'bookmarks']);
-    Route::get('/', [\App\Http\Controllers\UserController::class, 'show']);
-    Route::get('/{id}/edit', [\App\Http\Controllers\UserController::class, 'edit']);
-    Route::put('/update', [\App\Http\Controllers\UserController::class, 'update']);
-});
-
-
-/*
-|--------------------------------------------------------------------------
-| agent
-|--------------------------------------------------------------------------
-|
-*/
-
-Route::get('agents', [AgentController::class, 'index']);
-Route::get('agents/create', [AgentController::class, 'create']);
-Route::post('agents', [AgentController::class, 'store']);
-Route::get('agents/{id}', [AgentController::class, 'show']);
 
 /*
 |--------------------------------------------------------------------------
@@ -151,12 +118,38 @@ Route::get('/myCases',[CaseController::class,'myCases']);
 
 /*
 |--------------------------------------------------------------------------
+| agent
+|--------------------------------------------------------------------------
+|
+*/
+
+Route::get('agents', [AgentController::class, 'index']);
+Route::get('agents/register', [AgentController::class, 'create']);
+Route::post('agents', [AgentController::class, 'store']);
+Route::get('agents/{id}', [AgentController::class, 'show']);
+
+
+/*
+|--------------------------------------------------------------------------
+| currentUser
+|--------------------------------------------------------------------------
+|
+*/
+Route::prefix('users/current')->middleware('auth')->group(function () {
+    Route::get('bookmarks', [\App\Http\Controllers\UserController::class, 'bookmarks']);
+    Route::get('/', [\App\Http\Controllers\UserController::class, 'show']);
+    Route::get('/{id}/edit', [\App\Http\Controllers\UserController::class, 'edit']);
+    Route::put('/update', [\App\Http\Controllers\UserController::class, 'update']);
+});
+
+/*
+|--------------------------------------------------------------------------
 |users Authentication Routes
 |--------------------------------------------------------------------------
 |
 */
 
-Route::get('/users/login', [LoginController::class, 'login'])->name('login');
+Route::get('/users/login', [LoginController::class, 'login']);
 Route::get('/users/register', [LoginController::class, 'create']);
 Route::post('/users/login', [LoginController::class, 'checklogin']);
 Route::post('/users/register', [LoginController::class, 'register']);
@@ -168,7 +161,7 @@ Route::get('/users/logout', [LoginController::class, 'logout']);
 |--------------------------------------------------------------------------
 |
 */
-Route::prefix('admin')->group(function () {
+Route::prefix('admins')->group(function () {
     Route::get('login', [\App\Http\Controllers\admin\LoginController::class, 'login'])->name('login');
     Route::get('register', [\App\Http\Controllers\admin\LoginController::class, 'create']);
     Route::post('login', [\App\Http\Controllers\admin\LoginController::class, 'checklogin']);
@@ -184,10 +177,8 @@ Route::prefix('admin')->group(function () {
 */
 Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::get('dashboard', [AdminController::class, 'dashboard']);
-
     Route::get('assign', [\App\Http\Controllers\admin\RoleController::class, 'assignPermissionForm']);
     Route::post('assign', [\App\Http\Controllers\admin\RoleController::class, 'syncPermission']);
-
     Route::resource('contacts', \App\Http\Controllers\Admin\ContactController::class);
     Route::resource('menu', \App\Http\Controllers\Admin\MenuController::class);
     Route::resource('agents', \App\Http\Controllers\Admin\AgentController::class);
@@ -203,6 +194,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::resource('features', \App\Http\Controllers\Admin\FeatureController::class);
     Route::resource('feedbacks', \App\Http\Controllers\Admin\FeedbackController::class);
     Route::resource('newsletters', \App\Http\Controllers\admin\NewsletterController::class);
+    Route::delete('newslettersent/{id}', [\App\Http\Controllers\admin\NewsletterController::class,'destroySent']);
     Route::resource('tags', \App\Http\Controllers\Admin\TagController::class);
     Route::resource('variables', \App\Http\Controllers\Admin\VariableController::class);
     Route::resource('roles', \App\Http\Controllers\Admin\RoleController::class);
@@ -229,7 +221,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
 //        ->pluck('email');
 //
 //    foreach ($emails as $email) {
-//        $address = new \App\Mail\NewsletterMail($email);
+//        $address = new \App\Mail\NewsletterMail($email,[$body]);
 //        Mail::send($address,[$body]);
 //    }
 //});
