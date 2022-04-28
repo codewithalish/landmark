@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-md-12">
                     @include('layouts.partials.auth.alert')
-                    <h2>ایجاد پست</h2>
+                    <h2>ثبت ملک جدید</h2>
                     <div class="my-account-wrap">
                         <form class="login-form" method="post" action="/cases" enctype="multipart/form-data">
                             @csrf
@@ -75,7 +75,7 @@
                                 <input type="text" id="address" name="address" value="{{old('address') ?? ''}}">
                             </div>
                             <div class="item-wrap form-submit">
-                                <input type="submit" class="button-2" name="login" value="ثبت">
+                                <input type="submit" class="button-2"  value="ثبت">
                             </div>
                         </form>
 
