@@ -69,7 +69,7 @@ class NewsletterController extends Controller
 
       foreach ($emails as $email){
           $address=new NewsletterMail($email,$body);
-          Mail::send($address,$body);
+          Mail::send($address,[$body]);
 
       }
         NewsletterSent::create([
