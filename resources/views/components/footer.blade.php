@@ -75,7 +75,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    ارائه شده در وب سایت <a href="https://www.rtl-theme.com" target="_blank">راست چین</a>
+                    <a href="https://www.rtl-theme.com" target="_blank"></a>
                 </div>
                 <div class="col-sm-6">
                     <div class="footer-social text-right text-center-sm">

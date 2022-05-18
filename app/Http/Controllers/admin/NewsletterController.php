@@ -77,8 +77,13 @@ class NewsletterController extends Controller
             'body'=>$body,
         ]);
 
-            return back()->with('success', 'با موفقیت ارسال شد');
 
+
+        if (Mail::failures()) {
+            return back()->with('error','Sorry! Please try again latter');
+        }else{
+            return back()->with('success','Great! Successfully send in your mails');
+        }
 
     }
 
