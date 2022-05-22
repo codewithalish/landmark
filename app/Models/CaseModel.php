@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 class CaseModel extends Model
 {
-    protected $appends = ['liked'];
+    protected $appends = ['liked','avatar'];
     protected $table = 'cases';
     use HasFactory;
 
@@ -71,4 +71,12 @@ class CaseModel extends Model
         else
             return false;
     }
+    public function getAvatarPathAttribute($query)
+    {
+        if($this->attributes['avatar_path'])
+            return $this->attributes['avatar_path'];
+
+    return  'http://homemark.ir/public/landmark/images/property/property_1.jpg';
+    }
+
 }
