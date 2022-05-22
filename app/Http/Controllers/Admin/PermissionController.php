@@ -1,24 +1,26 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CaseRequest;
-use App\Models\Bookmark;
+use App\Models\Permission;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Role;
 
-class BookmarkController extends Controller
+class PermissionController extends Controller
 {
     public function index()
     {
         //
 
         $titleCard = 'لیست';
-        $th = ['شناسه', 'user_id', 'bookmarkable_id', 'bookmarkable_type', 'operation'];
-        $query = Bookmark::query()
+        $th = ['شناسه', 'name', 'operation'];
+        $query = \Spatie\Permission\Models\Permission::query()
             ->orderBy('id', 'DESC')
             ->get();
-        return view('admin.bookmarks.index',
+        return view('admin.permissions.index',
             [
                 'items' => $query,
                 'th' => $th,
@@ -39,7 +41,7 @@ class BookmarkController extends Controller
     public function create()
     {
         //
-        return view('admin.bookmarks.create');
+        return view('admin.permissions.create');
     }
 
     /**
@@ -48,16 +50,18 @@ class BookmarkController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(CaseRequest $request)
+    public function store(Request $request)
     {
-        $inputs = $request->only('user_id', 'bookmarkable_id', 'bookmarkable_type');
-        $result = Bookmark::create($inputs);
-        if ($result) {
-            return back()->with('success', 'با موفقیت ارسال شد');
-        } else {
-            return back()->with('error');
-        }
 
+        $permission_id=$request->get('permission_id');
+        $role_id =  $request->get('role_id');
+
+        $role=Role::find($role_id);
+        $permission=\Spatie\Permission\Models\Permission::find($permission_id);
+
+        $role->givePermissionTo($permission);
+
+        return back()->with('success','با موفقیت ثبت شد');
     }
 
     /**
@@ -69,8 +73,8 @@ class BookmarkController extends Controller
     public function show($id)
     {
         //
-        $query = Bookmark::find($id);
-        return view('admin.bookmarks.show', ['item' => $query]);
+        $query = \Spatie\Permission\Models\Permission::find($id);
+        return view('admin.permissions.show', ['item' => $query]);
     }
 
     /**
@@ -82,8 +86,8 @@ class BookmarkController extends Controller
     public function edit($id)
     {
         //
-        $query = Bookmark::where('id', $id)->first();
-        return view('admin.bookmarks.edit', ['item' => $query]);
+        $query = \Spatie\Permission\Models\Permission::where('id', $id)->first();
+        return view('admin.permissions.edit', ['item' => $query]);
     }
 
     /**
@@ -96,8 +100,8 @@ class BookmarkController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $query = $request->only('user_id', 'bookmarkable_id', 'bookmarkable_type');
-        Bookmark::where('id', $id)->update($query);
+        $query = $request->only('name');
+        \Spatie\Permission\Models\Permission::where('id', $id)->update($query);
         return back()->with('success', 'ویرایش با موفقیت انجام شد');
     }
 
@@ -110,7 +114,7 @@ class BookmarkController extends Controller
     public function destroy($id)
     {
         //
-        Bookmark::query()->where('id', $id)->delete();
+        \Spatie\Permission\Models\Permission::query()->where('id', $id)->delete();
         return back();
     }
 }

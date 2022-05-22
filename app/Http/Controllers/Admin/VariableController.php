@@ -1,24 +1,24 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CaseRequest;
-use App\Models\Category;
+use App\Models\Variable;
 use Illuminate\Http\Request;
 
-class CategoryController extends Controller
+class VariableController extends Controller
 {
     public function index()
     {
         //
 
         $titleCard = 'لیست';
-        $th = ['شناسه', 'title', 'operation'];
-        $query = Category::query()
+        $th = ['شناسه', 'key', 'value','operation'];
+        $query = Variable::query()
             ->orderBy('id', 'DESC')
             ->get();
-        return view('admin.categories.index',
+        return view('admin.variables.index',
             [
                 'items' => $query,
                 'th' => $th,
@@ -39,7 +39,7 @@ class CategoryController extends Controller
     public function create()
     {
         //
-        return view('admin.categories.create');
+        return view('admin.variables.create');
     }
 
     /**
@@ -48,10 +48,10 @@ class CategoryController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(CaseRequest $request)
+    public function store(Request $request)
     {
-        $inputs = $request->only('title');
-        $result=Category::create($inputs);
+        $inputs = $request->only('key', 'value');
+        $result=Variable::create($inputs);
         if ($result){
             return back()->with('success','با موفقیت ارسال شد');
         } else{
@@ -69,8 +69,8 @@ class CategoryController extends Controller
     public function show($id)
     {
         //
-        $query = Category::find($id);
-        return view('admin.categories.show', ['item' => $query]);
+        $query = Variable::find($id);
+        return view('admin.variables.show', ['item' => $query]);
     }
 
     /**
@@ -82,8 +82,8 @@ class CategoryController extends Controller
     public function edit($id)
     {
         //
-        $query = Category::where('id', $id)->first();
-        return view('admin.categories.edit', ['item' => $query]);
+        $query = Variable::where('id', $id)->first();
+        return view('admin.variables.edit', ['item' => $query]);
     }
 
     /**
@@ -96,8 +96,8 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $query = $request->only('title');
-        Category::where('id', $id)->update($query);
+        $query = $request->only('key', 'value');
+        Variable::where('id', $id)->update($query);
         return back()->with('success', 'ویرایش با موفقیت انجام شد');
     }
 
@@ -110,7 +110,7 @@ class CategoryController extends Controller
     public function destroy($id)
     {
         //
-        Category::query()->where('id', $id)->delete();
+        Variable::query()->where('id', $id)->delete();
         return back();
     }
 }

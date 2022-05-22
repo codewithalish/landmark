@@ -1,24 +1,29 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CaseRequest;
-use App\Models\Feature;
+use App\Models\Contact;
 use Illuminate\Http\Request;
 
-class FeatureController extends Controller
+class ContactController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
+     */
     public function index()
     {
         //
 
         $titleCard = 'لیست';
-        $th = ['شناسه', 'title', 'operation'];
-        $query = Feature::query()
+        $th = ['شناسه', 'name', 'mobile','massage', 'operation'];
+        $query = Contact::query()
             ->orderBy('id', 'DESC')
             ->get();
-        return view('admin.features.index',
+        return view('admin.contacts.index',
             [
                 'items' => $query,
                 'th' => $th,
@@ -39,7 +44,7 @@ class FeatureController extends Controller
     public function create()
     {
         //
-        return view('admin.features.create');
+        return view('admin.contacts.create');
     }
 
     /**
@@ -50,8 +55,8 @@ class FeatureController extends Controller
      */
     public function store(CaseRequest $request)
     {
-        $inputs = $request->only('title');
-        $result=Feature::create($inputs);
+        $inputs = $request->only('name', 'mobile','massage','user_id');
+        $result=Contact::create($inputs);
         if ($result){
             return back()->with('success','با موفقیت ارسال شد');
         } else{
@@ -69,8 +74,8 @@ class FeatureController extends Controller
     public function show($id)
     {
         //
-        $query = Feature::find($id);
-        return view('admin.features.show', ['item' => $query]);
+        $query = Contact::find($id);
+        return view('admin.contacts.show', ['item' => $query]);
     }
 
     /**
@@ -82,8 +87,8 @@ class FeatureController extends Controller
     public function edit($id)
     {
         //
-        $query = Feature::where('id', $id)->first();
-        return view('admin.features.edit', ['item' => $query]);
+        $query = Contact::where('id', $id)->first();
+        return view('admin.contacts.edit', ['item' => $query]);
     }
 
     /**
@@ -96,8 +101,8 @@ class FeatureController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $query = $request->only('title');
-        Feature::where('id', $id)->update($query);
+        $query = $request->only('name', 'mobile','massage','user_id');
+        Contact::where('id', $id)->update($query);
         return back()->with('success', 'ویرایش با موفقیت انجام شد');
     }
 
@@ -110,7 +115,7 @@ class FeatureController extends Controller
     public function destroy($id)
     {
         //
-        Feature::query()->where('id', $id)->delete();
+        Contact::query()->where('id', $id)->delete();
         return back();
     }
 }

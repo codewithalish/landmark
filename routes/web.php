@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CaseController;
 use App\Http\Controllers\AgentController;
@@ -162,11 +161,11 @@ Route::get('/users/logout', [LoginController::class, 'logout']);
 |
 */
 Route::prefix('admins')->group(function () {
-    Route::get('login', [\App\Http\Controllers\admin\LoginController::class, 'login'])->name('login');
-    Route::get('register', [\App\Http\Controllers\admin\LoginController::class, 'create']);
-    Route::post('login', [\App\Http\Controllers\admin\LoginController::class, 'checklogin']);
-    Route::post('register', [\App\Http\Controllers\admin\LoginController::class, 'register']);
-    Route::get('logout', [\App\Http\Controllers\admin\LoginController::class, 'logout']);
+    Route::get('login', [\App\Http\Controllers\Admin\LoginController::class, 'login'])->name('login');
+    Route::get('register', [\App\Http\Controllers\Admin\LoginController::class, 'create']);
+    Route::post('login', [\App\Http\Controllers\Admin\LoginController::class, 'checklogin']);
+    Route::post('register', [\App\Http\Controllers\Admin\LoginController::class, 'register']);
+    Route::get('logout', [\App\Http\Controllers\Admin\LoginController::class, 'logout']);
 });
 
 /*
@@ -176,9 +175,10 @@ Route::prefix('admins')->group(function () {
 |
 */
 Route::prefix('admin')->middleware(['auth'])->group(function () {
-    Route::get('dashboard', [AdminController::class, 'dashboard']);
-    Route::get('assign', [\App\Http\Controllers\admin\RoleController::class, 'assignPermissionForm']);
-    Route::post('assign', [\App\Http\Controllers\admin\RoleController::class, 'syncPermission']);
+    Route::get('/', [\App\Http\Controllers\Admin\AdminController::class, 'dashboard']);
+    Route::get('dashboard', [\App\Http\Controllers\Admin\AdminController::class, 'dashboard']);
+    Route::get('assign', [\App\Http\Controllers\Admin\RoleController::class, 'assignPermissionForm']);
+    Route::post('assign', [\App\Http\Controllers\Admin\RoleController::class, 'syncPermission']);
     Route::resource('contacts', \App\Http\Controllers\Admin\ContactController::class);
     Route::resource('menu', \App\Http\Controllers\Admin\MenuController::class);
     Route::resource('agents', \App\Http\Controllers\Admin\AgentController::class);
@@ -193,12 +193,12 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::resource('comments', \App\Http\Controllers\Admin\CommentController::class);
     Route::resource('features', \App\Http\Controllers\Admin\FeatureController::class);
     Route::resource('feedbacks', \App\Http\Controllers\Admin\FeedbackController::class);
-    Route::resource('newsletters', \App\Http\Controllers\admin\NewsletterController::class);
-    Route::delete('newslettersent/{id}', [\App\Http\Controllers\admin\NewsletterController::class,'destroySent']);
+    Route::resource('newsletters', \App\Http\Controllers\Admin\NewsletterController::class);
+    Route::delete('newslettersent/{id}', [\App\Http\Controllers\Admin\NewsletterController::class,'destroySent']);
     Route::resource('tags', \App\Http\Controllers\Admin\TagController::class);
     Route::resource('variables', \App\Http\Controllers\Admin\VariableController::class);
     Route::resource('roles', \App\Http\Controllers\Admin\RoleController::class);
-    Route::resource('assign', \App\Http\Controllers\admin\AssignController::class);
+    Route::resource('assign', \App\Http\Controllers\Admin\AssignController::class);
     Route::resource('permissions', \App\Http\Controllers\Admin\PermissionController::class);
 
 

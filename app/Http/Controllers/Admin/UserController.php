@@ -1,13 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CaseRequest;
-use App\Models\Contact;
+use App\Http\Requests\UserRequest;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
-class ContactController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,11 +21,11 @@ class ContactController extends Controller
         //
 
         $titleCard = 'لیست';
-        $th = ['شناسه', 'name', 'mobile','massage', 'operation'];
-        $query = Contact::query()
+        $th = ['شناسه', 'name', 'mobile', 'operation'];
+        $query = User::query()
             ->orderBy('id', 'DESC')
             ->get();
-        return view('admin.contacts.index',
+        return view('admin.users.index',
             [
                 'items' => $query,
                 'th' => $th,
@@ -31,9 +33,7 @@ class ContactController extends Controller
             ]
         );
 
-//
-//        $query=Post::get();
-//        return view('admin.posts.index',['items'=>$query]);
+
     }
 
     /**
@@ -44,7 +44,7 @@ class ContactController extends Controller
     public function create()
     {
         //
-        return view('admin.contacts.create');
+        return view('admin.users.create');
     }
 
     /**
@@ -53,10 +53,24 @@ class ContactController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(CaseRequest $request)
+    public function store(UserRequest $request)
     {
-        $inputs = $request->only('name', 'mobile','massage','user_id');
-        $result=Contact::create($inputs);
+        $inputs = $request->only(
+            'name',
+            'mobile',
+            'password',
+            'email',
+            'address',
+            'bio',
+            'avatar_path',
+            'telegram',
+            'whatsapp'
+        );
+        $inputs['password'] = Hash::make($inputs['password']);
+        if ($request->file('avatar_path'))
+            $inputs['avatar_path'] = $this->uploadMedia($request->file('avatar_path'));
+
+        $result=User::create($inputs);
         if ($result){
             return back()->with('success','با موفقیت ارسال شد');
         } else{
@@ -74,8 +88,8 @@ class ContactController extends Controller
     public function show($id)
     {
         //
-        $query = Contact::find($id);
-        return view('admin.contacts.show', ['item' => $query]);
+        $query = User::find($id);
+        return view('admin.users.show', ['item' => $query]);
     }
 
     /**
@@ -87,8 +101,8 @@ class ContactController extends Controller
     public function edit($id)
     {
         //
-        $query = Contact::where('id', $id)->first();
-        return view('admin.contacts.edit', ['item' => $query]);
+        $query = User::where('id', $id)->first();
+        return view('admin.users.edit', ['item' => $query]);
     }
 
     /**
@@ -101,9 +115,22 @@ class ContactController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $query = $request->only('name', 'mobile','massage','user_id');
-        Contact::where('id', $id)->update($query);
-        return back()->with('success', 'ویرایش با موفقیت انجام شد');
+        $query = $request->only(
+            'name',
+            'mobile',
+            'password',
+            'email',
+            'address',
+            'bio',
+            'avatar_path',
+            'telegram',
+            'whatsapp'
+            );
+        if ($request->file('avatar_path'))
+            $query['avatar_path'] = $this->uploadMedia($request->file('avatar_path'));
+
+        User::where('id', $id)->update($query);
+        return redirect('/admin/users')->with('success', 'ویرایش با موفقیت انجام شد');
     }
 
     /**
@@ -115,7 +142,7 @@ class ContactController extends Controller
     public function destroy($id)
     {
         //
-        Contact::query()->where('id', $id)->delete();
+        User::query()->where('id', $id)->delete();
         return back();
     }
 }

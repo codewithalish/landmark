@@ -1,26 +1,24 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CaseRequest;
-use App\Models\Permission;
-use App\Models\User;
+use App\Models\Feedback;
 use Illuminate\Http\Request;
-use Spatie\Permission\Models\Role;
 
-class PermissionController extends Controller
+class FeedbackController extends Controller
 {
     public function index()
     {
         //
 
         $titleCard = 'لیست';
-        $th = ['شناسه', 'name', 'operation'];
-        $query = \Spatie\Permission\Models\Permission::query()
+        $th = ['شناسه', 'user_id', 'body', 'operation'];
+        $query = Feedback::query()
             ->orderBy('id', 'DESC')
             ->get();
-        return view('admin.permissions.index',
+        return view('admin.feedbacks.index',
             [
                 'items' => $query,
                 'th' => $th,
@@ -41,7 +39,7 @@ class PermissionController extends Controller
     public function create()
     {
         //
-        return view('admin.permissions.create');
+        return view('admin.feedbacks.create');
     }
 
     /**
@@ -50,18 +48,16 @@ class PermissionController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(Request $request)
+    public function store(CaseRequest $request)
     {
+        $inputs = $request->only('user_id', 'body');
+        $result=Feedback::create($inputs);
+        if ($result){
+            return back()->with('success','با موفقیت ارسال شد');
+        } else{
+            return back()->with('error');
+        }
 
-        $permission_id=$request->get('permission_id');
-        $role_id =  $request->get('role_id');
-
-        $role=Role::find($role_id);
-        $permission=\Spatie\Permission\Models\Permission::find($permission_id);
-
-        $role->givePermissionTo($permission);
-
-        return back()->with('success','با موفقیت ثبت شد');
     }
 
     /**
@@ -73,8 +69,8 @@ class PermissionController extends Controller
     public function show($id)
     {
         //
-        $query = \Spatie\Permission\Models\Permission::find($id);
-        return view('admin.permissions.show', ['item' => $query]);
+        $query = Feedback::find($id);
+        return view('admin.feedbacks.show', ['item' => $query]);
     }
 
     /**
@@ -86,8 +82,8 @@ class PermissionController extends Controller
     public function edit($id)
     {
         //
-        $query = \Spatie\Permission\Models\Permission::where('id', $id)->first();
-        return view('admin.permissions.edit', ['item' => $query]);
+        $query = Feedback::where('id', $id)->first();
+        return view('admin.feedbacks.edit', ['item' => $query]);
     }
 
     /**
@@ -100,8 +96,8 @@ class PermissionController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $query = $request->only('name');
-        \Spatie\Permission\Models\Permission::where('id', $id)->update($query);
+        $query = $request->only('user_id', 'body');
+        Feedback::where('id', $id)->update($query);
         return back()->with('success', 'ویرایش با موفقیت انجام شد');
     }
 
@@ -114,7 +110,7 @@ class PermissionController extends Controller
     public function destroy($id)
     {
         //
-        \Spatie\Permission\Models\Permission::query()->where('id', $id)->delete();
+        Feedback::query()->where('id', $id)->delete();
         return back();
     }
 }

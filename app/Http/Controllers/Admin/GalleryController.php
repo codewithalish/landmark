@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CaseRequest;
-use App\Models\Service;
+use App\Models\Gallery;
 use Illuminate\Http\Request;
 
-class ServiceController extends Controller
+class GalleryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,11 +19,11 @@ class ServiceController extends Controller
         //
 
         $titleCard = 'لیست';
-        $th = ['شناسه', 'title', 'body', 'operation'];
-        $query = Service::query()
+        $th = ['شناسه', 'title',  'operation'];
+        $query = Gallery::query()
             ->orderBy('id', 'DESC')
             ->get();
-        return view('admin.services.index',
+        return view('admin.galleries.index',
             [
                 'items' => $query,
                 'th' => $th,
@@ -44,7 +44,7 @@ class ServiceController extends Controller
     public function create()
     {
         //
-        return view('admin.services.create');
+        return view('admin.galleries.create');
     }
 
     /**
@@ -53,14 +53,15 @@ class ServiceController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(CaseRequest $request)
+    public function store(Request $request)
     {
-        $inputs = $request->only('title', 'body', 'thumbnail_path');
 
-        if ($request->file('thumbnail_path'))
-            $inputs['thumbnail_path'] = $this->uploadMedia($request->file('thumbnail_path'));
+        $inputs = $request->only('title', 'avatar_path');
 
-        $result=Service::create($inputs);
+        if ($request->file('avatar_path'))
+            $inputs['avatar_path'] = $this->uploadMedia($request->file('avatar_path'));
+
+        $result=Gallery::create($inputs);
         if ($result){
             return back()->with('success','با موفقیت ارسال شد');
         } else{
@@ -78,8 +79,8 @@ class ServiceController extends Controller
     public function show($id)
     {
         //
-        $query = Service::find($id);
-        return view('admin.services.show', ['item' => $query]);
+        $query = Gallery::find($id);
+        return view('admin.galleries.show', ['item' => $query]);
     }
 
     /**
@@ -91,8 +92,8 @@ class ServiceController extends Controller
     public function edit($id)
     {
         //
-        $query = Service::where('id', $id)->first();
-        return view('admin.services.edit', ['item' => $query]);
+        $query = Gallery::where('id', $id)->first();
+        return view('admin.galleries.edit', ['item' => $query]);
     }
 
     /**
@@ -105,12 +106,8 @@ class ServiceController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $query = $request->only('title', 'body', 'thumbnail_path');
-
-        if ($request->file('thumbnail_path'))
-            $query['thumbnail_path'] = $this->uploadMedia($request->file('thumbnail_path'));
-
-        Service::where('id', $id)->update($query);
+        $query = $request->only(['title', 'avatar_path']);
+        Gallery::where('id', $id)->update($query);
         return back()->with('success', 'ویرایش با موفقیت انجام شد');
     }
 
@@ -123,7 +120,7 @@ class ServiceController extends Controller
     public function destroy($id)
     {
         //
-        Service::query()->where('id', $id)->delete();
+        Gallery::query()->where('id', $id)->delete();
         return back();
     }
 

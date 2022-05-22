@@ -1,24 +1,24 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CaseRequest;
-use App\Models\Feedback;
+use App\Models\Feature;
 use Illuminate\Http\Request;
 
-class FeedbackController extends Controller
+class FeatureController extends Controller
 {
     public function index()
     {
         //
 
         $titleCard = 'لیست';
-        $th = ['شناسه', 'user_id', 'body', 'operation'];
-        $query = Feedback::query()
+        $th = ['شناسه', 'title', 'operation'];
+        $query = Feature::query()
             ->orderBy('id', 'DESC')
             ->get();
-        return view('admin.feedbacks.index',
+        return view('admin.features.index',
             [
                 'items' => $query,
                 'th' => $th,
@@ -39,7 +39,7 @@ class FeedbackController extends Controller
     public function create()
     {
         //
-        return view('admin.feedbacks.create');
+        return view('admin.features.create');
     }
 
     /**
@@ -50,8 +50,8 @@ class FeedbackController extends Controller
      */
     public function store(CaseRequest $request)
     {
-        $inputs = $request->only('user_id', 'body');
-        $result=Feedback::create($inputs);
+        $inputs = $request->only('title');
+        $result=Feature::create($inputs);
         if ($result){
             return back()->with('success','با موفقیت ارسال شد');
         } else{
@@ -69,8 +69,8 @@ class FeedbackController extends Controller
     public function show($id)
     {
         //
-        $query = Feedback::find($id);
-        return view('admin.feedbacks.show', ['item' => $query]);
+        $query = Feature::find($id);
+        return view('admin.features.show', ['item' => $query]);
     }
 
     /**
@@ -82,8 +82,8 @@ class FeedbackController extends Controller
     public function edit($id)
     {
         //
-        $query = Feedback::where('id', $id)->first();
-        return view('admin.feedbacks.edit', ['item' => $query]);
+        $query = Feature::where('id', $id)->first();
+        return view('admin.features.edit', ['item' => $query]);
     }
 
     /**
@@ -96,8 +96,8 @@ class FeedbackController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $query = $request->only('user_id', 'body');
-        Feedback::where('id', $id)->update($query);
+        $query = $request->only('title');
+        Feature::where('id', $id)->update($query);
         return back()->with('success', 'ویرایش با موفقیت انجام شد');
     }
 
@@ -110,7 +110,7 @@ class FeedbackController extends Controller
     public function destroy($id)
     {
         //
-        Feedback::query()->where('id', $id)->delete();
+        Feature::query()->where('id', $id)->delete();
         return back();
     }
 }

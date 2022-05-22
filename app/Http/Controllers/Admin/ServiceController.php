@@ -1,16 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CaseRequest;
-use App\Http\Requests\UserRequest;
-use App\Models\Agent;
-use App\Models\Role;
+use App\Models\Service;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 
-class AgentController extends Controller
+class ServiceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -22,11 +19,11 @@ class AgentController extends Controller
         //
 
         $titleCard = 'لیست';
-        $th = ['شناسه', 'name', 'mobile','email', 'operation'];
-        $query = Agent::query()
+        $th = ['شناسه', 'title', 'body', 'operation'];
+        $query = Service::query()
             ->orderBy('id', 'DESC')
             ->get();
-        return view('admin.agents.index',
+        return view('admin.services.index',
             [
                 'items' => $query,
                 'th' => $th,
@@ -47,7 +44,7 @@ class AgentController extends Controller
     public function create()
     {
         //
-        return view('admin.agents.create');
+        return view('admin.services.create');
     }
 
     /**
@@ -56,29 +53,14 @@ class AgentController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(UserRequest $request)
+    public function store(CaseRequest $request)
     {
-        $inputs = $request->only(
-            'name',
-            'mobile',
-            'password',
-            'email',
-            'address',
-            'bio',
-            'avatar_path',
-            'telegram',
-            'whatsapp'
-        );
-        if ($request->file('avatar_path')){
-            $inputs['avatar_path'] = $this->uploadMedia($request->file('avatar_path'));
-        }
-        $inputs['password'] = Hash::make($inputs['password']);
+        $inputs = $request->only('title', 'body', 'thumbnail_path');
 
-        $result=Agent::create($inputs);
-        $roleUser = Role::where('name', 'agent')->first();
-        $result->assignRole($roleUser);
+        if ($request->file('thumbnail_path'))
+            $inputs['thumbnail_path'] = $this->uploadMedia($request->file('thumbnail_path'));
 
-
+        $result=Service::create($inputs);
         if ($result){
             return back()->with('success','با موفقیت ارسال شد');
         } else{
@@ -96,8 +78,8 @@ class AgentController extends Controller
     public function show($id)
     {
         //
-        $query = Agent::find($id);
-        return view('admin.agents.show', ['item' => $query]);
+        $query = Service::find($id);
+        return view('admin.services.show', ['item' => $query]);
     }
 
     /**
@@ -109,8 +91,8 @@ class AgentController extends Controller
     public function edit($id)
     {
         //
-        $query = Agent::where('id', $id)->first();
-        return view('admin.agents.edit', ['item' => $query]);
+        $query = Service::where('id', $id)->first();
+        return view('admin.services.edit', ['item' => $query]);
     }
 
     /**
@@ -123,22 +105,12 @@ class AgentController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $query = $request->only(
-            'name',
-            'mobile',
-            'password',
-            'email',
-            'address',
-            'bio',
-            'avatar_path',
-            'telegram',
-            'whatsapp'
-        );
+        $query = $request->only('title', 'body', 'thumbnail_path');
 
-        if ($request->file('avatar_path')){
-            $query['avatar_path'] = $this->uploadMedia($request->file('avatar_path'));
-        }
-        Agent::where('id', $id)->update($query);
+        if ($request->file('thumbnail_path'))
+            $query['thumbnail_path'] = $this->uploadMedia($request->file('thumbnail_path'));
+
+        Service::where('id', $id)->update($query);
         return back()->with('success', 'ویرایش با موفقیت انجام شد');
     }
 
@@ -151,9 +123,17 @@ class AgentController extends Controller
     public function destroy($id)
     {
         //
-        Agent::query()->where('id', $id)->delete();
+        Service::query()->where('id', $id)->delete();
         return back();
     }
 
+    public function uploadMedia($file)
+    {
+        $path='\images';
+        $fileName=uniqid().'-'.$file->getClientOriginalName();
+        $destination=public_path().'/'.$path;
+        $file->move($destination,$fileName);
 
+        return $path.'/'.$fileName;
+    }
 }

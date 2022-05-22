@@ -1,31 +1,24 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CaseRequest;
-use App\Http\Requests\UserRequest;
-use App\Models\User;
+use App\Models\Category;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 
-class UserController extends Controller
+class CategoryController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
-     */
     public function index()
     {
         //
 
         $titleCard = 'لیست';
-        $th = ['شناسه', 'name', 'mobile', 'operation'];
-        $query = User::query()
+        $th = ['شناسه', 'title', 'operation'];
+        $query = Category::query()
             ->orderBy('id', 'DESC')
             ->get();
-        return view('admin.users.index',
+        return view('admin.categories.index',
             [
                 'items' => $query,
                 'th' => $th,
@@ -33,7 +26,9 @@ class UserController extends Controller
             ]
         );
 
-
+//
+//        $query=Post::get();
+//        return view('admin.posts.index',['items'=>$query]);
     }
 
     /**
@@ -44,7 +39,7 @@ class UserController extends Controller
     public function create()
     {
         //
-        return view('admin.users.create');
+        return view('admin.categories.create');
     }
 
     /**
@@ -53,24 +48,10 @@ class UserController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(UserRequest $request)
+    public function store(CaseRequest $request)
     {
-        $inputs = $request->only(
-            'name',
-            'mobile',
-            'password',
-            'email',
-            'address',
-            'bio',
-            'avatar_path',
-            'telegram',
-            'whatsapp'
-        );
-        $inputs['password'] = Hash::make($inputs['password']);
-        if ($request->file('avatar_path'))
-            $inputs['avatar_path'] = $this->uploadMedia($request->file('avatar_path'));
-
-        $result=User::create($inputs);
+        $inputs = $request->only('title');
+        $result=Category::create($inputs);
         if ($result){
             return back()->with('success','با موفقیت ارسال شد');
         } else{
@@ -88,8 +69,8 @@ class UserController extends Controller
     public function show($id)
     {
         //
-        $query = User::find($id);
-        return view('admin.users.show', ['item' => $query]);
+        $query = Category::find($id);
+        return view('admin.categories.show', ['item' => $query]);
     }
 
     /**
@@ -101,8 +82,8 @@ class UserController extends Controller
     public function edit($id)
     {
         //
-        $query = User::where('id', $id)->first();
-        return view('admin.users.edit', ['item' => $query]);
+        $query = Category::where('id', $id)->first();
+        return view('admin.categories.edit', ['item' => $query]);
     }
 
     /**
@@ -115,22 +96,9 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $query = $request->only(
-            'name',
-            'mobile',
-            'password',
-            'email',
-            'address',
-            'bio',
-            'avatar_path',
-            'telegram',
-            'whatsapp'
-            );
-        if ($request->file('avatar_path'))
-            $query['avatar_path'] = $this->uploadMedia($request->file('avatar_path'));
-
-        User::where('id', $id)->update($query);
-        return redirect('/admin/users')->with('success', 'ویرایش با موفقیت انجام شد');
+        $query = $request->only('title');
+        Category::where('id', $id)->update($query);
+        return back()->with('success', 'ویرایش با موفقیت انجام شد');
     }
 
     /**
@@ -142,7 +110,7 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
-        User::query()->where('id', $id)->delete();
+        Category::query()->where('id', $id)->delete();
         return back();
     }
 }

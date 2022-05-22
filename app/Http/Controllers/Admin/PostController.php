@@ -1,24 +1,25 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CaseRequest;
-use App\Models\Comment;
+use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class CommentController extends Controller
+class PostController extends Controller
 {
     public function index()
     {
         //
 
         $titleCard = 'لیست';
-        $th = ['شناسه', 'user_id', 'commentable_id','commentable_type', 'body','operation'];
-        $query = Comment::query()
+        $th = ['شناسه', 'title', 'body', 'operation'];
+        $query = Post::query()
             ->orderBy('id', 'DESC')
             ->get();
-        return view('admin.comments.index',
+        return view('admin.posts.index',
             [
                 'items' => $query,
                 'th' => $th,
@@ -38,8 +39,8 @@ class CommentController extends Controller
      */
     public function create()
     {
-        //
-        return view('admin.comments.create');
+
+        return view('admin.posts.create');
     }
 
     /**
@@ -48,10 +49,19 @@ class CommentController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(CaseRequest $request)
+    public function store(Request $request)
     {
-        $inputs = $request->only('commentable_id','commentable_type', 'body');
-        $result=Comment::create($inputs);
+
+
+        $inputs = $request->only('title', 'body');
+
+        if ($request->file('avatar_path')){
+            $inputs['avatar_path'] = $this->uploadMedia($request->file('avatar_path'));
+        }
+
+        $inputs['user_id'] = Auth::id();
+
+        $result=Post::create($inputs);
         if ($result){
             return back()->with('success','با موفقیت ارسال شد');
         } else{
@@ -59,6 +69,7 @@ class CommentController extends Controller
         }
 
     }
+
 
     /**
      * Display the specified resource.
@@ -69,8 +80,8 @@ class CommentController extends Controller
     public function show($id)
     {
         //
-        $query = Comment::find($id);
-        return view('admin.comments.show', ['item' => $query]);
+        $query = Post::find($id);
+        return view('admin.posts.show', ['item' => $query]);
     }
 
     /**
@@ -82,8 +93,8 @@ class CommentController extends Controller
     public function edit($id)
     {
         //
-        $query = Comment::where('id', $id)->first();
-        return view('admin.comments.edit', ['item' => $query]);
+        $query = Post::where('id', $id)->first();
+        return view('admin.posts.edit', ['item' => $query]);
     }
 
     /**
@@ -96,8 +107,12 @@ class CommentController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $query = $request->only('commentable_id','commentable_type', 'body');
-        Comment::where('id', $id)->update($query);
+        $query = $request->only('title', 'body','user_id','avatar_path');
+
+        if ($request->file('avatar_path')){
+            $query['avatar_path'] = $this->uploadMedia($request->file('avatar_path'));
+        }
+        Post::where('id', $id)->update($query);
         return back()->with('success', 'ویرایش با موفقیت انجام شد');
     }
 
@@ -110,7 +125,7 @@ class CommentController extends Controller
     public function destroy($id)
     {
         //
-        Comment::query()->where('id', $id)->delete();
+        Post::query()->where('id', $id)->delete();
         return back();
     }
 }

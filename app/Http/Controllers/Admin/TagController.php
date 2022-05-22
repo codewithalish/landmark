@@ -1,26 +1,24 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CaseRequest;
-use App\Models\Role;
+use App\Models\Tag;
 use Illuminate\Http\Request;
-use Spatie\Permission\Models\Permission;
-use Spatie\Permission\Traits\HasRoles;
 
-class RoleController extends Controller
+class TagController extends Controller
 {
     public function index()
     {
         //
 
         $titleCard = 'لیست';
-        $th = ['شناسه', 'name',  'operation'];
-        $query = Role::query()
+        $th = ['شناسه', 'title', 'operation'];
+        $query = Tag::query()
             ->orderBy('id', 'DESC')
             ->get();
-        return view('admin.roles.index',
+        return view('admin.tags.index',
             [
                 'items' => $query,
                 'th' => $th,
@@ -41,7 +39,7 @@ class RoleController extends Controller
     public function create()
     {
         //
-        return view('admin.roles.create');
+        return view('admin.tags.create');
     }
 
     /**
@@ -50,15 +48,13 @@ class RoleController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(Request $request)
+    public function store(CaseRequest $request)
     {
-        $gaurd_name='web';
-        $inputs= $request->only('name',$gaurd_name);
-
-        $result = \Spatie\Permission\Models\Role::create($inputs);
-        if ($result) {
-            return redirect('/admin/roles')->with('success', 'با موفقیت ارسال شد');
-        } else {
+        $inputs = $request->only('title');
+        $result=Tag::create($inputs);
+        if ($result){
+            return back()->with('success','با موفقیت ارسال شد');
+        } else{
             return back()->with('error');
         }
 
@@ -73,8 +69,8 @@ class RoleController extends Controller
     public function show($id)
     {
         //
-        $query = Role::find($id);
-        return view('admin.roles.show', ['item' => $query]);
+        $query = Tag::find($id);
+        return view('admin.tags.show', ['item' => $query]);
     }
 
     /**
@@ -86,8 +82,8 @@ class RoleController extends Controller
     public function edit($id)
     {
         //
-        $query = Role::where('id', $id)->first();
-        return view('admin.roles.edit', ['item' => $query]);
+        $query = Tag::where('id', $id)->first();
+        return view('admin.tags.edit', ['item' => $query]);
     }
 
     /**
@@ -100,8 +96,8 @@ class RoleController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $query = $request->only('name', 'title');
-        Role::where('id', $id)->update($query);
+        $query = $request->only('title');
+        Tag::where('id', $id)->update($query);
         return back()->with('success', 'ویرایش با موفقیت انجام شد');
     }
 
@@ -114,33 +110,7 @@ class RoleController extends Controller
     public function destroy($id)
     {
         //
-        Role::query()->where('id', $id)->delete();
+        Tag::query()->where('id', $id)->delete();
         return back();
-    }
-
-    public function syncPermission(Request $request)
-    {
-
-        $role = Role::where('name', $request->get('role'))->first();
-
-        $role->syncPermissions($request->get('permissions'));
-
-        return back()->withSuccess('همه چیز اوکیه');
-
-    }
-
-
-    public function assignPermissionForm(Request $request)
-    {
-
-        $roles = \Spatie\Permission\Models\Role::all();
-
-        $permissions = Permission::all();
-
-        return view('roles.assign')->with([
-            'roles' => $roles,
-            'permissions' => $permissions
-        ]);
-
     }
 }

@@ -1,29 +1,24 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CaseRequest;
-use App\Models\Partner;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 
-class PartnerController extends Controller
+class CommentController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
-     */
     public function index()
     {
         //
 
         $titleCard = 'لیست';
-        $th = ['شناسه', 'title', 'body', 'operation'];
-        $query = Partner::query()
+        $th = ['شناسه', 'user_id', 'commentable_id','commentable_type', 'body','operation'];
+        $query = Comment::query()
             ->orderBy('id', 'DESC')
             ->get();
-        return view('admin.partners.index',
+        return view('admin.comments.index',
             [
                 'items' => $query,
                 'th' => $th,
@@ -44,7 +39,7 @@ class PartnerController extends Controller
     public function create()
     {
         //
-        return view('admin.partners.create');
+        return view('admin.comments.create');
     }
 
     /**
@@ -53,10 +48,10 @@ class PartnerController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(Request $request)
+    public function store(CaseRequest $request)
     {
-        $inputs = $request->only('title', 'url', 'body', 'avatar_path');
-        $result=Partner::create($inputs);
+        $inputs = $request->only('commentable_id','commentable_type', 'body');
+        $result=Comment::create($inputs);
         if ($result){
             return back()->with('success','با موفقیت ارسال شد');
         } else{
@@ -74,8 +69,8 @@ class PartnerController extends Controller
     public function show($id)
     {
         //
-        $query = Partner::find($id);
-        return view('admin.partners.show', ['item' => $query]);
+        $query = Comment::find($id);
+        return view('admin.comments.show', ['item' => $query]);
     }
 
     /**
@@ -87,8 +82,8 @@ class PartnerController extends Controller
     public function edit($id)
     {
         //
-        $query = Partner::where('id', $id)->first();
-        return view('admin.partners.edit', ['item' => $query]);
+        $query = Comment::where('id', $id)->first();
+        return view('admin.comments.edit', ['item' => $query]);
     }
 
     /**
@@ -101,8 +96,8 @@ class PartnerController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $query = $request->only('title', 'url', 'body', 'avatar_path');
-        Partner::where('id', $id)->update($query);
+        $query = $request->only('commentable_id','commentable_type', 'body');
+        Comment::where('id', $id)->update($query);
         return back()->with('success', 'ویرایش با موفقیت انجام شد');
     }
 
@@ -115,7 +110,7 @@ class PartnerController extends Controller
     public function destroy($id)
     {
         //
-        Partner::query()->where('id', $id)->delete();
+        Comment::query()->where('id', $id)->delete();
         return back();
     }
 }
